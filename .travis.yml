@@ -1,26 +1,27 @@
----
 language: node_js
 node_js:
-  - 6
-  - 7
-  - node
+- 6
+- 7
+- node
 addons:
   apt:
     sources:
-      - ubuntu-toolchain-r-test
+    - ubuntu-toolchain-r-test
     packages:
-      - g++-4.8
-install: true
-env:
-    - CXX=g++-4.8
-cache:
-  yarn
+    - g++-4.8
 install:
-  - yarn upgrade
+- yarn upgrade
+env:
+- CXX=g++-4.8
+cache: yarn
 script:
-  - yarn run test
-  - yarn run build
+- yarn run test
+- yarn run build
 deploy:
   provider: heroku
   api_key:
-    secure: "2c40ae32-933f-46ca-9283-4f08942b4419"
+    secure: 2c40ae32-933f-46ca-9283-4f08942b4419
+notifications:
+  email: never
+  slack:
+    secure: m0YnlenpHV4gGtj9ZA/0GqjL2QAWdr7sPEMIbu4vI32XcsQ1Yo5uPBhk7G+CC3Gf4QbaiPGR8TTbVS63RZbxkKWCEuZ2xztLsMKdkxlbNuENZzXaobJjCbSyjiI+nH8M1S144EQ9JTWGI96XbH0zVEq/fOGn5vMEIG+hngCS8AmflKtaZCquCN9t3ePwKOYZlXXI1u0RkZGoE/pVBDpKuX21YNDna0U27glqCwvSop8SIq5yuX91TOJ26lax5YnESuiJypT13Lnntma4rbjj5ZAFGl4GtdZ3FD4sdWqrBIFdvBJGKwEEFZLCwJCkR0F36AtFC/aQumCEz+yqJCiiBLuMSJY53O3cGHrL6ttM5cfFZJLUko61QFnFJ6a729ns9Ou2bQy6wNNhf+Rdgj3Y2nKNCkfLxM1E2RILYFv/CEZiEgaYxVgbBg88rzBxg6qahTbBPn+z9j47O6TJsEOfoxjok65ivRkyrCUVHyLVvjVFpaQ0s6sR3x1OAZRuZh9pgnUkXMQX76EUZmSrhxj/nKmigs+JEdtjwi83O3gSWpWPjdvZyMiwogyjO6evig+aEM26x9wFMP3VWjwrFaiO+sCNwlH8ohNCYorc/P7mxWx5qoANDw9jpuYYFgv0NlgZHnG2IiZsx9uThozJr/7Mfj53WrpiqbtrL9p3zpP/0wg=
