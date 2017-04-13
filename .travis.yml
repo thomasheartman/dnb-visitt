@@ -12,13 +12,14 @@ addons:
     - ubuntu-toolchain-r-test
     packages:
     - g++-4.8
-install:
-  - yarn upgrade
-  - yarn global add standard
-  - standard --fix
 env:
   - CXX=g++-4.8
 cache: yarn
+install:
+  - yarn upgrade
+before_script:
+  - yarn global add standard
+  - standard --fix
 script:
   - yarn run test
   - yarn run build

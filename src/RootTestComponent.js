@@ -6,6 +6,6 @@
 import React from 'react'
 // require('./styles/testStyles.css')
 
-const RootTest = () => <h2 className="my-class">I am a component being rendered from the root of the src dir</h2>
+const RootTest = () => <h2 className='my-class'>I am a component being rendered from the root of the src dir</h2>
 
 export default RootTest
