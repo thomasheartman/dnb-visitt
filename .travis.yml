@@ -4,11 +4,7 @@ node_js:
   - 6
   - 7
   - node
-cache:
-  directories:
-  - node_modules
-  - packages/create-react-app/node_modules
-  - packages/react-scripts/node_modules
+
 script:
   - yarn run test-ci
   - yarn run build
