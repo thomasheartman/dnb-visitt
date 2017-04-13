@@ -1,6 +1,5 @@
 {
   "name": "dnb-visitt",
-  "homepage": "/home/travis/build/TheHeartmann/dnb-visitt",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

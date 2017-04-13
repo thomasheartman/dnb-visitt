@@ -10,6 +10,8 @@ cache:
   - packages/create-react-app/node_modules
   - packages/react-scripts/node_modules
 script:
+  - npm install -g npm@latest
+  - rm -rf node_modules
   - npm install
   - npm test
   - npm run build
