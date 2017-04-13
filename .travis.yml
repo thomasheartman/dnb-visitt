@@ -4,6 +4,11 @@ node_js:
   - 4
   - 6
   - 7
+cache:
+  directories:
+  - node_modules
+  - packages/create-react-app/node_modules
+  - packages/react-scripts/node_modules
 script:
   - npm test
   - npm run build
@@ -16,6 +21,7 @@ env:
   global:
     - process.env.CI=true
     - CXX=g++-4.8
+    - USE_YARN=no
 addons:
   apt:
     sources:
