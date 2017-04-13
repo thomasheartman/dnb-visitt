@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - 4
+  - 6
+cache:
+  directories:
+	- node_modules
+script:
+  - npm test
+  - npm run build
+deploy:
+  provider: heroku
+  api_key:
+	secure: "2c40ae32-933f-46ca-9283-4f08942b4419"
