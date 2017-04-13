@@ -1,17 +1,17 @@
 ---
 language: node_js
 node_js:
-  - 4
   - 6
   - 7
+  - node
 cache:
   directories:
   - node_modules
   - packages/create-react-app/node_modules
   - packages/react-scripts/node_modules
 script:
-  - npm run test-ci
-  - npm run build
+  - yarn run test-ci
+  - yarn run build
 deploy:
   provider: heroku
   api_key:
@@ -21,7 +21,6 @@ env:
   global:
     - process.env.CI=true
     - CXX=g++-4.8
-    - USE_YARN=no
 addons:
   apt:
     sources:
