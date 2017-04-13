@@ -16,5 +16,6 @@ deploy:
     secure: "2c40ae32-933f-46ca-9283-4f08942b4419"
 install: true
 env:
-  - process.env.CI=true
-  - CXX=g++-4.8
+  global:
+    - process.env.CI=true
+    - CXX=g++-4.8
