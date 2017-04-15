@@ -27,9 +27,9 @@ deploy:
   provider: heroku
   api_key:
     secure: 2c40ae32-933f-46ca-9283-4f08942b4419
-    app:
-      master: dnb-visitt
-      production: dnb-visitt-bugs
+    # app:
+      # master: dnb-visitt
+      # production: dnb-visitt-bugs
     on:
       all_brances: true
 notifications:
