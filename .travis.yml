@@ -27,6 +27,9 @@ deploy:
   provider: heroku
   api_key:
     secure: 2c40ae32-933f-46ca-9283-4f08942b4419
+    app:
+      master: dnb-visitt
+      bugfix/travis_build_failing: dnb-visitt-bugs
 notifications:
   email: never
   slack:

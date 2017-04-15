@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import logo from './logo.svg'
 import Test from './components/test/TestComponent'
-import './App.css'
+// import './App.css'
 import RootTest from './RootTestComponent'
-import './styles/testStyles.css'
+// import './styles/testStyles.css'
 
 class App extends Component {
   render () {
