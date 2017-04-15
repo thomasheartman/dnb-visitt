@@ -1,0 +1,10 @@
+{
+    "filter": {
+        "county": "",
+        "minPrice": 0,
+        "maxPrice": 1000000000,
+        "numberOfBedrooms": 0,
+        "minSize": 0,
+        "maxSize": 0
+    }
+}
