@@ -1,23 +1,34 @@
 {
-  "name": "dnb-visitt",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4"
-  },
-  "devDependencies": {
-    "custom-react-scripts": "0.0.23",
-    "eslint": "^3.19.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-react": "^6.10.3",
-    "prop-types": "^15.5.8",
-    "standard": "^10.0.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "name": "dnb-visitt",
+    "version": "0.1.0",
+    "private": true,
+    "eslintConfig": {
+        "parserOptions": {
+            "ecmaVersion": 6,
+            "sourceType": "module",
+            "ecmaFeatures": {
+                "jsx": true
+            }
+        }
+    },
+    "dependencies": {
+        "react": "^15.5.4",
+        "react-dom": "^15.5.4"
+    },
+    "devDependencies": {
+        "custom-react-scripts": "0.0.23",
+        "eslint": "^3.19.0",
+        "eslint-plugin-import": "^2.2.0",
+        "eslint-plugin-react": "^6.10.3",
+        "flow-bin": "^0.44.0",
+        "prop-types": "^15.5.8",
+        "standard": "^10.0.1"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test --env=jsdom",
+        "eject": "react-scripts eject",
+        "flow": "flow"
+    }
 }
