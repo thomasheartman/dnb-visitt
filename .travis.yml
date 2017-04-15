@@ -30,6 +30,8 @@ deploy:
     app:
       master: dnb-visitt
       production: dnb-visitt-bugs
+    on:
+      all_brances: true
 notifications:
   email: never
   slack:
