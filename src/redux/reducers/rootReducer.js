@@ -7,8 +7,10 @@
 
 // TODO: import all minor reducers here
 import { combineReducers } from 'redux'
-import filter from './filterReducer'
+import filter from './filter/filterReducer'
+import searchResults from './results/resultsReducer'
 
 export default combineReducers({
-  filter
+  filter,
+  searchResults
 })

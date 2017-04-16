@@ -4,17 +4,16 @@
  * It takes all the main components and renders them
  * at the specified path.
  */
-'use strict'
 
 import React from 'react'
 // TODO: import components here
-import MasterLayout from '../components/Layout/MasterLayout'
+import MasterLayout from '../components/masterLayout/MasterLayout'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import createHistory from 'history/createBrowserHistory'
 
 const history = createHistory()
 
-const routes = (
+export default () => (
   <Router history={history}>
     <MasterLayout>
       <Route exact path='/' />
@@ -22,4 +21,3 @@ const routes = (
   </Router>
 )
 
-export default routes

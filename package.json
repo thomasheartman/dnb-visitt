@@ -20,14 +20,18 @@
     },
     "devDependencies": {
         "custom-react-scripts": "0.0.23",
+        "enzyme": "^2.8.2",
         "eslint": "^3.19.0",
         "eslint-plugin-import": "^2.2.0",
         "eslint-plugin-react": "^6.10.3",
         "flow-bin": "^0.44.0",
         "history": "^4.6.1",
+        "jest-enzyme": "^3.0.1",
         "prop-types": "^15.5.8",
+        "react-addons-test-utils": "^15.5.1",
         "react-router": "^4.1.1",
         "react-router-dom": "^4.1.1",
+        "react-test-renderer": "^15.5.4",
         "standard": "^10.0.1"
     },
     "scripts": {

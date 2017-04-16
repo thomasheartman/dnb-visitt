@@ -3,10 +3,9 @@
  *  Created by Thomas Hartmann
  * This is the app's entry point, and thus initializes everything.
  */
-'use strict'
 
 import React from 'react'
-import route from './routing/routes'
+import Routes from './routing/Routes'
 import { render } from 'react-dom'
 import sampleData from './redux/initialState.json'
 import storeFactory from './redux/store'
@@ -20,12 +19,11 @@ const store = storeFactory(initialState)
 
 // set a couple nice window variables for testing/debug
 window.store = store
-window.React = React
 
 // render the app
 render(
   <Provider store={store}>
-    {route}
+    <Routes/>
   </Provider>,
   document.getElementById('root')
 )

@@ -3,7 +3,6 @@
  * This is where the app's store is configured with middleware
  * and then exported for use.
  */
-'use strict'
 import reducer from './reducers/rootReducer'
 import thunk from 'redux-thunk'
 import { createStore, applyMiddleware } from 'redux'

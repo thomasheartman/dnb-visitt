@@ -5,7 +5,7 @@
  * the property filter
  */
 
-const filterConstants = {
+export default  {
     // property filtering
   CHANGE_COUNTY: 'CHANGE_COUNTY',
   CLEAR_COUNTY: 'CLEAR_COUNTY',
@@ -20,5 +20,3 @@ const filterConstants = {
 
   CLEAR_FILTER: 'CLEAR_FILTER'
 }
-
-export default filterConstants
