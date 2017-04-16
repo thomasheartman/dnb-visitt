@@ -7,13 +7,13 @@ import React from 'react'
 import { Dropdown } from 'react-toolbox/lib/dropdown'
 import AboutBox from './components/aboutBox/AboutBox'
 import Steps from './components/visitSteps/VisitSteps'
-
+/*
 const testCounties = [
-    { value: 'Nord-Trøndelag', label: 'Nord-Trøndelag'},
-    { value: 'Østfold', label: 'Møre og Romsdal'},
-    { value: 'Østfold', label: 'Østfold'}
+  { value: 'Nord-Trøndelag', label: 'Nord-Trøndelag' },
+  { value: 'Østfold', label: 'Møre og Romsdal' },
+  { value: 'Østfold', label: 'Østfold' }
 ]
-
+*/
 export default ({ selectedCounty, allCounties, handleChange = f => f }) => (
   <main className='frontpage full-width'>
     <AboutBox />
@@ -24,9 +24,10 @@ export default ({ selectedCounty, allCounties, handleChange = f => f }) => (
           <div className='dropdown row center-xs' />
           <Dropdown
             onChange={(value) => handleChange(value)}
-            source={testCounties}
+            source={allCounties}
             value={selectedCounty}
-                    />
+          />
+          <input type="submit" value="Søk"/>
         </div>
       </div>
     </section>
