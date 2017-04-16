@@ -19,11 +19,12 @@ const store = storeFactory(initialState)
 
 // set a couple nice window variables for testing/debug
 window.store = store
+window.React = React
 
 // render the app
 render(
   <Provider store={store}>
-    <Routes/>
+    <Routes />
   </Provider>,
   document.getElementById('root')
 )

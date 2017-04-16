@@ -7,29 +7,29 @@ import reducer from './resultsReducer'
 import types from './resultsActionTypes'
 
 it('should return the initial state', () => {
-    expect(
+  expect(
         reducer(undefined, {})
     ).toEqual({
-        "fetchingResults": false,
-        "results": []
+      'fetchingResults': false,
+      'results': []
     })
 })
 
 it('should set fetching to true', () => {
-    expect(
+  expect(
         reducer(undefined, { type: types.FETCH_RESULTS })
     ).toEqual({
-        "fetchingResults": true,
-        "results": []
+      'fetchingResults': true,
+      'results': []
     })
 })
 
 it('should cancel fetching', () => {
-    expect(
+  expect(
         reducer(undefined, { type: types.CANCEL_FETCHING_RESULTS })
     ).toEqual({
-        "fetchingResults": false,
-        "results": []
+      'fetchingResults': false,
+      'results': []
     })
 })
 
@@ -68,4 +68,4 @@ it('should change the results', function () {
             ]
         })
     )
-})*/
+}) */

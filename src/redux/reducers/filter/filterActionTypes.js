@@ -5,7 +5,7 @@
  * the property filter
  */
 
-export default  {
+export default {
     // property filtering
   CHANGE_COUNTY: 'CHANGE_COUNTY',
   CLEAR_COUNTY: 'CLEAR_COUNTY',

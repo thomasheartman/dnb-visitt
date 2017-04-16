@@ -6,18 +6,18 @@
  */
 
 import React from 'react'
-// TODO: import components here
-import MasterLayout from '../components/masterLayout/MasterLayout'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import createHistory from 'history/createBrowserHistory'
+// TODO: import components here
+import MasterLayout from '../components/masterLayout/MasterLayout'
+import Home from '../components/home/HomeMap'
 
 const history = createHistory()
 
 export default () => (
   <Router history={history}>
     <MasterLayout>
-      <Route exact path='/' />
+      <Route exact path='/' component={Home} />
     </MasterLayout>
   </Router>
 )
-

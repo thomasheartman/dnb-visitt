@@ -5,8 +5,11 @@
  */
 
 import React from 'react'
-import Header from './components/Header'
-import Footer from './components/Footer'
+import Header from './components/header/Header'
+import Footer from './components/footer/Footer'
+import '../../styles/meyersReset.css'
+import '../../styles//flexboxgrid.css'
+import '../../styles/style.css' // TODO: make travis accept this. Will hate it at the moment.
 
 export default ({ children }) => (
   <div>

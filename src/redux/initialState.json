@@ -10,5 +10,10 @@
     "searchResults": {
         "fetchingResults": false,
         "results": []
-    }
+    },
+    "counties": [
+        "Oslo",
+        "Akershus",
+        "Vestfold"
+    ]
 }

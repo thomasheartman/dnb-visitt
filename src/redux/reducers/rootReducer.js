@@ -8,9 +8,11 @@
 // TODO: import all minor reducers here
 import { combineReducers } from 'redux'
 import filter from './filter/filterReducer'
-import searchResults from './results/resultsReducer'
+import searchResults from './searchResults/resultsReducer'
+import counties from './counties/countiesReducer'
 
 export default combineReducers({
   filter,
-  searchResults
+  searchResults,
+  counties
 })
