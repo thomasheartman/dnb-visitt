@@ -7,11 +7,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 // icons
-import kontrakt from '../media/bolig-kontrakt.svg'
-import velg from '../media/bolig-velg.svg'
-import vr from '../media/bolig-vr.svg'
-import sok from '../media/bolig-sok.svg'
-import eie from '../media/bolig-eie.svg'
+import kontrakt from '../../../../media/icons/bolig-kontrakt.svg'
+import velg from '../../../../media/icons/bolig-velg.svg'
+import vr from '../../../../media/icons/bolig-vr.svg'
+import sok from '../../../../media/icons/bolig-sok.svg'
+import eie from '../../../../media/icons/bolig-eie.svg'
 
 export default () => (
   <div>

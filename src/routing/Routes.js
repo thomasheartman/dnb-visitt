@@ -11,6 +11,7 @@ import createHistory from 'history/createBrowserHistory'
 // TODO: import components here
 import MasterLayout from '../components/masterLayout/MasterLayout'
 import Home from '../components/home/HomeMap'
+import OmVisitt from '../components/omVisitt/OmVisitt'
 
 const history = createHistory()
 
@@ -18,6 +19,7 @@ export default () => (
   <Router history={history}>
     <MasterLayout>
       <Route exact path='/' component={Home} />
+      <Route path='/om-visitt' component={OmVisitt} />
     </MasterLayout>
   </Router>
 )

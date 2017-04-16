@@ -17,11 +17,11 @@ const testCounties = [
 */
 
 // TODO: fix this: Dropdown is messing with styling
-/*<Dropdown
+/* <Dropdown
   onChange={(value) => handleChange(value)}
   source={allCounties}
   value={selectedCounty}
-/>*/
+/> */
 
 export default ({ selectedCounty, allCounties, handleChange = f => f }) => (
   <main className='frontpage full-width'>
@@ -31,7 +31,6 @@ export default ({ selectedCounty, allCounties, handleChange = f => f }) => (
         <div className='col-xs-12 center-xs'>
           <h1 className='title-heading'>Hvor ønsker du å bo?</h1>
           <div className='dropdown row center-xs' />
-
           <Link to='/boligvelger'>
             <input type='submit' value='Søk' />
           </Link>
