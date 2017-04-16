@@ -4,6 +4,7 @@
  */
 
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Dropdown } from 'react-toolbox/lib/dropdown'
 import AboutBox from './components/aboutBox/AboutBox'
 import Steps from './components/visitSteps/VisitSteps'
@@ -27,7 +28,9 @@ export default ({ selectedCounty, allCounties, handleChange = f => f }) => (
             source={allCounties}
             value={selectedCounty}
           />
-          <input type="submit" value="Søk"/>
+          <Link to='/boligvelger'>
+            <input type="submit" value="Søk"/>
+          </Link>
         </div>
       </div>
     </section>
