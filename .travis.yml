@@ -14,9 +14,9 @@ env:
 cache: yarn
 install:
 - yarn upgrade
-- yarn global add standard #TODO: add back in when it works.
-before_script:
-- standard --fix
+# - yarn global add standard #TODO: add back in when it works.
+# before_script:
+# - standard --fix
 script:
 - yarn run test
 - yarn run build
