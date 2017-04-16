@@ -9,7 +9,6 @@ import Dropdown from 'react-toolbox/lib/dropdown'
 import AboutBox from './components/aboutBox/AboutBox'
 import Steps from './components/visitSteps/VisitSteps'
 
-
 export default ({ selectedCounty, allCounties, handleChange = f => f }) => (
   <main className='frontpage full-width'>
     <AboutBox />

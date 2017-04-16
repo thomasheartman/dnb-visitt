@@ -8,11 +8,12 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import createHistory from 'history/createBrowserHistory'
-// TODO: import components here
+// components TODO: consider adding a top level componentExporter
 import MasterLayout from '../components/masterLayout/MasterLayout'
 import Home from '../components/home/HomeMap'
 import OmVisitt from '../components/omVisitt/OmVisitt'
 import HjelpOgKontakt from '../components/hjelpOgKontakt/HjelpOgKontakt'
+import Boligvelger from '../components/boligvelger/Boligvelger'
 
 const history = createHistory()
 
@@ -22,6 +23,7 @@ export default () => (
       <Route exact path='/' component={Home} />
       <Route path='/om-visitt' component={OmVisitt} />
       <Route path='/hjelp-og-kontakt' component={HjelpOgKontakt} />
+      <Route path='/boligvelger' component={Boligvelger} />
     </MasterLayout>
   </Router>
 )
