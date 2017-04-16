@@ -29,7 +29,7 @@ export default ({ selectedCounty, allCounties, handleChange = f => f }) => (
             value={selectedCounty}
           />
           <Link to='/boligvelger'>
-            <input type="submit" value="Søk"/>
+            <input type='submit' value='Søk' />
           </Link>
         </div>
       </div>

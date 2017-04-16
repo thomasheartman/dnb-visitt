@@ -1,4 +1,4 @@
-/* global it */
+/* global it, expect */
 /*
  * Created by Thomas Hartmann
  * Test suite for results actions

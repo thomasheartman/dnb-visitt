@@ -1,3 +1,5 @@
+/* global it, expect */
+
 /*
  * Created by Thomas on 16/04/2017.
  * Test suite for results reducer

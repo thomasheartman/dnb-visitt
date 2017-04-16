@@ -5,8 +5,8 @@
  * Test file for filterReducer behavior
  */
 
- import reducer from './filterReducer'
- import types from './filterActionTypes'
+//  import reducer from './filterReducer'
+//  import types from './filterActionTypes'
 
  it('should return the initial state', () => {
 
