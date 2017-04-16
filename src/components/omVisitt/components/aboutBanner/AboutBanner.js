@@ -19,22 +19,22 @@ export default () => (
     <div className='row center-xs aboutpage-buttons'>
 
       <div className='col-xs-3'>
-        <img className='icon' src={vr} alt='Hva er Visitt?' />
+        <img className='visitt-icon' src={vr} alt='Hva er Visitt?' />
         <a href='#who' className='frontpage-button'>Hva er Visitt?</a>
       </div>
 
       <div className='col-xs-3'>
-        <img className='icon' src={leilighet} alt='Se i VR' />
+        <img className='visitt-icon' src={leilighet} alt='Se i VR' />
         <a href='#what' className='frontpage-button'>Se bolig i VR</a>
       </div>
 
       <div className='col-xs-3'>
-        <img className='icon' src={hjem} alt='Tilpass bolig' />
+        <img className='visitt-icon' src={hjem} alt='Tilpass bolig' />
         <a href='#why' className='frontpage-button'>Tilpass bolig</a>
       </div>
 
       <div className='col-xs-3'>
-        <img className='icon' src={omradeVelg} alt='Visitt filialer' />
+        <img className='visitt-icon' src={omradeVelg} alt='Visitt filialer' />
         <a href='#where' className='frontpage-button'>Hvor finner jeg Visitt?</a>
       </div>
 

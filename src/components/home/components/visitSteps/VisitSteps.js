@@ -21,23 +21,23 @@ export default () => (
     </div >
     <div className='row center-xs frontpage-buttons'>
       <div className='col-xs-2'>
-        <img className='icon' src={sok} alt='Finn bolig' />
+        <img className='visitt-icon' src={sok} alt='Finn bolig' />
         <Link to='/' className='frontpage-button'>Finn bolig</Link>
       </div>
       <div className='col-xs-2'>
-        <img className='icon' src={velg} alt='Velg bolig' />
+        <img className='visitt-icon' src={velg} alt='Velg bolig' />
         <Link to='/' className='frontpage-button'>Velg bolig</Link>
       </div>
       <div className='col-xs-4'>
-        <img className='icon' src={vr} alt='Se bolig i VR' />
+        <img className='visitt-icon' src={vr} alt='Se bolig i VR' />
         <Link to='/' className='frontpage-button frontpage-button-big'>Se bolig i VR</Link>
       </div>
       <div className='col-xs-2'>
-        <img className='icon' src={kontrakt} alt='Bolig kontrakt' />
+        <img className='visitt-icon' src={kontrakt} alt='Bolig kontrakt' />
         <Link to='/' className='frontpage-button'>Kontrakt</Link>
       </div>
       <div className='col-xs-2'>
-        <img className='icon' src={eie} alt='Eie bolig' />
+        <img className='visitt-icon' src={eie} alt='Eie bolig' />
         <Link to='/' className='frontpage-button'>Eie ny bolig</Link>
       </div>
     </div>
