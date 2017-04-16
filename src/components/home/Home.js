@@ -5,7 +5,7 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Dropdown } from 'react-toolbox/lib/dropdown'
+// import Dropdown from 'react-toolbox/lib/dropdown'
 import AboutBox from './components/aboutBox/AboutBox'
 import Steps from './components/visitSteps/VisitSteps'
 /*
@@ -15,6 +15,14 @@ const testCounties = [
   { value: 'Østfold', label: 'Østfold' }
 ]
 */
+
+// TODO: fix this: Dropdown is messing with styling
+/*<Dropdown
+  onChange={(value) => handleChange(value)}
+  source={allCounties}
+  value={selectedCounty}
+/>*/
+
 export default ({ selectedCounty, allCounties, handleChange = f => f }) => (
   <main className='frontpage full-width'>
     <AboutBox />
@@ -23,11 +31,7 @@ export default ({ selectedCounty, allCounties, handleChange = f => f }) => (
         <div className='col-xs-12 center-xs'>
           <h1 className='title-heading'>Hvor ønsker du å bo?</h1>
           <div className='dropdown row center-xs' />
-          <Dropdown
-            onChange={(value) => handleChange(value)}
-            source={allCounties}
-            value={selectedCounty}
-          />
+
           <Link to='/boligvelger'>
             <input type='submit' value='Søk' />
           </Link>
