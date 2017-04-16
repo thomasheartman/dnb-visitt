@@ -7,11 +7,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 // icons
-import kontrakt from '../../../../media/icons/bolig-kontrakt.svg'
-import velg from '../../../../media/icons/bolig-velg.svg'
-import vr from '../../../../media/icons/bolig-vr.svg'
-import sok from '../../../../media/icons/bolig-sok.svg'
-import eie from '../../../../media/icons/bolig-eie.svg'
+import { kontrakt, velg, vr, sok, eie } from '../../../../media/icons'
+
 
 export default () => (
   <div>

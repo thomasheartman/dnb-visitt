@@ -6,9 +6,7 @@
 
 import React from 'react'
 
-import hjem from '../../../../media/icons/bolig-hjem.svg'
-import velg from '../../../../media/icons/bolig-velg.svg'
-import vr from '../../../../media/icons/bolig-vr.svg'
+import { hjem, velg, vr } from '../../../../media/icons'
 
 export default () => (
   <div className='about-visit row middle-xs'>

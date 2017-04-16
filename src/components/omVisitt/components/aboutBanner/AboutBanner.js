@@ -7,10 +7,7 @@ import React from 'react'
 import image from './media/omvisitt.jpg'
 
 // icons
-import vr from '../../../../media/icons/bolig-vr.svg'
-import leilighet from '../../../../media/icons/bolig-leilighet.svg'
-import hjem from '../../../../media/icons/bolig-hjem.svg'
-import omradeVelg from '../../../../media/icons/omrade-velg.svg'
+import { vr, leilighet, hjem, omradeVelg } from '../../../../media/icons'
 
 export default () => (
   <div>

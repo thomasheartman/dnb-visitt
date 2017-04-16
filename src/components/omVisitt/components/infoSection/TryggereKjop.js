@@ -5,11 +5,11 @@
 import React from 'react'
 import InfoSection from './InfoSection'
 import { connect } from 'react-redux'
-import icon from '../../../../media/icons/bolig-hjem.svg'
+import { hjem } from '../../../../media/icons'
 
 const mapStateToProps = () => ({
   Link: <div><a name='why' /></div>,
-  Icon: <img className='icon end-xs' src={icon} alt='Tilpass bolig' />,
+  Icon: <img className='icon end-xs' src={hjem} alt='Tilpass bolig' />,
   Header: <h3>Tryggere kjøp</h3>,
   Body: (<div>
     <p>Med VR teknologi har du en unik mulighet til å oppleve nybygg før de er oppført, noe som kan gjøre deg som kunde tryggere på kjøpet ditt.</p>
