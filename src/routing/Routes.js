@@ -12,6 +12,7 @@ import createHistory from 'history/createBrowserHistory'
 import MasterLayout from '../components/masterLayout/MasterLayout'
 import Home from '../components/home/HomeMap'
 import OmVisitt from '../components/omVisitt/OmVisitt'
+import HjelpOgKontakt from '../components/hjelpOgKontakt/HjelpOgKontakt'
 
 const history = createHistory()
 
@@ -20,6 +21,7 @@ export default () => (
     <MasterLayout>
       <Route exact path='/' component={Home} />
       <Route path='/om-visitt' component={OmVisitt} />
+      <Route path='/hjelp-og-kontakt' component={HjelpOgKontakt} />
     </MasterLayout>
   </Router>
 )

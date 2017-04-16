@@ -12,7 +12,7 @@ import searchResults from './searchResults/resultsReducer'
 import counties from './counties/countiesReducer'
 import { reducer as formReducer } from 'redux-form'
 
-export const form = formReducer;
+export const form = formReducer
 
 export default combineReducers({
   filter,

@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom'
 // icons
 import { kontrakt, velg, vr, sok, eie } from '../../../../media/icons'
 
-
 export default () => (
   <div>
     <div className='row middle-xs visit-steps-container'>

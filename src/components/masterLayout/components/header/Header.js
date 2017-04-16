@@ -23,7 +23,7 @@ export default () => (
             <Link to='/om-visitt'>OM VISITT</Link>
           </li>
           <li>
-            <Link to='/hjelp'>HJELP OG KONTAKT</Link>
+            <Link to='/hjelp-og-kontakt'>HJELP OG KONTAKT</Link>
           </li>
         </ul >
       </nav >

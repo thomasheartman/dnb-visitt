@@ -2,40 +2,29 @@
  * Created by Thomas Hartmann
  * Help and contact page
  */
-import react from 'react'
+import React from 'react'
+import Form from './components/form/ContactForm'
+import { Link } from 'react-router-dom'
 
 export default () => (
   <div>
 
-
-    <div className="breadcrumbs-wrapper">
-      <nav className="breadcrumbs">
-        <a href="index.html">Hjem</a>
+    <div className='breadcrumbs-wrapper'>
+      <nav className='breadcrumbs'>
+        <Link to='/'>Hjem</Link>
         <span>></span>
-        <a href="hjelp-og-kontakt.html">Hjelp og Kontakt</a>
+        <Link to='/hjelp-og-kontakt'>Hjelp og Kontakt</Link>
       </nav>
     </div>
 
-    <main className="contact">
-      <div className="row heading text-box">
-        <h2 className="heading-title">Kontakt Oss</h2>
-        <p className="heading-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut nulla, mollitia. Odit magni ex culpa corporis laboriosam, vel eius minima inventore dignissimos quisquam ducimus, reiciendis. In unde culpa error?</p>
+    <main className='contact'>
+      <div className='row heading text-box'>
+        <h2 className='heading-title'>Kontakt Oss</h2>
+        <p className='heading-description'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut nulla, mollitia. Odit magni ex culpa corporis laboriosam, vel eius minima inventore dignissimos quisquam ducimus, reiciendis. In unde culpa error?</p>
       </div>
 
-      <form action="#">
-        <p>Navn:</p>
-        <input type="text">
-          <p>Nummer:</p>
-          <input type="number">
-            <p>
-              Email:
-        </p>
-            <input type="email">
-              <p>Din beskjed:</p>
-              <textarea name="Din beskjed" id="" cols="50" rows="5"></textarea>
-              <br>
-                <input type="submit" value="Send">
-          </form>
-      </main>
-</div>
+      <Form />
+
+    </main>
+  </div>
             )
