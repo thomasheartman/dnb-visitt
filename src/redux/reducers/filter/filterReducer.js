@@ -23,7 +23,38 @@ const maxPrice = (state = 0, action) => action.type === types.SET_MAX_PRICE ? ac
 const minSize = (state = 0, action) => action.type === types.SET_MIN_SIZE ? action.payload : state
 const maxSize = (state = 0, action) => action.type === types.SET_MAX_SIZE ? action.payload : state
 
-const numberOfBedrooms = (state = '', action) => action.type === types.SET_NUMBER_OF_BEDROOMS ? action.payload : state
+const one = (state = false, action) => {
+  switch (action.type) {
+    case types.SELECT_ONE:
+      return true
+    case types.DESELECT_ONE:
+      return false
+    default:
+      return state
+  }
+}
+
+const two = (state = false, action) => {
+  switch (action.type) {
+    case types.SELECT_TWO:
+      return true
+    case types.DESELECT_TWO:
+      return false
+    default:
+      return state
+  }
+}
+
+const threePlus = (state = false, action) => {
+  switch (action.type) {
+    case types.SELECT_THREE_PLUS:
+      return true
+    case types.DESELECT_THREE_PLUS:
+      return false
+    default:
+      return state
+  }
+}
 
 export default combineReducers({
   county,
@@ -31,5 +62,5 @@ export default combineReducers({
   maxPrice,
   minSize,
   maxSize,
-  numberOfBedrooms
+  numberOfBedrooms: combineReducers({ one, two, threePlus })
 })

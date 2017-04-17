@@ -3,9 +3,13 @@
     "county": "",
     "minPrice": 0,
     "maxPrice": 0,
-    "numberOfBedrooms": 0,
     "minSize": 0,
-    "maxSize": 0
+    "maxSize": 0,
+    "numberOfBedrooms": {
+      "one": false,
+      "two": false,
+      "threePlus": false
+    }
   },
   "searchResults": {
     "fetchingResults": false,
