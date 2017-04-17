@@ -5,7 +5,7 @@
 import React from 'react'
 import defaultImage from '../../../../../../media/images/nybygg.jpg'
 
-export default ({ projectName, poststed, housingType, bedrooms, price, image, imgAlt }) => (
+export default ({ projectName, poststed, housingType, bedrooms, price, image, altText }) => (
   <article className='housing-item-container'>
     <div className='housing-item-header row middle-xs'>
       <h2 className='housing-item-title col-xs start-xs'>{projectName}</h2>
@@ -26,7 +26,7 @@ export default ({ projectName, poststed, housingType, bedrooms, price, image, im
       <div className='col-xs-6 housing-item-image'>
         <img className='img-responsive'
           src={image || defaultImage}
-          alt={imgAlt || projectName} />
+          alt={altText || projectName} />
       </div>
     </div>
   </article>
