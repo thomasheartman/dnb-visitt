@@ -16,11 +16,29 @@ import { createStore, applyMiddleware } from 'redux'
 const consoleMessages = store => next => action => {
   let result
 
-    // We can also log info about state in a console group
-  console.log(`Dispatching action => ${action.type}`)
+  console.groupCollapsed(`Dispatching action => ${action.type}`)
 
   result = next(action)
 
+  const filter = store.getState().filter
+  const bedrooms = filter.numberOfBedrooms
+
+  console.log(`
+
+  Current filter state:
+   === === === === ===
+  County: ${filter.county}
+  Min price: ${filter.minPrice}
+  Max price: ${filter.maxPrice}
+  Min size: ${filter.minSize}
+  Max size: ${filter.maxSize}
+  Bedrooms selected:
+    One: ${bedrooms.one}
+    Two: ${bedrooms.two}
+    Three: ${bedrooms.threePlus}
+`)
+
+  console.groupEnd()
   return result
 }
 

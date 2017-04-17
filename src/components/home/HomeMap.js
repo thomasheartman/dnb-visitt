@@ -13,7 +13,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   handleChange (value) {
     console.log(`I'm changing to ${value}`)
-    // dispatch(changeCounty(value)) TODO: implement
+    // dispatch(setCounty(value)) TODO: implement
   }
 })
 

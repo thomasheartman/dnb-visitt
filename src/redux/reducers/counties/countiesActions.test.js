@@ -8,9 +8,9 @@ import types from './countiesActionTypes'
 
 it('should return an action with the correct type and payload', () => {
   const payload = [
-    "Oslo",
-    "Akershus",
-    "Vestfold"
+    'Oslo',
+    'Akershus',
+    'Vestfold'
   ]
   const expectedResult = {
     type: types.SET_COUNTIES,

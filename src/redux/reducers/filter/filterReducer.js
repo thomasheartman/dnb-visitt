@@ -8,7 +8,7 @@ import { combineReducers } from 'redux'
 
 const county = (state = '', action) => {
   switch (action.type) {
-    case types.CHANGE_COUNTY:
+    case types.SET_COUNTY:
       return action.payload
     case types.CLEAR_COUNTY:
       return ''
