@@ -5,20 +5,20 @@
 
 import React from 'react'
 
-export default ({ Link, Header, Icon, Body }) => (
+export default ({ link, heading, icon, iconAltText, body }) => (
   <div>
-    {Link}
+    < a name={link} />
     <div className='row about-heading'>
       <div className='col-xs start-xs'>
-        {Header}
+        <h3>{heading}</h3>
       </div>
       <div className='col-xs-2 end-xs'>
-        {Icon}
+        <img className='icon end-xs' src={icon} alt={iconAltText} />
       </div>
     </div>
     <div className='row about-description'>
       <div className='col-xs'>
-        {Body}
+        {body}
       </div>
     </div>
   </div>

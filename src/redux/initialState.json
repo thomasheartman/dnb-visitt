@@ -1,19 +1,64 @@
 {
-    "filter": {
-        "county": "",
-        "minPrice": 0,
-        "maxPrice": 0,
-        "numberOfBedrooms": 0,
-        "minSize": 0,
-        "maxSize": 0
-    },
-    "searchResults": {
-        "fetchingResults": false,
-        "results": []
-    },
-    "counties": [
-        "Oslo",
-        "Akershus",
-        "Vestfold"
+  "filter": {
+    "county": "",
+    "minPrice": 0,
+    "maxPrice": 0,
+    "numberOfBedrooms": 0,
+    "minSize": 0,
+    "maxSize": 0
+  },
+  "searchResults": {
+    "fetchingResults": false,
+    "results": [{
+        "project": 0,
+        "projectName": "OsloProsjektet",
+        "poststed": "Oslo",
+        "housingType": "leilighet",
+        "bedrooms": 2,
+        "county": "Oslo",
+        "price": 5000000
+      },
+      {
+        "project": 1,
+        "projectName": "Trønderbygg",
+        "poststed": "Stjørdalen",
+        "housingType": "Enebolig",
+        "bedrooms": 5,
+        "county": "Nord-Trøndelag",
+        "price": 6500000
+      },
+      {
+        "project": 1,
+        "projectName": "Trønderbygg",
+        "poststed": "Stjørdalen",
+        "housingType": "Enebolig",
+        "bedrooms": 5,
+        "county": "Nord-Trøndelag",
+        "price": 6500000
+      },
+      {
+        "project": 1,
+        "projectName": "Trønderbygg",
+        "poststed": "Stjørdalen",
+        "housingType": "Enebolig",
+        "bedrooms": 5,
+        "county": "Nord-Trøndelag",
+        "price": 6500000
+      },
+      {
+        "project": 1,
+        "projectName": "Trønderbygg",
+        "poststed": "Stjørdalen",
+        "housingType": "Enebolig",
+        "bedrooms": 5,
+        "county": "Nord-Trøndelag",
+        "price": 6500000
+      }
     ]
+  },
+  "counties": [
+    "Oslo",
+    "Akershus",
+    "Vestfold"
+  ]
 }

@@ -36,7 +36,7 @@
         "react-router-dom": "^4.1.1",
         "react-test-renderer": "^15.5.4",
         "redux-form": "^6.6.3",
-        "standard": "^10.0.1"
+        "standard": "^10.0.2"
     },
     "scripts": {
         "start": "react-scripts start",

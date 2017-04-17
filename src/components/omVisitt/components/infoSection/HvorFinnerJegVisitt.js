@@ -8,14 +8,15 @@ import { connect } from 'react-redux'
 import { omradeVelg } from '../../../../media/icons'
 
 const mapStateToProps = () => ({
-  Link: <div>< a name='where' /></div>,
-  Icon: <img className='icon end-xs' src={omradeVelg} alt='Visittfilialer' />,
-  Header: <h3>Hvor finner jeg Visitt?</h3>,
-  Body: (<div>
+  link: 'where',
+  icon: omradeVelg,
+  iconAltText: 'Visittfilialer',
+  heading: 'Hvor finner jeg Visitt?',
+  body:
+  <div>
     <p>Med Visitt VR kan du se boligprosjekter fra hele landet fra hvilken som helst filial som tilbyr Visitt.</p>
-    <p>Flytte til Oslo? Men bor i Tromsø? Inget problem. Bare besøk din nærmeste DNB filial.</p>
+    <p>Flytte til Oslo? Men bor i Tromsø? Inget problem. Bare besøk din nærmeste DNB-filial.</p>
   </div>
-  )
 })
 
 export default connect(mapStateToProps)(InfoSection)

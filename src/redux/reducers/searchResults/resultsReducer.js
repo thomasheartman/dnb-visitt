@@ -3,21 +3,22 @@
  * Reducer for results
  */
 
-import C from './resultsActionTypes'
+import types from './resultsActionTypes'
 import { combineReducers } from 'redux'
 
 const fetchingResults = (state = false, action) => {
   switch (action.type) {
-    case C.FETCH_RESULTS:
+    case types.FETCH_RESULTS:
       return true
-    case C.CANCEL_FETCHING_RESULTS:
+    case types.CANCEL_FETCHING_RESULTS:
+    case types.CHANGE_RESULTS:
       return false
     default:
       return state
   }
 }
 
-const results = (state = [], action) => action.type === C.CHANGE_RESULTS ? action.payload : state
+const results = (state = [], action) => action.type === types.CHANGE_RESULTS ? action.payload : state
 
 export default combineReducers({
   fetchingResults,
