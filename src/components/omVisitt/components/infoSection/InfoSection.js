@@ -13,7 +13,7 @@ export default ({ link, heading, icon, iconAltText, body }) => (
         <h3>{heading}</h3>
       </div>
       <div className='col-xs-2 end-xs'>
-        <img className='icon end-xs' src={icon} alt={iconAltText} />
+        <img className='visitt-icon end-xs' src={icon} alt={iconAltText} />
       </div>
     </div>
     <div className='row about-description'>
