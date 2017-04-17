@@ -25,15 +25,11 @@ const maxSize = (state = 0, action) => action.type === types.SET_MAX_SIZE ? acti
 
 const numberOfBedrooms = (state = '', action) => action.type === types.SET_NUMBER_OF_BEDROOMS ? action.payload : state
 
-// TODO: consider if this is the right way to do it or not.
-const clearFilter = (state = {}, action) => action.type === types.CLEAR_FILTER ? {} : state
-
 export default combineReducers({
   county,
   minPrice,
   maxPrice,
   minSize,
   maxSize,
-  numberOfBedrooms,
-  clearFilter
+  numberOfBedrooms
 })

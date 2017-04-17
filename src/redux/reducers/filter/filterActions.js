@@ -12,12 +12,19 @@ export const clearCounty = () => ({ type: types.CLEAR_COUNTY })
 export const setMinPrice = (minPrice) => ({ type: types.SET_MIN_PRICE, payload: minPrice })
 export const setMaxPrice = (maxPrice) => ({ type: types.SET_MAX_PRICE, payload: maxPrice })
 
-export const setNumberOfBedrooms = (numberOfBedrooms) => ({ type: type.SET_NUMBER_OF_BEDROOMS, payload: numberOfBedrooms })
+export const setNumberOfBedrooms = (numberOfBedrooms) => ({ type: types.SET_NUMBER_OF_BEDROOMS, payload: numberOfBedrooms })
 
 export const setMinSize = (minSize) => ({ type: types.SET_MIN_SIZE, payload: minSize })
 export const setMaxSize = (maxSize) => ({ type: types.SET_MAX_SIZE, payload: maxSize })
 
-export const clearFilter = () => ({ type: types.CLEAR_FILTER })
+export const clearFilter = () => {
+  clearCounty(),
+  setMinPrice(0),
+  setMaxPrice(0),
+  setNumberOfBedrooms(0),
+  setMinSize(0),
+  setMaxSize(0)
+}
 
 // TODO:find out if this is possible
 /*
