@@ -37,11 +37,6 @@ it('should cancel fetching', () => {
 })
 
 it('should change the results', function () {
-  const initialState = {
-    fetchingResults: true,
-    results: []
-  }
-
   const payload = [
     {
       'project': 0,
@@ -57,7 +52,7 @@ it('should change the results', function () {
 
   expect(
     reducer(
-      initialState, {
+      fetchingState, {
         type: types.CHANGE_RESULTS,
         payload: payload
       }
