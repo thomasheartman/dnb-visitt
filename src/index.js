@@ -10,6 +10,18 @@ import { render } from 'react-dom'
 import sampleData from './redux/initialState.json'
 import storeFactory from './redux/store'
 import { Provider } from 'react-redux'
+import * as firebase from 'firebase'
+
+// initialize firebase
+const config = {
+  apiKey: "AIzaSyDheiLwH9ZwX9EXeZ_b6M8cq3drC-ogCOo",
+  authDomain: "dnb-visitt.firebaseapp.com",
+  databaseURL: "https://dnb-visitt.firebaseio.com",
+  projectId: "dnb-visitt",
+  storageBucket: "dnb-visitt.appspot.com",
+  messagingSenderId: "1091924579708"
+};
+firebase.initializeApp(config);
 
 // initialize the store with some nice data
 const initialState = sampleData
