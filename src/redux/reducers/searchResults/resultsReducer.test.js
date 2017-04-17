@@ -36,8 +36,6 @@ it('should cancel fetching', () => {
   ).toEqual(initialState)
 })
 
-// TODO: fix this little thing
-// console logging shows the right result, so it works. Unsure what the test is complaining about.
 it('should change the results', function () {
   const initialState = {
     fetchingResults: true,
@@ -57,16 +55,11 @@ it('should change the results', function () {
     }
   ]
 
-  console.log(reducer(
-    initialState, {
-      type: types.CHANGE_RESULTS,
-      payload: payload
-    }))
-
   expect(
     reducer(
       initialState, {
-        type: types.CHANGE_RESULTS
+        type: types.CHANGE_RESULTS,
+        payload: payload
       }
     )).toEqual({
       'fetchingResults': false,
