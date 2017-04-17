@@ -4,28 +4,38 @@
  */
 import Filter from './Filter'
 import { connect } from 'react-redux'
-import { setCounty, setMaxPrice, setMinPrice, setMaxSize, setMinSize, setOne, setTwo, setThreePlus, clearFilter } from '../../../../redux/reducers/filter/filterActions'
+import { addCounty, removeCounty, setMaxPrice, setMinPrice, setMaxSize, setMinSize, setOne, setTwo, setThreePlus, clearFilter } from '../../../../redux/reducers/filter/filterActions'
+import { toggleFilter } from '../../../../redux/reducers/filterUi/filterUiActions'
+import { fetchResults } from '../../../../redux/reducers/searchResults/resultsActions'
 import fields from './inputFields'
 
 const mapStateToProps = state => ({
-  counties: state.counties,
+  showAll: state.showAllCounties,
+  allCounties: state.showAllCounties ? state.counties : state.counties.slice(0,4),
   bedroomValues: [
     { value: fields.ONE, checked: state.filter.numberOfBedrooms.one },
     { value: fields.TWO, checked: state.filter.numberOfBedrooms.two },
     { value: fields.THREE_PLUS, checked: state.filter.numberOfBedrooms.threePlus }
   ],
-  selectedCounty: state.filter.county,
+  selectedCounties: state.filter.counties,
   minPrice: state.filter.minPrice,
   maxPrice: state.filter.maxPrice,
   minSize: state.filter.minSize,
-  maxSize: state.filter.maxSize
+  maxSize: state.filter.maxSize.bedroomValues,
+  filter: state.filter
 })
 
 const mapDispatchToProps = dispatch => ({
+  handleToggle (show) {
+    dispatch(toggleFilter(show))
+  },
   handleChange (field, value) {
     switch (field) {
-      case fields.COUNTY:
-        dispatch(setCounty(value))
+      case fields.ADD_COUNTY:
+        dispatch(addCounty(value))
+        break
+      case fields.REMOVE_COUNTY:
+        dispatch(removeCounty(value))
         break
       case fields.MIN_PRICE:
         dispatch(setMinPrice(value))
@@ -55,8 +65,8 @@ const mapDispatchToProps = dispatch => ({
   handleBlur () {
     console.log('Handling blur. Searching …')
   },
-  performSearch () {
-    console.log('Performing search!')
+  performSearch (filter) {
+    dispatch(fetchResults(filter))
   },
   handleReset () {
     dispatch(clearFilter())

@@ -5,28 +5,28 @@
 import React from 'react'
 import defaultImage from '../../../../../../media/images/nybygg.jpg'
 
-export default ({ projectName, poststed, housingType, bedrooms, price, image, altText }) => (
+export default ({ ProjectName, Poststed, HousingType, Bedrooms, Price, image, altText }) => (
   <article className='housing-item-container'>
     <div className='housing-item-header row middle-xs'>
-      <h2 className='housing-item-title col-xs start-xs'>{projectName}</h2>
-      <span className='housing-item-loc col-xs end-xs'>{poststed}</span>
+      <h2 className='housing-item-title col-xs start-xs'>{ProjectName}</h2>
+      <span className='housing-item-loc col-xs end-xs'>{Poststed}</span>
     </div>
     <div className='row'>
       <div className='col-xs-6 housing-item-info-container'>
         <div className='row housing-item-type'>
-          <p>Hustype: {housingType}</p>
+          <p>Hustype: {HousingType}</p>
         </div>
         <div className='row housing-item-rooms'>
-          <p>Rom: {bedrooms}</p>
+          <p>Rom: {Bedrooms}</p>
         </div>
         <div className='row housing-item-price'>
-          <p>Pris: {price}</p>
+          <p>Pris: {Price}</p>
         </div>
       </div>
       <div className='col-xs-6 housing-item-image'>
         <img className='img-responsive'
           src={image || defaultImage}
-          alt={altText || projectName} />
+          alt={altText || ProjectName} />
       </div>
     </div>
   </article>

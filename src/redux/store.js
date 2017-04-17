@@ -27,7 +27,8 @@ const consoleMessages = store => next => action => {
 
   Current filter state:
    === === === === ===
-  County: ${filter.county}
+  Show all counties: ${store.getState().showAllCounties}
+  County: ${filter.counties}
   Min price: ${filter.minPrice}
   Max price: ${filter.maxPrice}
   Min size: ${filter.minSize}

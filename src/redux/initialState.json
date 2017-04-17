@@ -1,6 +1,6 @@
 {
   "filter": {
-    "county": "",
+    "counties": [],
     "minPrice": 0,
     "maxPrice": 0,
     "minSize": 0,
@@ -11,58 +11,33 @@
       "threePlus": false
     }
   },
+  "showAllCounties": false,
   "searchResults": {
     "fetchingResults": false,
-    "results": [{
-        "project": 0,
-        "projectName": "OsloProsjektet",
-        "poststed": "Oslo",
-        "housingType": "leilighet",
-        "bedrooms": 2,
-        "county": "Oslo",
-        "price": 5000000
-      },
-      {
-        "project": 1,
-        "projectName": "Trønderbygg",
-        "poststed": "Stjørdalen",
-        "housingType": "Enebolig",
-        "bedrooms": 5,
-        "county": "Nord-Trøndelag",
-        "price": 6500000
-      },
-      {
-        "project": 1,
-        "projectName": "Trønderbygg",
-        "poststed": "Stjørdalen",
-        "housingType": "Enebolig",
-        "bedrooms": 5,
-        "county": "Nord-Trøndelag",
-        "price": 6500000
-      },
-      {
-        "project": 1,
-        "projectName": "Trønderbygg",
-        "poststed": "Stjørdalen",
-        "housingType": "Enebolig",
-        "bedrooms": 5,
-        "county": "Nord-Trøndelag",
-        "price": 6500000
-      },
-      {
-        "project": 1,
-        "projectName": "Trønderbygg",
-        "poststed": "Stjørdalen",
-        "housingType": "Enebolig",
-        "bedrooms": 5,
-        "county": "Nord-Trøndelag",
-        "price": 6500000
-      }
+    "results": [
     ]
   },
   "counties": [
-    "Oslo",
-    "Akershus",
-    "Vestfold"
+    "OSLO",
+    "AKERSHUS",
+    "ØSTFOLD",
+    "TELEMARK",
+    "ROGALAND",
+    "VEST-AGDER",
+    "AUST-AGDER",
+    "HORDALAND",
+    "SOGN OG FJORDANE",
+    "MØRE OG ROMSDAL",
+    "SØR-TRØNDELAG",
+    "NORD-TRØNDELAG",
+    "NORDLAND",
+    "HEDMARK",
+    "OPPLAND",
+    "BUSKERUD",
+    "VESTFOLD",
+    "JAN MAYEN",
+    "TROMS",
+    "SVALBARD",
+    "FINNMARK"
   ]
 }

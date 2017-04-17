@@ -10,24 +10,20 @@ import { render } from 'react-dom'
 import sampleData from './redux/initialState.json'
 import storeFactory from './redux/store'
 import { Provider } from 'react-redux'
-import * as firebase from 'firebase'
-
-// initialize firebase
-const config = {
-  apiKey: "AIzaSyDheiLwH9ZwX9EXeZ_b6M8cq3drC-ogCOo",
-  authDomain: "dnb-visitt.firebaseapp.com",
-  databaseURL: "https://dnb-visitt.firebaseio.com",
-  projectId: "dnb-visitt",
-  storageBucket: "dnb-visitt.appspot.com",
-  messagingSenderId: "1091924579708"
-};
-firebase.initializeApp(config);
-
+import { database } from './firebase/firebase' // TODO: consider if we want to hit database on startup or not
+// import { setCounties } from './redux/reducers/counties/countiesActions'
+import { fetchResults } from './redux/reducers/searchResults/resultsActions'
 // initialize the store with some nice data
 const initialState = sampleData
 const store = storeFactory(initialState)
 
 // dispatch any necessary pre-start actions
+
+// Fill list of counties
+/* database.ref('allCounties/').once('value', snapshot => {
+  store.dispatch(setCounties(snapshot.val()))
+})
+*/
 
 // set a couple nice window variables for testing/debug
 window.store = store
@@ -40,3 +36,8 @@ render(
   </Provider>,
   document.getElementById('root')
 )
+
+// get initial search results
+database.ref('properties/').once('value', () => {
+  store.dispatch(fetchResults())
+})

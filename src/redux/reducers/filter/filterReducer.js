@@ -6,12 +6,16 @@
 import types from './filterActionTypes'
 import { combineReducers } from 'redux'
 
-const county = (state = '', action) => {
+export const counties = (state = [], action) => {
   switch (action.type) {
-    case types.SET_COUNTY:
-      return action.payload
-    case types.CLEAR_COUNTY:
-      return ''
+    case types.SET_COUNTY: // When we want to set a single county, e.g. the home page
+      return [action.payload]
+    case types.ADD_COUNTY: // for adding counties to the array
+      return [...state, action.payload]
+    case types.REMOVE_COUNTY: // removing counties
+      return state.filter((county) => county !== action.payload)
+    case types.CLEAR_COUNTIES: // clear all
+      return []
     default:
       return state
   }
@@ -23,6 +27,7 @@ const maxPrice = (state = 0, action) => action.type === types.SET_MAX_PRICE ? ac
 const minSize = (state = 0, action) => action.type === types.SET_MIN_SIZE ? action.payload : state
 const maxSize = (state = 0, action) => action.type === types.SET_MAX_SIZE ? action.payload : state
 
+// TODO: turn into array like counties
 const one = (state = false, action) => {
   switch (action.type) {
     case types.SELECT_ONE:
@@ -57,7 +62,7 @@ const threePlus = (state = false, action) => {
 }
 
 export default combineReducers({
-  county,
+  counties,
   minPrice,
   maxPrice,
   minSize,

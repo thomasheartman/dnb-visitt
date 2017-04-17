@@ -6,7 +6,12 @@
 import types from './filterActionTypes'
 
 export const setCounty = (newCounty) => ({ type: types.SET_COUNTY, payload: newCounty })
-export const clearCounty = () => ({ type: types.CLEAR_COUNTY })
+
+export const addCounty = (county) => ({ type: types.ADD_COUNTY, payload: county })
+
+export const removeCounty = (county) => ({ type: types.REMOVE_COUNTY, payload: county})
+
+export const clearCounties = () => ({ type: types.CLEAR_COUNTIES })
 
 // TODO: add checking for minPrice <= maxPrice
 export const setMinPrice = (minPrice) => ({ type: types.SET_MIN_PRICE, payload: minPrice })
@@ -20,7 +25,7 @@ export const setMinSize = (minSize) => ({ type: types.SET_MIN_SIZE, payload: min
 export const setMaxSize = (maxSize) => ({ type: types.SET_MAX_SIZE, payload: maxSize })
 
 export const clearFilter = () => dispatch => {
-  dispatch(clearCounty())
+  dispatch(clearCounties())
   dispatch(setMinPrice(0))
   dispatch(setMaxPrice(0))
   dispatch(setMinSize(0))
@@ -34,7 +39,7 @@ export const clearFilter = () => dispatch => {
 /*
 export default {
   setCounty,
-  clearCounty,
+  clearCounties,
   setMinPrice,
   setMaxPrice,
   setNumberOfBedrooms,

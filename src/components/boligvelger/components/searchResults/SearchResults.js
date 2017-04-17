@@ -3,10 +3,11 @@
  * The section of the page that holds search results
  */
 import React from 'react'
-import ResultItem from './components/resultItem/ResultItem'
+import _ from 'lodash'
 
-export default ({ results }) => (
+export default ({ results, getResults = f => f }) => (
   <div>
-    {results.map((result, key) => <ResultItem {...result} key={key} />)}
+    {getResults()}
+    {results}
   </div>
 )

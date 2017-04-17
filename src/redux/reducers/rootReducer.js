@@ -10,6 +10,7 @@ import { combineReducers } from 'redux'
 import filter from './filter/filterReducer'
 import searchResults from './searchResults/resultsReducer'
 import counties from './counties/countiesReducer'
+import showAllCounties from './filterUi/filterUiReducer'
 import { reducer as formReducer } from 'redux-form'
 
 export const form = formReducer
@@ -18,5 +19,6 @@ export default combineReducers({
   filter,
   searchResults,
   counties,
+  showAllCounties,
   form
 })

@@ -7,13 +7,12 @@ import { connect } from 'react-redux'
 import { setCounty } from '../../redux/reducers/filter/filterActions'
 
 const mapStateToProps = state => ({
-  selectedCounty: state.filter.county,
+  selectedCounties: state.filter.county,
   allCounties: state.counties
 })
 
 const mapDispatchToProps = dispatch => ({
   handleChange (value) {
-    console.log(`getting jiggy in ${value}`)
     dispatch(setCounty(value))
   }
 })

@@ -3,24 +3,22 @@
  * The website's property filtering tool
  */
 import React from 'react'
-import Dropdown from 'react-toolbox/lib/dropdown'
 import fields from './inputFields'
 
-export default ({ counties, bedroomValues, selectedCounty, minPrice, maxPrice, minSize, maxSize,
-  handleChange = f => f, handleReset = f => f, performSearch = f => f }) => (
+export default ({ showAll, allCounties, bedroomValues, selectedCounties, minPrice, maxPrice, minSize, maxSize, filter,
+  handleToggle = f => f, handleChange = f => f, handleReset = f => f, performSearch = f => f }) => (
     <div className='col-xs-4 housing-filter'>
       <ul id='regions-container'>
-        <div id='showMore'>Vis mer</div>
-        <select value={selectedCounty} onChange={(event) => handleChange(fields.COUNTY, event.target.value)}>
-          {counties.map((county) =>
-            <option value={county} key={county}>{county}</option>
-          )}
-        </select>
-        <Dropdown
-          onChange={(event) => handleChange(fields.COUNTY, event.target.value)}
-          source={counties}
-          value={selectedCounty}
-        />
+        <div id='showMore' onClick={() => handleToggle(!showAll)}>Vis {showAll ? 'mindre' : 'mer'}</div>
+        {allCounties.map((county) =>
+          <li className='filter-item' key={county}>
+            <input type='checkbox' className='regionItem' value={county}
+              checked={selectedCounties.includes(county)}
+              onChange={() => handleChange(selectedCounties.includes(county) ? fields.REMOVE_COUNTY : fields.ADD_COUNTY, county)}
+            />
+            <label htmlFor='location'>{county}</label>
+          </li>
+        )}
       </ul>
 
       <legend>Pris</legend>
@@ -50,6 +48,6 @@ export default ({ counties, bedroomValues, selectedCounty, minPrice, maxPrice, m
       </ul>
 
       <input type='reset' value='Tilbakestill' onClick={() => handleReset()} />
-      <input type='submit' value='Søk' className='submit' onClick={() => performSearch()} />
+      <input type='submit' value='Søk' className='submit' onClick={() => performSearch(filter)} />
     </div>
   )
