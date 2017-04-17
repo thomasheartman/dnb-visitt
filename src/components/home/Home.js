@@ -17,12 +17,17 @@ export default ({ selectedCounty, allCounties, handleChange = f => f }) => (
         <div className='col-xs-12 center-xs'>
           <h1 className='title-heading'>Hvor ønsker du å bo?</h1>
           <div className='dropdown row center-xs' />
+          <select value={selectedCounty} onChange={(event) => handleChange(event.target.value)}>
+            {allCounties.map((county) =>
+              <option value={county} key={county}>{county}</option>
+            )}
+          </select>
+          <Dropdown
+            onChange={(value) => handleChange(value)}
+            source={allCounties}
+            value={selectedCounty}
+          />
           <Link to='/boligvelger'>
-            <Dropdown
-              onChange={(value) => handleChange(value)}
-              source={allCounties}
-              value={selectedCounty}
-            />
             <input type='submit' value='Søk' />
           </Link>
         </div>

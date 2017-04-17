@@ -11,6 +11,11 @@ export default ({ counties, bedroomValues, selectedCounty, minPrice, maxPrice, m
     <div className='col-xs-4 housing-filter'>
       <ul id='regions-container'>
         <div id='showMore'>Vis mer</div>
+        <select value={selectedCounty} onChange={(event) => handleChange(fields.COUNTY, event.target.value)}>
+          {counties.map((county) =>
+            <option value={county} key={county}>{county}</option>
+          )}
+        </select>
         <Dropdown
           onChange={(event) => handleChange(fields.COUNTY, event.target.value)}
           source={counties}

@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import createHistory from 'history/createBrowserHistory'
 // components TODO: consider adding a top level componentExporter
 import MasterLayout from '../components/masterLayout/MasterLayout'
@@ -21,11 +21,13 @@ const history = createHistory()
 export default () => (
   <Router history={history}>
     <MasterLayout>
-      <Route exact path='/' component={Home} />
-      <Route path='/om-visitt' component={OmVisitt} />
-      <Route path='/hjelp-og-kontakt' component={HjelpOgKontakt} />
-      <Route path='/boligvelger' component={Boligvelger} />
-      <Route path='*' component={Error404} />
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route path='/om-visitt' component={OmVisitt} />
+        <Route path='/hjelp-og-kontakt' component={HjelpOgKontakt} />
+        <Route path='/boligvelger' component={Boligvelger} />
+        <Route path='*' component={Error404} />
+      </Switch>
     </MasterLayout>
   </Router>
 )
