@@ -15,6 +15,7 @@ cache: yarn
 install:
 - yarn upgrade
 script:
+- yarn test -a
 - yarn run build
 deploy:
   provider: heroku

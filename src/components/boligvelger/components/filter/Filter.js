@@ -4,8 +4,8 @@
  */
 import React from 'react'
 import fields from './inputFields'
-import { Collapse } from 'react-collapse'
-import { presets } from 'react-motion'
+import { VelocityComponent, VelocityTransitionGroup } from 'velocity-react'
+
 
 export default ({ showAll, initialCounties, hiddenCounties, bedroomValues, selectedCounties, minPrice, maxPrice, minSize, maxSize, filter,
   handleToggle = f => f, handleChange = f => f, handleReset = f => f, performSearch = f => f }) => (
@@ -22,19 +22,20 @@ export default ({ showAll, initialCounties, hiddenCounties, bedroomValues, selec
             <label htmlFor='location'>{county}</label>
           </li>
         )}
-        <Collapse isOpened={showAll}>
-          <div>
-        {hiddenCounties.map((county) =>
-          <li className='filter-item' key={county}>
-            <input type='checkbox' className='regionItem' value={county}
-              checked={selectedCounties.includes(county)}
-              onChange={() => handleChange(selectedCounties.includes(county) ? fields.REMOVE_COUNTY : fields.ADD_COUNTY, county)}
-            />
-            <label htmlFor='location'>{county}</label>
-          </li>
-        )}
-        </div>
-        </Collapse>
+        <VelocityTransitionGroup component="div" enter="slideDown" leave="slideUp">
+          {showAll ?
+            hiddenCounties.map((county) =>
+              <li className='filter-item' key={county}>
+                <input type='checkbox' className='regionItem' value={county}
+                  checked={selectedCounties.includes(county)}
+                  onChange={() => handleChange(selectedCounties.includes(county) ? fields.REMOVE_COUNTY : fields.ADD_COUNTY, county)}
+                />
+                <label htmlFor='location'>{county}</label>
+              </li>
+            )
+           : null}
+        </VelocityTransitionGroup>
+
       </ul>
 
       <legend>Pris</legend>
