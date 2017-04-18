@@ -14,11 +14,7 @@ env:
 cache: yarn
 install:
 - yarn upgrade
-# - yarn global add standard #TODO: add back in when it works.
-# before_script:
-# - standard --fix
 script:
-# - yarn run test
 - yarn run build
 deploy:
   provider: heroku
@@ -27,4 +23,5 @@ deploy:
 notifications:
   email: never
   slack:
-    secure: m0YnlenpHV4gGtj9ZA/0GqjL2QAWdr7sPEMIbu4vI32XcsQ1Yo5uPBhk7G+CC3Gf4QbaiPGR8TTbVS63RZbxkKWCEuZ2xztLsMKdkxlbNuENZzXaobJjCbSyjiI+nH8M1S144EQ9JTWGI96XbH0zVEq/fOGn5vMEIG+hngCS8AmflKtaZCquCN9t3ePwKOYZlXXI1u0RkZGoE/pVBDpKuX21YNDna0U27glqCwvSop8SIq5yuX91TOJ26lax5YnESuiJypT13Lnntma4rbjj5ZAFGl4GtdZ3FD4sdWqrBIFdvBJGKwEEFZLCwJCkR0F36AtFC/aQumCEz+yqJCiiBLuMSJY53O3cGHrL6ttM5cfFZJLUko61QFnFJ6a729ns9Ou2bQy6wNNhf+Rdgj3Y2nKNCkfLxM1E2RILYFv/CEZiEgaYxVgbBg88rzBxg6qahTbBPn+z9j47O6TJsEOfoxjok65ivRkyrCUVHyLVvjVFpaQ0s6sR3x1OAZRuZh9pgnUkXMQX76EUZmSrhxj/nKmigs+JEdtjwi83O3gSWpWPjdvZyMiwogyjO6evig+aEM26x9wFMP3VWjwrFaiO+sCNwlH8ohNCYorc/P7mxWx5qoANDw9jpuYYFgv0NlgZHnG2IiZsx9uThozJr/7Mfj53WrpiqbtrL9p3zpP/0wg=
+    rooms:
+      secure: oOnxP6c/aAEZ1BXI4K/BQ7jVYXZuzZs5lSvTfIuw3tJru2kP726+tdEDX2RZh49EshWVGygAj+MRzWk5Aj1xMRpQxCcjF9qa2PpADmP04XHWMIPRa8xeDepBrT6up3mmO/9sMB5si9+qaLpmSiUN0K+fBE4fhh9VnrnTSfoacVhZ4ax7CJ0k6rNrs7rTKiSW5OS12edxFFC7bjVF9e8kSIpFUrTr97/PiBxv99Y/KMG8i58NZx1KRGFYUe5z/fAtUldr5Q8XuOC+DpLhRxx9ZZfSFbEzE+fiYT7EHfYBWNvA63e2p/Waw1XABT1Ql/AvVn91fM8IgQ7auReGGmDGY2jfjJ1FsiwCz9S5couf5SwN58AZfWkq+kjJc1it1BvL/0MxOqIUP2tUHDEVVVp4qmTBi4VIi0Eh+OIgp1KFeQUWbv8jwl9SK6PStpXo6J72ZDdqcb305K7vk0cZgJ++dZTtczlBnW0UR2ESIPypTh+C+UP3eH+hbLEa7rw4VK9Rt2LKoxQMLCSG/+I4x7+0B5ep6NwyhptfiUyMnWZGvKHen5S0DF8xbkDDYPYjJHFfDECbGVB2IuKeXHPFXQKMQidCskISlAXfa6KnOfvp1tO5BOMd3ikEzEzMLF08ug8Zo8mfh+pmoAFs7CO5rDqi3R6MdM7mfk7m0Wb1Iadu32I=
