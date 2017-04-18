@@ -4,8 +4,7 @@
  */
 import React from 'react'
 import fields from './inputFields'
-import { VelocityComponent, VelocityTransitionGroup } from 'velocity-react'
-
+import { VelocityTransitionGroup } from 'velocity-react'
 
 export default ({ showAll, initialCounties, hiddenCounties, bedroomValues, selectedCounties, minPrice, maxPrice, minSize, maxSize, filter,
   handleToggle = f => f, handleChange = f => f, handleReset = f => f, performSearch = f => f }) => (
@@ -22,9 +21,9 @@ export default ({ showAll, initialCounties, hiddenCounties, bedroomValues, selec
             <label htmlFor='location'>{county}</label>
           </li>
         )}
-        <VelocityTransitionGroup component="div" enter="slideDown" leave="slideUp">
-          {showAll ?
-            hiddenCounties.map((county) =>
+        <VelocityTransitionGroup component='div' enter='slideDown' leave='slideUp'>
+          {showAll
+            ? hiddenCounties.map((county) =>
               <li className='filter-item' key={county}>
                 <input type='checkbox' className='regionItem' value={county}
                   checked={selectedCounties.includes(county)}
@@ -33,7 +32,7 @@ export default ({ showAll, initialCounties, hiddenCounties, bedroomValues, selec
                 <label htmlFor='location'>{county}</label>
               </li>
             )
-           : null}
+            : null}
         </VelocityTransitionGroup>
 
       </ul>
