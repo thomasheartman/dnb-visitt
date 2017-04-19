@@ -17,6 +17,7 @@ export default ({ selectedCounties, allCounties, handleChange = f => f }) => (
           <h1 className='title-heading'>Hvor ønsker du å bo?</h1>
           <div className='dropdown row center-xs'>
             <select value={selectedCounties} onChange={(event) => handleChange(event.target.value)}>
+				<option value="" disabled selected>Velg fylke</option>
               {allCounties.map((county) =>
                 <option value={county} key={county}>{county}</option>
 					)}

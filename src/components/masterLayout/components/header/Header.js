@@ -17,13 +17,13 @@ export default () => (
       <nav className='col-xs-12 col-sm-8 start-xs end-md'>
         <ul className='row center-xs middle-xs start-xs end-md'>
           <li>
-            <Link to='/boligvelger'>BOLIGSØK</Link>
+            <Link to='/boligvelger'>Boligsøk</Link>
           </li>
           <li>
-            <Link to='/om-visitt'>OM VISITT</Link>
+            <Link to='/om-visitt'>Om Visitt</Link>
           </li>
           <li>
-            <Link to='/hjelp-og-kontakt'>HJELP OG KONTAKT</Link>
+            <Link to='/hjelp-og-kontakt'>Hjelp og Kontakt</Link>
           </li>
         </ul >
       </nav >

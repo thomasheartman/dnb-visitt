@@ -503,7 +503,8 @@ main.frontpage {
 .housing-item-read a {
 	font-size: 1.25rem;
     color: #fff;
-    padding: 0.25rem 0.5rem;
+    padding: 1rem;
+    width: 100%;
 }
 
 
@@ -552,7 +553,7 @@ main.frontpage {
 /* HOUSING LIST ITEMS  */
 
 .housing-header {
-    margin-bottom: 1rem;
+    margin: 1rem;
 }
 
 .housing-title {

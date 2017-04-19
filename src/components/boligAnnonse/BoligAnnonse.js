@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom'
 import { icons } from '../../../src/media/icons.js'
 
 export default () => (
-  <div>
     <main className='boligAnnonse-main'>
       <div className='row'>
         <section className='col-xs-12'>
@@ -18,7 +17,7 @@ export default () => (
 				</div>
 			</div>
 
-			<image src="media/images/Trinn-5-alm-crop.jpg" className="housing-main-img" alt="Trinn 5 bolig"/>
+			<image src="/media/images/Trinn-5-alm-crop.jpg" className="housing-main-img" alt="Trinn 5 bolig"/>
 			<nav className="housing-inline-nav">
 				<ul>
 					<li>
@@ -28,7 +27,7 @@ export default () => (
 						<Link to="#presentation">Presentasjon</Link>
 					</li>
 					<li>
-						<Link to="#decorate-house">Dekorer Bolig</Link>
+						<Link to="#decorate-house">Ta en Visitt</Link>
 					</li>
 				</ul>
 			</nav>
@@ -55,7 +54,7 @@ export default () => (
 					<image src="/media/images/mekler.jpg" alt="mekler Rolf Kåre" className="img-container"/>
 					<div className="row middle-xs">
 						<div className="col-xs-4">
-							<image className="housing-listing-icon" src="media/icons/kalkulator.svg" alt="kalkulator"/>
+							<image className="housing-listing-icon" src="/media/icons/kalkulator.svg" alt="kalkulator"/>
 						</div>
 						<div className="col-xs-8">
 							<h3>Last ned prospekt</h3>
@@ -63,7 +62,7 @@ export default () => (
 					</div>
 					<div className="row middle-xs">
 						<div className="col-xs-4">
-							<image className="housing-listing-icon" src="media/icons/omrade-velg.svg" alt="Velg område" className="img-container"/>
+							<image className="housing-listing-icon" src="/media/icons/omrade-velg.svg" alt="Velg område" className="img-container"/>
 						</div>
 						<div className="col-xs-8">
 							<h3>Åpne i kart</h3>
@@ -81,10 +80,10 @@ export default () => (
 			</div>
 			<div className="row center-xs">
 				<div className="col-xs-6 two-grid-gutter big-button">
-					<image src="media/images/Trinn-5.jpg" alt="Trinn 5" className="img-container"/>
+					<image src="/media/images/Trinn-5.jpg" alt="Trinn 5" className="img-container"/>
 				</div>
 				<div className="col-xs-6 two-grid-gutter big-button">
-					<image src="media/images/vardevei.jpg" alt="Vardevei" className="img-container"/>
+					<image src="/media/images/vardevei.jpg" alt="Vardevei" className="img-container"/>
 				</div>
 			</div>
 			<div className="row center-xs middle-xs">
@@ -97,10 +96,10 @@ export default () => (
 			</div>
 			<div className="row center-xs">
 				<div className="col-xs-6 two-grid-gutter">
-					<image src="media/images/kjokken.jpg" alt="Kjøkken" className="img-container"/>
+					<image src="/media/images/kjokken.jpg" alt="Kjøkken" className="img-container"/>
 				</div>
 				<div className="col-xs-6 two-grid-gutter">
-					<image src="media/images/illustrasjon-stue.jpg" alt="Stue" className="img-container"/>
+					<image src="/media/images/illustrasjon-stue.jpg" alt="Stue" className="img-container"/>
 				</div>
 			</div>
 			<div className="row">
@@ -110,10 +109,10 @@ export default () => (
 			</div>
 			<div className="row center-xs">
 				<div className="col-xs-6 two-grid-gutter">
-					<image src="media/images/lekeplass.jpg" alt="Lekeplass" className="img-container"/>
+					<image src="/media/images/lekeplass.jpg" alt="Lekeplass" className="img-container"/>
 				</div>
 				<div className="col-xs-6 two-grid-gutter">
-					<image src="media/images/vardevei.jpg" alt="Vardevei" className="img-container"/>
+					<image src="/media/images/vardevei.jpg" alt="Vardevei" className="img-container"/>
 				</div>
 			</div>
 			<div className="row">
@@ -123,10 +122,10 @@ export default () => (
 			</div>
 			<div className="row center-xs">
 				<div className="col-xs-6 two-grid-gutter">
-					<image src="media/images/barn.jpg" alt="Barn" class="img-container"/>
+					<image src="/media/images/barn.jpg" alt="Barn" class="img-container"/>
 				</div>
 				<div className="col-xs-6 two-grid-gutter">
-					<image src="media/images/familie.jpg" alt="Familie" className="img-container"/>
+					<image src="/media/images/familie.jpg" alt="Familie" className="img-container"/>
 				</div>
 			</div>
 			<div className="row center-xs middle-xs">
@@ -140,5 +139,4 @@ export default () => (
         </section>
       </div>
     </main>
-  </div>
 )
