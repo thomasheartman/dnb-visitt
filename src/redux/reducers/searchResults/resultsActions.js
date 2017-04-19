@@ -20,12 +20,6 @@ export const fetchResults = (parameters) => (dispatch, getState) => {
 
   const db = database.ref('properties')
 
-  // debug
-  db.orderByKey().on('child_added', function (snapshot) {
-    console.log(snapshot.child('Fylke'))
-    console.log(snapshot.key)
-  })
-
   console.log('fetching results now')
 
   if (_.isEmpty(filter.counties)) {
@@ -35,7 +29,7 @@ export const fetchResults = (parameters) => (dispatch, getState) => {
   } else {
     let results = []
     Promise.all(
-      filter.counties.map(county => db.once('value', snapshot => {
+      filter.counties.map(county => db.orderByChild('Fylke').equalTo(county).once('value', snapshot => {
         console.log(`Getting results for ${county}`)
         return db.child('Fylke').orderByValue().equalTo(county).once('value')
       })
