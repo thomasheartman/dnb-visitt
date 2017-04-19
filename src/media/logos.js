@@ -4,4 +4,3 @@
  */
 export { default as visittLogo } from './logos/dnb_visitt_1.png'
 export { default as dnbLogo } from './logos/dnb-standard.svg'
-

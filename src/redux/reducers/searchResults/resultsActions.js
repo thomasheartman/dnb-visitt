@@ -21,7 +21,7 @@ export const fetchResults = (parameters) => (dispatch, getState) => {
   const db = database.ref('properties')
 
   // debug
-  db.orderByKey().on("child_added", function (snapshot) {
+  db.orderByKey().on('child_added', function (snapshot) {
     console.log(snapshot.child('Fylke'))
     console.log(snapshot.key)
   })
@@ -51,7 +51,7 @@ export const fetchResults = (parameters) => (dispatch, getState) => {
   }
 }
 
-/*const loadVideosParallel = (counties, callback) => {
+/* const loadVideosParallel = (counties, callback) => {
   Promise.all(
     counties.map(county => {
       console.log('send request ' + county);
@@ -62,4 +62,4 @@ export const fetchResults = (parameters) => (dispatch, getState) => {
         })
     })
   ).then(r => callback());
-}*/
+} */
