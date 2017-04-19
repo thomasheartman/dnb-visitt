@@ -12,9 +12,13 @@
   "showAllCounties": false,
   "searchResults": {
     "fetchingResults": false,
-    "results": [
-    ]
+    "results": []
   },
+
+
+  "currentProperty": {
+  },
+
 
   "counties": [
     "OSLO",
