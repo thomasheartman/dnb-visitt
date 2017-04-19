@@ -20,14 +20,14 @@ import Error404 from '../components/error404/Error404'
 const history = createHistory()
 
 export default () => (
-  <Router history={history}>
+  <Router history={history} onUpdate={() => window.scrollTo(0, 0)}>
     <MasterLayout>
       <Switch>
         <Route exact path='/' component={Home} />
         <Route path='/om-visitt' component={OmVisitt} />
         <Route path='/hjelp-og-kontakt' component={HjelpOgKontakt} />
         <Route path='/boligvelger' component={Boligvelger} />
-        <Route path='/annonse' component={BoligAnnonse}/>
+        <Route path='/annonse/:id' component={BoligAnnonse}/>
         <Route path='*' component={Error404} />
       </Switch>
     </MasterLayout>

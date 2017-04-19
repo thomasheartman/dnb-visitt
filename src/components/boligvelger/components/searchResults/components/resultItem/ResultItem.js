@@ -6,7 +6,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import defaultImage from '../../../../../../media/images/nybygg.jpg'
 
-export default ({ ProjectName, Poststed, HousingType, Bedrooms, Price, image, altText }) => (
+export default ({ ProjectName, Poststed, HousingType, Bedrooms, Price, image, altText, ...props }) => (
   <article className='housing-item-container'>
     <div className='housing-item-header row middle-xs'>
       <h2 className='housing-item-title col-xs start-xs'>{ProjectName}</h2>
@@ -24,7 +24,10 @@ export default ({ ProjectName, Poststed, HousingType, Bedrooms, Price, image, al
           <p>Pris: {Price}</p>
         </div>
         <div className='row housing-item-read'>
-          <Link to='/annonse'>Les mer</Link>
+          <Link to={{
+            pathname: `/annonse/${ProjectName}_${props.StreetName}`,
+            props: { ...props }
+          }}>Les mer</Link>
         </div>
       </div>
       <div className='col-xs-6 housing-item-image'>
