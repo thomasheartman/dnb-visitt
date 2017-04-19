@@ -82,8 +82,8 @@ input[type="search"] {
     height: 2rem;
 }
 
-input[type="submit"],
-input[type="reset"] {
+
+input[type="submit"], input[type="reset"] {
     background: #097C84;
     padding: 1rem;
     margin: 1rem 0;
@@ -92,9 +92,13 @@ input[type="reset"] {
     font-size: 1rem;
 }
 
-input[type="submit"]:hover,
-input[type="reset"]:hover {
+input[type="submit"]:hover, input[type="reset"]:hover {
     cursor: pointer;
+    background-color: #F67F00;
+}
+
+input[type="submit"]:active, input[type="reset"]:hover {
+    box-shadow: 0 2px 10px #404040;
 }
 
 form p {
@@ -114,10 +118,16 @@ form p {
 
 header {
     max-width: 1240px;
+    height: inherit;
     margin: 0 auto;
     padding: 0 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
@@ -125,34 +135,43 @@ header {
     height: 4rem;
 }
 
-
 /* MAIN NAVIGATION */
 
 header nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
+    -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
-    padding-right: 0 !important;
-    padding-left: 0 !important;
+    height: inherit;
 }
 
 header nav ul {
     height: inherit;
+    -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
 }
 
 header nav ul li {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
 }
 
 header nav ul li a {
-    display: block;
     width: 100%;
     padding: 1.5rem;
     color: #097C84;
     font-size: 0.8rem;
+    -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
 }
 
@@ -160,7 +179,6 @@ header nav ul li a:hover {
     background-color: #097C84;
     color: #fff;
 }
-
 
 /* MAIN */
 
@@ -204,13 +222,12 @@ main.frontpage {
 
 .about-visit {
     position: absolute;
-    height: 65vh;
+	top: 1rem;
+	left: 1rem;
 }
 
 .about-visit .text-box {
     position: relative;
-    top: 0;
-    left: 2rem;
     width: 18em;
     padding: 1rem 2rem;
     background: #fff;
@@ -262,8 +279,7 @@ main.frontpage {
     border-bottom: 2px solid #DDDDDD;
 }
 
-.visit-steps-container h3,
-.visit-steps-container a {
+.visit-steps-container h3, .visit-steps-container a {
     color: #097C84;
 }
 
@@ -300,25 +316,27 @@ main.frontpage {
     font-size: 2em;
 }
 
-
 /* FRONT PAGE HOME SEARCH */
 
 .home-search .dropdown select {
     width: 100%;
     padding: 1rem;
     font-size: 1rem;
+
 }
 
 .frontpage .home-search {
     height: 65vh;
     width: 100%;
     background-image: url(./media/vr-banner-illustration-fixed.jpg);
-    background-size: cover;
+    background-size:cover;
     background-repeat: no-repeat;
 }
 
 .home-search {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-bottom: 2rem;
 }
@@ -365,11 +383,15 @@ main.frontpage {
 }
 
 
+
 /* PROJECTS */
 
 .projects .row {
     height: 100%;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
+    -ms-flex-line-pack: stretch;
     align-content: stretch;
 }
 
@@ -411,6 +433,8 @@ main.frontpage {
 }
 
 .project-read-more-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: relative;
     background: #F67F00;
@@ -431,7 +455,6 @@ main.frontpage {
     position: relative;
     width: 100%;
 }
-
 
 /* HOUSING LIST ITEMS */
 
@@ -491,15 +514,15 @@ main.frontpage {
     padding: 0.25rem;
     margin: 0.1rem 0;
     font-size: 0.8rem;
-}
+} 
 
 .filter-item {
     margin: 1em 0;
 }
 
-/*.filter-item:nth-child(n+6) {
+.filter-item:nth-child(n+6) {
     display: none;
-}*/
+}
 
 #showMore {
     background-color: #097C84;
@@ -538,12 +561,16 @@ main.frontpage {
 }
 
 .housing-inline-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: 0 auto;
     margin-bottom: 2rem;
 }
 
 .housing-inline-nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: 0 auto;
 }
@@ -571,6 +598,7 @@ main.frontpage {
     margin: 3rem 0 0 0;
     padding: 1rem;
     background: #F0ECE9;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
 
@@ -592,7 +620,11 @@ main.frontpage {
     max-width: 14rem;
     padding: 0.5rem 0;
     border-bottom: 1px solid #333;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     font-weight: 700;
 }
@@ -639,11 +671,10 @@ main.frontpage {
     color: #fff;
 }
 
-
 /*  ABOUT PAGE  */
 
-.about-main .row {
-    margin-bottom: 2rem;
+.about-main .about-item-container {
+    margin-bottom: 8rem;
 }
 
 .about-main .aboutpage-buttons {
@@ -664,6 +695,8 @@ main.frontpage {
 }
 
 .about-description {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -688,10 +721,10 @@ main.frontpage {
     margin: 0.5rem 0;
     border-bottom: 1px solid #CCCCCC;
 }
-
 .visitt-branches li a {
     color: #404040;
 }
+
 
 
 /* RESERVE APPOINTMENT PAGE */
@@ -755,8 +788,8 @@ main.frontpage {
 }
 
 .reservation-active {
-    background: #F67F00;
-    color: #fff;
+    background:#F67F00;
+    color:#fff;
 }
 
 
@@ -764,30 +797,74 @@ main.frontpage {
 
 footer {
     position: relative;
+    height: 40rem;
     background-color: #404040;
-    padding: 2rem 0;
     font-family: arial, sans-serif;
     color: #fff;
 }
 
-.footer-heading {
-    font-size: 1em;
-    padding-bottom: 0.4em;
-    text-align: center;
-    border-bottom: solid 1px #fff;
+.footer-logo-container {
+    height: 100%;
+    background-color: #097C84;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.visitt-logo-footer {
+    width: 14rem;
+    padding: 12rem 0;
+}
+
+.footer-links {
+    width: 60%;
+    padding: 0 2rem 0 0;
+}
+
+.footer-links ul  {
+    width: 60%;
+    margin: 0 auto;
+    padding: 2rem;  
+    border-bottom: 2px solid #fff;
+}
+
+.footer-links ul  li {
+    padding: 1rem 0;  
+}
+
+.footer-links ul li a {
+    padding: 2rem 0;
+    font-size: 1.5rem;
+    color: #fff;
+} 
+
+.footer-links .dnb-logo-footer {
+    width: 10rem;
+    margin: 1rem 0;
 }
 
 .footer-box {
-    max-width: 1170px;
-    margin: 1em auto;
+    width: 60%;
+    padding: 0 2rem;
+    margin: 2rem auto;
 }
 
 .footer-box p,
 .footer-box a {
+    color: #CCCCCC;
     font-size: 0.8em;
-    margin: 0.5em 0;
+   
 }
 
-.social-media-icons {
-    width: 150px;
+.footer-box p {
+     margin: 0.5em 0;
+}
+
+.footer-box a {
+    position: relative;
+    top: 1rem;
+    font-size: 0.8rem;
+    text-decoration: underline;
 }

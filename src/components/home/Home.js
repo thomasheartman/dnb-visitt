@@ -15,16 +15,16 @@ export default ({ selectedCounty, allCounties, handleChange = f => f, handleSubm
       <div className='row'>
         <div className='col-xs-12 center-xs'>
           <h1 className='title-heading'>Hvor ønsker du å bo?</h1>
-          <div className='dropdown row center-xs' />
-          <select onChange={(event) => handleChange(event.target.value)}>
-            <option value='' >VIS ALLE</option>
-            {allCounties.map((county) =>
-              <option value={county} key={county}>{county}</option>
-            )}
-          </select><br />
-          <Link to='/boligvelger' onClick={() => handleSubmit(selectedCounty)}>
+          <div className='dropdown row center-xs' >
+            <select onChange={(event) => handleChange(event.target.value)}>
+              <option value='' >VIS ALLE</option>
+              {allCounties.map((county) =>
+                <option value={county} key={county}>{county}</option>
+              )}
+            </select><br />
+          <Link to='/boligvelger'onClick={() => handleSubmit(selectedCounty)}>
             <input type='submit' value='Søk' />
-          </Link>
+          </Link></div>
         </div>
       </div>
     </section>

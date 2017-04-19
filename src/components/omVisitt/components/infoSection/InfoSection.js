@@ -6,7 +6,7 @@
 import React from 'react'
 
 export default ({ link, heading, icon, iconAltText, body }) => (
-  <div>
+  <div className='about-item-container'>
     < a name={link} />
     <div className='row about-heading'>
       <div className='col-xs start-xs'>

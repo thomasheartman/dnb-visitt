@@ -4,45 +4,34 @@
  */
 
 import React from 'react'
-import icons from './media/social-media-bar.png'
+import { Link } from 'react-router-dom'
+import visittLogo from './media/dnb_visitt_1.png'
+import dnbLogo from './media/dnb-standard.svg'
 
 export default () => (
-  <footer>
-    <div className='row footer-box footer-heading'>
-      <div className='col-xs-12'>
-        <h2>TIL SALGS</h2>
-      </div>
+  <footer className='row middle-xs'>
+    <div className='col-xs-4 center-xs middle-xs footer-logo-container'>
+      <img src={visittLogo} className='visitt-logo-footer' alt='DNB Visitt logo' />
     </div>
-    <div className='row footer-box'>
-      <div className='col-xs-6'>
-        <p>Nybygg i Oslo</p>
-        <p>Nybygg i Bergen</p>
-        <p>Nybygg i Tromsø</p>
-      </div>
-      <div className='col-xs-6'>
-        <p>Selge</p>
-        <p>Nybygg</p>
-      </div>
-    </div>
-    <div className='row footer-box footer-heading'>
-      <div className='col-xs-12'>
-        <h2>HELE NORGES EIENDOMSMEGLER</h2>
-      </div>
-    </div>
-    <div className='row footer-box'>
-      <div className='col-xs-6'>
-        <p>Kontakt Oss:</p>
-        <p>Adresse: Bankveien 0256 Oslo</p>
-        <p>Telefon: 90909090</p>
-      </div>
-      <div className='col-xs-6'>
-        <p>Alt om bolig</p>
-        <p>Kjøpsbetingelser</p>
-      </div>
-    </div>
-    <div className='row footer-box'>
-      <div className='col-xs-6'>
-        <img className='social-media-icons' src={icons} alt='social media icons' />
+    <div className='col-xs-8 footer-links'>
+      <ul>
+        <li>
+          <Link to='/boligvelger'>Boligsøk</Link>
+        </li>
+        <li>
+          <Link to='/om-visitt'>Om Visitt</Link>
+        </li>
+        <li>
+          <Link to='/hjelp-og-kontakt'>Kontakt Oss</Link>
+        </li>
+      </ul>
+      <div className='footer-box'>
+        <img src={dnbLogo} className='dnb-logo-footer' alt='DNB logo' />
+        <p>©2017 DNB Eiendom - Hele Norges Eiendomsmegler</p>
+        <p>Hovedkontor: Dronning Eufemiasgt. 30, Oslo</p>
+        <p>Postadresse: 0191 Oslo</p>
+        <p>Org.nr: 910 968 955</p>
+        <p><a href='#'>Om cookies</a></p>
       </div>
     </div>
   </footer>
