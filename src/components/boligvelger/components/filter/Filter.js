@@ -4,13 +4,15 @@
  */
 import React from 'react'
 import fields from './inputFields'
+import { VelocityTransitionGroup } from 'velocity-react'
 
-export default ({ showAll, allCounties, bedroomValues, selectedCounties, minPrice, maxPrice, minSize, maxSize, filter,
+export default ({ showAll, initialCounties, hiddenCounties, bedroomValues, selectedCounties, minPrice, maxPrice, minSize, maxSize, filter,
   handleToggle = f => f, handleChange = f => f, handleReset = f => f, performSearch = f => f }) => (
     <div className='col-xs-4 housing-filter'>
       <ul id='regions-container'>
         <div id='showMore' onClick={() => handleToggle(!showAll)}>Vis {showAll ? 'mindre' : 'mer'}</div>
-        {allCounties.map((county) =>
+
+        {initialCounties.map((county) =>
           <li className='filter-item' key={county}>
             <input type='checkbox' className='regionItem' value={county}
               checked={selectedCounties.includes(county)}
@@ -19,6 +21,20 @@ export default ({ showAll, allCounties, bedroomValues, selectedCounties, minPric
             <label htmlFor='location'>{county}</label>
           </li>
         )}
+        <VelocityTransitionGroup component='div' enter='slideDown' leave='slideUp'>
+          {showAll
+            ? hiddenCounties.map((county) =>
+              <li className='filter-item' key={county}>
+                <input type='checkbox' className='regionItem' value={county}
+                  checked={selectedCounties.includes(county)}
+                  onChange={() => handleChange(selectedCounties.includes(county) ? fields.REMOVE_COUNTY : fields.ADD_COUNTY, county)}
+                />
+                <label htmlFor='location'>{county}</label>
+              </li>
+            )
+            : null}
+        </VelocityTransitionGroup>
+
       </ul>
 
       <legend>Pris</legend>

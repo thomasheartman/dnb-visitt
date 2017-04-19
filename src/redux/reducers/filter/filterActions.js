@@ -9,7 +9,7 @@ export const setCounty = (newCounty) => ({ type: types.SET_COUNTY, payload: newC
 
 export const addCounty = (county) => ({ type: types.ADD_COUNTY, payload: county })
 
-export const removeCounty = (county) => ({ type: types.REMOVE_COUNTY, payload: county})
+export const removeCounty = (county) => ({ type: types.REMOVE_COUNTY, payload: county })
 
 export const clearCounties = () => ({ type: types.CLEAR_COUNTIES })
 

@@ -6,6 +6,8 @@ Repo for redoing the DNB Visitt application with Node, React, Firebase, Heroku, 
 ### `npm install`
 This will install all the modules listed in the package.json file, allowing the app to build and run.
 
+### `npm start`
+This will run the dev server from localhost:3000. Hot reloading is enabled so anytime anything is saved, the app reloads reflecting changes.
 
 ## The tools
 
@@ -20,6 +22,13 @@ This will install all the modules listed in the package.json file, allowing the 
 ### Travis CI
 
 ## Project structure
+
+All files to be deployed must go in `src`. Other files, e.g. for documentation, can go anywhere else in the directory. 
+
+Generally the project is structured into a few main folders:
+`components`: contains the presentational components
+  All subfolders are organised by main page, and then any subcomponents they use. Try and keep components and other dependencies as local as possible.
+`redux`: contains the state and logic of the application
 
 ### Directories
 
@@ -42,11 +51,25 @@ These must be fixed manually.
 ### Don't be afraid of branches
 Use them. A lot.
 
+#### Branch naming
+Accepted naming conventions
+
+`feature/my_new_feature` — new features
+
+`bugfix/breaking_bug` — bugfixes
+
+`style/new_styling` — pure styling
+
+`refactor/thing_to_refactor` — refactoring
+
+`x/my_exciting_test_feature` — for experimental stuff that might never make it in to the actual project
+
 ### Setup
 
 
 #### .gitconfig
 
+See the git resources folder for an example of a .gitconfig file whith a lot of useful aliases etc.
 
 ##### Aliases
 

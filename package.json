@@ -14,12 +14,15 @@
     "dependencies": {
         "css-loader": "^0.28.0",
         "react": "^15.5.4",
+        "react-collapse": "^3.2.2",
         "react-dom": "^15.5.4",
+        "react-motion": "^0.4.8",
         "react-redux": "^5.0.4",
         "react-toolbox": "^2.0.0-beta.8",
         "redux": "^3.6.0",
         "redux-thunk": "^2.2.0",
-        "style-loader": "^0.16.1"
+        "style-loader": "^0.16.1",
+        "velocity-react": "^1.2.1"
     },
     "devDependencies": {
         "custom-react-scripts": "^0.0.23",
