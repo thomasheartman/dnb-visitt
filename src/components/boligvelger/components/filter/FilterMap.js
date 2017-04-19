@@ -11,12 +11,12 @@ import fields from './inputFields'
 
 const mapStateToProps = state => ({
   showAll: state.showAllCounties,
-<<<<<<< HEAD
-  allCounties: state.showAllCounties ? state.counties : state.counties.slice(0, 4),
-=======
   initialCounties: state.counties.slice(0, 4),
   hiddenCounties: state.counties.slice(4),
->>>>>>> f9961f82468cff49ced1ece2c7ef3c415e2f7f10
+
+  initialCounties: state.counties.slice(0, 4),
+  hiddenCounties: state.counties.slice(4),
+
   bedroomValues: [
     { value: fields.ONE, checked: state.filter.numberOfBedrooms.one },
     { value: fields.TWO, checked: state.filter.numberOfBedrooms.two },
