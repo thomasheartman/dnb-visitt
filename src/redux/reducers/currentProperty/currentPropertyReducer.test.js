@@ -8,18 +8,55 @@ import types from './currentPropertyActionTypes'
 import reducer from './currentPropertyReducer'
 
 const initialState = {
-  apartmentNo: 24,
-  streetName: 'someStreet'
+  fetchingProperty: false,
+  propertyData: {}
 }
 
-it('should change the value of the current property object', () => {
+const fetchingState = {
+  fetchingProperty: true,
+  propertyData: {
+    apartmentNo: 24,
+    streetName: 'someStreet'
+  }
+}
+
+it('should set fetching to true', () => {
+  const expectedResult = {
+    fetchingProperty: true,
+    propertyData: {}
+  }
+
+  expect(reducer(initialState, ({ type: types.FETCH_PROPERTY }))).toEqual(expectedResult)
+})
+
+it('should cancel fetching', () => {
+  const expectedState = {
+    fetchingProperty: false,
+    propertyData: {
+      apartmentNo: 24,
+      streetName: 'someStreet'
+    }
+  }
+
+  expect(reducer(fetchingState, ({ type: types.CANCEL_FETCHING_PROPERTY }))).toEqual(expectedState)
+})
+
+it('should change the value of the current property object AND cancel fetching', () => {
   const expectedResults = {
+    fetchingProperty: false,
+    propertyData: {
+      apartmentNo: 3550,
+      streetName: 'someOtherStreet entirely'
+    }
+  }
+
+  const payload = {
     apartmentNo: 3550,
     streetName: 'someOtherStreet entirely'
   }
 
   expect(reducer(
-    initialState,
-    ({ type: types.CHANGE_PROPERTY, payload: expectedResults })
+    fetchingState,
+    ({ type: types.CHANGE_PROPERTY, payload: payload })
   )).toEqual(expectedResults)
 })

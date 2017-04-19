@@ -17,6 +17,8 @@
 
 
   "currentProperty": {
+    "fetchingProperty": false,
+    "propertyData": {}
   },
 
 
