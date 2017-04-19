@@ -30,13 +30,11 @@ export const fetchResults = (parameters) => (dispatch, getState) => {
     let results = []
     Promise.all(
       filter.counties.map(county => db.orderByChild('Fylke').equalTo(county).once('value', snapshot => {
-        console.log(`Getting results for ${county}`)
-        return db.child('Fylke').orderByValue().equalTo(county).once('value')
-      })
-        .then(snapshot => {
-          console.log(`Snapshot results: ${snapshot.val().length}`)
-          results = [...results, ...snapshot.val()]
-        }))
+        console.log(`Getting results for ${county}: ${snapshot.numChildren()}`)
+        return snapshot.forEach((child) => {
+          results = [...results, child.val()]
+        })
+      }))
     )
       .then(() => {
         console.log(`Final results: ${results}`)
