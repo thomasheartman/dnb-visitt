@@ -51,6 +51,19 @@ These must be fixed manually.
 ### Don't be afraid of branches
 Use them. A lot.
 
+#### Branch naming
+Accepted naming conventions
+
+feature/my_new_feature — new features
+
+bugfix/breaking_bug — bugfixes
+
+style/new_styling — pure styling
+
+refactor/thing_to_refactor — refactoring
+
+x/my_exciting_test_feature — for experimental stuff that might never make it in to the actual project
+
 ### Setup
 
 
