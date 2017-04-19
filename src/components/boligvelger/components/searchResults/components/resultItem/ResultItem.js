@@ -3,6 +3,7 @@
  * Component that lists details about a single result
  */
 import React from 'react'
+import { Link } from 'react-router-dom'
 import defaultImage from '../../../../../../media/images/nybygg.jpg'
 
 export default ({ ProjectName, Poststed, HousingType, Bedrooms, Price, image, altText }) => (
@@ -22,8 +23,8 @@ export default ({ ProjectName, Poststed, HousingType, Bedrooms, Price, image, al
         <div className='row housing-item-price'>
           <p>Pris: {Price}</p>
         </div>
-		<div className='row housing-item-read'>
-			<Link to='/'>Les mer</Link>
+        <div className='row housing-item-read'>
+          <Link to='/annonse'>Les mer</Link>
         </div>
       </div>
       <div className='col-xs-6 housing-item-image'>
