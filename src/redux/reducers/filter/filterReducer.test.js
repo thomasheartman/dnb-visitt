@@ -103,7 +103,6 @@ it('should remove a bedroom option from the array', () => {
   expect(reducer(numberOfBedroomsFull, ({ type: types.REMOVE_BEDROOM_OPTION, payload: payload }))).toEqual(expectedResult)
 })
 
-
 it('should set the min size', () => {
   const payload = 60
 

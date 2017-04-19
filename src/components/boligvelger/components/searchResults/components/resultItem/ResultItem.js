@@ -21,12 +21,12 @@ export default ({ ProjectName, Poststed, HousingType, Bedrooms, Price, image, al
           <p>Rom: {Bedrooms}</p>
         </div>
         <div className='row housing-item-price'>
-          <p>Pris: {Price}</p>
+          <p>Pris: {Price.toLocaleString()}</p>
         </div>
         <div className='row housing-item-read'>
           <Link to={{
-            pathname: `/annonse/${ProjectName}_${props.StreetName}`,
-            props: { ...props }
+            pathname: `/annonse/${props.Id}`,
+            props: { ...props, Price, Poststed }
           }}>Les mer</Link>
         </div>
       </div>

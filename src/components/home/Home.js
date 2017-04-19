@@ -22,9 +22,9 @@ export default ({ selectedCounty, allCounties, handleChange = f => f, handleSubm
                 <option value={county} key={county}>{county}</option>
               )}
             </select><br />
-          <Link to='/boligvelger'onClick={() => handleSubmit(selectedCounty)}>
-            <input type='submit' value='Søk' />
-          </Link></div>
+            <Link to='/boligvelger'onClick={() => handleSubmit(selectedCounty)}>
+              <input type='submit' value='Søk' />
+            </Link></div>
         </div>
       </div>
     </section>

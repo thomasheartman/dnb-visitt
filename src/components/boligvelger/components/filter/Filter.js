@@ -16,10 +16,10 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
           <li className='filter-item' key={county}>
             <input type='checkbox' className='regionItem' value={county}
               checked={selectedCounties.includes(county)}
-            onChange={() => {
-              handleChange(selectedCounties.includes(county) ? fields.REMOVE_COUNTY : fields.ADD_COUNTY, county)
-              performSearch()
-            }}            />
+              onChange={() => {
+                handleChange(selectedCounties.includes(county) ? fields.REMOVE_COUNTY : fields.ADD_COUNTY, county)
+                performSearch()
+              }} />
             <label htmlFor='location'>{county}</label>
           </li>
         )}
@@ -80,7 +80,8 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
           <li className='filter-item' key={entry}>
             <input type='checkbox' value={entry}
               checked={selectedBedroomValues.includes(entry)}
-              onChange={() => {handleChange(selectedBedroomValues.includes(entry)
+              onChange={() => {
+                handleChange(selectedBedroomValues.includes(entry)
                 ? fields.REMOVE_BEDROOM_OPTION
                 : fields.ADD_BEDROOM_OPTION,
                 entry)
