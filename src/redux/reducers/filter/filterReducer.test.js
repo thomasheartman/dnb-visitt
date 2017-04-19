@@ -14,38 +14,28 @@ const initialState = {
   'maxPrice': 0,
   'minSize': 0,
   'maxSize': 0,
-  'numberOfBedrooms': {
-    'one': false,
-    'two': false,
-    'threePlus': false
-  }
+  'numberOfBedrooms': []
 }
 
-const allCheckboxesTicked = {
+const numberOfBedroomsFull = {
   'counties': [],
   'minPrice': 0,
   'maxPrice': 0,
   'minSize': 0,
   'maxSize': 0,
-  'numberOfBedrooms': {
-    'one': true,
-    'two': true,
-    'threePlus': true
-  }
+  'numberOfBedrooms': ['1', '2', '3+']
+
 }
 
-it('should change the county', () => {
+it('should change the counties', () => {
   const expectedResult = {
     'counties': [ 'Oslo' ],
     'minPrice': 0,
     'maxPrice': 0,
     'minSize': 0,
     'maxSize': 0,
-    'numberOfBedrooms': {
-      'one': false,
-      'two': false,
-      'threePlus': false
-    }
+    'numberOfBedrooms': []
+
   }
 
   expect(reducer(initialState, ({ type: types.SET_COUNTY, payload: 'Oslo' }))).toEqual(expectedResult)
@@ -60,11 +50,8 @@ it('should set the min price', () => {
     'maxPrice': 0,
     'minSize': 0,
     'maxSize': 0,
-    'numberOfBedrooms': {
-      'one': false,
-      'two': false,
-      'threePlus': false
-    }
+    'numberOfBedrooms': []
+
   }
 
   expect(reducer(initialState, ({ type: types.SET_MIN_PRICE, payload: payload }))).toEqual(expectedResult)
@@ -79,113 +66,43 @@ it('should set the max price', () => {
     'maxPrice': payload,
     'minSize': 0,
     'maxSize': 0,
-    'numberOfBedrooms': {
-      'one': false,
-      'two': false,
-      'threePlus': false
-    }
+    'numberOfBedrooms': []
+
   }
   expect(reducer(initialState, ({ type: types.SET_MAX_PRICE, payload: payload }))).toEqual(expectedResult)
 })
 
-it('should select one bedroom', () => {
+it('should select add a bedroom option to the array', () => {
+  const payload = '1'
+
   const expectedResult = {
     'counties': [],
     'minPrice': 0,
     'maxPrice': 0,
     'minSize': 0,
     'maxSize': 0,
-    'numberOfBedrooms': {
-      'one': true,
-      'two': false,
-      'threePlus': false
-    }
+    'numberOfBedrooms': [payload]
+
   }
 
-  expect(reducer(initialState, ({ type: types.SELECT_ONE }))).toEqual(expectedResult)
+  expect(reducer(initialState, ({ type: types.ADD_BEDROOM_OPTION, payload: payload }))).toEqual(expectedResult)
 })
 
-it('should select two bedrooms', () => {
+it('should remove a bedroom option from the array', () => {
+  const payload = '2'
+
   const expectedResult = {
     'counties': [],
     'minPrice': 0,
     'maxPrice': 0,
     'minSize': 0,
     'maxSize': 0,
-    'numberOfBedrooms': {
-      'one': false,
-      'two': true,
-      'threePlus': false
-    }
+    'numberOfBedrooms': ['1', '3+']
   }
 
-  expect(reducer(initialState, ({ type: types.SELECT_TWO }))).toEqual(expectedResult)
+  expect(reducer(numberOfBedroomsFull, ({ type: types.REMOVE_BEDROOM_OPTION, payload: payload }))).toEqual(expectedResult)
 })
 
-it('should select three+ bedrooms', () => {
-  const expectedResult = {
-    'counties': [ '',
-    'minPrice': 0,
-    'maxPrice': 0,
-    'minSize': 0,
-    'maxSize': 0,
-    'numberOfBedrooms': {
-      'one': false,
-      'two': false,
-      'threePlus': true
-    }
-  }
-
-  expect(reducer(initialState, ({ type: types.SELECT_THREE_PLUS }))).toEqual(expectedResult)
-})
-
-it('should deselect one bedroom', () => {
-  const expectedResult = {
-    'counties': [],
-    'minPrice': 0,
-    'maxPrice': 0,
-    'minSize': 0,
-    'maxSize': 0,
-    'numberOfBedrooms': {
-      'one': false,
-      'two': true,
-      'threePlus': true
-    }
-  }
-  expect(reducer(allCheckboxesTicked, ({ type: types.DESELECT_ONE }))).toEqual(expectedResult)
-})
-
-it('should deselect one bedroom', () => {
-  const expectedResult = {
-    'counties': [ '',
-    'minPrice': 0,
-    'maxPrice': 0,
-    'minSize': 0,
-    'maxSize': 0,
-    'numberOfBedrooms': {
-      'one': true,
-      'two': false,
-      'threePlus': true
-    }
-  }
-  expect(reducer(allCheckboxesTicked, ({ type: types.DESELECT_TWO }))).toEqual(expectedResult)
-})
-
-it('should deselect one bedroom', () => {
-  const expectedResult = {
-    'counties': [ '',
-    'minPrice': 0,
-    'maxPrice': 0,
-    'minSize': 0,
-    'maxSize': 0,
-    'numberOfBedrooms': {
-      'one': true,
-      'two': true,
-      'threePlus': false
-    }
-  }
-  expect(reducer(allCheckboxesTicked, ({ type: types.DESELECT_THREE_PLUS }))).toEqual(expectedResult)
-})
 
 it('should set the min size', () => {
   const payload = 60
@@ -196,11 +113,7 @@ it('should set the min size', () => {
     'maxPrice': 0,
     'minSize': payload,
     'maxSize': 0,
-    'numberOfBedrooms': {
-      'one': false,
-      'two': false,
-      'threePlus': false
-    }
+    'numberOfBedrooms': []
   }
   expect(reducer(initialState, ({ type: types.SET_MIN_SIZE, payload: payload }))).toEqual(expectedResult)
 })
@@ -213,11 +126,7 @@ it('should set the max size', () => {
     'maxPrice': 0,
     'minSize': 0,
     'maxSize': payload,
-    'numberOfBedrooms': {
-      'one': false,
-      'two': false,
-      'threePlus': false
-    }
+    'numberOfBedrooms': []
   }
   expect(reducer(initialState, ({ type: types.SET_MAX_SIZE, payload: payload }))).toEqual(expectedResult)
 })

@@ -28,15 +28,14 @@ const consoleMessages = store => next => action => {
   Current filter state:
    === === === === ===
   Show all counties: ${store.getState().showAllCounties}
-  County: ${filter.counties}
+  Counties: ${filter.counties}
   Min price: ${filter.minPrice}
   Max price: ${filter.maxPrice}
   Min size: ${filter.minSize}
   Max size: ${filter.maxSize}
-  Bedrooms selected:
-    One: ${bedrooms.one}
-    Two: ${bedrooms.two}
-    Three: ${bedrooms.threePlus}
+  Bedrooms selected: ${filter.numberOfBedrooms}
+
+  DropDownCounty: ${store.getState().dropDownCounty}
 `)
 
   console.groupEnd()

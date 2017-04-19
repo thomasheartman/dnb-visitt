@@ -4,16 +4,24 @@
  */
 import Home from './Home'
 import { connect } from 'react-redux'
-import { setCounty } from '../../redux/reducers/filter/filterActions'
+import { setDropDownCounty } from '../../redux/reducers/dropDownCounty/dropDownCountyActions'
+import { setCounty, clearCounties } from '../../redux/reducers/filter/filterActions'
 
 const mapStateToProps = state => ({
-  selectedCounties: state.filter.county,
+  selectedCounty: state.dropDownCounty,
   allCounties: state.counties
 })
 
 const mapDispatchToProps = dispatch => ({
   handleChange (value) {
-    dispatch(setCounty(value))
+    dispatch(setDropDownCounty(value))
+  },
+  handleSubmit (value) {
+    if (!value) {
+      dispatch(clearCounties())
+    } else {
+      dispatch(setCounty(value))
+    }
   }
 })
 

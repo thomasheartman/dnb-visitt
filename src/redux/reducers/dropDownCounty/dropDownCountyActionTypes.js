@@ -4,5 +4,5 @@
  */
 
 export default {
-  SET_COUNTY: "SET_COUNTY"
+  SET_DROP_DOWN_COUNTY: "SET_DROP_DOWN_COUNTY"
 }
