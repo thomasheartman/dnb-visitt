@@ -110,7 +110,7 @@ form p {
 
 .container-header {
     width: 100%;
-    height: 75px;
+    min-height: 75px;
     background: #fff;
     box-shadow: 0 0 4px #404040;
     display: fixed;
@@ -497,10 +497,13 @@ main.frontpage {
 }
 
 .housing-item-read {
-	font-size: 1.25rem;
     background-color: #F67F00;
+}
+
+.housing-item-read a {
+	font-size: 1.25rem;
     color: #fff;
-    padding: 0 0.5rem;
+    padding: 0.25rem 0.5rem;
 }
 
 
