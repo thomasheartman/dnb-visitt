@@ -7,6 +7,7 @@
 
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import ScrollToTop from './ScrollToTop'
 import createHistory from 'history/createBrowserHistory'
 // components TODO: consider adding a top level componentExporter
 import MasterLayout from '../components/masterLayout/MasterLayout'
@@ -21,6 +22,7 @@ const history = createHistory()
 
 export default () => (
   <Router history={history} onUpdate={() => window.scrollTo(0, 0)}>
+    <ScrollToTop>
     <MasterLayout>
       <Switch>
         <Route exact path='/' component={Home} />
@@ -31,5 +33,6 @@ export default () => (
         <Route path='*' component={Error404} />
       </Switch>
     </MasterLayout>
+    </ScrollToTop>
   </Router>
 )

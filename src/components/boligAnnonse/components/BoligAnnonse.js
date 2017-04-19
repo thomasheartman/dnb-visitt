@@ -3,7 +3,7 @@
  * Housing page
  */
 import React from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { kalkulator, omradeVelg } from '../../../media/icons.js'
 import trinn5 from './media/Trinn-5-alm-crop.jpg'
 import mekler from './media/mekler.jpg'
