@@ -4,10 +4,19 @@
  */
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { icons } from '../../../src/media/icons.js'
+import { avtale, eie, hjem, kontrakt, leilighet, sok, velg, vr, kalkulator, omradeVelg } from '../../media/icons.js'
+import trinn5 from './media/Trinn-5-alm-crop.jpg'
+import mekler from './media/mekler.jpg'
+import barn from './media/barn.jpg'
+import familie from './media/familie.jpg'
+import stue from './media/illustrasjon-stue.jpg'
+import kjokken from './media/kjokken.jpg'
+import lekeplass from './media/lekeplass.jpg'
+import trinn5alm from './media/Trinn-5-alm.jpg'
+import vardevei from './media/vardevei.jpg'
 
 export default () => (
-    <main className='boligAnnonse-main'>
+    <main className='housing-ad-main'>
       <div className='row'>
         <section className='col-xs-12'>
 			<div className="row center-xs">
@@ -17,7 +26,7 @@ export default () => (
 				</div>
 			</div>
 
-			<image src="/media/images/Trinn-5-alm-crop.jpg" className="housing-main-img" alt="Trinn 5 bolig"/>
+			<img src={trinn5} className="housing-main-img" alt="Trinn 5 bolig"/>
 			<nav className="housing-inline-nav">
 				<ul>
 					<li>
@@ -27,12 +36,12 @@ export default () => (
 						<Link to="#presentation">Presentasjon</Link>
 					</li>
 					<li>
-						<Link to="#decorate-house">Ta en Visitt</Link>
+						<Link to="#reserve-visit">Ta en Visitt</Link>
 					</li>
 				</ul>
 			</nav>
-			<section className="row">
-				<div className="col-xs-12 col-sm-4 col-md-6 housing-basics">
+			<section className="row housing-basics">
+				<div className="col-xs-12 col-sm-4 col-md-6">
 					<h2>Om boligen</h2>
 					<h3>4-roms leilighet</h3>
 					<p>Pris: <span>2 848 000,-</span></p>
@@ -51,18 +60,18 @@ export default () => (
 					<p>Ferdigstillelse: <span>30.03.2018</span></p>
 				</div>
 				<aside className="col-xs-12 col-sm-8 col-md-6">
-					<image src="/media/images/mekler.jpg" alt="mekler Rolf Kåre" className="img-container"/>
+					<img src={mekler} alt="mekler Rolf Kåre" className="img-container"/>
 					<div className="row middle-xs">
-						<div className="col-xs-4">
-							<image className="housing-listing-icon" src="/media/icons/kalkulator.svg" alt="kalkulator"/>
+						<div className="col-xs-4 full-width">
+							<img className="housing-listing-icon" src={kalkulator} alt="kalkulator"/>
 						</div>
 						<div className="col-xs-8">
 							<h3>Last ned prospekt</h3>
 						</div>
 					</div>
 					<div className="row middle-xs">
-						<div className="col-xs-4">
-							<image className="housing-listing-icon" src="/media/icons/omrade-velg.svg" alt="Velg område" className="img-container"/>
+						<div className="col-xs-4 full-width">
+							<img className="housing-listing-icon img-container" src={omradeVelg} alt="Velg område"/>
 						</div>
 						<div className="col-xs-8">
 							<h3>Åpne i kart</h3>
@@ -80,10 +89,10 @@ export default () => (
 			</div>
 			<div className="row center-xs">
 				<div className="col-xs-6 two-grid-gutter big-button">
-					<image src="/media/images/Trinn-5.jpg" alt="Trinn 5" className="img-container"/>
+					<img src={trinn5alm} alt="Trinn 5" className="img-container"/>
 				</div>
 				<div className="col-xs-6 two-grid-gutter big-button">
-					<image src="/media/images/vardevei.jpg" alt="Vardevei" className="img-container"/>
+					<img src={vardevei} alt="Vardevei" className="img-container"/>
 				</div>
 			</div>
 			<div className="row center-xs middle-xs">
@@ -96,10 +105,10 @@ export default () => (
 			</div>
 			<div className="row center-xs">
 				<div className="col-xs-6 two-grid-gutter">
-					<image src="/media/images/kjokken.jpg" alt="Kjøkken" className="img-container"/>
+					<img src={kjokken} alt="Kjøkken" className="img-container"/>
 				</div>
 				<div className="col-xs-6 two-grid-gutter">
-					<image src="/media/images/illustrasjon-stue.jpg" alt="Stue" className="img-container"/>
+					<img src={stue} alt="Stue" className="img-container"/>
 				</div>
 			</div>
 			<div className="row">
@@ -109,10 +118,10 @@ export default () => (
 			</div>
 			<div className="row center-xs">
 				<div className="col-xs-6 two-grid-gutter">
-					<image src="/media/images/lekeplass.jpg" alt="Lekeplass" className="img-container"/>
+					<img src={lekeplass} alt="Lekeplass" className="img-container"/>
 				</div>
 				<div className="col-xs-6 two-grid-gutter">
-					<image src="/media/images/vardevei.jpg" alt="Vardevei" className="img-container"/>
+					<img src={vardevei} alt="Vardevei" className="img-container"/>
 				</div>
 			</div>
 			<div className="row">
@@ -122,10 +131,10 @@ export default () => (
 			</div>
 			<div className="row center-xs">
 				<div className="col-xs-6 two-grid-gutter">
-					<image src="/media/images/barn.jpg" alt="Barn" class="img-container"/>
+					<img src={barn} alt="Barn" className="img-container"/>
 				</div>
 				<div className="col-xs-6 two-grid-gutter">
-					<image src="/media/images/familie.jpg" alt="Familie" className="img-container"/>
+					<img src={familie} alt="Familie" className="img-container"/>
 				</div>
 			</div>
 			<div className="row center-xs middle-xs">

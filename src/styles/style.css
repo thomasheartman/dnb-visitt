@@ -550,7 +550,15 @@ main.frontpage {
 }
 
 
-/* HOUSING LIST ITEMS  */
+/* HOUSING ANNONSE  */
+
+.housing-ad-main {
+	margin-bottom: 5rem;
+}
+
+.housing-ad-main section .row {
+    margin: 1rem 0;
+}
 
 .housing-header {
     margin: 1rem;
@@ -600,11 +608,9 @@ main.frontpage {
     border-left: none;
 }
 
-.housing-listing .row {
-    margin: 1rem 0;
-}
 
-.housing-listing section {
+.housing-ad-main .housing-basics {
+	position: relative;
     width: 100%;
     margin: 3rem 0 0 0;
     padding: 1rem;
@@ -613,9 +619,6 @@ main.frontpage {
     flex-wrap: wrap;
 }
 
-.housing-basics {
-    position: relative;
-}
 
 .housing-basics h2 {
     font-weight: 700;
@@ -644,17 +647,17 @@ main.frontpage {
     font-weight: 200;
 }
 
-.housing-listing aside {
+.housing-ad-main aside {
     margin-top: 1rem;
     padding: 1rem;
     background: #fff;
 }
 
-.housing-listing aside img:first-child {
+.housing-ad-main aside img:first-child {
     margin-bottom: 1rem;
 }
 
-.housing-listing .housing-listing-icon {
+.housing-ad-main .housing-listing-icon {
     max-width: 6rem;
 }
 
@@ -668,7 +671,7 @@ main.frontpage {
     padding-left: 0.5rem;
 }
 
-.housing-listing .big-button a {
+.housing-ad-main .big-button a {
     display: block;
     padding: 4rem 0;
     background: #097C84;
