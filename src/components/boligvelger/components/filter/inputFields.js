@@ -1,3 +1,5 @@
+export const allBedroomValues = ['1', '2', '3+']
+
 export default {
   ADD_COUNTY: 'ADD_COUNTY',
   REMOVE_COUNTY: 'REMOVE_COUNTY',
@@ -5,7 +7,6 @@ export default {
   MAX_PRICE: 'MAX_PRICE',
   MIN_SIZE: 'MIN_SIZE',
   MAX_SIZE: 'MAX_SIZE',
-  ONE: '1',
-  TWO: '2',
-  THREE_PLUS: '3+'
+  ADD_BEDROOM_OPTION: 'ADD_BEDROOM_OPTION',
+  REMOVE_BEDROOM_OPTION: 'REMOVE_BEDROOM_OPTION'
 }

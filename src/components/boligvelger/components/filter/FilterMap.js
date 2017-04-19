@@ -4,20 +4,17 @@
  */
 import Filter from './Filter'
 import { connect } from 'react-redux'
-import { addCounty, removeCounty, setMaxPrice, setMinPrice, setMaxSize, setMinSize, setOne, setTwo, setThreePlus, clearFilter } from '../../../../redux/reducers/filter/filterActions'
+import { addCounty, removeCounty, setMaxPrice, setMinPrice, setMaxSize, setMinSize, addBedroomOption, removeBedroomOption, clearFilter } from '../../../../redux/reducers/filter/filterActions'
 import { toggleFilter } from '../../../../redux/reducers/filterUi/filterUiActions'
 import { fetchResults } from '../../../../redux/reducers/searchResults/resultsActions'
-import fields from './inputFields'
+import fields, {allBedroomValues} from './inputFields'
 
 const mapStateToProps = state => ({
   showAll: state.showAllCounties,
   initialCounties: state.counties.slice(0, 4),
   hiddenCounties: state.counties.slice(4),
-  bedroomValues: [
-    { value: fields.ONE, checked: state.filter.numberOfBedrooms.one },
-    { value: fields.TWO, checked: state.filter.numberOfBedrooms.two },
-    { value: fields.THREE_PLUS, checked: state.filter.numberOfBedrooms.threePlus }
-  ],
+  allBedroomValues: allBedroomValues,
+  selectedBedroomValues: state.filter.numberOfBedrooms,
   selectedCounties: state.filter.counties,
   minPrice: state.filter.minPrice,
   maxPrice: state.filter.maxPrice,
@@ -50,14 +47,11 @@ const mapDispatchToProps = dispatch => ({
       case fields.MAX_SIZE:
         dispatch(setMaxSize(value))
         break
-      case fields.ONE:
-        dispatch(setOne(value))
+      case fields.ADD_BEDROOM_OPTION:
+        dispatch(addBedroomOption(value))
         break
-      case fields.TWO:
-        dispatch(setTwo(value))
-        break
-      case fields.THREE_PLUS:
-        dispatch(setThreePlus(value))
+      case fields.REMOVE_BEDROOM_OPTION:
+        dispatch(removeBedroomOption(value))
         break
       default:
         break
