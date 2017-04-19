@@ -496,6 +496,13 @@ main.frontpage {
     font-weight: 700;
 }
 
+.housing-item-read {
+	font-size: 1.25rem;
+    background-color: #F67F00;
+    color: #fff;
+    padding: 0 0.5rem;
+}
+
 
 /* HOUSING FILTER */
 

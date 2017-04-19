@@ -22,6 +22,9 @@ export default ({ ProjectName, Poststed, HousingType, Bedrooms, Price, image, al
         <div className='row housing-item-price'>
           <p>Pris: {Price}</p>
         </div>
+		<div className='row housing-item-read'>
+			<Link to='/'>Les mer</Link>
+        </div>
       </div>
       <div className='col-xs-6 housing-item-image'>
         <img className='img-responsive'
