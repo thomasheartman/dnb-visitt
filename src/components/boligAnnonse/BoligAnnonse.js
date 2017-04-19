@@ -36,7 +36,7 @@ export default () => (
 						<Link to="#presentation">Presentasjon</Link>
 					</li>
 					<li>
-						<Link to="#reserve-visit">Ta en Visitt</Link>
+						<Link to="#reserve-visit">Bestill Visitt</Link>
 					</li>
 				</ul>
 			</nav>
