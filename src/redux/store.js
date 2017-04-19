@@ -21,7 +21,6 @@ const consoleMessages = store => next => action => {
   result = next(action)
 
   const filter = store.getState().filter
-  const bedrooms = filter.numberOfBedrooms
 
   console.log(`
 
