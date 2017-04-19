@@ -92,7 +92,14 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
         )}
       </ul>
 
-      <input type='reset' value='Tilbakestill' onClick={() => handleReset()} />
-      <input type='submit' value='Søk' className='submit' onClick={() => performSearch(filter)} />
+      <input type='reset' value='Tilbakestill'
+        onClick={() => {
+          handleReset()
+          performSearch()
+        }}
+      />
+      <input type='submit' value='Søk' className='submit'
+        onClick={() => performSearch(filter)}
+      />
     </div>
   )
