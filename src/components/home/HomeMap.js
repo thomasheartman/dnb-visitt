@@ -6,6 +6,7 @@ import Home from './Home'
 import { connect } from 'react-redux'
 import { setDropDownCounty } from '../../redux/reducers/dropDownCounty/dropDownCountyActions'
 import { setCounty, clearCounties } from '../../redux/reducers/filter/filterActions'
+import { fetchResults } from '../../redux/reducers/searchResults/resultsActions'
 
 const mapStateToProps = state => ({
   selectedCounty: state.dropDownCounty,
@@ -22,6 +23,7 @@ const mapDispatchToProps = dispatch => ({
     } else {
       dispatch(setCounty(value))
     }
+    dispatch(fetchResults())
   }
 })
 

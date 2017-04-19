@@ -8,12 +8,14 @@
     "numberOfBedrooms": []
   },
   "dropDownCounty": "",
+
   "showAllCounties": false,
   "searchResults": {
     "fetchingResults": false,
     "results": [
     ]
   },
+
   "counties": [
     "OSLO",
     "AKERSHUS",
