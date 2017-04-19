@@ -5,12 +5,9 @@
     "maxPrice": 0,
     "minSize": 0,
     "maxSize": 0,
-    "numberOfBedrooms": {
-      "one": false,
-      "two": false,
-      "threePlus": false
-    }
+    "numberOfBedrooms": []
   },
+  "dropDownCounty": "",
   "showAllCounties": false,
   "searchResults": {
     "fetchingResults": false,

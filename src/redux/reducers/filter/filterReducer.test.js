@@ -9,7 +9,7 @@ import reducer from './filterReducer'
 import types from './filterActionTypes'
 
 const initialState = {
-  'county': '',
+  'counties': [],
   'minPrice': 0,
   'maxPrice': 0,
   'minSize': 0,
@@ -22,7 +22,7 @@ const initialState = {
 }
 
 const allCheckboxesTicked = {
-  'county': '',
+  'counties': [],
   'minPrice': 0,
   'maxPrice': 0,
   'minSize': 0,
@@ -36,7 +36,7 @@ const allCheckboxesTicked = {
 
 it('should change the county', () => {
   const expectedResult = {
-    'county': 'Oslo',
+    'counties': [ 'Oslo' ],
     'minPrice': 0,
     'maxPrice': 0,
     'minSize': 0,
@@ -55,7 +55,7 @@ it('should set the min price', () => {
   const payload = 250000
 
   const expectedResult = {
-    'county': '',
+    'counties': [],
     'minPrice': payload,
     'maxPrice': 0,
     'minSize': 0,
@@ -74,7 +74,7 @@ it('should set the max price', () => {
   const payload = 250000
 
   const expectedResult = {
-    'county': '',
+    'counties': [],
     'minPrice': 0,
     'maxPrice': payload,
     'minSize': 0,
@@ -90,7 +90,7 @@ it('should set the max price', () => {
 
 it('should select one bedroom', () => {
   const expectedResult = {
-    'county': '',
+    'counties': [],
     'minPrice': 0,
     'maxPrice': 0,
     'minSize': 0,
@@ -107,7 +107,7 @@ it('should select one bedroom', () => {
 
 it('should select two bedrooms', () => {
   const expectedResult = {
-    'county': '',
+    'counties': [],
     'minPrice': 0,
     'maxPrice': 0,
     'minSize': 0,
@@ -124,7 +124,7 @@ it('should select two bedrooms', () => {
 
 it('should select three+ bedrooms', () => {
   const expectedResult = {
-    'county': '',
+    'counties': [ '',
     'minPrice': 0,
     'maxPrice': 0,
     'minSize': 0,
@@ -141,7 +141,7 @@ it('should select three+ bedrooms', () => {
 
 it('should deselect one bedroom', () => {
   const expectedResult = {
-    'county': '',
+    'counties': [],
     'minPrice': 0,
     'maxPrice': 0,
     'minSize': 0,
@@ -157,7 +157,7 @@ it('should deselect one bedroom', () => {
 
 it('should deselect one bedroom', () => {
   const expectedResult = {
-    'county': '',
+    'counties': [ '',
     'minPrice': 0,
     'maxPrice': 0,
     'minSize': 0,
@@ -173,7 +173,7 @@ it('should deselect one bedroom', () => {
 
 it('should deselect one bedroom', () => {
   const expectedResult = {
-    'county': '',
+    'counties': [ '',
     'minPrice': 0,
     'maxPrice': 0,
     'minSize': 0,
@@ -191,7 +191,7 @@ it('should set the min size', () => {
   const payload = 60
 
   const expectedResult = {
-    'county': '',
+    'counties': [],
     'minPrice': 0,
     'maxPrice': 0,
     'minSize': payload,
@@ -208,7 +208,7 @@ it('should set the min size', () => {
 it('should set the max size', () => {
   const payload = 500
   const expectedResult = {
-    'county': '',
+    'counties': [],
     'minPrice': 0,
     'maxPrice': 0,
     'minSize': 0,

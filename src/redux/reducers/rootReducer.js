@@ -12,11 +12,13 @@ import searchResults from './searchResults/resultsReducer'
 import counties from './counties/countiesReducer'
 import showAllCounties from './filterUi/filterUiReducer'
 import { reducer as formReducer } from 'redux-form'
+import dropDownCounty from './dropDownCounty/dropDownCountyReducer'
 
 export const form = formReducer
 
 export default combineReducers({
   filter,
+  dropDownCounty,
   searchResults,
   counties,
   showAllCounties,

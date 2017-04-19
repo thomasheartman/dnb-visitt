@@ -28,6 +28,8 @@ const minSize = (state = 0, action) => action.type === types.SET_MIN_SIZE ? acti
 const maxSize = (state = 0, action) => action.type === types.SET_MAX_SIZE ? action.payload : state
 
 // TODO: turn into array like counties
+export const numberOfBedrooms = (state = ) =>
+
 const one = (state = false, action) => {
   switch (action.type) {
     case types.SELECT_ONE:
