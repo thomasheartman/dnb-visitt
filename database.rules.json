@@ -1,6 +1,14 @@
 {
   "rules": {
     ".read": true,
-    ".write": true
+    ".write": true,
+    "properties": {
+      ".indexOn": [
+        "Fylke",
+        "Price",
+        "SquareMetres",
+        "Bedrooms"
+      ]
+    }
   }
 }
