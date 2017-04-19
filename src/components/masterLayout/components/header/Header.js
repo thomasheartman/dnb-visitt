@@ -10,20 +10,20 @@ import logo from './media/dnb-standard.svg'
 export default () => (
   <div className='container-header'>
     <header className='row middle-xs '>
-      <Link to='/' className='col-xs-8 col-md-4 col-lg-2 full-width start-xs'>
+      <Link to='/' className='col-xs full-width start-xs'>
         <img className='logo'
           src={logo} alt='DNB Visitt logo' />
       </Link>
-      <nav className='col-sm-8 col-md-8 col-lg end-xs'>
-        <ul className='row center-xs middle-xs end-xs'>
+      <nav className='col-xs-12 col-sm-8 start-xs end-md'>
+        <ul className='row center-xs middle-xs start-xs end-md'>
           <li>
-            <Link to='/boligvelger'>BOLIGSØK</Link>
+            <Link to='/boligvelger'>Boligsøk</Link>
           </li>
           <li>
-            <Link to='/om-visitt'>OM VISITT</Link>
+            <Link to='/om-visitt'>Om Visitt</Link>
           </li>
           <li>
-            <Link to='/hjelp-og-kontakt'>HJELP OG KONTAKT</Link>
+            <Link to='/hjelp-og-kontakt'>Hjelp og Kontakt</Link>
           </li>
         </ul >
       </nav >
