@@ -18,26 +18,26 @@ const consoleMessages = store => next => action => {
 
   console.groupCollapsed(`Dispatching action => ${action.type}`)
 
-  result = next(action)
 
-  const filter = store.getState().filter
+  const property = store.getState().currentProperty.propertyData
 
   console.log(`
 
-  Current filter state:
+  Property: ${JSON.stringify(property)}
+
+  Current property state:
    === === === === ===
-  Show all counties: ${store.getState().showAllCounties}
-  Counties: ${filter.counties}
-  Min price: ${filter.minPrice}
-  Max price: ${filter.maxPrice}
-  Min size: ${filter.minSize}
-  Max size: ${filter.maxSize}
-  Bedrooms selected: ${filter.numberOfBedrooms}
+  County: ${property.Fylke}
+  Price: ${property.Price}
+  Size: ${property.SquareMetres}
+  Bedrooms selected: ${property.Bedrooms}
+  Id: ${JSON.stringify(property.Id)}
 
-  DropDownCounty: ${store.getState().dropDownCounty}
 `)
-
   console.groupEnd()
+
+  result = next(action)
+
   return result
 }
 

@@ -15,21 +15,32 @@ import lekeplass from './media/lekeplass.jpg'
 import trinn5alm from './media/Trinn-5-alm.jpg'
 import vardevei from './media/vardevei.jpg'
 
-export default ({ location }) => (
-  <main className='housing-ad-main'>
-    {!location.props
-
-      ? <div>
-        <h1>Whoops, ingen lastet data.</h1>
-        <p>Her må vi hente data. ;) </p>
-      </div>
-
-      : <div className='row'>
+export default ({
+  Price = 50000000,
+  Fellesutgifter = 1340,
+  Fellesgjeld = 0,
+  BRA = 90,
+  PRom = 85,
+  SquareMetres = 5000,
+  Inngangsetasje = 1,
+  AntallPlan = 1,
+  AntallRom = 4,
+  Bedrooms = 3,
+  EnergyRating = 'C',
+  StreetNumber = '29',
+  Byggestart = '30.06.2017',
+  Ferdigstillelse = '30.03.2018',
+  StreetName = 'Gabels gate',
+  ApartmentNumber = '4a',
+  Poststed = 'Frogner',
+  Fylke = 'Oslo'  }) => (
+    <main className='housing-ad-main'>
+      <div className='row'>
         <section className='col-xs-12'>
           <div className='row center-xs'>
             <div className='col-xs housing-header'>
-              <h2 className='housing-title'>{`${location.props.StreetName} ${location.props.StreetNumber}`}</h2>
-              <p className='housing-location'>{`${location.props.Poststed}, ${location.props.Fylke}`}</p>
+              <h2 className='housing-title'>{`${StreetName} ${StreetNumber}`}</h2>
+              <p className='housing-location'>{`${Poststed}, ${Fylke}`}</p>
             </div>
           </div>
 
@@ -50,21 +61,21 @@ export default ({ location }) => (
           <section className='row housing-basics'>
             <div className='col-xs-12 col-sm-4 col-md-6'>
               <h2>Om boligen</h2>
-              <h3>4-roms leilighet</h3>
-              <p>Pris: <span>{location.props.Price.toLocaleString()},-</span></p>
-              <p>Fellesutgifter: <span>1340,-</span></p>
-              <p>Andel fellesgjeld: <span>0,-</span></p>
-              <p>BRA: <span>90 m&#178;</span></p>
-              <p>P-rom: <span>85 m&#178;</span></p>
-              <p>Tomteareal: <span>{location.props.SquareMetres} m&#178;</span></p>
-              <p>Inngangsetasje: <span>1</span></p>
-              <p>Antall plan: <span>1</span></p>
-              <p>Antall rom: <span>4</span></p>
-              <p>Antall soverom: <span>3</span></p>
-              <p>Energimerke: <span>C</span></p>
-              <p>Bolignummer: <span>{location.props.ApartmentNumber}</span></p>
-              <p>Byggestart: <span>30.06.2017</span></p>
-              <p>Ferdigstillelse: <span>30.03.2018</span></p>
+              <h3>{`${AntallRom}-roms leilighet`}</h3>
+              <p>Pris: <span>{Price.toLocaleString()},-</span></p>
+              <p>Fellesutgifter: <span>{Fellesutgifter},-</span></p>
+              <p>Andel fellesgjeld: <span>{Fellesgjeld},-</span></p>
+              <p>BRA: <span>{BRA} m&#178;</span></p>
+              <p>P-rom: <span>{PRom} m&#178;</span></p>
+              <p>Tomteareal: <span>{SquareMetres} m&#178;</span></p>
+              <p>Inngangsetasje: <span>{Inngangsetasje}</span></p>
+              <p>Antall plan: <span>{AntallPlan}</span></p>
+              <p>Antall rom: <span>{AntallRom}</span></p>
+              <p>Antall soverom: <span>{Bedrooms}</span></p>
+              <p>Energimerke: <span>{EnergyRating}</span></p>
+              <p>Bolignummer: <span>{ApartmentNumber}</span></p>
+              <p>Byggestart: <span>{Byggestart}</span></p>
+              <p>Ferdigstillelse: <span>{Ferdigstillelse}</span></p>
             </div>
             <aside className='col-xs-12 col-sm-8 col-md-6'>
               <img src={mekler} alt='mekler Rolf Kåre' className='img-container' />
@@ -154,6 +165,6 @@ export default ({ location }) => (
           </div>
         </section>
       </div>
-    }
-  </main>
-)
+
+    </main>
+  )

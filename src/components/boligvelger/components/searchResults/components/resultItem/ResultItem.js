@@ -6,7 +6,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import defaultImage from '../../../../../../media/images/nybygg.jpg'
 
-export default ({ ProjectName, Poststed, HousingType, Bedrooms, Price, image, altText, ...props }) => (
+export default ({ ProjectName, Poststed, HousingType, Bedrooms, Price, image, altText,  Id,
+fetchProperty = f => f }) => (
   <article className='housing-item-container'>
     <div className='housing-item-header row middle-xs'>
       <h2 className='housing-item-title col-xs start-xs'>{ProjectName}</h2>
@@ -25,9 +26,10 @@ export default ({ ProjectName, Poststed, HousingType, Bedrooms, Price, image, al
         </div>
         <div className='row housing-item-read'>
           <Link to={{
-            pathname: `/annonse/${props.Id}`,
-            props: { ...props, Price, Poststed }
-          }}>Les mer</Link>
+            pathname: `/annonse/${Id}`,
+          }}
+            onClick={() => fetchProperty(Id)}
+          >Les mer</Link>
         </div>
       </div>
       <div className='col-xs-6 housing-item-image'>
