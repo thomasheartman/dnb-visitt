@@ -24,7 +24,6 @@ export const fetchResults = (parameters) => (dispatch, getState) => {
 
   const db = database.ref('properties')
 
-
   console.log('fetching results now')
 
   if (_.isEmpty(filter.counties)) {
@@ -35,19 +34,16 @@ export const fetchResults = (parameters) => (dispatch, getState) => {
     .then(() => dispatch(changeResults(results)))
   } else {
 
-
     let results = []
     const maxPrice = filter.maxPrice ? filter.maxPrice : Number.MAX_VALUE
     const minPrice = filter.minPrice ? filter.minPrice : 0
     const maxSize = filter.maxSize ? filter.maxSize : Number.MAX_VALUE
     const minSize = filter.minSize ? filter.minSize : 0
-/*    let numberOfBedrooms = []
+    let numberOfBedrooms = []
     numberOfBedrooms = filter.numberOfBedrooms.includes('1') ? [...numberOfBedrooms, 1] : numberOfBedrooms
     numberOfBedrooms = filter.numberOfBedrooms.includes('2') ? [...numberOfBedrooms, 2] : numberOfBedrooms
     numberOfBedrooms = filter.numberOfBedrooms.includes('3+') ? [...numberOfBedrooms, 3] : numberOfBedrooms
-    const threePlus = filter.numberOfBedrooms.includes('3+')*/
-
-
+    const threePlus = filter.numberOfBedrooms.includes('3+')
 
     Promise.all(
       filter.counties.map(county => db.orderByChild('Fylke').equalTo(county).on('child_added', snapshot => {
@@ -60,8 +56,8 @@ export const fetchResults = (parameters) => (dispatch, getState) => {
         console.log('Price in range')
         if (!(minSize <= propertySize && propertySize <= maxSize)) return
         console.log('Size in range')
-/*        if (_.isEmpty(numberOfBedrooms) || !(numberOfBedrooms.includes(propertyBedrooms) || threePlus && propertyBedrooms >= 3)) return
-        console.log('Bedrooms in range')*/
+        if (_.isEmpty(numberOfBedrooms) || !(numberOfBedrooms.includes(propertyBedrooms) || (threePlus && propertyBedrooms >= 3))) return
+        console.log('Bedrooms in range')
 
         console.log(`Getting results for ${county}: ${snapshot.val().Id}`)
         dispatch(addResult(snapshot.val()))
