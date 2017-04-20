@@ -11,7 +11,8 @@ export default () => (
     <main className='boligVelger-main'>
       <div className='row'>
         <Filter />
-        <section className='col-xs-8 housing-list-items' id='boligfilter'>
+        <section className='col-xs-12 col-sm-8 housing-list-items' id='boligfilter'>
+                    <h2>Finn bolig</h2>
           <SearchResults />
         </section>
       </div>

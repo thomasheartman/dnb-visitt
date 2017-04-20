@@ -11,7 +11,7 @@ import TextField from 'material-ui/TextField'
 export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, selectedBedroomValues,
   selectedCounties, minPrice, maxPrice, minSize, maxSize, filter,
   handleToggle = f => f, handleChange = f => f, handleReset = f => f, performSearch = f => f }) => (
-    <div className='col-xs-4 housing-filter'>
+    <div className='col-xs-12 col-sm-4 housing-filter'>
       <ul id='regions-container'>
         <div id='showMore' onClick={() => handleToggle(!showAll)}>Vis {showAll ? 'mindre' : 'mer'}</div>
 
