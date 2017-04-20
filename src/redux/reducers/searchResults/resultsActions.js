@@ -16,6 +16,8 @@ export const changeResults = results => ({ type: types.CHANGE_RESULTS, payload: 
 export const fetchResults = (parameters) => (dispatch, getState) => {
   if (getState().searchResults.fetchingResults) return
 
+  dispatch(startFetchingResults())
+
   const filter = getState().filter
 
   const db = database.ref('properties')

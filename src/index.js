@@ -10,9 +10,7 @@ import { render } from 'react-dom'
 import sampleData from './redux/initialState.json'
 import storeFactory from './redux/store'
 import { Provider } from 'react-redux'
-import { database } from './firebase/firebase' // TODO: consider if we want to hit database on startup or not
-// import { setCounties } from './redux/reducers/counties/countiesActions'
-import { fetchResults } from './redux/reducers/searchResults/resultsActions'
+
 // initialize the store with some nice data
 const initialState = sampleData
 const store = storeFactory(initialState)
@@ -36,8 +34,3 @@ render(
   </Provider>,
   document.getElementById('root')
 )
-
-// get initial search results
-database.ref('properties/').once('value', () => {
-  store.dispatch(fetchResults())
-})

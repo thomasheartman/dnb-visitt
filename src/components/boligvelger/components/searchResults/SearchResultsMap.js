@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 import SearchResults from './SearchResults'
 import _ from 'lodash'
 import NoResults from './components/noResults/NoResults'
-import Loading from './components/loading/Loading'
+import { fetchResults } from '../../../../redux/reducers/searchResults/resultsActions'
 import ResultItem from './components/resultItem/ResultItem'
 
 const mapResults = (results) => (
@@ -16,16 +16,21 @@ const mapResults = (results) => (
   </div>
 )
 
-const processedResults = (fetching, results) => (
-  fetching ? <Loading />
-    : _.isEmpty(results)
+const processedResults = (results) => (
+  _.isEmpty(results)
       ? <NoResults />
       : mapResults(results)
 )
 
-const mapStateToProps = state => ({
-  results: processedResults(state.searchResults.fetchingResults,
-    state.searchResults.results)
+const mapDispatchToProps = dispatch => ({
+  getResults() {
+    dispatch(fetchResults())
+  }
 })
 
-export default connect(mapStateToProps)(SearchResults)
+const mapStateToProps = state => ({
+  fetching: state.searchResults.fetchingResults,
+  results: processedResults(state.searchResults.results)
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchResults)
