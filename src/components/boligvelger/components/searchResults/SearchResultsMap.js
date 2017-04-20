@@ -8,7 +8,7 @@ import SearchResults from './SearchResults'
 import _ from 'lodash'
 import NoResults from './components/noResults/NoResults'
 import Loading from './components/loading/Loading'
-import ResultItem from './components/resultItem/ResultItem.map'
+import ResultItem from './components/resultItem/ResultItem'
 
 const mapResults = (results) => (
   <div>

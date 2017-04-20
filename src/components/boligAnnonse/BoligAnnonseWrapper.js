@@ -7,13 +7,12 @@
 
 import React from 'react'
 import Annonse from './components/BoligAnnonse.map'
-import { getProperty } from '../../redux/reducers/currentProperty/currentPropertyActions'
 
 // making this a stateful component so that we can load data on mount.
 class AnnonseWrapper extends React.Component {
 
   componentDidMount () {
-    this.props.dispatch(getProperty(this.props.match.params.id))
+    this.props.fetchProperty(this.props.match.params.id)
   }
 
   render = () => {

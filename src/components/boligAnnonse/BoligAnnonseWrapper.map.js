@@ -4,9 +4,17 @@
  */
 import { connect } from 'react-redux'
 import Wrapper from './BoligAnnonseWrapper'
+import { getProperty } from '../../redux/reducers/currentProperty/currentPropertyActions'
+
 
 const mapStateToProps = state => ({
   fetching: state.currentProperty.fetchingProperty
 })
 
-export default connect(mapStateToProps)(Wrapper)
+const mapDispatchToProps = dispatch => ({
+  fetchProperty (id) {
+    dispatch(getProperty(id))
+  }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Wrapper)
