@@ -25,10 +25,10 @@ export const fetchResults = (parameters) => (dispatch, getState) => {
 
   console.log('fetching results now')
 
-  if (_.isEmpty(filter)) {
+  if (_.isEmpty(filter.counties)) {
       let results = []
-    db.once('value', snapshot => {
-      results = [...results, snapshot.val()]
+      db.once('value', snapshot => {
+      results = snapshot.val()
     })
     .then(() => dispatch(changeResults(results)))
   } else {
@@ -39,11 +39,11 @@ export const fetchResults = (parameters) => (dispatch, getState) => {
     const minPrice = filter.minPrice ? filter.minPrice : 0
     const maxSize = filter.maxSize ? filter.maxSize : Number.MAX_VALUE
     const minSize = filter.minSize ? filter.minSize : 0
-    let numberOfBedrooms = []
+/*    let numberOfBedrooms = []
     numberOfBedrooms = filter.numberOfBedrooms.includes('1') ? [...numberOfBedrooms, 1] : numberOfBedrooms
     numberOfBedrooms = filter.numberOfBedrooms.includes('2') ? [...numberOfBedrooms, 2] : numberOfBedrooms
     numberOfBedrooms = filter.numberOfBedrooms.includes('3+') ? [...numberOfBedrooms, 3] : numberOfBedrooms
-    const threePlus = filter.numberOfBedrooms.includes('3+')
+    const threePlus = filter.numberOfBedrooms.includes('3+')*/
 
 
 
