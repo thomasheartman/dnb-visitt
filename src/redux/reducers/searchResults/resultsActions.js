@@ -22,6 +22,7 @@ export const fetchResults = (parameters) => (dispatch, getState) => {
 
   const db = database.ref('properties')
 
+
   console.log('fetching results now')
 
   if (_.isEmpty(filter.counties)) {
@@ -29,13 +30,25 @@ export const fetchResults = (parameters) => (dispatch, getState) => {
       dispatch(changeResults(snapshot.val()))
     })
   } else {
+
     let results = []
+    const maxPrice = filter.maxPrice ? filter.maxPrice : Number.MAX_VALUE
+    const minPrice = filter.minPrice ? filter.minPrice : 0
+    const maxSize = filter.maxSize ? filter.maxSize : Number.MAX_VALUE
+    const minSize = filter.minSize ? filter.minSize : 0
+
     Promise.all(
-      filter.counties.map(county => db.orderByChild('Fylke').equalTo(county).once('value', snapshot => {
-        console.log(`Getting results for ${county}: ${snapshot.numChildren()}`)
-        return snapshot.forEach((child) => {
-          results = [...results, child.val()]
-        })
+      filter.counties.map(county => db.orderByChild('Fylke').equalTo(county).on('child_added', snapshot => {
+
+        const propertyPrice = snapshot.val().Price
+        const propertySize = snapshot.val().Size
+        const propertyBedrooms = snapshot.val().Bedrooms
+
+        if (!(minPrice <= propertyPrice && propertyPrice <= maxPrice)) return
+        if (!(minSize <= propertySize && propertySize <= maxSize)) return
+
+        console.log(`Getting results for ${county}: ${snapshot.val().Id}`)
+        results = [...results, snapshot.val()]
       }))
     )
       .then(() => {
