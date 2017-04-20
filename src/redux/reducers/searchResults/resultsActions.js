@@ -61,8 +61,6 @@ export const fetchResults = (parameters) => (dispatch, getState) => {
 
   ref.orderByChild('Price').endAt(parseInt(filterValues.maxPrice, 10)).on('child_added', snapshot => {
     const property = snapshot.val()
-    matchesSearchCriteria(filterValues, property)
-      ? dispatch(addResult(property))
-      : false
+    if (matchesSearchCriteria(filterValues, property)) dispatch(addResult(property))
   })
 }

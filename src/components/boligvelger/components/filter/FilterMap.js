@@ -19,7 +19,7 @@ const mapStateToProps = state => ({
   minPrice: state.filter.minPrice,
   maxPrice: state.filter.maxPrice,
   minSize: state.filter.minSize,
-  maxSize: state.filter.maxSize.bedroomValues,
+  maxSize: state.filter.maxSize,
   filter: state.filter
 })
 

@@ -6,7 +6,8 @@ import React from 'react'
 import fields from './inputFields'
 import { VelocityTransitionGroup } from 'velocity-react'
 
-export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, selectedBedroomValues, selectedCounties, minPrice, maxPrice, minSize, maxSize, filter,
+export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, selectedBedroomValues,
+  selectedCounties, minPrice, maxPrice, minSize, maxSize, filter,
   handleToggle = f => f, handleChange = f => f, handleReset = f => f, performSearch = f => f }) => (
     <div className='col-xs-4 housing-filter'>
       <ul id='regions-container'>
@@ -57,6 +58,7 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
           <input type='number' placeholder='Til kr'
             value={maxPrice > 0 ? maxPrice : ''}
             onChange={(event) => {
+              console.log(event.target.value)
               handleChange(fields.MAX_PRICE, event.target.value)
               performSearch(filter)
             }}
