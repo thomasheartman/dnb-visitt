@@ -40,7 +40,6 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
             )
             : null}
         </VelocityTransitionGroup>
-
       </ul>
 
       <legend>Pris</legend>
