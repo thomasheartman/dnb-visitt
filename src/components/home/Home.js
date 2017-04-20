@@ -7,7 +7,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import AboutBox from './components/aboutBox/AboutBox'
 import Steps from './components/visitSteps/VisitSteps'
-import { Field } from 'redux-form'
 import MenuItem from 'material-ui/MenuItem'
 import SelectField from 'material-ui/SelectField'
 
@@ -16,13 +15,12 @@ import SelectField from 'material-ui/SelectField'
 // This can be used to override values in the theme
 const styles = {
   customWidth: {
-    width: 500,
+    width: 500
   },
   color: {
     color: '#F67F00' // DNB-orange. As an example
   }
 }
-
 
 export default ({ selectedCounty, allCounties, handleChange = f => f, handleSubmit = f => f }) => (
   <main className='frontpage full-width'>
@@ -34,9 +32,9 @@ export default ({ selectedCounty, allCounties, handleChange = f => f, handleSubm
           <div className='dropdown row center-xs' >
             <SelectField name='dropDownCounty'
               onChange={(event, index, value) => handleChange(value)}
-              hintText={selectedCounty ? selectedCounty : 'Velg et fylke'}
+              hintText={selectedCounty || 'Velg et fylke'}
               style={styles.customWidth}
-              floatingLabelText={selectedCounty ? selectedCounty : 'Velg et fylke'}
+              floatingLabelText={selectedCounty || 'Velg et fylke'}
               floatingLabelStyle={styles.color}
             >
               <MenuItem value={null} primaryText='Vis alle' />
