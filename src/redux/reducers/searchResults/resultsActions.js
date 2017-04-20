@@ -25,27 +25,41 @@ export const fetchResults = (parameters) => (dispatch, getState) => {
 
   console.log('fetching results now')
 
-  if (_.isEmpty(filter.counties)) {
+  if (_.isEmpty(filter)) {
+      let results = []
     db.once('value', snapshot => {
-      dispatch(changeResults(snapshot.val()))
+      results = [...results, snapshot.val()]
     })
+    .then(() => dispatch(changeResults(results)))
   } else {
+
 
     let results = []
     const maxPrice = filter.maxPrice ? filter.maxPrice : Number.MAX_VALUE
     const minPrice = filter.minPrice ? filter.minPrice : 0
     const maxSize = filter.maxSize ? filter.maxSize : Number.MAX_VALUE
     const minSize = filter.minSize ? filter.minSize : 0
+    let numberOfBedrooms = []
+    numberOfBedrooms = filter.numberOfBedrooms.includes('1') ? [...numberOfBedrooms, 1] : numberOfBedrooms
+    numberOfBedrooms = filter.numberOfBedrooms.includes('2') ? [...numberOfBedrooms, 2] : numberOfBedrooms
+    numberOfBedrooms = filter.numberOfBedrooms.includes('3+') ? [...numberOfBedrooms, 3] : numberOfBedrooms
+    const threePlus = filter.numberOfBedrooms.includes('3+')
+
+
 
     Promise.all(
       filter.counties.map(county => db.orderByChild('Fylke').equalTo(county).on('child_added', snapshot => {
 
         const propertyPrice = snapshot.val().Price
-        const propertySize = snapshot.val().Size
+        const propertySize = snapshot.val().SquareMetres
         const propertyBedrooms = snapshot.val().Bedrooms
 
         if (!(minPrice <= propertyPrice && propertyPrice <= maxPrice)) return
+        console.log('Price in range')
         if (!(minSize <= propertySize && propertySize <= maxSize)) return
+        console.log('Size in range')
+/*        if (_.isEmpty(numberOfBedrooms) || !(numberOfBedrooms.includes(propertyBedrooms) || threePlus && propertyBedrooms >= 3)) return
+        console.log('Bedrooms in range')*/
 
         console.log(`Getting results for ${county}: ${snapshot.val().Id}`)
         results = [...results, snapshot.val()]
@@ -57,16 +71,3 @@ export const fetchResults = (parameters) => (dispatch, getState) => {
       })
   }
 }
-
-/* const loadVideosParallel = (counties, callback) => {
-  Promise.all(
-    counties.map(county => {
-      console.log('send request ' + county);
-      return db.child('properties').child(county).equalTo(county).once('value')
-        .then(snapshot => {
-          console.log('got response ' + county);
-          return snapshot;
-        })
-    })
-  ).then(r => callback());
-} */

@@ -19,19 +19,11 @@ const consoleMessages = store => next => action => {
   console.groupCollapsed(`Dispatching action => ${action.type}`)
 
 
-  const property = store.getState().currentProperty.propertyData
+  const filter = store.getState().filter
 
   console.log(`
 
-  Property: ${JSON.stringify(property)}
-
-  Current property state:
-   === === === === ===
-  County: ${property.Fylke}
-  Price: ${property.Price}
-  Size: ${property.SquareMetres}
-  Bedrooms selected: ${property.Bedrooms}
-  Id: ${JSON.stringify(property.Id)}
+  Max size: ${filter.maxSize}
 
 `)
   console.groupEnd()
