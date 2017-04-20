@@ -7,7 +7,9 @@ import { connect } from 'react-redux'
 import Annonse from './BoligAnnonse'
 import { _ } from 'lodash'
 
-const defaultData = {
+
+// NOTE: kept around for structure
+/*const defaultData = {
   Price: 50000000,
   Fellesutgifter: 1340,
   Fellesgjeld: 0,
@@ -26,7 +28,7 @@ const defaultData = {
   AparmentNumber: '4a',
   Poststed: 'Frogner',
   Fylke: 'Oslo'
-}
+}*/
 
 const mapStateToProps = state => {
   const property = state.currentProperty.propertyData
