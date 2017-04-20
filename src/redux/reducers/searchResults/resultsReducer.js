@@ -11,6 +11,7 @@ const fetchingResults = (state = false, action) => {
     case types.FETCH_RESULTS:
       return true
     case types.CANCEL_FETCHING_RESULTS:
+    case types.ADD_RESULT:
     case types.CHANGE_RESULTS:
       return false
     default:
@@ -18,7 +19,17 @@ const fetchingResults = (state = false, action) => {
   }
 }
 
-const results = (state = [], action) => action.type === types.CHANGE_RESULTS ? action.payload : state
+const results = (state = [], action) => {
+  switch (action.type) {
+    case types.CHANGE_RESULTS:
+      return action.payload
+    case types.ADD_RESULT:
+      return [...state, action.payload]
+    default:
+      return state
+  }
+}
+
 
 export default combineReducers({
   fetchingResults,

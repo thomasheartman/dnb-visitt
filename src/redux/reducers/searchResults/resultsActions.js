@@ -11,10 +11,12 @@ export const startFetchingResults = () => ({ type: types.FETCH_RESULTS })
 
 export const cancelFetchingResults = () => ({ type: types.CANCEL_FETCHING_RESULTS })
 
+export const addResult = newResult => ({ type: types.ADD_RESULT, payload: newResult })
+
 export const changeResults = results => ({ type: types.CHANGE_RESULTS, payload: results })
 
 export const fetchResults = (parameters) => (dispatch, getState) => {
-  if (getState().searchResults.fetchingResults) return
+  // if (getState().searchResults.fetchingResults) return
 
   dispatch(startFetchingResults())
 
@@ -62,12 +64,8 @@ export const fetchResults = (parameters) => (dispatch, getState) => {
         console.log('Bedrooms in range')*/
 
         console.log(`Getting results for ${county}: ${snapshot.val().Id}`)
-        results = [...results, snapshot.val()]
+        dispatch(addResult(snapshot.val()))
       }))
     )
-      .then(() => {
-        console.log(`Final results: ${results}`)
-        dispatch(changeResults(results))
-      })
   }
 }
