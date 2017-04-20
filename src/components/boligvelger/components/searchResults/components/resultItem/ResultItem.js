@@ -13,7 +13,6 @@ export default ({ ProjectName, Poststed, HousingType, Bedrooms, Price, image, al
     }}
       onClick={() => fetchProperty(Id)}
     >
-
       <article className='housing-item-container'>
         <div className='housing-item-header row middle-xs'>
           <h2 className='housing-item-title col-xs start-xs'>{ProjectName}</h2>
