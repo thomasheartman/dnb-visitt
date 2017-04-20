@@ -10,21 +10,18 @@ import Annonse from './components/BoligAnnonse.map'
 
 // making this a stateful component so that we can load data on mount.
 class AnnonseWrapper extends React.Component {
-
   componentDidMount () {
     this.props.fetchProperty(this.props.match.params.id)
   }
 
-  render = () => {
+  render () {
     return this.props.fetching
-      ? <h1>Laster innhold</h1> //TODO: put a loader here
+      ? <h1>Laster innhold</h1> // TODO: put a loader here
       : < Annonse />
-
   }
 }
 
-export default AnnonseWrapper;
-
+export default AnnonseWrapper
 
 /*
 

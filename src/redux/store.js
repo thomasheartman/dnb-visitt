@@ -18,7 +18,6 @@ const consoleMessages = store => next => action => {
 
   console.groupCollapsed(`Dispatching action => ${action.type}`)
 
-
   const filter = store.getState().filter
 
   console.log(`

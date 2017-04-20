@@ -12,7 +12,6 @@ export const cancelFetchingProperty = () => ({ type: types.CANCEL_FETCHING_PROPE
 export const changeProperty = (newProperty) => ({ type: types.CHANGE_PROPERTY, payload: newProperty })
 
 export const getProperty = (id) => (dispatch, getState) => {
-
   if (getState().currentProperty.fetchingProperty) return
 
   dispatch(fetchProperty())
@@ -27,5 +26,4 @@ export const getProperty = (id) => (dispatch, getState) => {
     console.log('An error occurred', error)
     dispatch(cancelFetchingProperty())
   })
-
 }

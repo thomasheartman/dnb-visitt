@@ -4,6 +4,7 @@
  */
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
+import { TextField } from 'redux-form-material-ui'
 
 const ContactForm = ({ handleSubmit, input, pristine, submitting, reset }) => (
 
@@ -11,15 +12,12 @@ const ContactForm = ({ handleSubmit, input, pristine, submitting, reset }) => (
     event.preventDefault()
     handleSubmit(values)
   }}>
-    <p>Navn:</p>
-    <Field name='name' type='text' placeholder='Navn Navnesen' component='input' />
-    <p>Nummer:</p>
-    <Field name='number' type='number' placeholder='99900999' component='input' />
-    <p>Email:</p>
-    <Field name='email' type='email' placeholder='meg@eksempel.no' component='input' />
+    <Field name='name' type='text' floatingLabelText='Navn' hintText='Navn Navnesen' component={TextField} /><br />
+    <Field name='number' type='number' floatingLabelText='Nummer' hintText='90909090' component={TextField} /><br />
+    <Field name='email' type='email' floatingLabelText='Epost' hintText='inger.frosland@dnb.no' component={TextField} /><br />
+    <Field name='message' type='text' cols={50} rows={5} floatingLabelText='Din beskjed' hintText='Hva kan vi hjelpe deg med?'
+      multiLine component={TextField} /><br />
 
-    <p>Din beskjed:</p>
-    <Field name='message' type='text' cols='50' rows='5' placeholder='Hva kan vi hjelpe deg med?' component='textarea' />
     <br />
     <input type='submit' value='Send' disabled={pristine || submitting} />
   </form>

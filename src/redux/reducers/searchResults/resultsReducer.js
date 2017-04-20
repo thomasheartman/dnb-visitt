@@ -32,7 +32,6 @@ const results = (state = [], action) => {
   }
 }
 
-
 export default combineReducers({
   fetchingResults,
   results

@@ -23,16 +23,16 @@ const history = createHistory()
 export default () => (
   <Router history={history} onUpdate={() => window.scrollTo(0, 0)}>
     <ScrollToTop>
-    <MasterLayout>
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route path='/om-visitt' component={OmVisitt} />
-        <Route path='/hjelp-og-kontakt' component={HjelpOgKontakt} />
-        <Route path='/boligvelger/annonse/:id' component={AnnonseWrapper} />
-        <Route path='/boligvelger' component={Boligvelger} />
-        <Route path='*' component={Error404} />
-      </Switch>
-    </MasterLayout>
+      <MasterLayout>
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route path='/om-visitt' component={OmVisitt} />
+          <Route path='/hjelp-og-kontakt' component={HjelpOgKontakt} />
+          <Route path='/boligvelger/annonse/:id' component={AnnonseWrapper} />
+          <Route path='/boligvelger' component={Boligvelger} />
+          <Route path='*' component={Error404} />
+        </Switch>
+      </MasterLayout>
     </ScrollToTop>
   </Router>
 )

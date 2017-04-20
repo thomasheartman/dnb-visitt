@@ -23,7 +23,7 @@ const processedResults = (results) => (
 )
 
 const mapDispatchToProps = dispatch => ({
-  getResults() {
+  getResults () {
     dispatch(fetchResults())
   }
 })

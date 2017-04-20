@@ -5,11 +5,9 @@
 
 import { connect } from 'react-redux'
 import Annonse from './BoligAnnonse'
-import { _ } from 'lodash'
-
 
 // NOTE: kept around for structure
-/*const defaultData = {
+/* const defaultData = {
   Price: 50000000,
   Fellesutgifter: 1340,
   Fellesgjeld: 0,
@@ -28,7 +26,7 @@ import { _ } from 'lodash'
   AparmentNumber: '4a',
   Poststed: 'Frogner',
   Fylke: 'Oslo'
-}*/
+} */
 
 const mapStateToProps = state => {
   const property = state.currentProperty.propertyData
@@ -54,7 +52,6 @@ const mapStateToProps = state => {
     Poststed: property.Poststed,
     Fylke: property.Fylke
   })
-
 }
 
 const mapDispatchToProps = (dispatch, getState) => ({

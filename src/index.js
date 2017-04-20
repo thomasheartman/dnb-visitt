@@ -10,6 +10,13 @@ import { render } from 'react-dom'
 import sampleData from './redux/initialState.json'
 import storeFactory from './redux/store'
 import { Provider } from 'react-redux'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import visittTheme from './theme/visittMuiTheme'
+import injectTapEventPlugin from 'react-tap-event-plugin'
+
+// Needed for onTouchTap
+// http://stackoverflow.com/a/34015469/988941
+injectTapEventPlugin()
 
 // initialize the store with some nice data
 const initialState = sampleData
@@ -17,20 +24,20 @@ const store = storeFactory(initialState)
 
 // dispatch any necessary pre-start actions
 
-// Fill list of counties
-/* database.ref('allCounties/').once('value', snapshot => {
-  store.dispatch(setCounties(snapshot.val()))
-})
-*/
+const App = () =>
+  <Provider store={store}>
+    <Routes />
+  </Provider>
 
-// set a couple nice window variables for testing/debug
 window.store = store
 window.React = React
 
+// set a couple nice window variables for testing/debug
+
 // render the app
 render(
-  <Provider store={store}>
-    <Routes />
-  </Provider>,
+  <MuiThemeProvider muiTheme={visittTheme}>
+    <App />
+  </MuiThemeProvider>,
   document.getElementById('root')
 )

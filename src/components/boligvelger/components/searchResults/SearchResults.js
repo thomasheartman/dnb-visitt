@@ -5,14 +5,13 @@
 import React from 'react'
 
 export default class SearchResults extends React.Component {
-  componentWillMount() {
+  componentWillMount () {
     this.props.getResults()
   }
 
-  render() {
-return this.props.fetching
-      ? <h1>Laster innhold</h1> //TODO: put a loader here
+  render () {
+    return this.props.fetching
+      ? <h1>Laster innhold</h1> // TODO: put a loader here
       : this.props.results
   }
 }
-

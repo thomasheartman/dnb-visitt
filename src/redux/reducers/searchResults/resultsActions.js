@@ -5,7 +5,6 @@
 
 import types from './resultsActionTypes'
 import { database } from '../../../firebase/firebase'
-import _ from 'lodash'
 
 export const startFetchingResults = () => ({ type: types.FETCH_RESULTS })
 
@@ -18,7 +17,6 @@ export const changeResults = results => ({ type: types.CHANGE_RESULTS, payload: 
 export const clearResults = () => ({ type: types.CLEAR_RESULTS })
 
 const processFilterValues = (filter) => {
-
   let numberOfBedrooms = []
   numberOfBedrooms = filter.numberOfBedrooms.includes('1') ? [...numberOfBedrooms, 1] : numberOfBedrooms
   numberOfBedrooms = filter.numberOfBedrooms.includes('2') ? [...numberOfBedrooms, 2] : numberOfBedrooms
@@ -51,7 +49,6 @@ const matchesSearchCriteria = (filter, property) => {
 }
 
 export const fetchResults = (parameters) => (dispatch, getState) => {
-
   dispatch(startFetchingResults())
   dispatch(clearResults())
 
