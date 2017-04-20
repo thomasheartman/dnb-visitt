@@ -28,8 +28,8 @@ export default () => (
         <Route exact path='/' component={Home} />
         <Route path='/om-visitt' component={OmVisitt} />
         <Route path='/hjelp-og-kontakt' component={HjelpOgKontakt} />
+        <Route path='/boligvelger/annonse/:id' component={AnnonseWrapper} />
         <Route path='/boligvelger' component={Boligvelger} />
-        <Route path='/annonse/:id' component={AnnonseWrapper} />
         <Route path='*' component={Error404} />
       </Switch>
     </MasterLayout>

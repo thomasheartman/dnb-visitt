@@ -9,7 +9,7 @@ import defaultImage from '../../../../../../media/images/nybygg.jpg'
 export default ({ ProjectName, Poststed, HousingType, Bedrooms, Price, image, altText, Id,
   fetchProperty = f => f }) => (
     <Link to={{
-      pathname: `/annonse/${Id}`,
+      pathname: `boligvelger/annonse/${Id}`,
     }}
     >
       <article className='housing-item-container'>
