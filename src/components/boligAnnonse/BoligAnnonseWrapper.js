@@ -6,18 +6,21 @@
  */
 
 import React from 'react'
+import Annonse from './components/BoligAnnonse.map'
+import { getProperty } from '../../redux/reducers/currentProperty/currentPropertyActions'
 
+// making this a stateful component so that we can load data on mount.
 class AnnonseWrapper extends React.Component {
 
-  render ({ fetching, loading, content, currentContent, match, fetchContent = f => f }) {
-    return (
-      (
-        <div>
-          <button onClick={() => fetchContent(match.params.id)}>Click me to refresh the result!</button>
-          {content}
-        </div>
-      )
-    );
+  componentDidMount () {
+    this.props.dispatch(getProperty(this.props.match.params.id))
+  }
+
+  render = () => {
+    return this.props.fetching
+      ? <h1>Laster innhold</h1> //TODO: put a loader here
+      : < Annonse />
+
   }
 }
 

@@ -11,7 +11,6 @@ export default ({ ProjectName, Poststed, HousingType, Bedrooms, Price, image, al
     <Link to={{
       pathname: `/annonse/${Id}`,
     }}
-      onClick={() => fetchProperty(Id)}
     >
       <article className='housing-item-container'>
         <div className='housing-item-header row middle-xs'>

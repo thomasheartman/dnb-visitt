@@ -33,7 +33,13 @@ export default ({
   StreetName = 'Gabels gate',
   ApartmentNumber = '4a',
   Poststed = 'Frogner',
-  Fylke = 'Oslo'  }) => (
+  Fylke = 'Oslo' }) => (
+
+    <div>
+
+
+
+
     <main className='housing-ad-main'>
       <div className='row'>
         <section className='col-xs-12'>
@@ -167,4 +173,5 @@ export default ({
       </div>
 
     </main>
+    </div>
   )

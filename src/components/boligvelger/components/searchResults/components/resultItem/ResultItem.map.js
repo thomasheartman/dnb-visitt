@@ -10,10 +10,5 @@ const mapStateToProps = state => ({
 
 })
 
-const mapDispatchToProps = dispatch => ({
-  fetchProperty (id) {
-    dispatch(getProperty(id))
-  }
-})
 
-export default connect(mapStateToProps, mapDispatchToProps)(Result)
+export default connect(mapStateToProps)(Result)
