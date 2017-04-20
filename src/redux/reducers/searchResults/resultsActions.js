@@ -15,53 +15,54 @@ export const addResult = newResult => ({ type: types.ADD_RESULT, payload: newRes
 
 export const changeResults = results => ({ type: types.CHANGE_RESULTS, payload: results })
 
+export const clearResults = () => ({ type: types.CLEAR_RESULTS })
+
+const processFilterValues = (filter) => {
+
+  let numberOfBedrooms = []
+  numberOfBedrooms = filter.numberOfBedrooms.includes('1') ? [...numberOfBedrooms, 1] : numberOfBedrooms
+  numberOfBedrooms = filter.numberOfBedrooms.includes('2') ? [...numberOfBedrooms, 2] : numberOfBedrooms
+  numberOfBedrooms = filter.numberOfBedrooms.includes('3+') ? [...numberOfBedrooms, 3] : numberOfBedrooms
+
+  return {
+    counties: filter.counties ? filter.counties : [],
+    maxPrice: filter.maxPrice ? filter.maxPrice : Number.MAX_SAFE_INTEGER,
+    minPrice: filter.minPrice ? filter.minPrice : 0,
+    maxSize: filter.maxSize ? filter.maxSize : Number.MAX_SAFE_INTEGER,
+    minSize: filter.minSize ? filter.minSize : 0,
+    numberOfBedrooms,
+    threePlus: filter.numberOfBedrooms.includes('3+')
+  }
+}
+
+const matchesSearchCriteria = (filter, property) => {
+  const propertyPrice = property.Price
+  const propertySize = property.SquareMetres
+  const propertyBedrooms = property.Bedrooms
+
+  if (filter.counties.length > 0 && !filter.counties.includes(property.Fylke)) return false
+  if (filter.minPrice > propertyPrice) return false
+  if (filter.minSize > propertySize || propertySize > filter.maxSize) return false
+  if (filter.numberOfBedrooms.length > 0 && !filter.numberOfBedrooms.includes(propertyBedrooms)) {
+    if (property.Bedrooms < 3) return false
+    if (!filter.threePlus && property.Bedrooms >= 3) return false
+  }
+  return true
+}
+
 export const fetchResults = (parameters) => (dispatch, getState) => {
-  // if (getState().searchResults.fetchingResults) return
 
   dispatch(startFetchingResults())
+  dispatch(clearResults())
 
+  const ref = database.ref('properties')
   const filter = getState().filter
+  const filterValues = processFilterValues(filter)
 
-  const db = database.ref('properties')
-
-  console.log('fetching results now')
-
-  if (_.isEmpty(filter.counties)) {
-      let results = []
-      db.once('value', snapshot => {
-      results = snapshot.val()
-    })
-    .then(() => dispatch(changeResults(results)))
-  } else {
-
-    let results = []
-    const maxPrice = filter.maxPrice ? filter.maxPrice : Number.MAX_VALUE
-    const minPrice = filter.minPrice ? filter.minPrice : 0
-    const maxSize = filter.maxSize ? filter.maxSize : Number.MAX_VALUE
-    const minSize = filter.minSize ? filter.minSize : 0
-    let numberOfBedrooms = []
-    numberOfBedrooms = filter.numberOfBedrooms.includes('1') ? [...numberOfBedrooms, 1] : numberOfBedrooms
-    numberOfBedrooms = filter.numberOfBedrooms.includes('2') ? [...numberOfBedrooms, 2] : numberOfBedrooms
-    numberOfBedrooms = filter.numberOfBedrooms.includes('3+') ? [...numberOfBedrooms, 3] : numberOfBedrooms
-    const threePlus = filter.numberOfBedrooms.includes('3+')
-
-    Promise.all(
-      filter.counties.map(county => db.orderByChild('Fylke').equalTo(county).on('child_added', snapshot => {
-
-        const propertyPrice = snapshot.val().Price
-        const propertySize = snapshot.val().SquareMetres
-        const propertyBedrooms = snapshot.val().Bedrooms
-
-        if (!(minPrice <= propertyPrice && propertyPrice <= maxPrice)) return
-        console.log('Price in range')
-        if (!(minSize <= propertySize && propertySize <= maxSize)) return
-        console.log('Size in range')
-        if (_.isEmpty(numberOfBedrooms) || !(numberOfBedrooms.includes(propertyBedrooms) || (threePlus && propertyBedrooms >= 3))) return
-        console.log('Bedrooms in range')
-
-        console.log(`Getting results for ${county}: ${snapshot.val().Id}`)
-        dispatch(addResult(snapshot.val()))
-      }))
-    )
-  }
+  ref.orderByChild('Price').endAt(parseInt(filterValues.maxPrice, 10)).on('child_added', snapshot => {
+    const property = snapshot.val()
+    matchesSearchCriteria(filterValues, property)
+      ? dispatch(addResult(property))
+      : false
+  })
 }

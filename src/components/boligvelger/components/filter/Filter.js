@@ -47,14 +47,19 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
         <li className='filter-item'>
           <input type='number' placeholder='Fra kr'
             value={minPrice > 0 ? minPrice : ''}
-            onChange={(event) => handleChange(fields.MIN_PRICE, event.target.value)}
+            onChange={(event) => {
+              handleChange(fields.MIN_PRICE, event.target.value)
+              performSearch(filter)
+            }}
             onBlur={() => performSearch(filter)}
           />
 
           <input type='number' placeholder='Til kr'
             value={maxPrice > 0 ? maxPrice : ''}
-            onChange={(event) => handleChange(fields.MAX_PRICE, event.target.value)}
-            onBlur={() => performSearch(filter)}
+            onChange={(event) => {
+              handleChange(fields.MAX_PRICE, event.target.value)
+              performSearch(filter)
+            }}
           />
         </li>
       </ul>
@@ -64,11 +69,17 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
         <li className='filter-item'>
           <input type='number' placeholder='Fra kvm'
             value={minSize > 0 ? minSize : ''}
-            onChange={(event) => handleChange(fields.MIN_SIZE, event.target.value)}
+            onChange={(event) => {
+              handleChange(fields.MIN_SIZE, event.target.value)
+              performSearch(filter)
+            }}
             onBlur={() => performSearch(filter)}
           />
           <input type='number' placeholder='Til kvm' value={maxSize > 0 ? maxSize : ''}
-            onChange={(event) => handleChange(fields.MAX_SIZE, event.target.value)}
+            onChange={(event) => {
+              handleChange(fields.MAX_SIZE, event.target.value)
+              performSearch(filter)
+            }}
             onBlur={() => performSearch(filter)}
           />
         </li>

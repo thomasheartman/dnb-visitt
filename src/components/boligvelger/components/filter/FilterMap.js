@@ -57,9 +57,6 @@ const mapDispatchToProps = dispatch => ({
         break
     }
   },
-  handleBlur () {
-    console.log('Handling blur. Searching …')
-  },
   performSearch (filter) {
     dispatch(fetchResults(filter))
   },

@@ -25,6 +25,8 @@ const results = (state = [], action) => {
       return action.payload
     case types.ADD_RESULT:
       return [...state, action.payload]
+    case types.CLEAR_RESULTS:
+      return []
     default:
       return state
   }
