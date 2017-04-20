@@ -7,12 +7,22 @@
 
 import React from 'react'
 
-export default ({ fetching, loading, content, currentContent, match, fetchContent = f => f }) => (
-  <div>
-    <button onClick={() => fetchContent(match.params.id)}>Click me to refresh the result!</button>
-    {content}
-</div>
-)
+class AnnonseWrapper extends React.Component {
+
+  render ({ fetching, loading, content, currentContent, match, fetchContent = f => f }) {
+    return (
+      (
+        <div>
+          <button onClick={() => fetchContent(match.params.id)}>Click me to refresh the result!</button>
+          {content}
+        </div>
+      )
+    );
+  }
+}
+
+export default AnnonseWrapper;
+
 
 /*
 
