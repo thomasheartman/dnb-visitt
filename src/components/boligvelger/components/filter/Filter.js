@@ -5,6 +5,8 @@
 import React from 'react'
 import fields from './inputFields'
 import { VelocityTransitionGroup } from 'velocity-react'
+import Checkbox from 'material-ui/Checkbox'
+import TextField from 'material-ui/TextField'
 
 export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, selectedBedroomValues,
   selectedCounties, minPrice, maxPrice, minSize, maxSize, filter,
@@ -15,27 +17,25 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
 
         {initialCounties.map((county) =>
           <li className='filter-item' key={county}>
-            <input type='checkbox' className='regionItem' value={county}
+            <Checkbox className='regionItem' label={county}
               checked={selectedCounties.includes(county)}
-              onChange={() => {
+              onCheck={() => {
                 handleChange(selectedCounties.includes(county) ? fields.REMOVE_COUNTY : fields.ADD_COUNTY, county)
                 performSearch()
               }} />
-            <label htmlFor='location'>{county}</label>
           </li>
         )}
         <VelocityTransitionGroup component='div' enter='slideDown' leave='slideUp'>
           {showAll
             ? hiddenCounties.map((county) =>
               <li className='filter-item' key={county}>
-                <input type='checkbox' className='regionItem' value={county}
+                <Checkbox className='regionItem' label={county}
                   checked={selectedCounties.includes(county)}
                   onChange={() => {
                     handleChange(selectedCounties.includes(county) ? fields.REMOVE_COUNTY : fields.ADD_COUNTY, county)
                     performSearch()
                   }}
                 />
-                <label htmlFor='location'>{county}</label>
               </li>
             )
             : null}
@@ -45,7 +45,7 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
       <legend>Pris</legend>
       <ul>
         <li className='filter-item'>
-          <input type='number' placeholder='Fra kr'
+          <TextField type='number' placeholder='Fra kr'
             value={minPrice > 0 ? minPrice : ''}
             onChange={(event) => {
               handleChange(fields.MIN_PRICE, event.target.value)
@@ -54,7 +54,7 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
             onBlur={() => performSearch(filter)}
           />
 
-          <input type='number' placeholder='Til kr'
+          <TextField type='number' placeholder='Til kr'
             value={maxPrice > 0 ? maxPrice : ''}
             onChange={(event) => {
               console.log(event.target.value)
@@ -68,7 +68,7 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
       <legend>Areal</legend>
       <ul>
         <li className='filter-item'>
-          <input type='number' placeholder='Fra kvm'
+          <TextField type='number' placeholder='Fra kvm'
             value={minSize > 0 ? minSize : ''}
             onChange={(event) => {
               handleChange(fields.MIN_SIZE, event.target.value)
@@ -76,7 +76,7 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
             }}
             onBlur={() => performSearch(filter)}
           />
-          <input type='number' placeholder='Til kvm' value={maxSize > 0 ? maxSize : ''}
+          <TextField type='number' placeholder='Til kvm' value={maxSize > 0 ? maxSize : ''}
             onChange={(event) => {
               handleChange(fields.MAX_SIZE, event.target.value)
               performSearch(filter)
@@ -90,17 +90,17 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
       <ul>
         {allBedroomValues.map((entry) =>
           <li className='filter-item' key={entry}>
-            <input type='checkbox' value={entry}
+            <Checkbox value={entry}
+              label={entry}
               checked={selectedBedroomValues.includes(entry)}
-              onChange={() => {
+              onCheck={() => {
                 handleChange(selectedBedroomValues.includes(entry)
-                ? fields.REMOVE_BEDROOM_OPTION
-                : fields.ADD_BEDROOM_OPTION,
-                entry)
+                  ? fields.REMOVE_BEDROOM_OPTION
+                  : fields.ADD_BEDROOM_OPTION,
+                  entry)
                 performSearch()
               }}
             />
-            <label htmlFor={entry}>{entry}</label>
           </li>
         )}
       </ul>

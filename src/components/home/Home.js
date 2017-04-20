@@ -7,9 +7,22 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import AboutBox from './components/aboutBox/AboutBox'
 import Steps from './components/visitSteps/VisitSteps'
-import {Field} from 'redux-form'
+import { Field } from 'redux-form'
 import MenuItem from 'material-ui/MenuItem'
 import SelectField from 'material-ui/SelectField'
+
+// TODO: Create a line break between dropdown and button
+
+// This can be used to override values in the theme
+const styles = {
+  customWidth: {
+    width: 500,
+  },
+  color: {
+    color: '#F67F00' // DNB-orange. As an example
+  }
+}
+
 
 export default ({ selectedCounty, allCounties, handleChange = f => f, handleSubmit = f => f }) => (
   <main className='frontpage full-width'>
@@ -19,18 +32,23 @@ export default ({ selectedCounty, allCounties, handleChange = f => f, handleSubm
         <div className='col-xs-12 center-xs'>
           <h1 className='title-heading'>Hvor ønsker du å bo?</h1>
           <div className='dropdown row center-xs' >
-            <SelectField name='dropDownCounty' onChange={(event) => handleChange(event.target.value)} hintText='Velg et fylke'>
-            <MenuItem value='' primaryText='Vis alle'/>
-            </SelectField>
-            <select onChange={(event) => handleChange(event.target.value)}>
-              <option value='' >VIS ALLE</option>
+            <SelectField name='dropDownCounty'
+              onChange={(event, index, value) => handleChange(value)}
+              hintText={selectedCounty ? selectedCounty : 'Velg et fylke'}
+              style={styles.customWidth}
+              floatingLabelText={selectedCounty ? selectedCounty : 'Velg et fylke'}
+              floatingLabelStyle={styles.color}
+            >
+              <MenuItem value={null} primaryText='Vis alle' />
               {allCounties.map((county) =>
-                <option value={county} key={county}>{county}</option>
+                <MenuItem value={county} key={county} primaryText={county} />
               )}
-            </select><br />
-            <Link to='/boligvelger'onClick={() => handleSubmit(selectedCounty)}>
+            </SelectField>
+            <br />
+            <Link to='/boligvelger' onClick={() => handleSubmit(selectedCounty)}>
               <input type='submit' value='Søk' />
-            </Link></div>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

@@ -32,7 +32,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 export default getMuiTheme({
   palette: {
     primary1Color: '#097C84', // DNB-green
-    primary2Color: '#F67F00' // DBB-orange
+    primary2Color: '#F67F00', // DNB-orange
   },
   appBar: { // NOTE: we're not actually using this, but it shows you can style individual components
     height: 50

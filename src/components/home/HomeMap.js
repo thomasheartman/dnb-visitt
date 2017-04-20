@@ -15,6 +15,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   handleChange (value) {
+    console.log(value)
     dispatch(setDropDownCounty(value))
   },
   handleSubmit (value) {
