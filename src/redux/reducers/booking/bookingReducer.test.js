@@ -5,15 +5,12 @@
  * Test file for booking reducer
  */
 
-// TODO: fill in
 import {
-	database
+  database
 } from '../../../firebase/firebase'
 import reducer from './bookingReducer'
 import types from './bookingActionTypes'
 
-it('should pass an arbitrary test', () => {
-	const ref = database.ref('appointments')
 const initialState = {
   'date': '',
   'time': '',
@@ -31,8 +28,33 @@ it('should pass an arbitrary test', () => {
   ref.on('child_added', snapshot => {
     console.log(snapshot.val())
   })
-		// done()
+  // done()
 })
+
+it('should add an entry to the database', (done) => {
+  const branch1 = {
+      '20171224': {
+        '0900': {
+          'name': 'Jan Jonas Johansen',
+          'email': 'jjj@mememe.com'
+      }
+    }
+  }
+
+  const ref = database.ref('appointments')
+
+  ref.once('value', snapshot => {
+
+    ref.set({
+      branch1
+    })
+
+  }).then(
+    setTimeout(() => done(), 2000)
+    )
+
+})
+
 
 it('should set the email address', () => {
   const payload = 'me@example.com'
@@ -54,7 +76,7 @@ it('should set the email address', () => {
 })
 
 it('should change the client name', () => {
-  const payload = 'me@example.com'
+  const payload = 'Jan Johansen'
 
   const expectedState = {
     'date': '',
@@ -74,7 +96,7 @@ it('should change the client name', () => {
 })
 
 it('should set the time', () => {
-  const payload = 'me@example.com'
+  const payload = '0900'
 
   const expectedState = {
     'date': '',
@@ -93,7 +115,7 @@ it('should set the time', () => {
 })
 
 it('should set the date', () => {
-  const payload = 'me@example.com'
+  const payload = '2017/04/22'
 
   const expectedState = {
     'date': payload,
@@ -111,7 +133,10 @@ it('should set the date', () => {
 })
 
 it('should change the property', () => {
-  const payload = 'me@example.com'
+  const payload = {
+    id: 1,
+    address: 'Some street 22b'
+  }
 
   const expectedState = {
     'date': '',
@@ -120,31 +145,9 @@ it('should change the property', () => {
       'name': '',
       'email': ''
     },
-    'property': {
-      payload
-    }
+    'property': payload
   }
   expect(
     reducer(initialState, ({ type: types.SELECT_PROPERTY, payload: payload })))
-    .toEqual(false)
-})
-
-
-it('should pass an arbitrary test', (done) => {
-	const date = "2017_04_23"
-
-	const ref = database.ref('appointments')
-
-	ref.on('child_added', snapshot => {
-		if (snapshot.val().date !== date) {
-			const post = ref.push()
-			ref.set({
-				date
-			})
-			console.log($(date.val()) + "has been booked.")
-		}
-		else {
-			console.log("The selected date is not available.")
-		}
-	})
+    .toEqual(expectedState)
 })
