@@ -32,7 +32,7 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
               <li className='filter-item' key={county}>
                 <Checkbox className='regionItem' label={county}
                   checked={selectedCounties.includes(county)}
-                  onChange={() => {
+                  onCheck={() => {
                     handleChange(selectedCounties.includes(county) ? fields.REMOVE_COUNTY : fields.ADD_COUNTY, county)
                     performSearch()
                   }}
