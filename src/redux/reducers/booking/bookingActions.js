@@ -8,14 +8,14 @@ import {
 } from '../../../firebase/firebase'
 
 const bookAvailableDate = (date) => {
-	const ref = database.ref('appointments')
+  const ref = database.ref('appointments')
 
-	ref.on('child_Added', snapshot => {
-		if (appointments.date === false) {
-			const post = ref.push()
-			ref.set({
-				date
-			})
-		}
-	})
+  ref.on('child_Added', snapshot => {
+    if (appointments.date === false) {
+      const post = ref.push()
+      ref.set({
+        date
+      })
+    }
+  })
 }

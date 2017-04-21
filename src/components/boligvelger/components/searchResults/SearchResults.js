@@ -12,7 +12,7 @@ export default class SearchResults extends React.Component {
 
   render () {
     return this.props.fetching
-      ? <Spinner/>
+      ? <Spinner />
       : this.props.results
   }
 }

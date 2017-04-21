@@ -21,28 +21,15 @@
     "propertyData": {}
   },
 
+  "booking": {
+    "date": "",
+    "time": "",
+    "client": {
+      "name": "",
+      "email": ""
+    },
+    "property": {
 
-  "counties": [
-    "OSLO",
-    "AKERSHUS",
-    "ØSTFOLD",
-    "TELEMARK",
-    "ROGALAND",
-    "VEST-AGDER",
-    "AUST-AGDER",
-    "HORDALAND",
-    "SOGN OG FJORDANE",
-    "MØRE OG ROMSDAL",
-    "SØR-TRØNDELAG",
-    "NORD-TRØNDELAG",
-    "NORDLAND",
-    "HEDMARK",
-    "OPPLAND",
-    "BUSKERUD",
-    "VESTFOLD",
-    "JAN MAYEN",
-    "TROMS",
-    "SVALBARD",
-    "FINNMARK"
-  ]
+    }
+  }
 }

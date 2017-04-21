@@ -11,4 +11,4 @@ import CircularProgress from 'material-ui/CircularProgress'
 
 export const LoadingBar = () => (<LinearProgress />)
 
-export const Spinner = () => (<CircularProgress size={300}/>)
+export const Spinner = () => (<CircularProgress size={300} />)

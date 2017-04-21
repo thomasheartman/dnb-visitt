@@ -9,7 +9,6 @@ import React from 'react'
 import Annonse from './components/BoligAnnonse.map'
 import { Spinner } from '../loadingIndicators/Loading'
 
-
 // making this a stateful component so that we can load data on mount.
 class AnnonseWrapper extends React.Component {
   componentDidMount () {
@@ -18,7 +17,7 @@ class AnnonseWrapper extends React.Component {
 
   render () {
     return this.props.fetching
-      ? <Spinner/>
+      ? <Spinner />
       : < Annonse />
   }
 }

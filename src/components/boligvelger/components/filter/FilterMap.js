@@ -7,12 +7,13 @@ import { connect } from 'react-redux'
 import { addCounty, removeCounty, setMaxPrice, setMinPrice, setMaxSize, setMinSize, addBedroomOption, removeBedroomOption, clearFilter } from '../../../../redux/reducers/filter/filterActions'
 import { toggleFilter } from '../../../../redux/reducers/filterUi/filterUiActions'
 import { fetchResults } from '../../../../redux/reducers/searchResults/resultsActions'
-import fields, {allBedroomValues} from './inputFields'
+import fields, { allBedroomValues } from './inputFields'
+import counties from '../../../../redux/counties'
 
 const mapStateToProps = state => ({
   showAll: state.showAllCounties,
-  initialCounties: state.counties.slice(0, 4),
-  hiddenCounties: state.counties.slice(4),
+  initialCounties: counties.slice(0, 4),
+  hiddenCounties: counties.slice(4),
   allBedroomValues: allBedroomValues,
   selectedBedroomValues: state.filter.numberOfBedrooms,
   selectedCounties: state.filter.counties,

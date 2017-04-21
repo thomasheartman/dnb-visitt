@@ -7,10 +7,11 @@ import { connect } from 'react-redux'
 import { setDropDownCounty } from '../../redux/reducers/dropDownCounty/dropDownCountyActions'
 import { setCounty, clearCounties } from '../../redux/reducers/filter/filterActions'
 import { fetchResults } from '../../redux/reducers/searchResults/resultsActions'
+import counties from '../../redux/counties'
 
 const mapStateToProps = state => ({
   selectedCounty: state.dropDownCounty,
-  allCounties: state.counties
+  allCounties: counties
 })
 
 const mapDispatchToProps = dispatch => ({

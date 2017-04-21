@@ -7,17 +7,14 @@ import { Link } from 'react-router-dom'
 import { getHousingIcon } from '../../../../../../media/icons'
 import { getHousingImage } from './media/defaultThumbnails'
 
-
 class ResultItem extends React.Component {
-
   render () {
     const { id, price, poststed, streetName, streetNumber, bedrooms, housingType } = this.props
 
     return (
       < Link to={{
         pathname: `boligvelger/annonse/${id}`
-      }
-      }
+      }}
       >
         <article className='row housing-item-container'>
           <div className='col-xs-12 col-sm-6 full-width housing-item-image'>
@@ -31,7 +28,7 @@ class ResultItem extends React.Component {
             <h2 className='housing-item-title'>{streetName} {streetNumber}</h2>
             <p className='housing-item-rooms'>Soverom: {bedrooms}</p>
             <p className='housing-item-price'>Pris fra: {price.toLocaleString()}</p>
-            <div className="row housing-item-type-container">
+            <div className='row housing-item-type-container'>
               <p className='housing-item-type'><img src={getHousingIcon(housingType)} alt={housingType} /> {housingType}</p>
             </div>
           </div>
@@ -42,4 +39,3 @@ class ResultItem extends React.Component {
 }
 
 export default ResultItem
-

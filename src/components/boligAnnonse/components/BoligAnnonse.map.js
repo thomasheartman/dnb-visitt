@@ -32,7 +32,6 @@ const mapStateToProps = state => {
   const property = state.currentProperty.propertyData
   if (!property) return
 
-
   return ({
     price: property.price,
     commonCosts: property.commonCosts,
