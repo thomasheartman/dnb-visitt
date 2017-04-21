@@ -18,9 +18,11 @@ export const clearResults = () => ({ type: types.CLEAR_RESULTS })
 
 const arrayToLowerCase = (array) => {
   let result = []
-  array.map((item) => {
+  array.forEach((item) => {
+    console.log(item)
     result = [...result, item.toLowerCase()]
   })
+  console.log(result)
   return result
 }
 
@@ -46,7 +48,7 @@ const matchesSearchCriteria = (filter, property) => {
   const propertySize = property.grossArea
   const propertyBedrooms = property.bedrooms
 
-  if (filter.counties.length > 0 && !filter.counties.includes(property.county)) return false
+  if (filter.counties.length > 0 && !filter.counties.includes(property.Fylke)) return false
   if (filter.minPrice > propertyPrice) return false
   if (filter.minSize > propertySize || propertySize > filter.maxSize) return false
   if (filter.numberOfBedrooms.length > 0 && !filter.numberOfBedrooms.includes(propertyBedrooms)) {
