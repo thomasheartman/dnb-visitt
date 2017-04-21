@@ -4,7 +4,7 @@
  */
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
-import { TextField, DatePicker, TimePicker} from 'redux-form-material-ui'
+import { TextField, DatePicker} from 'redux-form-material-ui'
 
 
 
@@ -14,7 +14,7 @@ const ContactForm = ({ handleSubmit, input, pristine, submitting, reset }) => (
     event.preventDefault()
     handleSubmit(values)
   }}>
-    <Field name='DatePicker' mode="landscape" floatingLabelText='Velg dato' hintText='Velg dato' component={DatePicker}/>
+    <Field name='DatePicker' mode="landscape" floatingLabelText='Velg dato' hintText='Velg dato' component={DatePicker} format={null}/>
     <Field name='name' type='text' floatingLabelText='Navn' hintText='Fornavn Etternavn' component={TextField} />
     <Field name='number' type='number' floatingLabelText='Nummer' hintText='Telefonnummer' component={TextField} />
     <Field name='email' type='email' floatingLabelText='Epost' hintText='Epost' component={TextField} />

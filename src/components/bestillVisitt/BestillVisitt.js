@@ -4,7 +4,7 @@
  */
 import React from 'react'
 import Form from './components/form/ContactForm'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 export default () => (
   <div>
@@ -12,7 +12,6 @@ export default () => (
         <div className="row">
             <div className="col-xs">
                 <h2>Bestill Visitt</h2>
-
             </div>
         </div>
         <div className="row reservation-container">
@@ -23,7 +22,7 @@ export default () => (
             <div className="col-xs-12 col-sm-6 reserved-house-container">
                 <p>Valgt bolig:</p>
                 <h2>StreetName StreetNumber</h2>
-                <img href="/"/>
+                <img href="/" role="presentation"/>
             </div>
         </div>
     </main>
