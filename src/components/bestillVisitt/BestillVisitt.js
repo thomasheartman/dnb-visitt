@@ -1,6 +1,6 @@
 /*
- * Created by Thomas Hartmann
- * Help and contact page
+ * Created by Nikolai Nergård
+ * Reserve time slot to Visit page
  */
 import React from 'react'
 import Form from './components/form/ContactForm'
