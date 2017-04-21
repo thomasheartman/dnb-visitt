@@ -6,6 +6,15 @@
  */
 
 // TODO: fill in
-it('should pass an arbitrary test', () => {
-  expect(true).toEqual(true)
+import {
+	database
+} from '../../../firebase/firebase'
+
+it('should pass an arbitrary test', (done) => {
+	const ref = database.ref('appointments')
+
+	ref.on('child_added', snapshot => {
+			console.log(snapshot.val())
+		})
+		//done()
 })
