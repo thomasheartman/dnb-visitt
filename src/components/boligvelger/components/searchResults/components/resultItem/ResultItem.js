@@ -11,7 +11,7 @@ import { getHousingImage } from './media/defaultThumbnails'
 class ResultItem extends React.Component {
 
   render () {
-    const { Id, ProjectName, Price, Poststed, StreetName, StreetNumber, Bedrooms, HousingType } = this.props
+    const { Id, Price, Poststed, StreetName, StreetNumber, Bedrooms, HousingType } = this.props
 
     return (
       < Link to={{
