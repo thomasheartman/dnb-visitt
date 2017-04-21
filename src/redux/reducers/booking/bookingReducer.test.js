@@ -23,33 +23,31 @@ const initialState = {
 }
 
 it('should pass an arbitrary test', () => {
-  const ref = database.ref('appointments')
+  const ref = database.ref('appointments/branch2/20170505')
 
   ref.on('child_added', snapshot => {
-    console.log(snapshot.val())
+    console.log(`${snapshot.key}:  ${JSON.stringify(snapshot.val())}`)
   })
   // done()
 })
 
 it('should add an entry to the database', (done) => {
-  const branch1 = {
-      '20171224': {
-        '0900': {
-          'name': 'Jan Jonas Johansen',
-          'email': 'jjj@mememe.com'
-      }
-    }
+  const payload = {
+    'name': 'Ingrid Frøsland',
+    'email': 'taking_you_with_me@lipa.ac.uk'
   }
 
-  const ref = database.ref('appointments')
+  const ref = database.ref('appointments/branch2/20170505/1300')
 
-  ref.once('value', snapshot => {
-
-    ref.set({
-      branch1
-    })
-
-  }).then(
+  ref.once('value')
+    .then(snapshot => {
+      if (snapshot.val() !== null) {
+        console.log('No vacancy')
+        return false
+      }
+      console.log(`Setting data: ${JSON.stringify(snapshot.val())}`)
+      ref.set(payload)
+    }).then(
     setTimeout(() => done(), 2000)
     )
 
