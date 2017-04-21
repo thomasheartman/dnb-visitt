@@ -15,27 +15,13 @@ import lekeplass from './media/lekeplass.jpg'
 import trinn5alm from './media/Trinn-5-alm.jpg'
 import vardevei from './media/vardevei.jpg'
 
-export default ({
-  price = 50000000,
-  commonCosts = 1340,
-  sharedDebt = 0,
-  grossArea = 90,
-  netLivingSpace = 85,
-  entryFloor = 1,
-  floors = 1,
-  numberOfRooms = 4,
-  bedrooms = 3,
-  energyRating = 'C',
-  streetNumber = '29',
-  projectConstructionStart = '30.06.2017',
-  projectConstructionFinalized = '30.03.2018',
-  streetName = 'Gabels gate',
-  apartmentNumber = '4a',
-  zipLocation = 'Frogner',
-  county = 'Oslo' }) => (
+export default ({ price, commonCosts, sharedDebt, grossArea,
+  netLivingSpace, entryFloor, floors, numberOfRooms, bedrooms,
+  energyRating, streetNumber, projectConstructionStart, projectConstructionFinalized,
+  streetName, apartmentNumber, zipLocation, county, property,
+  handleSelectProperty = f => f }) => (
 
     <div>
-
       <main className='housing-ad-main'>
         <div className='row'>
           <section className='col-xs-12'>
@@ -56,7 +42,7 @@ export default ({
                   <Link to='#presentation'>Presentasjon</Link>
                 </li>
                 <li>
-                  <Link to='/bestill-visitt'>Bestill Visitt</Link>
+                  <Link to='/bestill-visitt' onClick={() => handleSelectProperty(property)}>Bestill Visitt</Link>
                 </li>
               </ul>
             </nav>

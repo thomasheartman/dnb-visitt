@@ -3,23 +3,8 @@
  * Actions for user bookings
  */
 
-import {
-	database
-} from '../../../firebase/firebase'
+import { database } from '../../../firebase/firebase'
+import types from './bookingActionTypes'
+import { browserHistory } from 'react-router'
 
-const bookAvailableDate = (date) => {
-  const ref = database.ref('appointments')
-
-	ref.on('child_Added', snapshot => {
-		if (appointments.date === false) {
-			const post = ref.push()
-			ref.set({
-				date
-			})
-			console.log($(date.val()) + "has been booked.")
-		}
-		else {
-			console.log("The selected date is not available.")
-		}
-	})
-}
+export const selectProperty = (property) => ({ type: types.SELECT_PROPERTY, payload: property })

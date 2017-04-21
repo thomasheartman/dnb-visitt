@@ -18,18 +18,16 @@ const consoleMessages = store => next => action => {
 
   console.groupCollapsed(`Dispatching action => ${action.type}`)
 
-  const filter = store.getState().filter
+  const booking = store.getState().booking
 
   console.log(`
 
-    Current filter state:
+    Current booking state:
    === === === === ===
-  Counties: ${filter.counties}
-  Min price: ${filter.minPrice}
-  Max price: ${filter.maxPrice}
-  Min size: ${filter.minSize}
-  Max size: ${filter.maxSize}
-  Bedrooms selected: ${filter.numberOfBedrooms}
+  Client: ${JSON.stringify(booking.client)}
+  Property: ${JSON.stringify(booking.property)}
+  Time: ${booking.time}
+  Date: ${booking.date}
 
 
 `)

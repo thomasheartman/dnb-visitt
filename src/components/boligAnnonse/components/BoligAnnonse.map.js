@@ -5,35 +5,14 @@
 
 import { connect } from 'react-redux'
 import Annonse from './BoligAnnonse'
-
-// NOTE: kept around for structure
-/* const defaultData = {
-  Price: 50000000,
-  Fellesutgifter: 1340,
-  Fellesgjeld: 0,
-  BRA: 90,
-  PRom: 85,
-  SquareMetres: 5000,
-  Inngangsetasje: 1,
-  AntallPlan: 1,
-  AntallRom: 4,
-  Bedrooms: 3,
-  EnergyRating: 'C',
-  StreetNumber: '29',
-  Byggestart: '30.06.2017',
-  Ferdigstillelse: '30.03.2018',
-  StreetName: 'Gabels Gate',
-  AparmentNumber: '4a',
-  Poststed: 'Frogner',
-  Fylke: 'Oslo'
-} */
+import { selectProperty } from '../../../redux/reducers/booking/bookingActions'
 
 const mapStateToProps = state => {
   const property = state.currentProperty.propertyData
   if (!property) return
 
   return ({
-    price: property.price,
+    price: property.price || 50,
     commonCosts: property.commonCosts,
     sharedDebt: property.sharedDebt,
     grossArea: property.grossArea,
@@ -49,12 +28,15 @@ const mapStateToProps = state => {
     streetName: property.streetName,
     apartmentNumber: property.apartmentNumber,
     zipLocation: property.zipLocation,
-    county: property.county
+    county: property.county,
+    property: property
   })
 }
 
-const mapDispatchToProps = (dispatch, getState) => ({
-  // TODO: map dispatch
+const mapDispatchToProps = (dispatch) => ({
+  handleSelectProperty (property) {
+    dispatch(selectProperty(property))
+  }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Annonse)
