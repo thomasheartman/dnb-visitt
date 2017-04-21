@@ -45,7 +45,7 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
       <legend>Pris</legend>
       <ul>
         <li className='filter-item'>
-          <TextField type='number' placeholder='Fra kr'
+          <TextField name='minPrice' type='number' placeholder='Fra kr'
             value={minPrice > 0 ? minPrice : ''}
             onChange={(event) => {
               handleChange(fields.MIN_PRICE, event.target.value)
@@ -54,7 +54,7 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
             onBlur={() => performSearch(filter)}
           />
 
-          <TextField type='number' placeholder='Til kr'
+          <TextField name='maxPrice' type='number' placeholder='Til kr'
             value={maxPrice > 0 ? maxPrice : ''}
             onChange={(event) => {
               console.log(event.target.value)
@@ -68,7 +68,7 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
       <legend>Areal</legend>
       <ul>
         <li className='filter-item'>
-          <TextField type='number' placeholder='Fra kvm'
+          <TextField name='minSize' type='number' placeholder='Fra kvm'
             value={minSize > 0 ? minSize : ''}
             onChange={(event) => {
               handleChange(fields.MIN_SIZE, event.target.value)
@@ -76,7 +76,7 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
             }}
             onBlur={() => performSearch(filter)}
           />
-          <TextField type='number' placeholder='Til kvm' value={maxSize > 0 ? maxSize : ''}
+          <TextField name='maxSize' type='number' placeholder='Til kvm' value={maxSize > 0 ? maxSize : ''}
             onChange={(event) => {
               handleChange(fields.MAX_SIZE, event.target.value)
               performSearch(filter)
