@@ -4,7 +4,8 @@
  */
 import React from 'react'
 import { Link } from 'react-router-dom'
-import defaultImage from '../../../../../../components/boligAnnonse/components/media/Trinn-5.jpg'
+import defaultImage from '../../../../../../media/illustrations/Trinn-5.jpg'
+import { getIcon } from '../../../../../../media/icons'
 
 export default ({ ProjectName, Poststed, StreetName, StreetNumber, HousingType, Bedrooms, Price, image, altText, Id,
   fetchProperty = f => f }) => (
@@ -21,7 +22,7 @@ export default ({ ProjectName, Poststed, StreetName, StreetNumber, HousingType, 
         <div className='col-xs-12 col-sm-6 housing-item-info-container'>
             <p className='housing-item-loc'>{Poststed}</p>
             <h2 className='housing-item-title'>{StreetName} {StreetNumber}</h2>
-            <p className='housing-item-rooms'>Soverom: {Bedrooms}</p> 
+            <p className='housing-item-rooms'>Soverom: {Bedrooms}</p>
             <p className='housing-item-price'>Pris fra: {Price.toLocaleString()}</p>
             <div className="row housing-item-type-container">
                 <p className='housing-item-type'>[HousingIcon] {HousingType}</p>

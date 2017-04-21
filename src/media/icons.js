@@ -13,3 +13,17 @@ export { default as vr } from './icons/bolig-vr.svg'
 export { default as kalkulator } from './icons/kalkulator.svg'
 export { default as omradeVelg } from './icons/omrade-velg.svg'
 export { default as socialMediaBar } from './icons/social-media-bar.png'
+export { default as hus } from './icons/bolig-hus.svg'
+export { default as rekkehus } from './icons/bolig-rekkehus.svg'
+
+export const getHousingIcon = (housingType) => {
+  switch (housingType.toLowerCase()) {
+    case 'leilighet':
+      return leilighet
+      case 'hus':
+      return hus
+ case rekkehus:
+{}
+
+  }
+}
