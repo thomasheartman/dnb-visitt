@@ -15,13 +15,10 @@ const ContactForm = ({ handleSubmit, input, pristine, submitting, reset }) => (
     handleSubmit(values)
   }}>
     <Field name='DatePicker' mode="landscape" floatingLabelText='Velg dato' hintText='Velg dato' component={DatePicker} />
-    <Field name='TimePicker' floatingLabelText='Velg tid' hintText='Velg tid' component={TimePicker} format={null} props={{format: "24hr"}}/><br />
-
-    <br />
-    <Field name='name' type='text' floatingLabelText='Navn' hintText='Fornavn Etternavn' component={TextField} /><br />
-    <Field name='number' type='number' floatingLabelText='Nummer' hintText='Telefonnummer' component={TextField} /><br />
-    <Field name='email' type='email' floatingLabelText='Epost' hintText='Epost' component={TextField} /><br /> 
-    <br />
+    <Field name='TimePicker' floatingLabelText='Velg tid' hintText='Velg tid' component={TimePicker} format={null} props={{format: "24hr"}}/>
+    <Field name='name' type='text' floatingLabelText='Navn' hintText='Fornavn Etternavn' component={TextField} />
+    <Field name='number' type='number' floatingLabelText='Nummer' hintText='Telefonnummer' component={TextField} />
+    <Field name='email' type='email' floatingLabelText='Epost' hintText='Epost' component={TextField} />
     <input type='submit' value='Bestill Visitt' disabled={pristine || submitting} />
   </form>
 ) 
