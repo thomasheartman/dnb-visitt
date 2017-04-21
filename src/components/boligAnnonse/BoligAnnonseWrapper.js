@@ -7,6 +7,8 @@
 
 import React from 'react'
 import Annonse from './components/BoligAnnonse.map'
+import { Spinner } from '../loadingIndicators/Loading'
+
 
 // making this a stateful component so that we can load data on mount.
 class AnnonseWrapper extends React.Component {
@@ -16,21 +18,9 @@ class AnnonseWrapper extends React.Component {
 
   render () {
     return this.props.fetching
-      ? <h1>Laster innhold</h1> // TODO: put a loader here
+      ? <Spinner/>
       : < Annonse />
   }
 }
 
 export default AnnonseWrapper
-
-/*
-
-    {
-      currentContent.Id === parseInt(match.params.id)
-      ? content
-      : fetching
-        ? loading
-        : fetchContent(parseInt(match.params.id))
-    }
-
-*/
