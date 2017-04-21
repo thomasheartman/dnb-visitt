@@ -4,9 +4,10 @@
  */
 import React from 'react'
 import fields from './inputFields'
+import limits from './filterLimits'
 import { VelocityTransitionGroup } from 'velocity-react'
 import Checkbox from 'material-ui/Checkbox'
-import TextField from 'material-ui/TextField'
+import Slider from 'material-ui/Slider'
 
 export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, selectedBedroomValues,
   selectedCounties, minPrice, maxPrice, minSize, maxSize, filter,
@@ -31,7 +32,7 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
               <li className='filter-item' key={county}>
                 <Checkbox className='regionItem' label={county}
                   checked={selectedCounties.includes(county)}
-                  onChange={() => {
+                  onCheck={() => {
                     handleChange(selectedCounties.includes(county) ? fields.REMOVE_COUNTY : fields.ADD_COUNTY, county)
                     performSearch()
                   }}
@@ -44,22 +45,33 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
 
       <legend>Pris</legend>
       <ul>
-        <li className='filter-item'>
-          <TextField type='number' placeholder='Fra kr'
-            value={minPrice > 0 ? minPrice : ''}
-            onChange={(event) => {
-              handleChange(fields.MIN_PRICE, event.target.value)
-              performSearch(filter)
-            }}
+        <li>
+          <label htmlFor='minPriceSlider'>Fra kr. {minPrice.toLocaleString()}</label>
+          <Slider
+            name='minPriceSlider'
+            min={0}
+            max={limits.MAX_PRICE}
+            value={minPrice}
+            step={limits.PRICE_STEP_SIZE}
+            onDragStop={() => performSearch(filter)}
             onBlur={() => performSearch(filter)}
+            onChange={(event, value) => {
+              handleChange(fields.SET_MIN_PRICE, value)
+            }}
           />
+          <br />
 
-          <TextField type='number' placeholder='Til kr'
-            value={maxPrice > 0 ? maxPrice : ''}
-            onChange={(event) => {
-              console.log(event.target.value)
-              handleChange(fields.MAX_PRICE, event.target.value)
-              performSearch(filter)
+          <label htmlFor='maxPriceSlider'>Til kr. {maxPrice.toLocaleString()}</label>
+          <Slider
+            name='maxPriceSlider'
+            min={0}
+            max={limits.MAX_PRICE}
+            defaultValue={limits.MAX_PRICE}
+            step={limits.PRICE_STEP_SIZE}
+            onDragStop={() => performSearch(filter)}
+            onBlur={() => performSearch(filter)}
+            onChange={(event, value) => {
+              handleChange(fields.SET_MAX_PRICE, value)
             }}
           />
         </li>
@@ -67,21 +79,35 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
 
       <legend>Areal</legend>
       <ul>
-        <li className='filter-item'>
-          <TextField type='number' placeholder='Fra kvm'
-            value={minSize > 0 ? minSize : ''}
-            onChange={(event) => {
-              handleChange(fields.MIN_SIZE, event.target.value)
-              performSearch(filter)
-            }}
+
+        <li>
+          <label htmlFor='minSizeSlider'>Fra {minSize} m&#178;</label>
+          <Slider
+            name='minSizeSlider'
+            min={0}
+            max={limits.MAX_SIZE}
+            value={minSize}
+            step={limits.SIZE_STEP_SIZE}
+            onDragStop={() => performSearch(filter)}
             onBlur={() => performSearch(filter)}
+            onChange={(event, value) => {
+              handleChange(fields.SET_MIN_SIZE, value)
+            }}
           />
-          <TextField type='number' placeholder='Til kvm' value={maxSize > 0 ? maxSize : ''}
-            onChange={(event) => {
-              handleChange(fields.MAX_SIZE, event.target.value)
-              performSearch(filter)
-            }}
+          <br />
+
+          <label htmlFor='maxSizeSlider'>Til {maxSize} m&#178;</label>
+          <Slider
+            name='maxSizeSlider'
+            min={0}
+            max={limits.MAX_SIZE}
+            defaultValue={limits.MAX_SIZE}
+            step={limits.SIZE_STEP_SIZE}
+            onDragStop={() => performSearch(filter)}
             onBlur={() => performSearch(filter)}
+            onChange={(event, value) => {
+              handleChange(fields.SET_MAX_SIZE, value)
+            }}
           />
         </li>
       </ul>

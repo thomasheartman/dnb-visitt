@@ -3,6 +3,7 @@
  * The section of the page that holds search results
  */
 import React from 'react'
+import { Spinner } from '../../../loadingIndicators/Loading'
 
 export default class SearchResults extends React.Component {
   componentWillMount () {
@@ -11,7 +12,7 @@ export default class SearchResults extends React.Component {
 
   render () {
     return this.props.fetching
-      ? <h1>Laster innhold</h1> // TODO: put a loader here
+      ? <Spinner/>
       : this.props.results
   }
 }
