@@ -8,7 +8,7 @@ import SearchResults from './SearchResults'
 import _ from 'lodash'
 import NoResults from './components/noResults/NoResults'
 import { fetchResults } from '../../../../redux/reducers/searchResults/resultsActions'
-import ResultItem from './components/resultItem/ResultItem'
+import ResultItem from './components/resultItem/ResultItem.map'
 
 const mapResults = (results) => (
   <div>
