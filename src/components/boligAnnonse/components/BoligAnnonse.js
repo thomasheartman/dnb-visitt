@@ -5,14 +5,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { kalkulator, omradeVelg } from '../../../media/icons.js'
-import trinn5 from '../../../media/illustrations/Trinn-5-alm-crop.jpg'
+import trinn5 from './media/Trinn-5-alm-crop.jpg'
 import mekler from './media/mekler.jpg'
 import barn from './media/barn.jpg'
 import familie from './media/familie.jpg'
 import stue from './media/illustrasjon-stue.jpg'
 import kjokken from './media/kjokken.jpg'
 import lekeplass from './media/lekeplass.jpg'
-import trinn5alm from '../../../media/illustrations/Trinn-5-alm.jpg'
+import trinn5alm from './media/Trinn-5-alm.jpg'
 import vardevei from './media/vardevei.jpg'
 
 export default ({
