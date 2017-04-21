@@ -4,7 +4,9 @@
  */
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
-import { TextField } from 'redux-form-material-ui'
+import { TextField, DatePicker, TimePicker, SelectField, MenuItem} from 'redux-form-material-ui'
+
+
 
 const ContactForm = ({ handleSubmit, input, pristine, submitting, reset }) => (
 
@@ -12,14 +14,18 @@ const ContactForm = ({ handleSubmit, input, pristine, submitting, reset }) => (
     event.preventDefault()
     handleSubmit(values)
   }}>
+    <Field name='DatePicker' mode="landscape" floatingLabelText='Velg dato' hintText='Velg dato' component={DatePicker} />
+    <Field name='TimePicker' floatingLabelText='Velg tid' hintText='Velg tid' component={TimePicker} format={null} props={{format: "24hr"}}/><br />
+    <SelectField name="DNB Visitt Filial" label="Velg filial">
+      <MenuItem value="DNB Grorud" primaryText="DNB Grorud"/>
+      <MenuItem value="DNB Oslo S" primaryText="DNB Oslo S"/>
+    </SelectField>
+    <br />
     <Field name='name' type='text' floatingLabelText='Navn' hintText='Fornavn Etternavn' component={TextField} /><br />
     <Field name='number' type='number' floatingLabelText='Nummer' hintText='Telefonnummer' component={TextField} /><br />
-    <Field name='email' type='email' floatingLabelText='Epost' hintText='Epost' component={TextField} /><br />
-    <Field name='message' type='text' cols={50} rows={5} floatingLabelText='Din beskjed' hintText='Har du et spørsmål?' multiLine component={TextField} />
+    <Field name='email' type='email' floatingLabelText='Epost' hintText='Epost' component={TextField} /><br /> 
     <br />
-     <Field name='email' type='checkbox' floatingLabelText='Epost' hintText='Epost' component={TextField} /><br />
-    <br />
-    <input type='submit' value='Send' disabled={pristine || submitting} />
+    <input type='submit' value='Bestill Visitt' disabled={pristine || submitting} />
   </form>
 ) 
 

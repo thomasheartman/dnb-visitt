@@ -8,17 +8,25 @@ import { Link } from 'react-router-dom'
 
 export default () => (
   <div>
-     <main class="reservation-main">
-        <div class="row heading">
-            <div class="col-xs full-width">
+     <main className="reservation-main">
+        <div className="row heading">
+            <div className="col-xs full-width">
                 <h2>Bestill Visitt</h2>
                 <p>Reserver din Visitt på noen få tastetrykk.</p>
             </div>
         </div>
-        <div class="row reservation-box">
-            <div class="col-xs full-width">
+        <div className="row reservation-box">
+            <div className="col-xs-12 col-sm-6">
                 <Form />
             </div>
+            <div className="col-xs-12 col-sm-6">
+                <p>Valgt bolig:</p>
+                <h2>StreetName StreetNumber</h2>
+                <img href="/"/>
+            </div>
+        </div>
+        <div className="row">
+             
         </div>
     </main>
   </div>
