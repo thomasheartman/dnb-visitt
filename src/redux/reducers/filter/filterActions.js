@@ -4,6 +4,7 @@
  */
 
 import types from './filterActionTypes'
+import limits from '../../../components/boligvelger/components/filter/filterLimits'
 
 export const setCounty = (newCounty) => ({ type: types.SET_COUNTY, payload: newCounty })
 
@@ -13,9 +14,33 @@ export const removeCounty = (county) => ({ type: types.REMOVE_COUNTY, payload: c
 
 export const clearCounties = () => ({ type: types.CLEAR_COUNTIES })
 
-// TODO: add checking for minPrice <= maxPrice
-export const setMinPrice = (minPrice) => ({ type: types.SET_MIN_PRICE, payload: minPrice })
-export const setMaxPrice = (maxPrice) => ({ type: types.SET_MAX_PRICE, payload: maxPrice })
+
+export const setMinPriceHard = (minPrice) => ({ type: types.SET_MIN_PRICE, payload: minPrice })
+export const setMaxPriceHard = (maxPrice) => ({ type: types.SET_MAX_PRICE, payload: maxPrice })
+
+// Adjusts the price dynamically by making sure it does not exceed max price
+export const setMinPrice = (minPrice) => (dispatch, getState) => {
+  dispatch(setMinPriceHard(minPrice))
+  if (getState().filter.maxPrice < minPrice) dispatch(setMaxPriceHard(minPrice))
+}
+
+export const setMaxPrice = (maxPrice) => (dispatch, getState) => {
+  dispatch(setMaxPriceHard(maxPrice))
+  if (getState().filter.minPrice > maxPrice) dispatch(setMinPriceHard(maxPrice))
+}
+
+export const setMinSizeHard = (minSize) => ({ type: types.SET_MIN_SIZE, payload: minSize })
+export const setMaxSizeHard = (maxSize) => ({ type: types.SET_MAX_SIZE, payload: maxSize })
+
+export const setMinSize = (minSize) => (dispatch, getState) => {
+  dispatch(setMinSizeHard(minSize))
+  if (getState().filter.maxSize < minSize) dispatch(setMaxSizeHard(minSize))
+}
+
+export const setMaxSize = (maxSize) => (dispatch, getState) => {
+  dispatch(setMaxSizeHard(maxSize))
+  if (getState().filter.minSize > maxSize) dispatch(setMinSizeHard(maxSize))
+}
 
 export const addBedroomOption = (newOption) => ({ type: types.ADD_BEDROOM_OPTION, payload: newOption })
 export const removeBedroomOption = (option) => ({ type: types.REMOVE_BEDROOM_OPTION, payload: option })
@@ -25,27 +50,12 @@ export const setOne = newValue => newValue ? ({ type: types.SELECT_ONE }) : ({ t
 export const setTwo = newValue => newValue ? ({ type: types.SELECT_TWO }) : ({ type: types.DESELECT_TWO })
 export const setThreePlus = newValue => newValue ? ({ type: types.SELECT_THREE_PLUS }) : ({ type: types.DESELECT_THREE_PLUS })
 
-export const setMinSize = (minSize) => ({ type: types.SET_MIN_SIZE, payload: minSize })
-export const setMaxSize = (maxSize) => ({ type: types.SET_MAX_SIZE, payload: maxSize })
 
 export const clearFilter = () => dispatch => {
   dispatch(clearCounties())
-  dispatch(setMinPrice(0))
-  dispatch(setMaxPrice(0))
-  dispatch(setMinSize(0))
-  dispatch(setMaxSize(0))
+  dispatch(setMinPriceHard(0))
+  dispatch(setMaxPriceHard(limits.MAX_PRICE))
+  dispatch(setMinSizeHard(0))
+  dispatch(setMaxSizeHard(limits.MAX_SIZE))
   dispatch(clearBedroomOptions())
 }
-
-// TODO:find out if this is possible
-/*
-export default {
-  setCounty,
-  clearCounties,
-  setMinPrice,
-  setMaxPrice,
-  setNumberOfBedrooms,
-  setMinSize,
-  setMaxSize,
-  clearFilter
-} */

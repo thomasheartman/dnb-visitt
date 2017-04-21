@@ -66,7 +66,7 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
             name='maxPriceSlider'
             min={0}
             max={limits.MAX_PRICE}
-            defaultValue={limits.MAX_PRICE}
+            value={maxPrice}
             step={limits.PRICE_STEP_SIZE}
             onDragStop={() => performSearch(filter)}
             onBlur={() => performSearch(filter)}
@@ -101,7 +101,7 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
             name='maxSizeSlider'
             min={0}
             max={limits.MAX_SIZE}
-            defaultValue={limits.MAX_SIZE}
+            value={maxSize}
             step={limits.SIZE_STEP_SIZE}
             onDragStop={() => performSearch(filter)}
             onBlur={() => performSearch(filter)}
