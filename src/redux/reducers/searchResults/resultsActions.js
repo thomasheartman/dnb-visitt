@@ -50,8 +50,8 @@ const matchesSearchCriteria = (filter, property) => {
   if (filter.minPrice > propertyPrice) return false
   if (filter.minSize > propertySize || propertySize > filter.maxSize) return false
   if (filter.numberOfBedrooms.length > 0 && !filter.numberOfBedrooms.includes(propertyBedrooms)) {
-    if (property.Bedrooms < 3) return false
-    if (!filter.threePlus && property.Bedrooms >= 3) return false
+    if (propertyBedrooms < 3) return false
+    if (!filter.threePlus && propertyBedrooms >= 3) return false
   }
   return true
 }

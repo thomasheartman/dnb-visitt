@@ -46,9 +46,6 @@ export const addBedroomOption = (newOption) => ({ type: types.ADD_BEDROOM_OPTION
 export const removeBedroomOption = (option) => ({ type: types.REMOVE_BEDROOM_OPTION, payload: option })
 export const clearBedroomOptions = () => ({ type: types.CLEAR_BEDROOMS })
 
-export const setOne = newValue => newValue ? ({ type: types.SELECT_ONE }) : ({ type: types.DESELECT_ONE })
-export const setTwo = newValue => newValue ? ({ type: types.SELECT_TWO }) : ({ type: types.DESELECT_TWO })
-export const setThreePlus = newValue => newValue ? ({ type: types.SELECT_THREE_PLUS }) : ({ type: types.DESELECT_THREE_PLUS })
 
 
 export const clearFilter = () => dispatch => {
