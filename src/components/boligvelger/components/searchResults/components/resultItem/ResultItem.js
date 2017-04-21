@@ -4,38 +4,42 @@
  */
 import React from 'react'
 import { Link } from 'react-router-dom'
-import defaultImage from '../../../../../../media/images/nybygg.jpg'
+import { getHousingIcon } from '../../../../../../media/icons'
+import { getHousingImage } from './media/defaultThumbnails'
 
-export default ({ ProjectName, Poststed, HousingType, Bedrooms, Price, image, altText, Id,
-  fetchProperty = f => f }) => (
-    <Link to={{
-      pathname: `boligvelger/annonse/${Id}`
-    }}
-    >
-      <article className='housing-item-container'>
-        <div className='housing-item-header row middle-xs'>
-          <h2 className='housing-item-title col-xs start-xs'>{ProjectName}</h2>
-          <span className='housing-item-loc col-xs end-xs'>{Poststed}</span>
-        </div>
-        <div className='row'>
-          <div className='col-xs-6 housing-item-info-container'>
-            <div className='row housing-item-type'>
-              <p>Hustype: {HousingType}</p>
-            </div>
-            <div className='row housing-item-rooms'>
-              <p>Rom: {Bedrooms}</p>
-            </div>
-            <div className='row housing-item-price'>
-              <p>Pris: {Price.toLocaleString()}</p>
-            </div>
-            <div className='row housing-item-read' />
-          </div>
-          <div className='col-xs-6 housing-item-image'>
+
+class ResultItem extends React.Component {
+
+  render () {
+    const { Id, Price, Poststed, StreetName, StreetNumber, Bedrooms, HousingType } = this.props
+
+    return (
+      < Link to={{
+        pathname: `boligvelger/annonse/${Id}`
+      }
+      }
+      >
+        <article className='row housing-item-container'>
+          <div className='col-xs-12 col-sm-6 full-width housing-item-image'>
             <img className='img-responsive'
-              src={image || defaultImage}
-              alt={altText || ProjectName} />
+              src={getHousingImage(HousingType)}
+              alt={`${StreetName} ${StreetNumber} | ${HousingType}`}
+            />
           </div>
-        </div>
-      </article>
-    </Link>
-  )
+          <div className='col-xs-12 col-sm-6 housing-item-info-container'>
+            <p className='housing-item-loc'>{Poststed}</p>
+            <h2 className='housing-item-title'>{StreetName} {StreetNumber}</h2>
+            <p className='housing-item-rooms'>Soverom: {Bedrooms}</p>
+            <p className='housing-item-price'>Pris fra: {Price.toLocaleString()}</p>
+            <div className="row housing-item-type-container">
+              <p className='housing-item-type'><img src={getHousingIcon(HousingType)} alt={HousingType} /> {HousingType}</p>
+            </div>
+          </div>
+        </article>
+      </Link >
+    )
+  }
+}
+
+export default ResultItem
+
