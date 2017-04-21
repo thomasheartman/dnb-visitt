@@ -2,9 +2,9 @@
   "filter": {
     "counties": [],
     "minPrice": 0,
-    "maxPrice": 50000000,
+    "maxPrice": 5000000,
     "minSize": 0,
-    "maxSize": 500,
+    "maxSize": 200,
     "numberOfBedrooms": []
   },
   "dropDownCounty": "",
