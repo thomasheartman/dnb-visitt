@@ -16,6 +16,10 @@ const bookAvailableDate = (date) => {
 			ref.set({
 				date
 			})
+			console.log($(date.val()) + "has been booked.")
+		}
+		else {
+			console.log("The selected date is not available.")
 		}
 	})
 }
