@@ -1,0 +1,194 @@
+{
+  "allCounties" : [ "OSLO", "AKERSHUS", "ØSTFOLD", "TELEMARK", "ROGALAND", "VEST-AGDER", "AUST-AGDER", "HORDALAND", "SOGN OG FJORDANE", "MØRE OG ROMSDAL", "SØR-TRØNDELAG", "NORD-TRØNDELAG", "NORDLAND", "HEDMARK", "OPPLAND", "BUSKERUD", "VESTFOLD", "JAN MAYEN", "TROMS", "SVALBARD", "FINNMARK" ],
+  "appointments" : {
+    "branch1" : {
+      "2017_04_21" : {
+        "0900" : {
+          "booked" : false
+        },
+        "1000" : {
+          "booked" : true,
+          "email" : "jan@johansen.no",
+          "name" : "Jan Johansen"
+        },
+        "1100" : {
+          "booked" : true,
+          "email" : "me@example.com",
+          "name" : "Georg Gregersen"
+        },
+        "1200" : {
+          "booked" : false
+        },
+        "1300" : {
+          "booked" : false
+        }
+      }
+    }
+  },
+  "counties" : {
+    "NORD-TRØNDELAG" : {
+      "projects" : [ "1" ]
+    },
+    "OSLO" : {
+      "projects" : [ "0" ]
+    }
+  },
+  "projects" : [ {
+    "county" : "OSLO",
+    "name" : "Osloprosjektet"
+  }, {
+    "county" : "NORD-TRØNDELAG",
+    "name" : "Trønderbygg"
+  } ],
+  "properties" : [ {
+    "ApartmentNumber" : "4a",
+    "Bedrooms" : 5,
+    "Description" : "Jowl pork brisket hamburger, turkey beef t-bone. Shankle bacon leberkas filet mignon, biltong ham turducken swine. Drumstick landjaeger corned beef kielbasa jerky. Cupim cow leberkas, short ribs spare ribs fatback tongue biltong drumstick venison frankfurter porchetta andouille tenderloin. Pastrami drumstick short loin andouille, tri-tip sausage chicken flank corned beef venison shoulder.",
+    "Fylke" : "OSLO",
+    "HousingType" : "Studio",
+    "Id" : 3,
+    "Postnummer" : "0159",
+    "Poststed" : "OSLO",
+    "Price" : 50000000,
+    "ProjectImagePath" : "~/Content/assets/bilder/",
+    "ProjectName" : "Grand Hotel",
+    "SquareMetres" : 5000,
+    "StreetName" : "Karl Johans gate",
+    "StreetNumber" : "31"
+  }, {
+    "ApartmentNumber" : "9b",
+    "Bedrooms" : 4,
+    "Description" : "Dette er stedet å bo. Balkong, stort bad og mange rom.",
+    "Fylke" : "AKERSHUS",
+    "HousingType" : "Leilighet",
+    "Id" : 8,
+    "Postnummer" : "1451",
+    "Poststed" : "NESODDTANGEN",
+    "Price" : 5100000,
+    "ProjectImagePath" : "~/Content/assets/bilder/",
+    "ProjectName" : "Oslo City",
+    "SquareMetres" : 85,
+    "StreetName" : "Tåkegata",
+    "StreetNumber" : "4"
+  }, {
+    "ApartmentNumber" : "9a",
+    "Bedrooms" : 4,
+    "Description" : "Denne leiligheten er en del av de som tilhører eliten.",
+    "Fylke" : "ØSTFOLD",
+    "HousingType" : "Leilighet",
+    "Id" : 7,
+    "Postnummer" : "1725",
+    "Poststed" : "SARPSBORG",
+    "Price" : 5000000,
+    "ProjectImagePath" : "~/Content/assets/bilder/",
+    "ProjectName" : "Oslo City",
+    "SquareMetres" : 80,
+    "StreetName" : "Jensengaten",
+    "StreetNumber" : "3"
+  }, {
+    "ApartmentNumber" : "24",
+    "Bedrooms" : 2,
+    "Description" : "Dette er et fint sted.",
+    "Fylke" : "AKERSHUS",
+    "HousingType" : "Leilighet",
+    "Id" : 9,
+    "Postnummer" : "1469",
+    "Poststed" : "RASTA",
+    "Price" : 4300000,
+    "ProjectImagePath" : "~/Content/assets/bilder/",
+    "ProjectName" : "Grand Hotel",
+    "SquareMetres" : 65,
+    "StreetName" : "Toggaten",
+    "StreetNumber" : "5"
+  }, {
+    "ApartmentNumber" : "3",
+    "Bedrooms" : 4,
+    "Description" : "Beef ribs chuck brisket shank cow kevin ribeye turducken prosciutto sausage biltong pig jerky ball tip. Chicken pork loin short loin strip steak kevin. Bresaola landjaeger kevin, andouille ribeye picanha capicola biltong fatback boudin beef ribs flank sausage hamburger pork. Chuck spare ribs tenderloin rump. Ground round rump tri-tip drumstick filet mignon alcatra ham hock turducken beef hamburger swine kielbasa meatloaf. Fatback sausage ball tip picanha. Alcatra boudin doner, kielbasa ball tip meatloaf tongue shankle swine t-bone picanha.",
+    "Fylke" : "OSLO",
+    "HousingType" : "Bedsit",
+    "Id" : 2,
+    "Postnummer" : "0050",
+    "Poststed" : "OSLO",
+    "Price" : 4000000,
+    "ProjectImagePath" : "~/Content/assets/bilder/",
+    "ProjectName" : "Oslo City",
+    "SquareMetres" : 200,
+    "StreetName" : "Stenersgata",
+    "StreetNumber" : "1"
+  }, {
+    "ApartmentNumber" : "25",
+    "Bedrooms" : 2,
+    "Description" : "Dette er også et fint sted å bo.",
+    "Fylke" : "AKERSHUS",
+    "HousingType" : "Leilighet",
+    "Id" : 10,
+    "Postnummer" : "1472",
+    "Poststed" : "FJELLHAMAR",
+    "Price" : 4000000,
+    "ProjectImagePath" : "~/Content/assets/bilder/",
+    "ProjectName" : "Grand Hotel",
+    "SquareMetres" : 60,
+    "StreetName" : "Hansenveien",
+    "StreetNumber" : "6"
+  }, {
+    "ApartmentNumber" : "8",
+    "Bedrooms" : 3,
+    "Description" : "Denne har balkong.",
+    "Fylke" : "BUSKERUD",
+    "HousingType" : "Leilighet",
+    "Id" : 6,
+    "Postnummer" : "3043",
+    "Poststed" : "DRAMMEN",
+    "Price" : 3400000,
+    "ProjectImagePath" : "~/Content/assets/bilder/",
+    "ProjectName" : "Oslo City",
+    "SquareMetres" : 60,
+    "StreetName" : "Haldengata",
+    "StreetNumber" : "98"
+  }, {
+    "ApartmentNumber" : "7",
+    "Bedrooms" : 3,
+    "Description" : "En enda bedre leilighet, fordi denne har bedre utsikt.",
+    "Fylke" : "OSLO",
+    "HousingType" : "Leilighet",
+    "Id" : 5,
+    "Postnummer" : "0183",
+    "Poststed" : "OSLO",
+    "Price" : 3100000,
+    "ProjectImagePath" : "~/Content/assets/bilder/",
+    "ProjectName" : "Oslo City",
+    "SquareMetres" : 55,
+    "StreetName" : "Storgata",
+    "StreetNumber" : "2"
+  }, {
+    "ApartmentNumber" : "6",
+    "Bedrooms" : 2,
+    "Description" : "En flott og romslig leilighet med god utsikt.",
+    "Fylke" : "ØSTFOLD",
+    "HousingType" : "Leilighet",
+    "Id" : 4,
+    "Postnummer" : "1609",
+    "Poststed" : "FREDRIKSTAD",
+    "Price" : 2800000,
+    "ProjectImagePath" : "~/Content/assets/bilder/",
+    "ProjectName" : "Oslo City",
+    "SquareMetres" : 45,
+    "StreetName" : "Veiengata",
+    "StreetNumber" : "24"
+  }, {
+    "ApartmentNumber" : "",
+    "Bedrooms" : 1,
+    "Description" : "Shoulder landjaeger pork chop bresaola fatback shank chicken biltong pork flank ribeye meatloaf picanha sirloin. Ham hock filet mignon pork, alcatra chicken rump t-bone pig biltong jowl beef ribs salami venison meatloaf. Meatball tri-tip beef ribs, fatback burgdoggen capicola pastrami jerky shoulder boudin filet mignon pork belly ground round swine corned beef. Porchetta ham boudin pastrami pork loin. Chuck sausage meatball, beef ribs turducken beef corned beef short ribs landjaeger prosciutto cow tenderloin. Beef ribs cow turkey, pastrami capicola burgdoggen tongue. Fatback andouille jowl venison cow porchetta t-bone landjaeger pork doner pork belly filet mignon shankle hamburger.",
+    "Fylke" : "OSLO",
+    "HousingType" : "Mansion",
+    "Id" : 1,
+    "Postnummer" : "0186",
+    "Poststed" : "OSLO",
+    "Price" : 2600000,
+    "ProjectImagePath" : "~/Content/assets/bilder/",
+    "ProjectName" : "Westerdals",
+    "SquareMetres" : 40,
+    "StreetName" : "Christian Krohgs gate",
+    "StreetNumber" : "32"
+  } ]
+}
