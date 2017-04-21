@@ -12,6 +12,8 @@ import {
 import reducer from './bookingReducer'
 import types from './bookingActionTypes'
 
+it('should pass an arbitrary test', () => {
+	const ref = database.ref('appointments')
 const initialState = {
   'date': '',
   'time': '',
@@ -125,4 +127,24 @@ it('should change the property', () => {
   expect(
     reducer(initialState, ({ type: types.SELECT_PROPERTY, payload: payload })))
     .toEqual(false)
+})
+
+
+it('should pass an arbitrary test', (done) => {
+	const date = "2017_04_23"
+
+	const ref = database.ref('appointments')
+
+	ref.on('child_added', snapshot => {
+		if (snapshot.val().date !== date) {
+			const post = ref.push()
+			ref.set({
+				date
+			})
+			console.log($(date.val()) + "has been booked.")
+		}
+		else {
+			console.log("The selected date is not available.")
+		}
+	})
 })
