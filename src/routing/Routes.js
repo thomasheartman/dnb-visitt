@@ -15,6 +15,7 @@ import Home from '../components/home/HomeMap'
 import OmVisitt from '../components/omVisitt/OmVisitt'
 import HjelpOgKontakt from '../components/hjelpOgKontakt/HjelpOgKontakt'
 import Boligvelger from '../components/boligvelger/Boligvelger'
+import BestillVisitt from '../components/bestillVisitt/BestillVisitt'
 import AnnonseWrapper from '../components/boligAnnonse/BoligAnnonseWrapper.map'
 import Error404 from '../components/error404/Error404'
 
@@ -30,6 +31,7 @@ export default () => (
           <Route path='/hjelp-og-kontakt' component={HjelpOgKontakt} />
           <Route path='/boligvelger/annonse/:id' component={AnnonseWrapper} />
           <Route path='/boligvelger' component={Boligvelger} />
+          <Route path="/bestill-visitt" component={BestillVisitt} />
           <Route path='*' component={Error404} />
         </Switch>
       </MasterLayout>
