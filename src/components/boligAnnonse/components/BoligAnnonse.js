@@ -16,24 +16,23 @@ import trinn5alm from './media/Trinn-5-alm.jpg'
 import vardevei from './media/vardevei.jpg'
 
 export default ({
-  Price = 50000000,
-  Fellesutgifter = 1340,
-  Fellesgjeld = 0,
-  BRA = 90,
-  PRom = 85,
-  SquareMetres = 5000,
-  Inngangsetasje = 1,
-  AntallPlan = 1,
-  AntallRom = 4,
-  Bedrooms = 3,
-  EnergyRating = 'C',
-  StreetNumber = '29',
-  Byggestart = '30.06.2017',
-  Ferdigstillelse = '30.03.2018',
-  StreetName = 'Gabels gate',
-  ApartmentNumber = '4a',
-  Poststed = 'Frogner',
-  Fylke = 'Oslo' }) => (
+  price = 50000000,
+  commonCosts = 1340,
+  sharedDebt = 0,
+  grossArea = 90,
+  netLivingSpace = 85,
+  entryFloor = 1,
+  floors = 1,
+  numberOfRooms = 4,
+  bedrooms = 3,
+  energyRating = 'C',
+  streetNumber = '29',
+  projectConstructionStart = '30.06.2017',
+  projectConstructionFinalized = '30.03.2018',
+  streetName = 'Gabels gate',
+  apartmentNumber = '4a',
+  zipLocation = 'Frogner',
+  county = 'Oslo' }) => (
 
     <div>
 
@@ -42,8 +41,8 @@ export default ({
           <section className='col-xs-12'>
             <div className='row center-xs'>
               <div className='col-xs housing-header'>
-                <h2 className='housing-title'>{`${StreetName} ${StreetNumber}`}</h2>
-                <p className='housing-location'>{`${Poststed}, ${Fylke}`}</p>
+                <h2 className='housing-title'>{`${streetName} ${streetNumber}`}</h2>
+                <p className='housing-location'>{`${zipLocation}, ${county}`}</p>
               </div>
             </div>
 
@@ -64,21 +63,21 @@ export default ({
             <section className='row housing-basics'>
               <div className='col-xs-12 col-sm-4 col-md-6'>
                 <h2>Om boligen</h2>
-                <h3>{`${AntallRom}-roms leilighet`}</h3>
-                <p>Pris: <span>{Price.toLocaleString()},-</span></p>
-                <p>Fellesutgifter: <span>{Fellesutgifter},-</span></p>
-                <p>Andel fellesgjeld: <span>{Fellesgjeld},-</span></p>
-                <p>BRA: <span>{BRA} m&#178;</span></p>
-                <p>P-rom: <span>{PRom} m&#178;</span></p>
-                <p>Tomteareal: <span>{SquareMetres} m&#178;</span></p>
-                <p>Inngangsetasje: <span>{Inngangsetasje}</span></p>
-                <p>Antall plan: <span>{AntallPlan}</span></p>
-                <p>Antall rom: <span>{AntallRom}</span></p>
-                <p>Antall soverom: <span>{Bedrooms}</span></p>
-                <p>Energimerke: <span>{EnergyRating}</span></p>
-                <p>Bolignummer: <span>{ApartmentNumber}</span></p>
-                <p>Byggestart: <span>{Byggestart}</span></p>
-                <p>Ferdigstillelse: <span>{Ferdigstillelse}</span></p>
+                <h3>{`${numberOfRooms}-roms leilighet`}</h3>
+                <p>Pris: <span>{price.toLocaleString()},-</span></p>
+                <p>Fellesutgifter: <span>{commonCosts},-</span></p>
+                <p>Andel fellesgjeld: <span>{sharedDebt},-</span></p>
+                <p>BRA: <span>{grossArea} m&#178;</span></p>
+                <p>P-rom: <span>{netLivingSpace} m&#178;</span></p>
+                <p>Tomteareal: <span>{grossArea} m&#178;</span></p>
+                <p>Inngangsetasje: <span>{entryFloor}</span></p>
+                <p>Antall plan: <span>{floors}</span></p>
+                <p>Antall rom: <span>{numberOfRooms}</span></p>
+                <p>Antall soverom: <span>{bedrooms}</span></p>
+                <p>Energimerke: <span>{energyRating}</span></p>
+                <p>Bolignummer: <span>{apartmentNumber}</span></p>
+                <p>Byggestart: <span>{projectConstructionStart}</span></p>
+                <p>Ferdigstillelse: <span>{projectConstructionFinalized}</span></p>
               </div>
               <aside className='col-xs-12 col-sm-8 col-md-6'>
                 <img src={mekler} alt='mekler Rolf Kåre' className='img-container' />

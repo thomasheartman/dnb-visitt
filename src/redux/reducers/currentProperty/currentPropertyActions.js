@@ -17,10 +17,9 @@ export const getProperty = (id) => (dispatch, getState) => {
   dispatch(fetchProperty())
 
   const ref = database.ref('properties')
-
   const idInt = parseInt(id, 10)
 
-  ref.orderByChild('Id').equalTo(idInt).on('child_added', (snapshot) => {
+  ref.orderByChild('id').equalTo(idInt).on('child_added', (snapshot) => {
     dispatch(changeProperty(snapshot.val()))
   }, (error) => {
     console.log('An error occurred', error)
