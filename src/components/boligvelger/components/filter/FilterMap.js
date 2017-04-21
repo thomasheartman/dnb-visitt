@@ -35,16 +35,16 @@ const mapDispatchToProps = dispatch => ({
       case fields.REMOVE_COUNTY:
         dispatch(removeCounty(value))
         break
-      case fields.MIN_PRICE:
+      case fields.SET_MIN_PRICE:
         dispatch(setMinPrice(value))
         break
-      case fields.MAX_PRICE:
+      case fields.SET_MAX_PRICE:
         dispatch(setMaxPrice(value))
         break
-      case fields.MIN_SIZE:
+      case fields.SET_MIN_SIZE:
         dispatch(setMinSize(value))
         break
-      case fields.MAX_SIZE:
+      case fields.SET_MAX_SIZE:
         dispatch(setMaxSize(value))
         break
       case fields.ADD_BEDROOM_OPTION:
