@@ -321,7 +321,6 @@ main.frontpage {
     width: 100%;
     padding: 1rem;
     font-size: 1rem;
-
 }
 
 .frontpage .home-search {
@@ -761,69 +760,30 @@ main.frontpage {
 
 /* RESERVE APPOINTMENT PAGE */
 
-.reservation-box h3 {
+.reservation-main {
+    max-width: 960px;
+    padding: 2rem 0;
+}
+
+.reserve-form-container {
+    border-right: 1px solid #F67F00;
+}
+
+.reservation-box {
+
+}
+
+.reserved-house-container {
+
+}
+
+.reserved-house-container p {
     margin-bottom: 1rem;
 }
 
-.reservation-box ul li {
-    margin-bottom: 1rem;
+.reserved-house-container h2 {
+    color: #097C84;
 }
-
-.reservation-box ul li a {
-    display: block;
-    padding: 0.5rem;
-    background: #F0ECE9;
-    color: #404040;
-}
-
-.the-reservation p {
-    display: inline-block;
-    background: #F67F00;
-    color: #fff;
-    padding: 0.5rem;
-}
-
-#reserve-form {
-    margin: 2rem 0 1rem 0;
-}
-
-#reserve-form input[type="submit"] {
-    padding: 1rem 2rem;
-    background-color: #097C84;
-    color: #fff;
-    font-size: 1.5rem;
-}
-
-#reserve-form input[type="text"],
-#reserve-form input[type="email"] {
-    height: 3rem;
-    width: 100%;
-    max-width: 20rem;
-    font-size: 1.5rem;
-}
-
-#reserve-form input[type="text"]:hover,
-#reserve-form input[type="email"]:hover {
-    cursor: pointer;
-}
-
-::-webkit-datetime-edit {
-    padding: 0.3rem 0.5rem;
-}
-
-::-webkit-datetime-edit-text {
-    color: red;
-}
-
-::-webkit-inner-spin-button {
-    display: none;
-}
-
-.reservation-active {
-    background:#F67F00;
-    color:#fff;
-}
-
 
 /* FOOTER */
 

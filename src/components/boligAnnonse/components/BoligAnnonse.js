@@ -56,7 +56,7 @@ export default ({
                   <Link to='#presentation'>Presentasjon</Link>
                 </li>
                 <li>
-                  <Link to='#reserve-visit'>Bestill Visitt</Link>
+                  <Link to='/bestill-visitt'>Bestill Visitt</Link>
                 </li>
               </ul>
             </nav>
