@@ -16,6 +16,14 @@ export const changeResults = results => ({ type: types.CHANGE_RESULTS, payload: 
 
 export const clearResults = () => ({ type: types.CLEAR_RESULTS })
 
+const arrayToLowerCase = (array) => {
+  let result = []
+  array.map((item) => {
+    result = [...result, item.toLowerCase()]
+  })
+  return result
+}
+
 const processFilterValues = (filter) => {
   let numberOfBedrooms = []
   numberOfBedrooms = filter.numberOfBedrooms.includes('1') ? [...numberOfBedrooms, 1] : numberOfBedrooms
@@ -23,7 +31,7 @@ const processFilterValues = (filter) => {
   numberOfBedrooms = filter.numberOfBedrooms.includes('3+') ? [...numberOfBedrooms, 3] : numberOfBedrooms
 
   return {
-    counties: filter.counties ? filter.counties : [],
+    counties: filter.counties ? arrayToLowerCase(filter.counties) : [],
     maxPrice: filter.maxPrice ? filter.maxPrice : Number.MAX_SAFE_INTEGER,
     minPrice: filter.minPrice ? filter.minPrice : 0,
     maxSize: filter.maxSize ? filter.maxSize : Number.MAX_SAFE_INTEGER,
@@ -34,11 +42,11 @@ const processFilterValues = (filter) => {
 }
 
 const matchesSearchCriteria = (filter, property) => {
-  const propertyPrice = property.Price
-  const propertySize = property.SquareMetres
-  const propertyBedrooms = property.Bedrooms
+  const propertyPrice = property.price
+  const propertySize = property.grossArea
+  const propertyBedrooms = property.bedrooms
 
-  if (filter.counties.length > 0 && !filter.counties.includes(property.Fylke)) return false
+  if (filter.counties.length > 0 && !filter.counties.includes(property.county)) return false
   if (filter.minPrice > propertyPrice) return false
   if (filter.minSize > propertySize || propertySize > filter.maxSize) return false
   if (filter.numberOfBedrooms.length > 0 && !filter.numberOfBedrooms.includes(propertyBedrooms)) {
@@ -56,7 +64,7 @@ export const fetchResults = (parameters) => (dispatch, getState) => {
   const filter = getState().filter
   const filterValues = processFilterValues(filter)
 
-  ref.orderByChild('Price').endAt(parseInt(filterValues.maxPrice, 10)).on('child_added', snapshot => {
+  ref.orderByChild('price').endAt(parseInt(filterValues.maxPrice, 10)).on('child_added', snapshot => {
     const property = snapshot.val()
     if (matchesSearchCriteria(filterValues, property)) dispatch(addResult(property))
   })

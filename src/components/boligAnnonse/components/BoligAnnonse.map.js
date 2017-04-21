@@ -33,24 +33,23 @@ const mapStateToProps = state => {
   if (!property) return
 
   return ({
-    Price: property.Price,
-    Fellesutgifter: 1340,
-    Fellesgjeld: 0,
-    BRA: 90,
-    PRom: 85,
-    SquareMetres: property.SquareMetres,
-    Inngangsetasje: 1,
-    AntallPlan: 1,
-    AntallRom: 4,
-    Bedrooms: property.Bedrooms,
-    EnergyRating: 'C',
-    StreetNumber: property.StreetNumber,
-    Byggestart: '30.06.2017',
-    Ferdigstillelse: '30.03.2018',
-    StreetName: property.StreetName,
-    AparmentNumber: '4a',
-    Poststed: property.Poststed,
-    Fylke: property.Fylke
+    price: property.price,
+    commonCosts: property.commonCosts,
+    sharedDebt: property.sharedDebt,
+    grossArea: property.grossArea,
+    netLivingSpace: property.netLivingSpace,
+    entryFloor: property.entryFloor,
+    floors: property.floors,
+    numberOfRooms: property.numberOfRooms,
+    bedrooms: property.bedrooms,
+    energyRating: property.energyRating,
+    streetNumber: property.streetNumber,
+    projectConstructionStart: property.projectConstructionStart,
+    projectConstructionFinalized: property.projectConstructionFinalized,
+    streetName: property.streetName,
+    aparmentNumber: property.aparmentNumber,
+    zipLocation: property.zipLocation,
+    county: property.county
   })
 }
 
