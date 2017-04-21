@@ -20,26 +20,26 @@ export const setMaxPriceHard = (maxPrice) => ({ type: types.SET_MAX_PRICE, paylo
 
 // Adjusts the price dynamically by making sure it does not exceed max price
 export const setMinPrice = (minPrice) => (dispatch, getState) => {
-  dispatch(setMinPriceHard(minPrice))
   if (getState().filter.maxPrice < minPrice) dispatch(setMaxPriceHard(minPrice))
+  dispatch(setMinPriceHard(minPrice))
 }
 
 export const setMaxPrice = (maxPrice) => (dispatch, getState) => {
-  dispatch(setMaxPriceHard(maxPrice))
   if (getState().filter.minPrice > maxPrice) dispatch(setMinPriceHard(maxPrice))
+  dispatch(setMaxPriceHard(maxPrice))
 }
 
 export const setMinSizeHard = (minSize) => ({ type: types.SET_MIN_SIZE, payload: minSize })
 export const setMaxSizeHard = (maxSize) => ({ type: types.SET_MAX_SIZE, payload: maxSize })
 
 export const setMinSize = (minSize) => (dispatch, getState) => {
-  dispatch(setMinSizeHard(minSize))
   if (getState().filter.maxSize < minSize) dispatch(setMaxSizeHard(minSize))
+  dispatch(setMinSizeHard(minSize))
 }
 
 export const setMaxSize = (maxSize) => (dispatch, getState) => {
-  dispatch(setMaxSizeHard(maxSize))
   if (getState().filter.minSize > maxSize) dispatch(setMinSizeHard(maxSize))
+  dispatch(setMaxSizeHard(maxSize))
 }
 
 export const addBedroomOption = (newOption) => ({ type: types.ADD_BEDROOM_OPTION, payload: newOption })
