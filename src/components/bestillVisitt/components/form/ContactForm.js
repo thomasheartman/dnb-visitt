@@ -16,10 +16,7 @@ const ContactForm = ({ handleSubmit, input, pristine, submitting, reset }) => (
   }}>
     <Field name='DatePicker' mode="landscape" floatingLabelText='Velg dato' hintText='Velg dato' component={DatePicker} />
     <Field name='TimePicker' floatingLabelText='Velg tid' hintText='Velg tid' component={TimePicker} format={null} props={{format: "24hr"}}/><br />
-    <SelectField name="DNB Visitt Filial" label="Velg filial">
-      <MenuItem value="DNB Grorud" primaryText="DNB Grorud"/>
-      <MenuItem value="DNB Oslo S" primaryText="DNB Oslo S"/>
-    </SelectField>
+ 
     <br />
     <Field name='name' type='text' floatingLabelText='Navn' hintText='Fornavn Etternavn' component={TextField} /><br />
     <Field name='number' type='number' floatingLabelText='Nummer' hintText='Telefonnummer' component={TextField} /><br />
