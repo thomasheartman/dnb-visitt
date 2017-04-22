@@ -5,11 +5,19 @@
 
 import { connect } from 'react-redux'
 import BestillVisitt from './BestillVisitt'
+import { getProperty } from '../../redux/reducers/currentProperty/currentPropertyActions'
 
 const mapStateToProps = state => ({
-  streetName: state.booking.property.streetName,
-  streetNumber: state.booking.property.streetNumber,
-  image: state.booking.property.image
+  id: state.currentProperty.propertyData.id,
+  fetching: state.currentProperty.fetchingProperty,
+  address: `${state.currentProperty.propertyData.streetName} ${state.currentProperty.propertyData.streetNumber}`,
+  image: state.currentProperty.propertyData.image
 })
 
-export default connect(mapStateToProps)(BestillVisitt)
+const mapDispatchToProps = dispatch => ({
+  fetchProperty (id) {
+    dispatch(getProperty(id))
+  }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(BestillVisitt)

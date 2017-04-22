@@ -12,6 +12,7 @@ const mapStateToProps = state => {
   if (!property) return
 
   return ({
+    id: property.id,
     price: property.price || 50,
     commonCosts: property.commonCosts,
     sharedDebt: property.sharedDebt,

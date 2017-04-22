@@ -7,7 +7,8 @@ import Wrapper from './BoligAnnonseWrapper'
 import { getProperty } from '../../redux/reducers/currentProperty/currentPropertyActions'
 
 const mapStateToProps = state => ({
-  fetching: state.currentProperty.fetchingProperty
+  fetching: state.currentProperty.fetchingProperty,
+  id: state.currentProperty.propertyData.id
 })
 
 const mapDispatchToProps = dispatch => ({

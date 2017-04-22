@@ -15,11 +15,11 @@ import lekeplass from './media/lekeplass.jpg'
 import trinn5alm from './media/Trinn-5-alm.jpg'
 import vardevei from './media/vardevei.jpg'
 
-export default ({ price, commonCosts, sharedDebt, grossArea,
+export default ({id, price, commonCosts, sharedDebt, grossArea,
   netLivingSpace, entryFloor, floors, numberOfRooms, bedrooms,
   energyRating, streetNumber, projectConstructionStart, projectConstructionFinalized,
   streetName, apartmentNumber, zipLocation, county, property,
-  handleSelectProperty = f => f }) => (
+  handleSelectProperty = f => f }, match) => (
 
     <div>
       <main className='housing-ad-main'>
@@ -42,7 +42,7 @@ export default ({ price, commonCosts, sharedDebt, grossArea,
                   <Link to='#presentation'>Presentasjon</Link>
                 </li>
                 <li>
-                  <Link to='/bestill-visitt' onClick={() => handleSelectProperty(property)}>Bestill Visitt</Link>
+                  <Link to={`/bestill-visitt/${id}`} onClick={() => handleSelectProperty(property)}>Bestill Visitt</Link>
                 </li>
               </ul>
             </nav>

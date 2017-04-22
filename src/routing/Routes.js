@@ -30,8 +30,8 @@ export default () => (
           <Route path='/hjelp-og-kontakt' component={HjelpOgKontakt} />
           <Route path='/boligvelger/annonse/:id' component={AnnonseWrapper} />
           <Route path='/boligvelger' component={Boligvelger} />
-          <Route path="/bestill-visitt" component={BestillVisitt} />
-          <Route path='*' component={Error404} />
+          <Route path="/bestill-visitt/:id" component={BestillVisitt} />
+          <Route component={Error404} />
         </Switch>
       </MasterLayout>
     </ScrollToTop>

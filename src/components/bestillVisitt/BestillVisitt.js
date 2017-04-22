@@ -3,29 +3,48 @@
  * Reserve time slot to Visit page
  */
 import React from 'react'
-import Form from './components/form/ContactForm'
-import { Link } from 'react-router-dom'
+import Form from './components/form/BookingForm'
+import { Spinner } from '../loadingIndicators/Loading'
+// import { Link } from 'react-router-dom'
 
-export default ({ streetName, streetNumber }) => (
-  <div>
-     <main className="reservation-main">
-        <div className="row">
-            <div className="col-xs">
+
+class BestillVisitt extends React.Component {
+  componentDidMount () {
+    if (parseInt(this.props.match.params.id) !== parseInt(this.props.id)) {
+      // this means that the currently loaded property is not the right one
+      // so we'll have to load the right one from the database
+      this.props.fetchProperty(this.props.match.params.id)
+    }
+  }
+
+  render () {
+    const { address, image, fetching } = this.props
+
+    return (
+      fetching
+      ? <Spinner />
+        : <div>
+          <main className="reservation-main">
+            <div className="row">
+              <div className="col-xs">
                 <h2>Bestill Visitt</h2>
 
+              </div>
             </div>
-        </div>
-        <div className="row reservation-container">
-            <div className="col-xs-12 col-sm-6 reserve-form-container">
+            <div className="row reservation-container">
+              <div className="col-xs-12 col-sm-6 reserve-form-container">
                 <p>Reserver din Visitt:</p>
                 <Form />
-            </div>
-            <div className="col-xs-12 col-sm-6 reserved-house-container">
+              </div>
+              <div className="col-xs-12 col-sm-6 reserved-house-container">
                 <p>Valgt bolig:</p>
-                <h2>{`${streetName} ${streetNumber}`}</h2>
-                <img href="/"/>
+                <h2>{`${address}`}</h2>
+                <img role='presentation' href={image} />
+              </div>
             </div>
+          </main>
         </div>
-    </main>
-  </div>
-)
+    )}
+}
+
+export default BestillVisitt
