@@ -12,7 +12,7 @@ import { Spinner } from '../loadingIndicators/Loading'
 // making this a stateful component so that we can load data on mount.
 class AnnonseWrapper extends React.Component {
   componentDidMount () {
-    if (parseInt(this.props.match.params.id) !== parseInt(this.props.id)) {
+    if (parseInt(this.props.match.params.id, 10) !== parseInt(this.props.id, 10)) {
       this.props.fetchProperty(this.props.match.params.id)
     }
   }

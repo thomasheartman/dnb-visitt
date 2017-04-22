@@ -14,7 +14,6 @@ export const removeCounty = (county) => ({ type: types.REMOVE_COUNTY, payload: c
 
 export const clearCounties = () => ({ type: types.CLEAR_COUNTIES })
 
-
 export const setMinPriceHard = (minPrice) => ({ type: types.SET_MIN_PRICE, payload: minPrice })
 export const setMaxPriceHard = (maxPrice) => ({ type: types.SET_MAX_PRICE, payload: maxPrice })
 
@@ -45,8 +44,6 @@ export const setMaxSize = (maxSize) => (dispatch, getState) => {
 export const addBedroomOption = (newOption) => ({ type: types.ADD_BEDROOM_OPTION, payload: newOption })
 export const removeBedroomOption = (option) => ({ type: types.REMOVE_BEDROOM_OPTION, payload: option })
 export const clearBedroomOptions = () => ({ type: types.CLEAR_BEDROOMS })
-
-
 
 export const clearFilter = () => dispatch => {
   dispatch(clearCounties())

@@ -50,9 +50,7 @@ it('should add an entry to the database', (done) => {
     }).then(
     setTimeout(() => done(), 2000)
     )
-
 })
-
 
 it('should set the email address', () => {
   const payload = 'me@example.com'
@@ -90,7 +88,6 @@ it('should change the client name', () => {
   expect(reducer
     (initialState, ({ type: types.SET_CLIENT_NAME, payload: payload })))
     .toEqual(expectedState)
-
 })
 
 it('should set the time', () => {
