@@ -5,7 +5,7 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom'
-import visittLogo from './media/dnb_visitt_1.png'
+import visittLogo from './media/dnb_visitt_footer.svg'
 import dnbLogo from './media/dnb-standard.svg'
 
 export default () => (
