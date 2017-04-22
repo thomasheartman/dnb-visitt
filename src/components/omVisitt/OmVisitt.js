@@ -9,7 +9,7 @@ import Hva from './components/infoSection/HvaErVisitt'
 import Hvor from './components/infoSection/HvorFinnerJegVisitt'
 import Se from './components/infoSection/SeBoligIVr'
 import Tryggere from './components/infoSection/TryggereKjop'
-import Map from './components/map/Map'
+
 
 export default () => (
   <div>
@@ -23,7 +23,7 @@ export default () => (
       <Se />
       <Tryggere />
       <Hvor />
-      <Map />
+
     </main>
   </div >
 )
