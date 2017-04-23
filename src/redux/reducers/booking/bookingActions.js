@@ -36,7 +36,7 @@ export const processForm = (values) => (dispatch, getState) => {
   ref.once('value')
     .then(snapshot => {
       if (snapshot.val() !== null) {
-        throw { message: 'No vacancy' }
+        throw new Error('Den valgte tiden er ikke ledig')
       }
       ref.set(payload)
     })

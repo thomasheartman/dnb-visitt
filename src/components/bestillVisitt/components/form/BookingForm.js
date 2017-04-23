@@ -31,6 +31,7 @@ const BookingForm = ({ date, branch, handleSubmit, input, pristine, submitting, 
         name='branch' type='text'
         floatingLabelText='Filial'
         hintText='Hvor vil du på visitt?'
+        required
       >
         {branches.map((branch) =>
           <MenuItem value={branch} key={branch} primaryText={branch} />
@@ -47,6 +48,7 @@ const BookingForm = ({ date, branch, handleSubmit, input, pristine, submitting, 
         hintText='Velg dato'
         autoOk={true}
         shouldDisableDate={(date) => date.getDay() === 0 || date.getDay() === 6}
+        required
       />
 
       <Field component={SelectField}
@@ -54,15 +56,16 @@ const BookingForm = ({ date, branch, handleSubmit, input, pristine, submitting, 
         name='time' type='text'
         floatingLabelText='Klokkeslett'
         hintText='Når vil du på visitt?'
+        required
       >
         {hours.map((hour) =>
           <MenuItem value={hour} key={hour} primaryText={hour} />
         )}
       </Field>
 
-      <Field name='name' type='text' floatingLabelText='Navn' hintText='Fornavn Etternavn' component={TextField} />
-      <Field name='number' type='number' floatingLabelText='Nummer' hintText='Telefonnummer' component={TextField} />
-      <Field name='email' type='email' floatingLabelText='Epost' hintText='Epost' component={TextField} />
+      <Field name='name' type='text' floatingLabelText='Navn' hintText='Fornavn Etternavn' component={TextField} required />
+      <Field name='number' type='number' floatingLabelText='Nummer' hintText='Telefonnummer' component={TextField} required />
+      <Field name='email' type='email' floatingLabelText='Epost' hintText='Epost' component={TextField} required />
 
       <input type='submit' value='Bestill Visitt' disabled={pristine || submitting} />
     </form>
