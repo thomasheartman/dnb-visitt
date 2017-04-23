@@ -20,10 +20,11 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
           <li className='filter-item' key={county}>
             <Checkbox className='regionItem' label={county}
               checked={selectedCounties.includes(county)}
-              onCheck={() => {
-                handleChange(selectedCounties.includes(county) ? fields.REMOVE_COUNTY : fields.ADD_COUNTY, county)
-                performSearch()
-              }} />
+                  onCheck={() => {
+                    handleChange(selectedCounties.includes(county) ? fields.REMOVE_COUNTY : fields.ADD_COUNTY, county)
+                    performSearch()
+                  }}
+              />
           </li>
         )}
         <VelocityTransitionGroup component='div' enter='slideDown' leave='slideUp'>
@@ -44,7 +45,7 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
       </ul>
 
       <legend>Pris</legend>
-      <ul>
+      <ul className="filter-slider-container">
         <li>
           <label htmlFor='minPriceSlider'>Fra kr. {minPrice.toLocaleString()}</label>
           <Slider
@@ -58,6 +59,7 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
             onChange={(event, value) => {
               handleChange(fields.SET_MIN_PRICE, value)
             }}
+            style={{ marginBottom: 0 }}
           />
           <br />
 
@@ -73,12 +75,13 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
             onChange={(event, value) => {
               handleChange(fields.SET_MAX_PRICE, value)
             }}
+            style={{ marginBottom: 0 }}
           />
         </li>
       </ul>
 
       <legend>Areal</legend>
-      <ul>
+      <ul className="filter-slider-container">
 
         <li>
           <label htmlFor='minSizeSlider'>Fra {minSize} m&#178;</label>
@@ -92,7 +95,9 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
             onBlur={() => performSearch(filter)}
             onChange={(event, value) => {
               handleChange(fields.SET_MIN_SIZE, value)
+
             }}
+            style={{ marginBottom: 0 }}
           />
           <br />
 
@@ -108,12 +113,13 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
             onChange={(event, value) => {
               handleChange(fields.SET_MAX_SIZE, value)
             }}
+            style={{ marginBottom: 0 }}
           />
         </li>
       </ul>
 
       <legend>Antall soverom</legend>
-      <ul>
+      <ul className="filter-slider-container">
         {allBedroomValues.map((entry) =>
           <li className='filter-item' key={entry}>
             <Checkbox value={entry}
@@ -130,15 +136,15 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
           </li>
         )}
       </ul>
-
-      <input type='reset' value='Tilbakestill'
+      <input type='submit' value='Søk' className='submit'
+          onClick={() => performSearch(filter)}
+      />
+      <input type='reset' value='Tilbakestill' className='submit'
         onClick={() => {
           handleReset()
           performSearch()
         }}
       />
-      <input type='submit' value='Søk' className='submit'
-        onClick={() => performSearch(filter)}
-      />
+
     </div>
   )

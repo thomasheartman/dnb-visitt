@@ -116,12 +116,13 @@ input[type="search"] {
 
 
 input[type="submit"], input[type="reset"] {
-    background: #097C84;
+    width: 10rem;
+    background:#404040;
     padding: 1rem;
-    margin: 1rem 0;
+    margin: 1rem 0.25rem;
     border: none;
     color: #fff;
-    font-size: 1rem;
+    font-size: 1.25rem;
 }
 
 input[type="submit"]:hover, input[type="reset"]:hover {
@@ -477,7 +478,7 @@ main.frontpage {
 
 .housing-filter {
     position: relative;
-    background-color: cadetblue;
+    background-color: #097C84;
     color: #fff;
 }
 
@@ -567,6 +568,7 @@ main.frontpage {
 .housing-filter legend {
     font-size: 1.2rem;
     font-weight: 700;
+    margin: 1.5rem 0; 
 }
 
 .housing-filter input[type="number"] {
@@ -576,25 +578,29 @@ main.frontpage {
     font-size: 0.8rem;
 } 
 
-.filter-item {
-    margin: 1em 0;
+.housing-filter ul div {
+    margin-bottom: 0;
 }
 
-.filter-item:nth-child(n+6) {
-    display: none;
+.filter-item {
+    margin: 0.25rem 0;
+}
+
+.filter-slider-container li div {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
 }
 
 #showMore {
-    background-color: #097C84;
-    font-size: 1.2rem;
     padding: 0.5rem;
     margin: 1rem 0;
-    border: none;
+    background-color: #404040;
+    font-size: 1.2rem;
     color: #fff;
 }
 
 #showMore:hover {
-    background-color: #F67F00;
+    border: 1px solid #F67F00;
     cursor: pointer;
 }
 
