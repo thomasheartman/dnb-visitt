@@ -18,7 +18,7 @@ class BestillVisitt extends React.Component {
   }
 
   render () {
-    const { bookingCompleted, address, image, fetching, fireMail } = this.props
+    const { bookingCompleted, address, image, fetching } = this.props
 
     if (bookingCompleted) {
       return <BookingCompleted />

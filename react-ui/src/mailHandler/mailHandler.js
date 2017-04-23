@@ -5,15 +5,13 @@
  */
 import { from, replyTo } from './defaultConfirmBookingValues'
 
-
 export const confirmBooking = ({ to, subject, html }) => {
+  const headers = new Headers()
 
-const headers = new Headers()
-
-headers.append('Content-Type', 'application/json');
+  headers.append('Content-Type', 'application/json')
 
   fetch('/send-bekreftelse', {
-    method: "POST",
+    method: 'POST',
     headers: headers,
     body: JSON.stringify({
       from: from,

@@ -10,8 +10,6 @@ const auth = require('./auth')
 const nodemailerMailgun = nodemailer.createTransport(mg(auth))
 
 function sendMail ({from, to, subject, replyTo, html, text}) {
-
-
   nodemailerMailgun.sendMail({
     from: from,
     to: to, // An array if you have multiple recipients.
