@@ -27,24 +27,19 @@ class BestillVisitt extends React.Component {
             <div className='row'>
               <div className='col-xs'>
                 <h2>Bestill Visitt</h2>
-
-              </div>
             </div>
-            <div className='row reservation-container'>
-              <div className='col-xs-12 col-sm-6 reserve-form-container'>
+        </div>
+        <div className="row reservation-container">
+            <div className="col-xs-12 col-sm-6 reserve-form-container">
                 <p>Reserver din Visitt:</p>
                 <Form />
-              </div>
-              <div className='col-xs-12 col-sm-6 reserved-house-container'>
-                <p>Valgt bolig:</p>
-                <h2>{`${address}`}</h2>
-                <img role='presentation' href={image} />
-              </div>
             </div>
-          </main>
+            <div className="col-xs-12 col-sm-6 reserved-house-container">
+                <p>Valgt bolig:</p>
+                <h2>{address}</h2>
+                <img href="/" role="presentation"/>
+            </div>
         </div>
-    )
-  }
-}
-
-export default BestillVisitt
+    </main>
+  </div>
+)

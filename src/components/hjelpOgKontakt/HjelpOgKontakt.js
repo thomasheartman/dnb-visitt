@@ -4,6 +4,7 @@
  */
 import React from 'react'
 import Form from './components/form/ContactForm'
+import Map from './components/map/Map'
 import { Link } from 'react-router-dom'
 
 export default () => (
@@ -24,7 +25,8 @@ export default () => (
       </div>
 
       <Form />
-
+		
+	  <Map />
     </main>
   </div>
 )

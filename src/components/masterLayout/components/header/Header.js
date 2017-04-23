@@ -5,7 +5,7 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom'
-import logo from './media/dnb-standard.svg'
+import logo from './media/dnb-visitt.svg'
 
 export default () => (
   <div className='container-header'>
