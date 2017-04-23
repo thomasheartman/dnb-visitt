@@ -5,26 +5,22 @@
 'use strict'
 const nodemailer = require('nodemailer')
 const mg = require('nodemailer-mailgun-transport')
+const auth = require('./auth')
 
-const auth = {
-  auth: {
-    api_key: 'key-b690b83ce609d5ef8ab65f77491cce66',
-    domain: 'sandbox8af49f77ddf74950b6faf0e16c2ab317.mailgun.org'
-  }
-}
+const nodemailerMailgun = nodemailer.createTransport(mg(auth))
 
-function sendMail () {
-  const nodemailerMailgun = nodemailer.createTransport(mg(auth))
+function sendMail ({from, to, subject, replyTo, html, text}) {
+
 
   nodemailerMailgun.sendMail({
-    from: 'visitt@dnb.no',
-    to: 'thomas.o.hartmann@gmail.com', // An array if you have multiple recipients.
-    subject: 'Takk for din bestilling.',
-    'h:Reply-To': 'dnbvisitt@gmail.com',
+    from: from,
+    to: to, // An array if you have multiple recipients.
+    subject: subject,
+    'h:Reply-To': replyTo,
     // You can use "html:" to send HTML email content. It's magic!
-    html: '<b>Wow Big powerful letters</b>',
+    html: html,
     // You can use "text:" to send plain-text content. It's oldschool!
-    text: 'Mailgun rocks, pow pow!'
+    text: text
   }, function (err, info) {
     if (err) {
       console.log('Error: ' + err)

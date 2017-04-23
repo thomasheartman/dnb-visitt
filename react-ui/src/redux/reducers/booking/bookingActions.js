@@ -32,6 +32,7 @@ export const saveBooking = (bookingData) => (dispatch) => {
   dispatch(setDate(date))
   dispatch(setBranch(branch))
   dispatch(selectProperty(property))
+
 }
 
 /**

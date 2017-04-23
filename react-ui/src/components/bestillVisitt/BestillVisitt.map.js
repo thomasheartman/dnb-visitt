@@ -7,6 +7,7 @@ import { connect } from 'react-redux'
 import BestillVisitt from './BestillVisitt'
 import { getProperty } from '../../redux/reducers/currentProperty/currentPropertyActions'
 import _ from 'lodash'
+import { confirmBooking } from '../../mailHandler/mailHandler'
 
 const mapStateToProps = state => {
   const property = state.currentProperty.propertyData
@@ -28,6 +29,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   fetchProperty (id) {
     dispatch(getProperty(id))
+  },
+  fireMail () {
+    confirmBooking({ to: 'thomas.o.hartmann@gmail.com', subject: 'Din bestilling', html: '<div>HTML</div>'})
   }
 })
 

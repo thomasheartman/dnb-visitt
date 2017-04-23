@@ -18,7 +18,7 @@ class BestillVisitt extends React.Component {
   }
 
   render () {
-    const { bookingCompleted, address, image, fetching } = this.props
+    const { bookingCompleted, address, image, fetching, fireMail } = this.props
 
     if (bookingCompleted) {
       return <BookingCompleted />
@@ -45,6 +45,7 @@ class BestillVisitt extends React.Component {
                 <img href={image} role='presentation' />
               </div>
             </div>
+            <button onClick={() => fireMail()}>CLICK ME</button>
           </main>
         </div>
     )
