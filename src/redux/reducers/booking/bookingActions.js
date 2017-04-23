@@ -5,21 +5,9 @@
  */
 
 import types from './bookingActionTypes'
-import { database } from '../../../firebase/firebase'
+import { addBookingToDatabase } from '../../../firebase/queries'
 
 export const selectProperty = (property) => ({ type: types.SELECT_PROPERTY, payload: property })
-
-// TODO: join this and the function in openingHours.js somewhere
-const pad = (number, desiredLength = 2, paddingCharacter = '0') =>
-  (String(paddingCharacter).repeat(desiredLength) + String(number)).slice(String(number).length)
-
-const formatDate = (date) => {
-  const day = pad(date.getDate(), 2)
-  const month = pad(date.getMonth() + 1, 2)
-  const year = date.getFullYear().toString()
-  const fullDate = year.concat('-', month, '-', day)
-  return fullDate
-}
 
 export const processForm = (values) => (dispatch, getState) => {
   const { branch, date, time, name, email, number } = values
@@ -30,37 +18,5 @@ export const processForm = (values) => (dispatch, getState) => {
     'phoneNumber': number
   }
 
-  const dateFormatted = formatDate(date)
-
-  const ref = database.ref(`appointments/${branch}/${dateFormatted}/${time}`)
-
-  ref.once('value')
-    .then(snapshot => {
-      if (snapshot.val() !== null) {
-        throw new Error('Den valgte tiden er ikke ledig') 
-      }
-      ref.set(payload)
-    })
-    .catch(err => alert(err.message))
-}
-
-export const getSchedule = (branch: string, date: Date) => {
-
-  const dateFormatted = formatDate(date)
-
-  const ref = database.ref(`appointments/${branch}/${dateFormatted}`)
-
-ref.once('value')
-    .then(snapshot => {
-      console.log(snapshot.val())
-    })
-
-  let bookings = []
-
-  ref.on('child_added', snapshot => {
-      if (snapshot.val() !== null) {
-        bookings = [...bookings, snapshot.key]
-        console.log(bookings)
-      }
-    })
+  dispatch(addBookingToDatabase(branch, date, time, payload))
 }

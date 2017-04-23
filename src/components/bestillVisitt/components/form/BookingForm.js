@@ -8,16 +8,16 @@ import MenuItem from 'material-ui/MenuItem'
 import { TextField, DatePicker, SelectField } from 'redux-form-material-ui'
 import branches from './branchValues/branches'
 import hours from './branchValues/openingHours'
-import { getSchedule } from '../../../../redux/reducers/booking/bookingActions'
 
 
 class BookingForm extends React.Component {
 
   componentDidUpdate () {
-    const { branch, date } = this.props
+    const { branch, date, fetchSchedule } = this.props
     console.log(`Branch and date: ${branch}, ${date}`)
     if (branch && date) {
-      getSchedule(branch, date)
+      console.log('Getting schedj')
+      fetchSchedule(branch, date)
     }
   }
 

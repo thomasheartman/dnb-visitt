@@ -7,7 +7,10 @@
 import { connect } from 'react-redux'
 import Form from './BookingForm'
 import { reduxForm, formValueSelector } from 'redux-form'
-import { processForm, getSchedule } from '../../../../redux/reducers/booking/bookingActions'
+import { processForm } from '../../../../redux/reducers/booking/bookingActions'
+import { getSchedule } from '../../../../firebase/queries'
+
+
 // For supporting norwegian dates
 import areIntlLocalesSupported from 'intl-locales-supported';
 import IntlPolyfill from 'intl'
@@ -27,7 +30,7 @@ const mapDispatchToProps = dispatch => ({
   handleBranch (branch) {
     console.log('the new branch is ' + JSON.stringify(branch))
   },
-  fetchSchedule (branch :string, date: Date) {
+  fetchSchedule (branch: string, date: Date) {
     dispatch(getSchedule(branch, date))
   }
 })

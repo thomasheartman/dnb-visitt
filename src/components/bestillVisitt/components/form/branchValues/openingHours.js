@@ -3,9 +3,7 @@
  * A file listing opening hours
  */
 
-// function to pad numbers so that they're always 4 characters long
-const pad = (number, desiredLength = 4, paddingCharacter = '0') =>
-  (String(paddingCharacter).repeat(desiredLength) + String(number)).slice(String(number).length)
+import { pad } from '../../../../../helperFunctions/formatting'
 
 const openingHour = 9
 const closingHour = 17
