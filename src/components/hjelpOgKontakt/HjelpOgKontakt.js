@@ -25,8 +25,8 @@ export default () => (
       </div>
 
       <Form />
-		
-	  <Map />
+
+      <Map />
     </main>
   </div>
 )

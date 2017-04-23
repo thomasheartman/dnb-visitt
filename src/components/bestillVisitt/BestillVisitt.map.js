@@ -8,7 +8,6 @@ import BestillVisitt from './BestillVisitt'
 import { getProperty } from '../../redux/reducers/currentProperty/currentPropertyActions'
 
 const mapStateToProps = state => {
-
   const property = state.currentProperty.propertyData
 
   const addressString = `${property.streetName} ${property.streetNumber}`
@@ -17,11 +16,11 @@ const mapStateToProps = state => {
     : addressString
 
   return ({
-  id: property.id,
-  fetching: state.currentProperty.fetchingProperty,
-  address: fullAddressString,
-  image: property.image
-})
+    id: property.id,
+    fetching: state.currentProperty.fetchingProperty,
+    address: fullAddressString,
+    image: property.image
+  })
 }
 
 const mapDispatchToProps = dispatch => ({

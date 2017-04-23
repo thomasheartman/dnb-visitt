@@ -9,21 +9,18 @@ import { TextField, DatePicker, SelectField } from 'redux-form-material-ui'
 import branches from './branchValues/branches'
 import hours from './branchValues/openingHours'
 
-
 class BookingForm extends React.Component {
-
   componentDidUpdate () {
     const { branch, date, fetchSchedule } = this.props
     console.log(`Branch and date: ${branch}, ${date}`)
     if (branch && date) {
-      console.log('Getting schedj')
       fetchSchedule(branch, date)
     }
   }
 
-
   render () {
-    const { date, branch, DateTimeFormat, handleSubmit, input, pristine, submitting,
+    const { date, branch, DateTimeFormat, schedule,
+      handleSubmit, input, pristine, submitting,
       handleDate = f => f, handleBranch = f => f, fetchSchedule = f => f } = this.props
 
     return (
@@ -53,20 +50,22 @@ class BookingForm extends React.Component {
             mode='landscape'
             floatingLabelText='Velg dato'
             hintText='Velg dato'
-            autoOk={true}
+            autoOk
             shouldDisableDate={(date) => date.getDay() === 0 || date.getDay() === 6}
             required
           />
 
           <Field component={SelectField}
-            disabled={date && branch ? false : true}
+            disabled={!(date && branch)}
             name='time' type='text'
             floatingLabelText='Klokkeslett'
             hintText='Når vil du på visitt?'
             required
           >
             {hours.map((hour) =>
-              <MenuItem value={hour} key={hour} primaryText={hour} />
+              <MenuItem value={hour} key={hour} primaryText={hour}
+                disabled={schedule.includes(hour)}
+              />
             )}
           </Field>
 
@@ -77,7 +76,7 @@ class BookingForm extends React.Component {
           <input type='submit' value='Bestill Visitt' disabled={pristine || submitting} />
         </form>
 
-        <button disabled={date && branch ? false : true} onClick={() => fetchSchedule(branch, date)}>Get schedule</button>
+        <button disabled={!(date && branch)} onClick={() => fetchSchedule(branch, date)}>Get schedule</button>
       </div>
     )
   }

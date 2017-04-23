@@ -45,7 +45,8 @@ const selector = formValueSelector('bookingForm')
 const mapStateToProps = state => ({
   date: selector(state, 'date'),
   branch: selector(state, 'branch'),
-  DateTimeFormat: DateTimeFormat
+  DateTimeFormat: DateTimeFormat,
+  schedule: state.bookingSchedule
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(reduxConnectedForm)

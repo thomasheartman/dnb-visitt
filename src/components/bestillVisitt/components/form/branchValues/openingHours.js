@@ -13,7 +13,7 @@ const createHourArray = (openingHour, closingHour) => {
   for (var hour = openingHour; hour < closingHour; hour++) {
     // multiply value by 100 to get times like 0900, 1000 etc.
     // subtract opening hour to make sure to start on 0 and not get undefined fields.
-    hours[hour-openingHour] = pad(hour*100);
+    hours[hour - openingHour] = pad(hour * 100)
   }
   return hours
 }

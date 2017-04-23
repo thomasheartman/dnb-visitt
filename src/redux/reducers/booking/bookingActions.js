@@ -6,6 +6,8 @@
 
 import types from './bookingActionTypes'
 import { addBookingToDatabase } from '../../../firebase/queries'
+import { formatDate } from '../../../helperFunctions/formatting'
+
 
 export const selectProperty = (property) => ({ type: types.SELECT_PROPERTY, payload: property })
 
@@ -18,5 +20,8 @@ export const processForm = (values) => (dispatch, getState) => {
     'phoneNumber': number
   }
 
-  dispatch(addBookingToDatabase(branch, date, time, payload))
+  const dateFormatted = formatDate(date)
+
+
+  dispatch(addBookingToDatabase(branch, dateFormatted, time, payload))
 }

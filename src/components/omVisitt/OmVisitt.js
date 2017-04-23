@@ -10,7 +10,6 @@ import Hvor from './components/infoSection/HvorFinnerJegVisitt'
 import Se from './components/infoSection/SeBoligIVr'
 import Tryggere from './components/infoSection/TryggereKjop'
 
-
 export default () => (
   <div>
 

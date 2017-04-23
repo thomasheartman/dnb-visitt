@@ -3,8 +3,9 @@
  * Reducer for booking schedule
  */
 import types from './bookingScheduleActionTypes'
+import { combineReducers } from 'redux'
 
-const bookingSchedule = (state = [], action) => {
+const appointments = (state = [], action) => {
   switch (action.type) {
     case types.ADD_BOOKING:
       return [...state, action.payload]
@@ -17,4 +18,8 @@ const bookingSchedule = (state = [], action) => {
   }
 }
 
-export default bookingSchedule
+export const branch = (state = '', action) => action.type === types.CHANGE_BRANCH ? action.payload : state
+
+export const date = (state = '', action) => action.type === types.CHANGE_DATE ? action.payload : state
+
+export default combineReducers({ appointments, branch, date })

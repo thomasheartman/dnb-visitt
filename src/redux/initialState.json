@@ -30,8 +30,12 @@
     },
     "property": {
 
-    },
+    }
+  },
 
-    "bookingSchedule": []
+  "bookingSchedule": {
+    "appointments": [],
+    "date": "",
+    "branch": ""
   }
 }

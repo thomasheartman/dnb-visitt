@@ -29,15 +29,15 @@ class BestillVisitt extends React.Component {
                 <h2>Bestill Visitt</h2>
               </div>
             </div>
-            <div className="row reservation-container">
-              <div className="col-xs-12 col-sm-6 reserve-form-container">
+            <div className='row reservation-container'>
+              <div className='col-xs-12 col-sm-6 reserve-form-container'>
                 <p>Reserver din Visitt:</p>
                 <Form />
               </div>
-              <div className="col-xs-12 col-sm-6 reserved-house-container">
+              <div className='col-xs-12 col-sm-6 reserved-house-container'>
                 <p>Valgt bolig:</p>
                 <h2>{address}</h2>
-                <img href={image} role="presentation" />
+                <img href={image} role='presentation' />
               </div>
             </div>
           </main>
