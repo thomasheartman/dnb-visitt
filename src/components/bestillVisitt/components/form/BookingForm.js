@@ -3,7 +3,7 @@
  * The contact form for the contact us page
  */
 import React from 'react'
-import { Field, reduxForm } from 'redux-form'
+import { Field } from 'redux-form'
 import MenuItem from 'material-ui/MenuItem'
 import { TextField, DatePicker, SelectField } from 'redux-form-material-ui'
 import branches from './branchValues/branches'
@@ -18,7 +18,7 @@ const DateTimeFormat = areIntlLocalesSupported(['nb-NO'])
   ? global.Intl.DateTimeFormat
   : IntlPolyfill.DateTimeFormat
 
-const BookingForm = ({ handleSubmit, input, pristine, submitting, reset,
+const BookingForm = ({ date, branch, handleSubmit, input, pristine, submitting, reset,
   handleDate = f => f, handleBranch = f => f }) => (
 
     <form onSubmit={(event, values) => {
@@ -27,7 +27,7 @@ const BookingForm = ({ handleSubmit, input, pristine, submitting, reset,
     }}>
 
       <Field component={SelectField}
-        onChange={(event, key, value) => handleBranch(value)}
+        onChange={() => handleBranch(branch)}
         name='branch' type='text'
         floatingLabelText='Filial'
         hintText='Hvor vil du på visitt?'
@@ -40,7 +40,7 @@ const BookingForm = ({ handleSubmit, input, pristine, submitting, reset,
       <Field component={DatePicker}
         DateTimeFormat={DateTimeFormat}
         locale='nb-NO'
-        onChange={(unused, value) => handleDate(value)}
+        onChange={() => handleDate(date)}
         name='date' format={null}
         mode='landscape'
         floatingLabelText='Velg dato'
@@ -50,6 +50,7 @@ const BookingForm = ({ handleSubmit, input, pristine, submitting, reset,
       />
 
       <Field component={SelectField}
+      disabled={date && branch ? false : true}
         name='time' type='text'
         floatingLabelText='Klokkeslett'
         hintText='Når vil du på visitt?'
@@ -67,4 +68,4 @@ const BookingForm = ({ handleSubmit, input, pristine, submitting, reset,
     </form>
   )
 
-export default reduxForm({ form: 'bookingForm', destroyOnUnmount: false })(BookingForm)
+export default BookingForm

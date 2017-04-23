@@ -5,10 +5,12 @@
 
 import { connect } from 'react-redux'
 import Form from './BookingForm'
+import { reduxForm, formValueSelector } from 'redux-form'
+import { processForm } from '../../../../redux/reducers/booking/bookingActions'
 
 const mapDispatchToProps = dispatch => ({
-  handleSubmit (values) {
-    console.log(values)
+  onSubmit (values) {
+    dispatch(processForm(values))
   },
   handleDate (date) {
     console.log('the new date is: ' + JSON.stringify(date))
@@ -18,4 +20,16 @@ const mapDispatchToProps = dispatch => ({
   }
 })
 
-export default connect(null, mapDispatchToProps)(Form)
+const reduxConnectedForm = reduxForm({
+  form: 'bookingForm',
+  destroyOnUnmount: false
+})(Form)
+
+const selector = formValueSelector('bookingForm')
+
+const mapStateToProps = state => ({
+  date: selector(state, 'date'),
+  branch: selector(state, 'branch'),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(reduxConnectedForm)
