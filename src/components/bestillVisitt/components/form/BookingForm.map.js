@@ -24,12 +24,6 @@ const mapDispatchToProps = dispatch => ({
   onSubmit (values) {
     dispatch(processForm(values))
   },
-  handleDate (date) {
-    console.log('the new date is: ' + JSON.stringify(date))
-  },
-  handleBranch (branch) {
-    console.log('the new branch is ' + JSON.stringify(branch))
-  },
   fetchSchedule (branch: string, date: Date) {
     dispatch(updateSchedule(branch, date))
   }

@@ -19,8 +19,7 @@ class BookingForm extends React.Component {
 
   render () {
     const { date, branch, DateTimeFormat, schedule,
-      handleSubmit, input, pristine, submitting,
-      handleDate = f => f, handleBranch = f => f } = this.props
+      handleSubmit, input, pristine, submitting } = this.props
 
     return (
       <div>
@@ -30,7 +29,6 @@ class BookingForm extends React.Component {
         }}>
 
           <Field component={SelectField}
-            onChange={() => handleBranch(branch)}
             name='branch' type='text'
             floatingLabelText='Filial'
             hintText='Hvor vil du på visitt?'
@@ -44,7 +42,6 @@ class BookingForm extends React.Component {
           <Field component={DatePicker}
             DateTimeFormat={DateTimeFormat}
             locale='nb-NO'
-            onChange={() => handleDate(date)}
             name='date' format={null}
             mode='landscape'
             floatingLabelText='Velg dato'
