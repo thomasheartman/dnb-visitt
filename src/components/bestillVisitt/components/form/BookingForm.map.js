@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 import Form from './BookingForm'
 import { reduxForm, formValueSelector } from 'redux-form'
 import { processForm } from '../../../../redux/reducers/booking/bookingActions'
-import { getSchedule } from '../../../../firebase/queries'
+import { updateSchedule } from '../../../../redux/reducers/bookingSchedule/bookingScheduleActions'
 
 
 // For supporting norwegian dates
@@ -31,7 +31,7 @@ const mapDispatchToProps = dispatch => ({
     console.log('the new branch is ' + JSON.stringify(branch))
   },
   fetchSchedule (branch: string, date: Date) {
-    dispatch(getSchedule(branch, date))
+    dispatch(updateSchedule(branch, date))
   }
 })
 
@@ -46,7 +46,7 @@ const mapStateToProps = state => ({
   date: selector(state, 'date'),
   branch: selector(state, 'branch'),
   DateTimeFormat: DateTimeFormat,
-  schedule: state.bookingSchedule
+  schedule: state.bookingSchedule.appointments || []
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(reduxConnectedForm)

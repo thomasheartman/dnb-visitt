@@ -21,7 +21,7 @@ class BookingForm extends React.Component {
   render () {
     const { date, branch, DateTimeFormat, schedule,
       handleSubmit, input, pristine, submitting,
-      handleDate = f => f, handleBranch = f => f, fetchSchedule = f => f } = this.props
+      handleDate = f => f, handleBranch = f => f } = this.props
 
     return (
       <div>
@@ -75,8 +75,6 @@ class BookingForm extends React.Component {
 
           <input type='submit' value='Bestill Visitt' disabled={pristine || submitting} />
         </form>
-
-        <button disabled={!(date && branch)} onClick={() => fetchSchedule(branch, date)}>Get schedule</button>
       </div>
     )
   }

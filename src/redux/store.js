@@ -18,17 +18,13 @@ const consoleMessages = store => next => action => {
 
   console.groupCollapsed(`Dispatching action => ${action.type}`)
 
-  const booking = store.getState().booking
-  const property = store.getState().currentProperty.propertyData
+  const schedule = store.getState().bookingSchedule.appointments
 
   console.log(`
 
-  Current booking state:
+  Current booking schedule:
    === === === === ===
-  Client: ${JSON.stringify(booking.client)}
-  Property: ${JSON.stringify(property)}
-  Time: ${booking.time}
-  Date: ${booking.date}
+  Schedule: ${schedule}
 
 
 `)
