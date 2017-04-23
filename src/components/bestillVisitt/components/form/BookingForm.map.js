@@ -9,6 +9,12 @@ import Form from './BookingForm'
 const mapDispatchToProps = dispatch => ({
   handleSubmit (values) {
     console.log(values)
+  },
+  handleDate (date) {
+    console.log('the new date is: ' + JSON.stringify(date))
+  },
+  handleBranch (branch) {
+    console.log('the new branch is ' + JSON.stringify(branch))
   }
 })
 

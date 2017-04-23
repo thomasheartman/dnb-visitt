@@ -9,48 +9,62 @@ import { TextField, DatePicker, SelectField } from 'redux-form-material-ui'
 import branches from './branchValues/branches'
 import hours from './branchValues/openingHours'
 
-const BookingForm = ({ handleSubmit, input, pristine, submitting, reset }) => (
+// For supporting norwegian dates
+import areIntlLocalesSupported from 'intl-locales-supported';
+import IntlPolyfill from 'intl'
+require('intl/locale-data/jsonp/nb-NO')
 
-  <form onSubmit={(event, values) => {
-    event.preventDefault()
-    handleSubmit(values)
-  }}>
+const DateTimeFormat = areIntlLocalesSupported(['nb-NO'])
+  ? global.Intl.DateTimeFormat
+  : IntlPolyfill.DateTimeFormat
 
-    <Field component={SelectField}
-      name='branch' type='text'
-      floatingLabelText='Filial'
-      hintText='Hvor vil du på visitt?'
-    >
-      {branches.map((branch) =>
-        <MenuItem value={branch} key={branch} primaryText={branch} />
-      )}
-    </Field>
+const BookingForm = ({ handleSubmit, input, pristine, submitting, reset,
+  handleDate = f => f, handleBranch = f => f }) => (
 
-    <Field component={DatePicker}
-      name='date' format={null}
-      mode='landscape'
-      floatingLabelText='Velg dato'
-      hintText='Velg dato'
-      autoOk={true}
-      shouldDisableDate={(date) => date.getDay() === 0 || date.getDay() === 6}
-    />
+    <form onSubmit={(event, values) => {
+      event.preventDefault()
+      handleSubmit(values)
+    }}>
 
-    <Field component={SelectField}
-      name='time' type='text'
-      floatingLabelText='Klokkeslett'
-      hintText='Når vil du på visitt?'
-    >
-      {hours.map((hour) =>
-        <MenuItem value={hour} key={hour} primaryText={hour} />
-      )}
-    </Field>
+      <Field component={SelectField}
+        onChange={(event, key, value) => handleBranch(value)}
+        name='branch' type='text'
+        floatingLabelText='Filial'
+        hintText='Hvor vil du på visitt?'
+      >
+        {branches.map((branch) =>
+          <MenuItem value={branch} key={branch} primaryText={branch} />
+        )}
+      </Field>
 
-    <Field name='name' type='text' floatingLabelText='Navn' hintText='Fornavn Etternavn' component={TextField} />
-    <Field name='number' type='number' floatingLabelText='Nummer' hintText='Telefonnummer' component={TextField} />
-    <Field name='email' type='email' floatingLabelText='Epost' hintText='Epost' component={TextField} />
+      <Field component={DatePicker}
+        DateTimeFormat={DateTimeFormat}
+        locale='nb-NO'
+        onChange={(unused, value) => handleDate(value)}
+        name='date' format={null}
+        mode='landscape'
+        floatingLabelText='Velg dato'
+        hintText='Velg dato'
+        autoOk={true}
+        shouldDisableDate={(date) => date.getDay() === 0 || date.getDay() === 6}
+      />
 
-    <input type='submit' value='Bestill Visitt' disabled={pristine || submitting} />
-  </form>
-)
+      <Field component={SelectField}
+        name='time' type='text'
+        floatingLabelText='Klokkeslett'
+        hintText='Når vil du på visitt?'
+      >
+        {hours.map((hour) =>
+          <MenuItem value={hour} key={hour} primaryText={hour} />
+        )}
+      </Field>
 
-export default reduxForm({ form: 'bookingForm' })(BookingForm)
+      <Field name='name' type='text' floatingLabelText='Navn' hintText='Fornavn Etternavn' component={TextField} />
+      <Field name='number' type='number' floatingLabelText='Nummer' hintText='Telefonnummer' component={TextField} />
+      <Field name='email' type='email' floatingLabelText='Epost' hintText='Epost' component={TextField} />
+
+      <input type='submit' value='Bestill Visitt' disabled={pristine || submitting} />
+    </form>
+  )
+
+export default reduxForm({ form: 'bookingForm', destroyOnUnmount: false })(BookingForm)

@@ -13,6 +13,8 @@
     },
     "dependencies": {
         "css-loader": "^0.28.0",
+        "intl": "^1.2.5",
+        "intl-locales-supported": "^1.0.0",
         "material-ui": "^0.17.4",
         "react": "^15.5.4",
         "react-collapse": "^3.2.2",
