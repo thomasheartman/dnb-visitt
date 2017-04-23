@@ -37,7 +37,7 @@ class BestillVisitt extends React.Component {
               <div className="col-xs-12 col-sm-6 reserved-house-container">
                 <p>Valgt bolig:</p>
                 <h2>{address}</h2>
-                <img href="/" role="presentation" />
+                <img href={image} role="presentation" />
               </div>
             </div>
           </main>
