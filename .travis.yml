@@ -22,6 +22,7 @@ deploy:
   provider: heroku
   api_key:
     secure: PWIo/yd0TLqz5FLmgQh3HTLo3CoNjWJ0Bv5ndh8ryhTeWwFOipb9hgzCDBgLd1XB8MnB+mbRs2LWAGGejms5F08sK1O3J1z2M4C1rGpY3hOt7/4wic2mg9iHBo7+lonbcSvjvqL7GGmhyRhA+SHTm+SVj/8uz53T/r4Um9sRTKrkYEvSNuxXvI9Lj/RsykNkpH5pHiZn9RwOI5SwLMYn/zQpqlB1pSLXpzbt8z5i8F0jSZhOApRMMW7PYC0CxexcBXE5gsC9cPUb6np8C+P9P0aoJhp/AXLWFFks52eeT3mg/cGRjp3Em1O6rOhzYMVGFUFu/LskvpUb+RA74Fy3qV9GTiUWkAjhfiP4+ra8uo6k55WOShpSLKrUTilADQGwrlXBHqP/lFVOAdN2YqRr03ZIDNok59NFS8EdcF7cecwU0a6tcdEMEX1AeR102toSTSa4hkvoXAoEur4s8MmiXs7wqE4TlbN/hOpzE7HDdb4Dhyp93ohpYqO9hlw9VEqEKJt6qrWxm+dAQ/fnDYFv44acDJlUxp+iEFa+Vubo7RG+PzfmearWJYv5izkOb1QVmgXAn7GTcaizJQMVZRZYys5GqufTQ8Vi+tPVpAkbIxvBJo2EL+f+5MjZ+hn8NZH18d44x0WpauQ7AypC4CAa4l8k5rjokjl3gBNao+decu0=
+  app: dnb-visitt
 notifications:
   email: never
   slack:
