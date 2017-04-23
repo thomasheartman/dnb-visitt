@@ -18,10 +18,10 @@ class BestillVisitt extends React.Component {
   }
 
   render () {
-    const { bookingCompleted, address, image, fetching } = this.props
+    const { bookingCompleted, address, image, fetching, fireMail } = this.props
 
     if (bookingCompleted) {
-      return <BookingCompleted/>
+      return <BookingCompleted />
     }
 
     return (

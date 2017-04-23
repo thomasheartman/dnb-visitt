@@ -14,7 +14,7 @@ const initialState = {
 }
 
 it('should change the branch', () => {
-const payload = 'Oslo'
+  const payload = 'Oslo'
 
   const expectedState = {
     appointments: ['0900', '1000', '1400'],
@@ -28,7 +28,6 @@ const payload = 'Oslo'
 })
 
 it('should change the date', () => {
-
   const payload = '2018-03-25'
 
   const expectedState = {
