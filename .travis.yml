@@ -12,6 +12,7 @@ addons:
 env:
 - CXX=g++-4.8
 cache: yarn
+before_install: cd react-ui
 install:
 - yarn upgrade
 script:
