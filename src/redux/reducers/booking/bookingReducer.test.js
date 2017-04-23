@@ -14,6 +14,7 @@ import types from './bookingActionTypes'
 const initialState = {
   'date': '',
   'time': '',
+  'branch': '',
   'client': {
     'name': '',
     'email': ''
@@ -28,6 +29,7 @@ it('should set the email address', () => {
   const expectedState = {
     'date': '',
     'time': '',
+    'branch': '',
     'client': {
       'name': '',
       'email': payload
@@ -47,6 +49,7 @@ it('should change the client name', () => {
   const expectedState = {
     'date': '',
     'time': '',
+    'branch': '',
     'client': {
       'name': payload,
       'email': ''
@@ -66,6 +69,7 @@ it('should set the time', () => {
   const expectedState = {
     'date': '',
     'time': payload,
+    'branch': '',
     'client': {
       'name': '',
       'email': ''
@@ -85,6 +89,7 @@ it('should set the date', () => {
   const expectedState = {
     'date': payload,
     'time': '',
+    'branch': '',
     'client': {
       'name': '',
       'email': ''
@@ -97,6 +102,26 @@ it('should set the date', () => {
     .toEqual(expectedState)
 })
 
+it('should set the branch', () => {
+  const payload = 'DNB Oslo S'
+
+  const expectedState = {
+    'date': '',
+    'time': '',
+    'branch': payload,
+    'client': {
+      'name': '',
+      'email': ''
+    },
+    'property': {
+    }
+  }
+
+  expect(reducer(initialState,
+  ({ type: types.SET_BOOKING_BRANCH, payload: payload })
+  )).toEqual(expectedState)
+})
+
 it('should change the property', () => {
   const payload = {
     id: 1,
@@ -106,6 +131,7 @@ it('should change the property', () => {
   const expectedState = {
     'date': '',
     'time': '',
+    'branch': '',
     'client': {
       'name': '',
       'email': ''

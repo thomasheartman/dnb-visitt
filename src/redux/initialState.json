@@ -24,6 +24,7 @@
   "booking": {
     "date": "",
     "time": "",
+    "branch": "",
     "client": {
       "name": "",
       "email": ""
