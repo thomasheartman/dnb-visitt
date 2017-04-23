@@ -1,4 +1,5 @@
 /*
+ * @flow
  * Created by Thomas Hartmann
  * Actions for user bookings
  */
@@ -36,23 +37,27 @@ export const processForm = (values) => (dispatch, getState) => {
   ref.once('value')
     .then(snapshot => {
       if (snapshot.val() !== null) {
-        throw new Error('Den valgte tiden er ikke ledig')
+        throw new Error('Den valgte tiden er ikke ledig') 
       }
       ref.set(payload)
     })
     .catch(err => alert(err.message))
 }
 
-export const getSchedule = (branch, date) => {
+export const getSchedule = (branch: string, date: Date) => {
 
   const dateFormatted = formatDate(date)
 
   const ref = database.ref(`appointments/${branch}/${dateFormatted}`)
 
+ref.once('value')
+    .then(snapshot => {
+      console.log(snapshot.val())
+    })
+
   let bookings = []
 
-  ref.on('child_added')
-    .then(snapshot => {
+  ref.on('child_added', snapshot => {
       if (snapshot.val() !== null) {
         bookings = [...bookings, snapshot.key]
         console.log(bookings)
