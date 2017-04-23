@@ -7,12 +7,22 @@ import { connect } from 'react-redux'
 import BestillVisitt from './BestillVisitt'
 import { getProperty } from '../../redux/reducers/currentProperty/currentPropertyActions'
 
-const mapStateToProps = state => ({
-  id: state.currentProperty.propertyData.id,
+const mapStateToProps = state => {
+
+  const property = state.currentProperty.propertyData
+
+  const addressString = `${property.streetName} ${property.streetNumber}`
+  const fullAddressString = property.apartmentNumber
+    ? addressString.concat(`, leilighet ${property.apartmentNumber}`)
+    : addressString
+
+  return ({
+  id: property.id,
   fetching: state.currentProperty.fetchingProperty,
-  address: `${state.currentProperty.propertyData.streetName} ${state.currentProperty.propertyData.streetNumber}`,
-  image: state.currentProperty.propertyData.image
+  address: fullAddressString,
+  image: property.image
 })
+}
 
 const mapDispatchToProps = dispatch => ({
   fetchProperty (id) {

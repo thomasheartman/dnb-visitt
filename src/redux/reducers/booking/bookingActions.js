@@ -42,3 +42,20 @@ export const processForm = (values) => (dispatch, getState) => {
     })
     .catch(err => alert(err.message))
 }
+
+export const getSchedule = (branch, date) => {
+
+  const dateFormatted = formatDate(date)
+
+  const ref = database.ref(`appointments/${branch}/${dateFormatted}`)
+
+  let bookings = []
+
+  ref.on('child_added')
+    .then(snapshot => {
+      if (snapshot.val() !== null) {
+        bookings = [...bookings, snapshot.key]
+        console.log(bookings)
+      }
+    })
+}
