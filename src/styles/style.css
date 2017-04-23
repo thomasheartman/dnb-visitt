@@ -43,7 +43,7 @@ a:hover {
 
 .img-responsive {
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
 .full-width {
@@ -71,6 +71,39 @@ a:hover {
     width: 100%;
     max-width: 1240px;
     margin: 0 auto;
+}
+
+.page-sub-heading {
+    margin: 2rem 0;
+    border-bottom: 1px solid #404040;
+}
+
+.page-sub-heading h2 {
+    margin-bottom: 0.25rem;
+}
+
+.page-sub-heading img {
+    height: 6rem;
+    just
+}
+
+
+.notification {
+    box-sizing:padding-box;
+    padding-bottom: 2rem;
+    font-size: 0.75rem;
+    font-weight: 300;
+    text-align: center;
+    border-bottom: 1px solid #F67F00;
+    max-width: 24rem;
+    margin: 0 auto;
+}
+
+.orange-button {
+    padding: 1rem 3rem;
+    border: 1px solid #F67F00;
+    color: #F67F00;
+   
 }
 
 
@@ -784,6 +817,54 @@ main.frontpage {
 .reserved-house-container h2 {
     color: #097C84;
 }
+
+/* RESERVATION CONFIRMATION */
+
+.confirmation-container {
+    padding: 1rem 0 5rem 0;
+    font-family: sans-serif, Arial;
+}
+
+.reservation-info {
+  max-width: 16rem;
+  margin: 0 auto;
+}
+
+.reservation-info h2 {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.reservation-info-line {
+    width: 16rem;
+    margin: 1rem 0;
+    font-size: 1.25rem;
+}
+
+.reservation-info-line span:first-child {
+    font-weight: 700;
+    color: #404040;
+}
+
+.reservation-info-line span:last-child {
+    color: #097C84;
+}
+
+.reserved-houses {
+    margin: 2rem 0;
+}
+
+.reserved-houses h3 {
+    margin: 1rem 0;
+    color: #097C84;
+  
+}
+
+.reserved-houses h3::first-letter {
+    text-transform: capitalize;
+}
+
+
 
 /* FOOTER */
 
