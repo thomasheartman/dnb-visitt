@@ -2,8 +2,8 @@
  * Created by Thomas Hartmann
  * An email handler for confirmation mails
  */
-'use strict';
-const nodemailer = require('nodemailer');
+'use strict'
+const nodemailer = require('nodemailer')
 const mg = require('nodemailer-mailgun-transport')
 
 const auth = {
@@ -14,27 +14,23 @@ const auth = {
 }
 
 function sendMail () {
-
-
-  const nodemailerMailgun = nodemailer.createTransport(mg(auth));
+  const nodemailerMailgun = nodemailer.createTransport(mg(auth))
 
   nodemailerMailgun.sendMail({
     from: 'visitt@dnb.no',
     to: 'thomas.o.hartmann@gmail.com', // An array if you have multiple recipients.
     subject: 'Takk for din bestilling.',
     'h:Reply-To': 'dnbvisitt@gmail.com',
-    //You can use "html:" to send HTML email content. It's magic!
+    // You can use "html:" to send HTML email content. It's magic!
     html: '<b>Wow Big powerful letters</b>',
-    //You can use "text:" to send plain-text content. It's oldschool!
+    // You can use "text:" to send plain-text content. It's oldschool!
     text: 'Mailgun rocks, pow pow!'
   }, function (err, info) {
     if (err) {
-      console.log('Error: ' + err);
+      console.log('Error: ' + err)
+    } else {
+      console.log('Response: ' + info)
     }
-    else {
-      console.log('Response: ' + info);
-    }
-
   })
 }
 
