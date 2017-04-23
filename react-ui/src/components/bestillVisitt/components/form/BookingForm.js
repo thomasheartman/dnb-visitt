@@ -35,7 +35,7 @@ class BookingForm extends React.Component {
             required
           >
             {branches.map((branch) =>
-              <MenuItem value={branch} key={branch} primaryText={branch} />
+                        <MenuItem value={branch} key={branch} primaryText={branch} style={'color: #333'} />
             )}
           </Field>
 

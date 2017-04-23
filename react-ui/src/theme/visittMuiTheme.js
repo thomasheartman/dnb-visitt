@@ -17,7 +17,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
     accent1Color: pinkA200,
     accent2Color: grey100,
     accent3Color: grey500,
-    textColor: white,
+    textColor: black,
     alternateTextColor: '#097C84',
     canvasColor: white,
     borderColor: grey300,
@@ -30,11 +30,15 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
 // Customize the theme here. E.g:
 export default getMuiTheme({
+  fontFamily: 'Lato, sans-serif',
   palette: {
-      primary1Color: '#F67F00', // DNB-orange
-      primary2Color: '#097C84', // DNB-green
-    textColor: '#FFF',
-    alternateTextColor: '333'
+    primary1Color: '#F67F00', // DNB-orange
+    primary2Color: '#097C84', // DNB-green
+    textColor: '#333',
+    alternateTextColor: '#fff',
+    accent1Color: '#F67F00',
+    accent2Color: '#404040',
+    accent3Color: '#333'
   },
   appBar: { // NOTE: we're not actually using this, but it shows you can style individual components
     height: 50
