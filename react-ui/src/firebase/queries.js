@@ -7,6 +7,12 @@ import { database } from './firebase'
 import { addBooking } from '../redux/reducers/bookingSchedule/bookingScheduleActions'
 import { saveBooking } from '../redux/reducers/booking/bookingActions'
 
+import { confirmBooking } from '../mailHandler/mailHandler'
+
+// TODO: heavy refactoring, think about separation of concerns etc.
+const createMailSubject = (date, time, branch) => `Din bestilling av Visitt: ${branch}, ${date}, ${time}`
+
+const mailHTML = (date, time, branch) => `<div>Din bestilling av Visitt: ${branch}, ${date}, ${time}</div>`
 
 export const addBookingToDatabase = (branch: string, date: string, time: string, details: object) =>
   (dispatch, getState) => {
@@ -34,6 +40,11 @@ export const addBookingToDatabase = (branch: string, date: string, time: string,
           property: property
         }))
       })
+      .then(() => confirmBooking({
+        to: details.email,
+        subject: createMailSubject(date, time, branch),
+        html: mailHTML(date, time, branch)
+      }))
       .catch(err => alert(err.message))
   }
 

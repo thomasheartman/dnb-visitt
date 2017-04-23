@@ -20,7 +20,7 @@ it('should set the email address', () => {
     'client': {
       'name': '',
       'email': payload,
-    'phoneNumber': ''
+      'phoneNumber': ''
     },
     'property': {
     }
@@ -41,7 +41,7 @@ it('should change the client name', () => {
     'client': {
       'name': payload,
       'email': '',
-    'phoneNumber': ''
+      'phoneNumber': ''
     },
     'property': {
     }
@@ -83,7 +83,7 @@ it('should set the time', () => {
     'client': {
       'name': '',
       'email': '',
-    'phoneNumber': ''
+      'phoneNumber': ''
     },
     'property': {
     }
@@ -104,7 +104,7 @@ it('should set the date', () => {
     'client': {
       'name': '',
       'email': '',
-    'phoneNumber': ''
+      'phoneNumber': ''
     },
     'property': {
     }
@@ -124,7 +124,7 @@ it('should set the branch', () => {
     'client': {
       'name': '',
       'email': '',
-    'phoneNumber': ''
+      'phoneNumber': ''
     },
     'property': {
     }
@@ -148,7 +148,7 @@ it('should change the property', () => {
     'client': {
       'name': '',
       'email': '',
-    'phoneNumber': ''
+      'phoneNumber': ''
     },
     'property': payload
   }

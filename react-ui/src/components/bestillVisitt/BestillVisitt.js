@@ -21,7 +21,7 @@ class BestillVisitt extends React.Component {
     const { bookingCompleted, address, image, fetching } = this.props
 
     if (bookingCompleted) {
-      return <BookingCompleted/>
+      return <BookingCompleted />
     }
 
     return (

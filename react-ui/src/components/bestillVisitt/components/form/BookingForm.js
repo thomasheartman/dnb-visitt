@@ -18,7 +18,7 @@ class BookingForm extends React.Component {
   }
 
   render () {
-    const { date, branch, DateTimeFormat, schedule, client,
+    const { date, branch, DateTimeFormat, schedule,
       handleSubmit, input, pristine, submitting } = this.props
 
     return (

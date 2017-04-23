@@ -6,7 +6,7 @@ import BookingCompleted from './BookingCompleted'
 import { connect } from 'react-redux'
 const mapStateToProps = state => {
   const { date, time, branch, property } = state.booking
-  const image = property.image
+  const housingType = property.housingType
 
   const addressString = `${property.streetName} ${property.streetNumber}`
   const address = property.apartmentNumber
@@ -18,7 +18,7 @@ const mapStateToProps = state => {
     time,
     branch,
     address,
-    image
+    housingType
   })
 }
 
