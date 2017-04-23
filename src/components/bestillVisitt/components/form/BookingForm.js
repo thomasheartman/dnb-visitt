@@ -68,13 +68,24 @@ class BookingForm extends React.Component {
           <Field name='name' type='text'
             floatingLabelText='Navn'
             hintText='Fornavn Etternavn'
-            component={TextField} required
-            initialValue={client.name ? client.name : ''}
+            component={TextField}
+            required
           />
-          <Field name='number' type='number' floatingLabelText='Nummer' hintText='Telefonnummer' component={TextField} required />
-          <Field name='email' type='email' floatingLabelText='Epost' hintText='Epost' component={TextField} required />
+          <Field name='number' type='number'
+            floatingLabelText='Nummer'
+            hintText='Telefonnummer'
+            component={TextField}
+            required
+          />
+          <Field name='email' type='email'
+            floatingLabelText='Epost'
+            hintText='Epost'
+            component={TextField}
+            required
+          />
 
-          <input type='submit' value='Bestill Visitt' disabled={pristine || submitting} />
+          <input type='submit' value='Bestill Visitt'
+            disabled={pristine || submitting} />
         </form>
       </div>
     )
