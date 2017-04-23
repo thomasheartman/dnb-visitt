@@ -5,23 +5,10 @@
  * Test file for booking reducer
  */
 
-import {
-  database
-} from '../../../firebase/firebase'
 import reducer from './bookingReducer'
 import types from './bookingActionTypes'
 
-const initialState = {
-  'date': '',
-  'time': '',
-  'branch': '',
-  'client': {
-    'name': '',
-    'email': ''
-  },
-  'property': {
-  }
-}
+const initialState = {}
 
 it('should set the email address', () => {
   const payload = 'me@example.com'
@@ -32,7 +19,8 @@ it('should set the email address', () => {
     'branch': '',
     'client': {
       'name': '',
-      'email': payload
+      'email': payload,
+    'phoneNumber': ''
     },
     'property': {
     }
@@ -52,7 +40,8 @@ it('should change the client name', () => {
     'branch': '',
     'client': {
       'name': payload,
-      'email': ''
+      'email': '',
+    'phoneNumber': ''
     },
     'property': {
     }
@@ -60,6 +49,27 @@ it('should change the client name', () => {
 
   expect(reducer
     (initialState, ({ type: types.SET_CLIENT_NAME, payload: payload })))
+    .toEqual(expectedState)
+})
+
+it('should set the client phone phoneNumber', () => {
+  const payload = '90909090'
+
+  const expectedState = {
+    'date': '',
+    'time': '',
+    'branch': '',
+    'client': {
+      'name': '',
+      'email': '',
+      'phoneNumber': payload
+    },
+    'property': {
+    }
+  }
+
+  expect(reducer(initialState,
+    ({ type: types.SET_CLIENT_PHONE_NUMBER, payload: payload })))
     .toEqual(expectedState)
 })
 
@@ -72,7 +82,8 @@ it('should set the time', () => {
     'branch': '',
     'client': {
       'name': '',
-      'email': ''
+      'email': '',
+    'phoneNumber': ''
     },
     'property': {
     }
@@ -92,7 +103,8 @@ it('should set the date', () => {
     'branch': '',
     'client': {
       'name': '',
-      'email': ''
+      'email': '',
+    'phoneNumber': ''
     },
     'property': {
     }
@@ -111,7 +123,8 @@ it('should set the branch', () => {
     'branch': payload,
     'client': {
       'name': '',
-      'email': ''
+      'email': '',
+    'phoneNumber': ''
     },
     'property': {
     }
@@ -134,7 +147,8 @@ it('should change the property', () => {
     'branch': '',
     'client': {
       'name': '',
-      'email': ''
+      'email': '',
+    'phoneNumber': ''
     },
     'property': payload
   }

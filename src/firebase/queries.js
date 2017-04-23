@@ -5,7 +5,7 @@
  */
 import { database } from './firebase'
 import { addBooking } from '../redux/reducers/bookingSchedule/bookingScheduleActions'
-import { selectProperty } from '../redux/reducers/booking/bookingActions'
+import { saveBooking } from '../redux/reducers/booking/bookingActions'
 
 
 export const addBookingToDatabase = (branch: string, date: string, time: string, details: object) =>
@@ -25,7 +25,13 @@ export const addBookingToDatabase = (branch: string, date: string, time: string,
         dispatch(saveBooking({
           date: date,
           time: time,
-          branch: branch
+          branch: branch,
+          client: {
+            email: details.email,
+            name: details.name,
+            phoneNumber: details.phoneNumber
+          },
+          property: property
         }))
       })
       .catch(err => alert(err.message))
