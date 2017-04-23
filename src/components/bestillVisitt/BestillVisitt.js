@@ -3,7 +3,7 @@
  * Reserve time slot to Visit page
  */
 import React from 'react'
-import Form from './components/form/BookingForm'
+import Form from './components/form/BookingForm.map'
 import { Spinner } from '../loadingIndicators/Loading'
 // import { Link } from 'react-router-dom'
 
