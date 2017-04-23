@@ -18,7 +18,7 @@ class BookingForm extends React.Component {
   }
 
   render () {
-    const { date, branch, DateTimeFormat, schedule,
+    const { date, branch, DateTimeFormat, schedule, client,
       handleSubmit, input, pristine, submitting } = this.props
 
     return (
@@ -65,7 +65,12 @@ class BookingForm extends React.Component {
             )}
           </Field>
 
-          <Field name='name' type='text' floatingLabelText='Navn' hintText='Fornavn Etternavn' component={TextField} required />
+          <Field name='name' type='text'
+            floatingLabelText='Navn'
+            hintText='Fornavn Etternavn'
+            component={TextField} required
+            initialValue={client.name ? client.name : ''}
+          />
           <Field name='number' type='number' floatingLabelText='Nummer' hintText='Telefonnummer' component={TextField} required />
           <Field name='email' type='email' floatingLabelText='Epost' hintText='Epost' component={TextField} required />
 

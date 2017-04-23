@@ -5,7 +5,7 @@
 
 import { connect } from 'react-redux'
 import Annonse from './BoligAnnonse'
-import { selectProperty } from '../../../redux/reducers/booking/bookingActions'
+import { clearBooking } from '../../../redux/reducers/booking/bookingActions'
 
 const mapStateToProps = state => {
   const property = state.currentProperty.propertyData
@@ -35,8 +35,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  handleSelectProperty (property) {
-    dispatch(selectProperty(property))
+  handleSelectProperty () {
+    dispatch(clearBooking())
   }
 })
 

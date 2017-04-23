@@ -42,7 +42,7 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
                   <Link to='#presentation'>Presentasjon</Link>
                 </li>
                 <li>
-                  <Link to={`/bestill-visitt/${id}`} onClick={() => handleSelectProperty(property)}>Bestill Visitt</Link>
+                  <Link to={`/bestill-visitt/${id}`} onClick={() => handleSelectProperty()}>Bestill Visitt</Link>
                 </li>
               </ul>
             </nav>

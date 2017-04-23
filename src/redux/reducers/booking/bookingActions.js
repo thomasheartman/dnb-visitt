@@ -27,20 +27,6 @@ export const saveBooking = (bookingData) => (dispatch) => {
 
   const { date, time, branch, client, property } = bookingData
 
-  console.log(`
-
-  Bookingdata: ${JSON.stringify(bookingData)}
-
-  Extracted values:
-  date: ${date}
-  time: ${time}
-  branch: ${branch}
-  client: ${JSON.stringify(client)}
-  property: ${JSON.stringify(property)}
-
-
-  `)
-
   dispatch(setName(client.name))
   dispatch(setEmail(client.email))
   dispatch(setPhoneNumber(client.phoneNumber))
@@ -49,6 +35,29 @@ export const saveBooking = (bookingData) => (dispatch) => {
   dispatch(setBranch(branch))
   dispatch(selectProperty(property))
 
+}
+
+/**
+|--------------------------------------------------
+| Note: doesn't reset client, as, if it's the same
+| session, they probably want to keep their name, email etc.
+|--------------------------------------------------
+*/
+export const clearBooking = () => (dispatch, getState) => {
+
+const {name, email, phoneNumber} = getState().booking.client
+
+  dispatch(saveBooking({
+    date: '',
+    time: '',
+    branch: '',
+    property: {},
+    client: {
+      name: name,
+      email: email,
+      phoneNumber: phoneNumber
+    }
+  }))
 }
 
 export const processForm = (values) => (dispatch, getState) => {

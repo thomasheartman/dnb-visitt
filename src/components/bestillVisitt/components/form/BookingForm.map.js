@@ -30,8 +30,8 @@ const mapDispatchToProps = dispatch => ({
 })
 
 const reduxConnectedForm = reduxForm({
-  form: 'bookingForm',
-  destroyOnUnmount: false
+  form: 'bookingForm'
+  // destroyOnUnmount: false
 })(Form)
 
 const selector = formValueSelector('bookingForm')
@@ -40,7 +40,8 @@ const mapStateToProps = state => ({
   date: selector(state, 'date'),
   branch: selector(state, 'branch'),
   DateTimeFormat: DateTimeFormat,
-  schedule: state.bookingSchedule.appointments || []
+  schedule: state.bookingSchedule.appointments || [],
+  client: state.booking.client
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(reduxConnectedForm)
