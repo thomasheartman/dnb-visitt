@@ -45,7 +45,6 @@ class BestillVisitt extends React.Component {
                 <img href={image} role='presentation' />
               </div>
             </div>
-            <button onClick={() => fireMail()}>CLICK ME</button>
           </main>
         </div>
     )
