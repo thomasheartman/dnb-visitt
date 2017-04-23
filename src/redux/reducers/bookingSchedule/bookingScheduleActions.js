@@ -18,21 +18,6 @@ const setDate = (newDate: string) => ({ type: types.CHANGE_DATE, payload: newDat
 
 const setBranch = (newBranch: string) => ({ type: types.CHANGE_BRANCH, payload: newBranch })
 
-// the "public" version of the function
-export const changeDate = (newDate: Date) => (dispatch, getState) => {
-  const dateFormatted = formatDate(newDate)
-
-  if (dateFormatted === getState().bookingSchedule.date) return
-
-  dispatch(setDate(newDate))
-}
-
-export const changeBranch = (newBranch: string) => (dispatch, getState) => {
-  if (newBranch === getState().bookingSchedule.branch) return
-
-  dispatch(setBranch(newBranch))
-}
-
 export const updateSchedule = (newBranch: string, newDate: Date) => (dispatch, getState) => {
 
   const newDateFormatted = formatDate(newDate)
@@ -49,5 +34,8 @@ export const updateSchedule = (newBranch: string, newDate: Date) => (dispatch, g
     hasChanged = true
   }
 
-  if (hasChanged) dispatch(getSchedule(newBranch, newDateFormatted))
+  if (hasChanged) {
+    dispatch(clearSchedule())
+    dispatch(getSchedule(newBranch, newDateFormatted))
+  }
 }

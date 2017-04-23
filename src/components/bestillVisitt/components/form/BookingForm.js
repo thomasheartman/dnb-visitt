@@ -12,7 +12,6 @@ import hours from './branchValues/openingHours'
 class BookingForm extends React.Component {
   componentDidUpdate () {
     const { branch, date, fetchSchedule } = this.props
-    console.log(`Branch and date: ${branch}, ${date}`)
     if (branch && date) {
       fetchSchedule(branch, date)
     }
