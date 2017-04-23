@@ -21,19 +21,7 @@
     "propertyData": {}
   },
 
-  "booking": {
-    "date": "",
-    "time": "",
-    "branch": "",
-    "client": {
-      "name": "",
-      "email": "",
-      "phoneNumber": ""
-    },
-    "property": {
-
-    }
-  },
+  "booking": {},
 
   "bookingSchedule": {
     "appointments": [],

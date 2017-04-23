@@ -4,6 +4,7 @@
  */
 import React from 'react'
 import Form from './components/form/BookingForm.map'
+import BookingCompleted from './components/bookingCompleted/BookingCompleted.map'
 import { Spinner } from '../loadingIndicators/Loading'
 // import { Link } from 'react-router-dom'
 
@@ -17,7 +18,11 @@ class BestillVisitt extends React.Component {
   }
 
   render () {
-    const { address, image, fetching } = this.props
+    const { bookingCompleted, address, image, fetching } = this.props
+
+    if (bookingCompleted) {
+      return <BookingCompleted/>
+    }
 
     return (
       fetching

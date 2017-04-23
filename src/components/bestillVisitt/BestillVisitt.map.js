@@ -6,6 +6,7 @@
 import { connect } from 'react-redux'
 import BestillVisitt from './BestillVisitt'
 import { getProperty } from '../../redux/reducers/currentProperty/currentPropertyActions'
+import _ from 'lodash'
 
 const mapStateToProps = state => {
   const property = state.currentProperty.propertyData
@@ -16,6 +17,7 @@ const mapStateToProps = state => {
     : addressString
 
   return ({
+    bookingCompleted: !_.isEmpty(state.booking.property),
     id: property.id,
     fetching: state.currentProperty.fetchingProperty,
     address: fullAddressString,
