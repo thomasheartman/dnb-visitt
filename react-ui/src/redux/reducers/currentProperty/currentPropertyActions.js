@@ -5,6 +5,7 @@
 
 import types from './currentPropertyActionTypes'
 import { database } from '../../../firebase/firebase'
+import { formatPropertyData } from '../../../helperFunctions/formatting'
 
 export const fetchProperty = () => ({ type: types.FETCH_PROPERTY })
 export const cancelFetchingProperty = () => ({ type: types.CANCEL_FETCHING_PROPERTY })
@@ -21,7 +22,7 @@ export const getProperty = (id) => (dispatch, getState) => {
 
   ref.orderByChild('id').equalTo(idInt).once('child_added')
     .then((snapshot) => {
-      dispatch(changeProperty(snapshot.val()))
+      dispatch(changeProperty(formatPropertyData(snapshot.val())))
     })
     .catch((error) => {
       console.log('An error occurred', error)

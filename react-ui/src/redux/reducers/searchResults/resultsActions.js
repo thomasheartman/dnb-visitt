@@ -5,6 +5,7 @@
 
 import types from './resultsActionTypes'
 import { database } from '../../../firebase/firebase'
+import { formatPropertyData } from '../../../helperFunctions/formatting'
 
 export const startFetchingResults = () => ({ type: types.FETCH_RESULTS })
 
@@ -72,7 +73,9 @@ export const fetchResults = (parameters) => (dispatch, getState) => {
     .then(snapshot => {
       const properties = snapshot.val()
       properties.forEach((property) => {
-        if (matchesSearchCriteria(filterValues, property)) dispatch(addResult(property))
+        if (matchesSearchCriteria(filterValues, property)) {
+          dispatch(addResult(formatPropertyData(property)))
+        }
       }
       )
     })
