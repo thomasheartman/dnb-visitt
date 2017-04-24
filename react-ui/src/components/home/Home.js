@@ -20,7 +20,7 @@ const styles = {
 
   },
   color: {
-    color: '#FFF' // DNB-orange. As an example
+    color: '#333' // DNB-orange. As an example
   }
 }
 
