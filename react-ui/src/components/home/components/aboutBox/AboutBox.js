@@ -9,8 +9,8 @@ import React from 'react'
 import { hjem, velg, vr } from '../../../../media/icons'
 
 export default () => (
-  <div className='about-visit row middle-xs'>
-    <div className='center-xs middle-xs text-box'>
+  <div className='col-xs-2 about-visit'>
+    <div className='row center-xs between-xs middle-xs text-box'>
       <div className='row'>
         <img className='visitt-icon col-xs-12' src={hjem} alt='Se bolig i VR' />
         <p>Opplev din fremtidige bolig før den i det hele tatt er bygget</p>

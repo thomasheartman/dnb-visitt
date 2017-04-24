@@ -14,53 +14,68 @@ import { showAll } from './dropdownConstants'
 
 // This can be used to override values in the theme
 const styles = {
-  customWidth: {
-    width: 500,
-    backgroundColor: '#FFF'
+  dropdownStyle: {
+    width: '32rem',
+    height: '4rem',
+    fontSize: '1.5rem',
+    backgroundColor: '#FFF',
+    color: '#404040'
 
   },
   color: {
     color: '#404040'
   },
 
-  relative: {
-    position: 'relative'
+  inactiveBackground: {
+    color: '#e0e0e0'
+  },
+
+  centerLabel: {
+    position: 'relative',
+    top: '1.25rem',
+    right: '7rem'
+  },
+
+  listStyle: {
+    color: '#e0e0e0'
   }
 }
 
 export default ({ selectedCounty, allCounties, handleChange = f => f, handleSubmit = f => f }) => (
   <main className='frontpage full-width'>
-    <section className='home-search center-xs middle-xs '>
+    <section className='home-search row middle-xs '>
       <AboutBox />
-      <div className="col-xs-offset-3"></div>
-      <div className='row'>
-        <div className='col-xs-12 center-xs'>
-          <h1 className='title-heading'>Hvor ønsker du å bo?</h1>
-          <div className='dropdown center-xs' >
-            <div className="dropDown-background">
-              <SelectField name='dropDownCounty' className="selectField"
-                onChange={(event, index, value) => handleChange(value)}
-                hintText={selectedCounty || 'Velg et fylke ...'}
-                style={styles.customWidth}
-                floatingLabelText={selectedCounty || 'Velg et fylke ...'}
-                menuStyle={styles.backgroundColor}
-                fullWidth={true}
-                floatingLabelStyle={styles.relative}
-              >
-                <MenuItem value={showAll} primaryText={showAll} />
-                {allCounties.map((county) =>
-                  <MenuItem value={county} key={county} primaryText={county} />
-                )}
-              </SelectField>
-            </div>
-            <Link to='/boligvelger' onClick={() => handleSubmit(selectedCounty)} className="col-xs">
+      <div className="col-xs-offset-1 col-sm-offset-2"></div>
+      <div className='select-fylke-container col-xs-12 col-sm-6'>
+          <div className="title-container row center-xs">
+            <h1 className='title-heading'>Hvor ønsker du å bo?</h1>
+          </div>
+          <div className='dropdown row middle-xs center-xs' >
+            <SelectField name='dropDownCounty' className="select-county"
+              onChange={(event, index, value) => handleChange(value)}
+              hintText={selectedCounty || 'Velg et fylke ...'}
+              style={styles.dropdownStyle}
+              floatingLabelText={selectedCounty || 'Velg et fylke ...'}
+              fullWidth={true}
+              listStyle={styles.listStyle}
+              labelStyle={styles.inactiveBackground}
+              floatingLabelStyle={styles.centerLabel}
+            >
+              <MenuItem value={showAll} primaryText={showAll} />
+              {allCounties.map((county) =>
+                <MenuItem value={county} key={county} primaryText={county} />
+              )}
+            </SelectField>
+            <Link to='/boligvelger' onClick={() => handleSubmit(selectedCounty)} className="select-county-search-button">
               <input type='submit' value='Søk' />
             </Link>
           </div>
         </div>
-      </div>
     </section>
     <Steps />
-    <RecentProperties />
+    <div className="recentProperties row center-xs between-xs middle-xs">
+        <RecentProperties />
+    </div>
+    
   </main >
 )

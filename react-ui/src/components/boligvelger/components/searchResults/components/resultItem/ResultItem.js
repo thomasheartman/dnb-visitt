@@ -9,14 +9,14 @@ import { getHousingImage } from './media/defaultThumbnails'
 
 class ResultItem extends React.Component {
   render () {
-    const { id, price, poststed, streetName, streetNumber, bedrooms, housingType } = this.props
+    const { id, price, postPlace, streetName, streetNumber, bedrooms, housingType } = this.props
 
     return (
       < Link to={{
         pathname: `/boligvelger/annonse/${id}`
       }}
       >
-        <article className='row housing-item-container'>
+        <article className='row housing-item-container start-xs'>
           <div className='col-xs-12 col-sm-6 full-width housing-item-image'>
             <img className='img-responsive'
               src={getHousingImage(housingType)}
@@ -24,14 +24,15 @@ class ResultItem extends React.Component {
             />
           </div>
           <div className='col-xs-12 col-sm-6 housing-item-info-container'>
-            <p className='housing-item-loc'>{poststed}</p>
-            <h2 className='housing-item-title'>{streetName} {streetNumber}</h2>
-            <p className='housing-item-rooms'>Soverom: {bedrooms}</p>
-            <p className='housing-item-price'>Pris fra: {price.toLocaleString()}</p>
-            <div className='row middle-xs housing-item-type-container'>
-              <img src={getHousingIcon(housingType)} alt={housingType} viewBox="0 0 100 100"/>
-              <p className='housing-item-type'> {housingType}</p>
-             
+            <div className="housing-items">
+              <p className='housing-item-loc'>{postPlace}</p>
+              <h2 className='housing-item-title'>{streetName} {streetNumber}</h2>
+              <p className='housing-item-rooms'>Soverom: {bedrooms}</p>
+              <p className='housing-item-price'>Pris fra: {price.toLocaleString()}</p>
+              <div className='row middle-xs housing-item-type-container'>
+                <img src={getHousingIcon(housingType)} alt={housingType} viewBox="0 0 100 100"/>
+                <p className='housing-item-type'> {housingType}</p>
+              </div>
             </div>
           </div>
         </article>
