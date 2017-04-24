@@ -16,7 +16,8 @@ export const formatDate = (date) => {
   return fullDate
 }
 
-export const toTitleCase = (textString) => {
+// Function to format street and county names according to norwegian standards
+export const toTitleCaseNorwegian = (textString) => {
 
   const lowerCaseWords = ['og', 'vei', 'gate']
 
@@ -27,12 +28,15 @@ export const toTitleCase = (textString) => {
   })
 }
 
+// Capitalises words where necessary
 export const formatPropertyData = (property) => {
-  property.streetName = toTitleCase(property.streetName)
-  property.county = toTitleCase(property.county)
-  property.zipLocation = toTitleCase(property.zipLocation)
-  property.projectName = toTitleCase(property.projectName)
+  property.streetName = toTitleCaseNorwegian(property.streetName)
+  property.county = toTitleCaseNorwegian(property.county)
+  property.zipLocation = toTitleCaseNorwegian(property.zipLocation)
+  property.projectName = toTitleCaseNorwegian(property.projectName)
   property.energyRating = property.energyRating.toUpperCase()
 
   return property
 }
+
+export const formatTime = time => time.slice(0, 2) + ':' + time.slice(2, 4)

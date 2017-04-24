@@ -4,6 +4,7 @@
  */
 import BookingCompleted from './BookingCompleted'
 import { connect } from 'react-redux'
+import { formatTime } from '../../../../helperFunctions/formatting'
 const mapStateToProps = state => {
   const { date, time, branch, property } = state.booking
   const housingType = property.housingType
@@ -15,7 +16,7 @@ const mapStateToProps = state => {
 
   return ({
     date,
-    time,
+    time: formatTime (time),
     branch,
     address,
     housingType
