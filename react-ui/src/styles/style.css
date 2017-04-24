@@ -1,3 +1,7 @@
+/* FONT */
+
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Libre+Baskerville:400,700');
+
 /* GENERELL STYLING */
 
 html {
@@ -16,7 +20,12 @@ h1,
 h2,
 h3,
 h4 {
-    font-family: sans-serif, arial;
+    font-family: 'Libre Baskerville', arial;
+    
+}
+
+p, a, span, input, label {
+    font-family: 'Lato', arial, sans-serif;
 }
 
 a {
@@ -26,6 +35,7 @@ a {
 a:hover {
     cursor: pointer;
 }
+
 
 
 /* GENERAL CLASSES */
@@ -203,6 +213,7 @@ header nav {
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
     height: inherit;
+    font-weight: 300;
 }
 
 header nav ul {
