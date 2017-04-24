@@ -625,3 +625,6 @@ __pycache__/
 *.xsd.cs
 
 # End of https://www.gitignore.io/api/node,macos,windows,webstorm,phpstorm,jetbrains,sublimetext,intellij+iml,visualstudio,visualstudiocode
+
+#Icon? files causing trouble for windows users
+[Ii]con?
