@@ -22,6 +22,5 @@ export const composeMail = ({ from = fromDefault, to, replyTo = replyToDefault, 
       html: html
     })
   })
-    .then((response) => console.log(JSON.stringify(response)))
     .catch(err => alert(err))
 }
