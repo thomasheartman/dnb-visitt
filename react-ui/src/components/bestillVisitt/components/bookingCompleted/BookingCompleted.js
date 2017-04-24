@@ -14,7 +14,7 @@ export default ({ date, time, branch, address, housingType }) => (
     <main className='confirmation-container'>
       <div className='row middle-xs page-sub-heading'>
         <h2 className='col-xs'>Takk for bestillingen din, vi gleder oss til å vise frem boligen</h2>
-        <img src={hjem} viewBox='0 0 500 500' role='presentation'/>
+        <img src={hjem} viewBox='0 0 500 500' role='presentation' />
       </div>
       <p className='notification'>Din Visitt visning er nå bestilt. Du vil motta bekreftelse på epost.</p>
       <div className='reservation-info'>

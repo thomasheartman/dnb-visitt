@@ -3,7 +3,7 @@
  * The contact form for the contact us page
  */
 import React from 'react'
-import { Field, reduxForm } from 'redux-form'
+import { Field } from 'redux-form'
 import { TextField } from 'redux-form-material-ui'
 
 const ContactForm = ({ handleSubmit, input, pristine, submitting, reset }) => (
@@ -23,4 +23,4 @@ const ContactForm = ({ handleSubmit, input, pristine, submitting, reset }) => (
   </form>
 )
 
-export default reduxForm({ form: 'contactForm' })(ContactForm)
+export default ContactForm
