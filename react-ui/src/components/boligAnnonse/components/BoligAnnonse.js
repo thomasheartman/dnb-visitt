@@ -38,7 +38,7 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
           </li>
         </ul>
         <div className="col-xs end-xs middle-xs full-width reserve-visit-button">
-          <Link to={`/bestill-visitt/${id}`} onClick={() => handleSelectProperty()}>Bestill Visitt</Link>
+          <Link to={`/bestill-visitt/${id}`} onClick={() => handleSelectProperty()}>Bestill Visning</Link>
         </div>
       </div>
       <main className='housing-ad-main'>
