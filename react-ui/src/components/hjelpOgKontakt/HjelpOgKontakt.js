@@ -10,13 +10,11 @@ import { hjem} from '../../media/icons'
 
 export default () => (
   <div>
+    <div className='row heading'>	     
+      <h1 className='title'>Hjelp og Kontakt</h1>	    
+    </div>
     <main className='contact'>
-      <div className='row middle-xs page-sub-heading'>
-        <h2 className='col-xs'>Hjelp og Kontakt</h2>
-        <img src={omradeVelg} viewBox='0 0 500 500' role='presentation' />
-      </div>
       <Map />
-
       <div className='row middle-xs page-sub-heading'>
         <h2 className='col-xs'>Hovedkontor</h2>
         <img src={hjem} viewBox='0 0 500 500' role='presentation' />

@@ -15,11 +15,11 @@ import { visittLogo } from '../../media/logos'
 
 export default () => (
   <div>
+    <div className='row heading'>	     
+      <h1 className='title'>Om Visitt</h1>	    
+    </div>
     <main className='about-main'>   
-      <div className='row middle-xs page-sub-heading'>
-          <h2 className='col-xs'>Om Visitt</h2>
-          <img src={visittLogo} viewBox='0 0 500 500' role='presentation' />
-      </div>
+
       <Banner />
       <Hva />
       <Se />
