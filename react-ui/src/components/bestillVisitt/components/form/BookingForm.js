@@ -47,11 +47,12 @@ class BookingForm extends React.Component {
             floatingLabelText='Velg dato'
             hintText='Velg dato'
             autoOk
-            shouldDisableDate={(date) => validateDate(date)}
+            shouldDisableDate={(date) => validateDate(date) }
             required
           />
 
           <Field component={SelectField}
+            style={!(date && branch) ? { 'display': 'none' } : {}}
             disabled={!(date && branch)}
             name='time' type='text'
             floatingLabelText='Klokkeslett'
