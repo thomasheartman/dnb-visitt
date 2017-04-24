@@ -46,7 +46,7 @@ export default ({ selectedCounty, allCounties, handleChange = f => f, handleSubm
                 fullWidth={true}
                 floatingLabelStyle={styles.relative}
               >
-                <MenuItem value={'Vis alle'} primaryText='Vis alle' />
+                <MenuItem value={false} primaryText='Vis alle' />
                 {allCounties.map((county) =>
                   <MenuItem value={county} key={county} primaryText={county} />
                 )}

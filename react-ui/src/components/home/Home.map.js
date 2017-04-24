@@ -16,11 +16,10 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   handleChange (value) {
-    console.log(value)
     dispatch(setDropDownCounty(value))
   },
   handleSubmit (value) {
-    if (!value || value.toLoweCase()==='vis alle') {
+    if (!value || value===false) {
       dispatch(clearCounties())
     } else {
       dispatch(setCounty(value))
