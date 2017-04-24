@@ -8,7 +8,7 @@ import { TextField } from 'redux-form-material-ui'
 
 const ContactForm = ({ handleSubmit, input, pristine, submitting, reset }) => (
 
-  <form onSubmit={(event, values) => {
+  <form className="col-xs-12 col-sm-4" onSubmit={(event, values) => {
     event.preventDefault()
     handleSubmit(values)
   }}>
