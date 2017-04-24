@@ -22,22 +22,22 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
   images, handleSelectProperty = f => f }, match) => (
 
     <div>
-      <div className="housing-nav middle-xs row">
-        <ul className="col-xs middle-xs row">
+      <div className='housing-nav middle-xs row'>
+        <ul className='col-xs middle-xs row'>
           <li>
-            <a href="#spesifikasjoner">Spesifikasjoner</a>
+            <a href='#spesifikasjoner'>Spesifikasjoner</a>
           </li>
           <li>
-            <a href="#om-bolig">Om Boligen</a>
+            <a href='#om-bolig'>Om Boligen</a>
           </li>
           <li>
-            <a href="#bilder">Bilder</a>
+            <a href='#bilder'>Bilder</a>
           </li>
           <li>
-            <a href="#vr">VR</a>
+            <a href='#vr'>VR</a>
           </li>
         </ul>
-        <div className="col-xs end-xs middle-xs full-width reserve-visit-button">
+        <div className='col-xs end-xs middle-xs full-width reserve-visit-button'>
           <Link to={`/bestill-visitt/${id}`} onClick={() => handleSelectProperty()}>Bestill Visitt</Link>
         </div>
       </div>
@@ -89,10 +89,10 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
                   </div>
                 </div>
               </aside>
-              <a href="" name="spesifikasjoner"></a>
+              <a href='' name='spesifikasjoner'></a>
             </section>
             <div className='row center-xs'>
-              <a href="" name="om-bolig"></a>
+              <a href='' name='om-bolig'></a>
               <div className='col-xs-6 two-grid-gutter big-button'>
                 <Link to='#'>Se Plantegning</Link>
               </div>
@@ -117,7 +117,7 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
               </div>
             </div>
             <div className='row center-xs'>
-              <a href="" name="bilder"></a>
+              <a href='' name='bilder'></a>
               <div className='col-xs-6 two-grid-gutter'>
                 <img src={images[3]} alt='Kjøkken' className='img-container' />
               </div>
@@ -144,7 +144,7 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
               </div>
             </div>
             <div className='row center-xs'>
-              <a href="" name="vr"></a>
+              <a href='' name='vr'></a>
               <div className='col-xs-6 two-grid-gutter'>
                 <img src={barn} alt='Barn' className='img-container' />
               </div>
