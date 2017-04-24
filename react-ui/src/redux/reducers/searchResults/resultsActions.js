@@ -30,7 +30,7 @@ const processFilterValues = (filter) => {
   numberOfBedrooms = filter.numberOfBedrooms.includes('1') ? [...numberOfBedrooms, 1] : numberOfBedrooms
   numberOfBedrooms = filter.numberOfBedrooms.includes('2') ? [...numberOfBedrooms, 2] : numberOfBedrooms
   numberOfBedrooms = filter.numberOfBedrooms.includes('3+') ? [...numberOfBedrooms, 3] : numberOfBedrooms
-
+  
   return {
     counties: filter.counties ? arrayToLowerCase(filter.counties) : [],
     maxPrice: filter.maxPrice ? filter.maxPrice : Number.MAX_SAFE_INTEGER,
