@@ -13,7 +13,7 @@ class ResultItem extends React.Component {
 
     return (
       < Link to={{
-        pathname: `boligvelger/annonse/${id}`
+        pathname: `/boligvelger/annonse/${id}`
       }}
       >
         <article className='row housing-item-container'>
@@ -39,3 +39,4 @@ class ResultItem extends React.Component {
 }
 
 export default ResultItem
+  

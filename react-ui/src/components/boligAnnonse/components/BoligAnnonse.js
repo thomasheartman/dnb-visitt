@@ -19,7 +19,7 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
   netLivingSpace, entryFloor, floors, numberOfRooms, bedrooms,
   energyRating, streetNumber, projectConstructionStart, projectConstructionFinalized,
   streetName, apartmentNumber, zipLocation, county, property,
-  handleSelectProperty = f => f }, match) => (
+  images, handleSelectProperty = f => f }, match) => (
 
     <div>
       <div className="housing-nav middle-xs row">
@@ -50,7 +50,7 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
                 <p className='housing-location'>{`${zipLocation}, ${county}`}</p>
               </div>
             </div>
-            <img src={trinn5} className='housing-main-img' alt='Trinn 5 bolig' />
+            <img src={images[0]} className='housing-main-img' alt='Trinn 5 bolig' />
             <section className='row housing-basics'>
               <div className='col-xs-12 col-sm-4 col-md-6'>
                 <h2>Om boligen</h2>
@@ -102,10 +102,10 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
             </div>
             <div className='row center-xs'>
               <div className='col-xs-6 two-grid-gutter big-button'>
-                <img src={trinn5alm} alt='Trinn 5' className='img-container' />
+                <img src={images[1]} alt='Trinn 5' className='img-container' />
               </div>
               <div className='col-xs-6 two-grid-gutter big-button'>
-                <img src={vardevei} alt='Vardevei' className='img-container' />
+                <img src={images[2]} alt='Vardevei' className='img-container' />
               </div>
             </div>
             <div className='row center-xs middle-xs'>
@@ -119,10 +119,10 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
             <div className='row center-xs'>
               <a href="" name="bilder"></a>
               <div className='col-xs-6 two-grid-gutter'>
-                <img src={kjokken} alt='Kjøkken' className='img-container' />
+                <img src={images[3]} alt='Kjøkken' className='img-container' />
               </div>
               <div className='col-xs-6 two-grid-gutter'>
-                <img src={stue} alt='Stue' className='img-container' />
+                <img src={images[4]} alt='Stue' className='img-container' />
               </div>
             </div>
             <div className='row'>
@@ -132,10 +132,10 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
             </div>
             <div className='row center-xs'>
               <div className='col-xs-6 two-grid-gutter'>
-                <img src={lekeplass} alt='Lekeplass' className='img-container' />
+                <img src={images[5]} alt='Lekeplass' className='img-container' />
               </div>
               <div className='col-xs-6 two-grid-gutter'>
-                <img src={vardevei} alt='Vardevei' className='img-container' />
+                <img src={images[5]} alt='Vardevei' className='img-container' />
               </div>
             </div>
             <div className='row'>
