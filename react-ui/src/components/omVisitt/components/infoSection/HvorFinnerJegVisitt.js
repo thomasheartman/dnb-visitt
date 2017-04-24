@@ -3,6 +3,7 @@
  * Info about visitt
  */
 import React from 'react'
+import { Link } from 'react-router-dom'
 import InfoSection from './InfoSection'
 import { connect } from 'react-redux'
 import { omradeVelg } from '../../../../media/icons'
@@ -11,11 +12,10 @@ const mapStateToProps = () => ({
   link: 'where',
   icon: omradeVelg,
   iconAltText: 'Visittfilialer',
-  heading: 'Hvor finner jeg Visitt?',
+  heading: 'Her finner du Visitt',
   body:
   <div>
-    <p>Med Visitt VR kan du se boligprosjekter fra hele landet fra hvilken som helst filial som tilbyr Visitt.</p>
-    <p>Flytte til Oslo? Men bor i Tromsø? Inget problem. Bare besøk din nærmeste DNB-filial.</p>
+    <p>Det å kjøpe bolig er et stort steg og ofte en del av et nytt kapittel i livet. <Link to="/hjelp-og-kontakt">Kontakt oss</Link> gjerne om du har spørsmål.</p>
   </div>
 })
 

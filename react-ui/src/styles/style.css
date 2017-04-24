@@ -88,9 +88,15 @@ a:hover {
     margin: 0 auto;
 }
 
+
+
 .page-sub-heading {
-    margin: 1rem 0 2rem 0;
+    margin: 5rem 0 2rem 0;
     border-bottom: 1px solid #404040;
+}
+
+.page-sub-heading:first-child {
+    margin: 1rem 0 2rem 0;
 }
 
 .page-sub-heading h2 {
@@ -119,10 +125,10 @@ a:hover {
 }
 
 .orange-button {
+    width: 30rem;
     padding: 1rem 3rem;
     border: 1px solid #F67F00;
     color: #F67F00;
-   
 }
 
 .spinner-container {
@@ -1002,13 +1008,7 @@ main.frontpage {
 
 }
 
-.contact .page-sub-heading {
-    margin: 5rem 0 2rem 0;
-}
 
-.contact .page-sub-heading:first-child {
-    margin: 1rem 0 2rem 0;
-}
 
 
 
