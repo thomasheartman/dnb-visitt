@@ -3,8 +3,8 @@
  * The main page for property filtering
  */
 import React from 'react'
-import Filter from './components/filter/FilterMap'
-import SearchResults from './components/searchResults/SearchResultsMap'
+import Filter from './components/filter/Filter.map'
+import SearchResults from './components/searchResults/SearchResults.map'
 
 export default () => (
   <div>

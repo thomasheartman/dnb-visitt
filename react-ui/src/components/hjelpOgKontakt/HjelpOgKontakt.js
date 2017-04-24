@@ -3,7 +3,7 @@
  * Help and contact page
  */
 import React from 'react'
-import Form from './components/form/ContactFormMap'
+import Form from './components/form/ContactForm.map'
 import Map from './components/map/Map'
 import { omradeVelg} from '../../media/icons'
 import { hjem} from '../../media/icons'

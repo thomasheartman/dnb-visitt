@@ -8,10 +8,22 @@ import Annonse from './BoligAnnonse'
 import { clearBooking } from '../../../redux/reducers/booking/bookingActions'
 import { getAdImages } from './media/annonseImages'
 
+const toObjectArray = (images) => {
+  let results = []
+  images.forEach((image) => {
+    results = [...results, {src: image, caption: 'Opplev din bolig'}]
+  })
+  return results
+}
+
 const mapStateToProps = state => {
   const property = state.currentProperty.propertyData
   if (!property) return
-  
+
+  const images = getAdImages(property.housingType)
+
+  const lightboxSource = toObjectArray(images)
+
   return ({
     id: property.id,
     price: property.price || 50,
@@ -31,8 +43,8 @@ const mapStateToProps = state => {
     apartmentNumber: property.apartmentNumber,
     zipLocation: property.zipLocation,
     county: property.county,
-    property: property,
-    images: getAdImages(property.housingType)
+    images,
+    lightboxSource
   })
 }
 

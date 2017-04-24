@@ -5,22 +5,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { kalkulator, omradeVelg } from '../../../media/icons.js'
-// import trinn5 from './media/Trinn-5-alm-crop.jpg'
 import mekler from './media/mekler.jpg'
 import barn from './media/barn.jpg'
 import familie from './media/familie.jpg'
-// import stue from './media/illustrasjon-stue.jpg'
-// import kjokken from './media/kjokken.jpg'
-// import lekeplass from './media/lekeplass.jpg'
-// import trinn5alm from './media/Trinn-5-alm.jpg'
-// import vardevei from './media/vardevei.jpg'
+import lekeplass from './media/lekeplass.jpg'
 import { Sticky } from 'react-sticky'
 
 export default ({id, price, commonCosts, sharedDebt, grossArea,
   netLivingSpace, entryFloor, floors, numberOfRooms, bedrooms,
   energyRating, streetNumber, projectConstructionStart, projectConstructionFinalized,
-  streetName, apartmentNumber, zipLocation, county, property,
-  images, handleSelectProperty = f => f }, match) => (
+  streetName, apartmentNumber, zipLocation, county,
+  images, handleSelectProperty = f => f }) => (
 
     <div>
     <Sticky>
@@ -139,7 +134,7 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
                 <img src={images[5]} alt='Lekeplass' className='img-container' />
               </div>
               <div className='col-xs-6 two-grid-gutter'>
-                <img src={images[5]} alt='Vardevei' className='img-container' />
+                <img src={lekeplass} alt='Vardevei' className='img-container' />
               </div>
             </div>
             <div className='row'>
