@@ -157,10 +157,18 @@ form p {
 
 .container-header {
     width: 100%;
-    min-height: 75px;
+    height: auto;
     background: #fff;
     box-shadow: 0 0 4px #404040;
     display: fixed;
+}
+
+
+@media screen and (min-width: 760px) {
+    .container-header {
+        height: 60px;
+        
+    }
 }
 
 header {
@@ -168,6 +176,7 @@ header {
     height: inherit;
     margin: 0 auto;
     padding: 0 1rem;
+    z-index: 999;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -214,16 +223,20 @@ header nav ul li {
 }
 
 header nav ul li a {
-    width: 100%;
-    padding: 1.5rem;
+    padding: 1.25rem;
     color: #097C84;
-    font-size: 0.8rem;
+    font-size: 1.25rem;
     -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
 }
 
 header nav ul li a:hover {
     background-color: #097C84;
+    color: #fff;
+}
+
+.selected {
+    background-color: #F67F00; 
     color: #fff;
 }
 
