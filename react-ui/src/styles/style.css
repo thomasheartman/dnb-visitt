@@ -506,7 +506,7 @@ main.frontpage {
 
 .housing-item-image .img-responsive {
     object-fit: contain;
-    
+    height: 100%;
 }
 
 .housing-item-loc {
@@ -524,6 +524,10 @@ main.frontpage {
     margin-bottom: 1.5rem;
 }
 
+.housing-item-title::first-letter {
+    text-transform: capitalize;
+}
+
 .housing-item-price {
 }
 
@@ -531,6 +535,10 @@ main.frontpage {
     margin: 1rem 0;
     padding: 0.5rem 0;
     border-top: 1px solid #F67F00;
+}
+
+.housing-item-type-container .housing-item-type::first-letter {
+    text-transform: capitalize;
 }
 
 
@@ -863,6 +871,11 @@ main.frontpage {
 
 .reserved-houses h3::first-letter {
     text-transform: capitalize;
+}
+
+.reserved-houses img {
+    max-height: 14rem;
+    width: auto;
 }
 
 
