@@ -10,6 +10,7 @@ import Steps from './components/visitSteps/VisitSteps'
 import MenuItem from 'material-ui/MenuItem'
 import SelectField from 'material-ui/SelectField'
 import RecentProperties from './components/recentProperties/RecentProperties.map'
+import { showAll } from './dropdownConstants'
 
 // This can be used to override values in the theme
 const styles = {
@@ -46,7 +47,7 @@ export default ({ selectedCounty, allCounties, handleChange = f => f, handleSubm
                 fullWidth={true}
                 floatingLabelStyle={styles.relative}
               >
-                <MenuItem value={false} primaryText='Vis alle' />
+                <MenuItem value={showAll} primaryText={showAll} />
                 {allCounties.map((county) =>
                   <MenuItem value={county} key={county} primaryText={county} />
                 )}

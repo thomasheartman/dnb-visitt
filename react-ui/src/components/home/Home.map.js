@@ -8,6 +8,7 @@ import { setDropDownCounty } from '../../redux/reducers/dropDownCounty/dropDownC
 import { setCounty, clearCounties } from '../../redux/reducers/filter/filterActions'
 import { fetchResults } from '../../redux/reducers/searchResults/resultsActions'
 import counties from '../../redux/counties'
+import { showAll } from './dropdownConstants'
 
 const mapStateToProps = state => ({
   selectedCounty: state.dropDownCounty,
@@ -19,7 +20,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(setDropDownCounty(value))
   },
   handleSubmit (value) {
-    if (!value || value===false) {
+    if (!value || value===showAll ) {
       dispatch(clearCounties())
     } else {
       dispatch(setCounty(value))
