@@ -18,32 +18,38 @@ const styles = {
     width: 500
   },
   color: {
-    color: '#F67F00' // DNB-orange. As an example
+    color: '#FFF' // DNB-orange. As an example
+  },
+  background: {
+    backgroundColor: '#FFF'
   }
 }
 
 export default ({ selectedCounty, allCounties, handleChange = f => f, handleSubmit = f => f }) => (
   <main className='frontpage full-width'>
     <AboutBox />
-    <section className='home-search center-xs middle-xs'>
+    <section className='home-search center-xs middle-xs '>
       <div className='row'>
         <div className='col-xs-12 center-xs'>
           <h1 className='title-heading'>Hvor ønsker du å bo?</h1>
-          <div className='dropdown row center-xs' >
-            <SelectField name='dropDownCounty'
-              onChange={(event, index, value) => handleChange(value)}
-              hintText={selectedCounty || 'Velg et fylke'}
-              style={styles.customWidth}
-              floatingLabelText={selectedCounty || 'Velg et fylke'}
-              floatingLabelStyle={styles.color}
-            >
-              <MenuItem value={null} primaryText='Vis alle' />
-              {allCounties.map((county) =>
-                <MenuItem value={county} key={county} primaryText={county} />
-              )}
-            </SelectField>
+          <div className='dropdown row center-xs middle-xs' >
+            <div className="dropDown-background col-xs">
+              <SelectField name='dropDownCounty' className="selectField"
+                onChange={(event, index, value) => handleChange(value)}
+                hintText={selectedCounty || 'Velg et fylke'}
+                style={styles.customWidth, styles.backgroundColor}
+                floatingLabelText={selectedCounty || 'Velg et fylke'}
+                floatingLabelStyle={styles.color}
+                menuStyle={styles.backgroundColor}
+              >
+                <MenuItem value={null} primaryText='Vis alle' />
+                {allCounties.map((county) =>
+                  <MenuItem value={county} key={county} primaryText={county} />
+                )}
+              </SelectField>
+            </div>
             <br />
-            <Link to='/boligvelger' onClick={() => handleSubmit(selectedCounty)}>
+            <Link to='/boligvelger' onClick={() => handleSubmit(selectedCounty)} className="col-xs">
               <input type='submit' value='Søk' />
             </Link>
           </div>

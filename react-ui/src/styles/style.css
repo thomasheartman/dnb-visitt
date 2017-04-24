@@ -249,6 +249,11 @@ main.frontpage {
     padding: 0 0 4rem 0;
 }
 
+.frontpage .title-heading {
+    color: #fff;
+    text-shadow: 1px 1px 2px #333;
+}
+
 
 /* ABOUT VISIT INFO BOX */
 
@@ -350,16 +355,10 @@ main.frontpage {
 
 /* FRONT PAGE HOME SEARCH */
 
-.home-search .dropdown select {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1rem;
-}
-
 .frontpage .home-search {
     height: 65vh;
     width: 100%;
-    background-image: url(./media/vr-banner-illustration-fixed.jpg);
+    background-image: url(./media/main-velger.jpg);
     background-size:cover;
     background-repeat: no-repeat;
 }
@@ -382,6 +381,10 @@ main.frontpage {
     font-size: 2.5rem;
     font-weight: 700;
     text-shadow: 0 0 1px #fff;
+}
+
+.home-search .dropdown .dropDown-background {
+   
 }
 
 .home-search input {
