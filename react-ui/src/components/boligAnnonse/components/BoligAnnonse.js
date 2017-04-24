@@ -14,6 +14,7 @@ import familie from './media/familie.jpg'
 // import lekeplass from './media/lekeplass.jpg'
 // import trinn5alm from './media/Trinn-5-alm.jpg'
 // import vardevei from './media/vardevei.jpg'
+import { Sticky } from 'react-sticky'
 
 export default ({id, price, commonCosts, sharedDebt, grossArea,
   netLivingSpace, entryFloor, floors, numberOfRooms, bedrooms,
@@ -22,6 +23,7 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
   images, handleSelectProperty = f => f }, match) => (
 
     <div>
+    <Sticky>
       <div className='housing-nav middle-xs row'>
         <ul className='col-xs middle-xs row'>
           <li>
@@ -41,6 +43,8 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
           <Link to={`/bestill-visitt/${id}`} onClick={() => handleSelectProperty()}>Bestill Visitt</Link>
         </div>
       </div>
+    </Sticky>
+
       <main className='housing-ad-main'>
         <div className='row'>
           <section className='col-xs-12'>
