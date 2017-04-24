@@ -6,6 +6,7 @@ import { database } from './firebase'
 import { addBooking } from '../redux/reducers/bookingSchedule/bookingScheduleActions'
 import { saveBooking } from '../redux/reducers/booking/bookingActions'
 import { composeMail } from '../mailHandler/mailHandler'
+import { formatTime } from '../helperFunctions/formatting'
 
 // TODO: heavy refactoring, think about separation of concerns etc.
 const createMailSubject = (date, time, branch) => `Din bestilling av Visitt: ${branch}, ${date}, ${time}`
@@ -38,11 +39,15 @@ export const addBookingToDatabase = (branch, date, time, details) =>
           property: property
         }))
       })
-      .then(() => composeMail({
+      .then(() => {
+        const timeFormatted = formatTime(time)
+
+        composeMail({
         to: details.email,
-        subject: createMailSubject(date, time, branch),
-        html: mailHTML(date, time, branch)
-      }))
+        subject: createMailSubject(date, timeFormatted, branch),
+        html: mailHTML(date, timeFormatted, branch)
+        })
+      })
       .catch(err => alert(err.message))
   }
 
