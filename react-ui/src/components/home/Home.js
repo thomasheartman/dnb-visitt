@@ -20,7 +20,7 @@ const styles = {
 
   },
   color: {
-    color: '#FFF' // DNB-orange. As an example
+    color: '#404040' // DNB-orange. As an example
   }
 }
 
@@ -31,15 +31,15 @@ export default ({ selectedCounty, allCounties, handleChange = f => f, handleSubm
       <div className='row'>
         <div className='col-xs-12 center-xs'>
           <h1 className='title-heading'>Hvor ønsker du å bo?</h1>
-          <div className='dropdown row center-xs middle-xs' >
-            <div className="dropDown-background col-xs">
+          <div className='dropdown center-xs' >
+            <div className="dropDown-background">
               <SelectField name='dropDownCounty' className="selectField"
                 onChange={(event, index, value) => handleChange(value)}
                 hintText={selectedCounty || 'Velg et fylke'}
                 style={styles.customWidth}
                 floatingLabelText={selectedCounty || 'Velg et fylke'}
-              floatingLabelStyle={styles.color}
-              menuStyle={styles.backgroundColor}
+                floatingLabelStyle={styles.color}
+                menuStyle={styles.backgroundColor}
               >
                 <MenuItem value={null} primaryText='Vis alle' />
               {allCounties.map((county) =>
@@ -47,10 +47,7 @@ export default ({ selectedCounty, allCounties, handleChange = f => f, handleSubm
               )}
               </SelectField>
           </div>
-          <br />
-          <Link to='/boligvelger' onClick={() => handleSubmit(selectedCounty)} className="col-xs">
-            <input type='submit' value='Søk' />
-          </Link>
+          <Link to='/boligvelger' onClick={() => handleSubmit(selectedCounty)} className="col-xs"><input type='submit' value='Søk' /></Link>     
         </div>
       </div>
       </div>

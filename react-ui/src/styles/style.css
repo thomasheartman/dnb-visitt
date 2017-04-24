@@ -62,7 +62,7 @@ a:hover {
 }
 
 .title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     padding: 1rem;
     color: #fff;
 }
@@ -286,8 +286,6 @@ main.frontpage {
 
 .about-visit .text-box p {
     color: #097C84;
-    font-size: 0.8rem;
-    text-align: center;
 }
 
 
@@ -361,7 +359,7 @@ main.frontpage {
 /* FRONT PAGE HOME SEARCH */
 
 .frontpage .home-search {
-    height: 65vh;
+    height: 80vh;
     width: 100%;
     background-image: url(./media/main-velger.jpg);
     background-size:cover;
@@ -541,8 +539,13 @@ main.frontpage {
 
 .housing-item-type-container {
     margin: 1rem 0;
-    padding: 0.5rem 0;
+    padding: 1rem 0;
     border-top: 1px solid #F67F00;
+}
+
+.housing-item-type-container img {
+    height: 3rem;
+    margin-right: 2rem;
 }
 
 .housing-item-type-container .housing-item-type::first-letter {
@@ -653,6 +656,11 @@ main.frontpage {
     font-weight: 700;
     margin: 0 0 0.5rem 0;
 }
+
+.housing-title::first-letter {
+    text-transform: capitalize;
+}
+
 
 .housing-location {
     font-weight: 100;
