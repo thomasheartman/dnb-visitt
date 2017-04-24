@@ -65,10 +65,6 @@ export const fetchResults = (parameters) => (dispatch, getState) => {
   const filter = getState().filter
   const filterValues = processFilterValues(filter)
 
-  // ref.orderByChild('price').endAt(parseInt(filterValues.maxPrice, 10)).on('child_added', snapshot => {
-  //   const property = snapshot.val()
-  //   if (matchesSearchCriteria(filterValues, property)) dispatch(addResult(property))
-
   ref.orderByChild('price').endAt(parseInt(filterValues.maxPrice, 10)).once('value')
     .then(snapshot => {
       const properties = snapshot.val()
@@ -78,6 +74,24 @@ export const fetchResults = (parameters) => (dispatch, getState) => {
         }
       }
       )
+    })
+    .then(() => dispatch(cancelFetchingResults()))
+    .catch(err => {
+      dispatch(cancelFetchingResults())
+      console.log(err)
+    })
+}
+
+export const fetchResultsHomePage = () => (dispatch, getState) => {
+  dispatch(startFetchingResults())
+  dispatch(clearResults())
+
+  const ref = database.ref('properties')
+
+
+  ref.orderByChild('price').limitToLast(2).once('value')
+    .then(snapshot => {
+      snapshot.val().forEach((property) => dispatch(addResult(formatPropertyData(property))))
     })
     .then(() => dispatch(cancelFetchingResults()))
     .catch(err => {

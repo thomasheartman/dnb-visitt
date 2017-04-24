@@ -9,8 +9,7 @@ import AboutBox from './components/aboutBox/AboutBox'
 import Steps from './components/visitSteps/VisitSteps'
 import MenuItem from 'material-ui/MenuItem'
 import SelectField from 'material-ui/SelectField'
-
-// TODO: Create a line break between dropdown and button
+import RecentProperties from './components/recentProperties/RecentProperties.map'
 
 // This can be used to override values in the theme
 const styles = {
@@ -48,18 +47,19 @@ export default ({ selectedCounty, allCounties, handleChange = f => f, handleSubm
                 floatingLabelStyle={styles.relative}
               >
                 <MenuItem value={null} primaryText='Vis alle' />
-              {allCounties.map((county) =>
-                <MenuItem value={county} key={county} primaryText={county} />
-              )}
+                {allCounties.map((county) =>
+                  <MenuItem value={county} key={county} primaryText={county} />
+                )}
               </SelectField>
+            </div>
+            <Link to='/boligvelger' onClick={() => handleSubmit(selectedCounty)} className="col-xs">
+              <input type='submit' value='Søk' />
+            </Link>
           </div>
-          <Link to='/boligvelger' onClick={() => handleSubmit(selectedCounty)} className="col-xs">
-            <input type='submit' value='Søk' />
-          </Link>
         </div>
       </div>
-      </div>
     </section>
-  <Steps />
+    <Steps />
+    <RecentProperties />
   </main >
 )
