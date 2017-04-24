@@ -30,7 +30,7 @@ const processFilterValues = (filter) => {
   numberOfBedrooms = filter.numberOfBedrooms.includes('1') ? [...numberOfBedrooms, 1] : numberOfBedrooms
   numberOfBedrooms = filter.numberOfBedrooms.includes('2') ? [...numberOfBedrooms, 2] : numberOfBedrooms
   numberOfBedrooms = filter.numberOfBedrooms.includes('3+') ? [...numberOfBedrooms, 3] : numberOfBedrooms
-  
+
   return {
     counties: filter.counties ? arrayToLowerCase(filter.counties) : [],
     maxPrice: filter.maxPrice ? filter.maxPrice : Number.MAX_SAFE_INTEGER,
@@ -72,10 +72,10 @@ export const fetchResults = (parameters) => (dispatch, getState) => {
         if (matchesSearchCriteria(filterValues, property)) {
           dispatch(addResult(formatPropertyData(property)))
         }
-      }
-      )
+      })
     })
-    .then(() => dispatch(cancelFetchingResults()))
+    .then(() => {
+      if (getState().searchResults.fetchingResults) dispatch(cancelFetchingResults())})
     .catch(err => {
       dispatch(cancelFetchingResults())
       console.log(err)
@@ -93,7 +93,9 @@ export const fetchResultsHomePage = () => (dispatch, getState) => {
     .then(snapshot => {
       snapshot.val().forEach((property) => dispatch(addResult(formatPropertyData(property))))
     })
-    .then(() => dispatch(cancelFetchingResults()))
+    .then(() => {
+      if (getState().searchResults.fetchingResults) dispatch(cancelFetchingResults())
+    })
     .catch(err => {
       dispatch(cancelFetchingResults())
       console.log(err)
