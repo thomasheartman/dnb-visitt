@@ -4,8 +4,10 @@
  */
 
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import logo from './media/dnb-visitt.svg'
+
+const activeClassName ='selected'
 
 export default () => (
     <div className='container-header'>
@@ -17,13 +19,13 @@ export default () => (
         <nav className='col-xs-12 col-sm-8 start-xs end-md'>
           <ul className='row center-xs middle-xs start-xs end-md'>
             <li>
-              <Link to='/boligvelger'>Boligsøk</Link>
+              <NavLink activeClassName={activeClassName} to='/boligvelger'>Boligsøk</NavLink>
             </li>
             <li>
-              <Link to='/om-visitt'>Om Visitt</Link>
+              <NavLink activeClassName={activeClassName} to='/om-visitt'>Om Visitt</NavLink>
             </li>
             <li>
-              <Link to='/hjelp-og-kontakt'>Hjelp og Kontakt</Link>
+              <NavLink activeClassName={activeClassName} to='/hjelp-og-kontakt'>Hjelp og Kontakt</NavLink>
             </li>
           </ul >
         </nav >
