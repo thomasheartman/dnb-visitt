@@ -8,6 +8,7 @@ import MenuItem from 'material-ui/MenuItem'
 import { TextField, DatePicker, SelectField } from 'redux-form-material-ui'
 import branches from './branchValues/branches'
 import hours from './branchValues/openingHours'
+import { validateDate } from './dateValidator'
 
 class BookingForm extends React.Component {
   componentDidUpdate () {
@@ -46,11 +47,12 @@ class BookingForm extends React.Component {
             floatingLabelText='Velg dato'
             hintText='Velg dato'
             autoOk
-            shouldDisableDate={(date) => date.getDay() === 0 || date.getDay() === 6}
+            shouldDisableDate={(date) => validateDate(date) }
             required
           />
 
           <Field component={SelectField}
+            style={!(date && branch) ? { 'display': 'none' } : {}}
             disabled={!(date && branch)}
             name='time' type='text'
             floatingLabelText='Klokkeslett'
