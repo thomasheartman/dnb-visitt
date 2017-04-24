@@ -474,18 +474,6 @@ main.frontpage {
 }
 
 
-/* HOUSING LIST FILTER */
-
-.housing-filter {
-    position: relative;
-    background-color: #097C84;
-    color: #fff;
-}
-
-.housing-filter form {
-    position: relative;
-    width: 100%;
-}
 
 /* HOUSING LIST ITEMS */
 
@@ -561,8 +549,16 @@ main.frontpage {
 /* HOUSING FILTER */
 
 .housing-filter {
-    padding: 2rem 1rem;
+    position: relative;
+    padding: 0 2rem;
+    background-color: #097C84;
+    color: #fff;
     font-family: Arial;
+}
+
+.housing-filter form {
+    position: relative;
+    width: 100%;
 }
 
 .housing-filter legend {
