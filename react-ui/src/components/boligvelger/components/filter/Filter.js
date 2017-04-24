@@ -24,6 +24,8 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
                     handleChange(selectedCounties.includes(county) ? fields.REMOVE_COUNTY : fields.ADD_COUNTY, county)
                     performSearch()
                   }}
+                    labelStyle={{color: 'white'}}
+                    iconStyle={{fill: 'white'}}
               />
           </li>
         )}
@@ -37,6 +39,8 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
                     handleChange(selectedCounties.includes(county) ? fields.REMOVE_COUNTY : fields.ADD_COUNTY, county)
                     performSearch()
                   }}
+                  labelStyle={{color: 'white'}}
+                  iconStyle={{fill: 'white'}}
                 />
               </li>
             )
@@ -131,7 +135,10 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
                   : fields.ADD_BEDROOM_OPTION,
                   entry)
                 performSearch()
+                
               }}
+              labelStyle={{color: 'white'}}
+              iconStyle={{fill: 'white'}}
             />
           </li>
         )}

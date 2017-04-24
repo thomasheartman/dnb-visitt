@@ -105,6 +105,11 @@ a:hover {
    
 }
 
+.spinner-container {
+    width: 20rem;
+    margin: 5rem auto;
+}
+
 
 /* FORMS GENERELT */
 
