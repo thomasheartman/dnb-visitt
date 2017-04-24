@@ -1,5 +1,4 @@
 /*
- * @flow
  * Created by Thomas Hartmann
  * A file containing database queries
  */
@@ -13,7 +12,7 @@ const createMailSubject = (date, time, branch) => `Din bestilling av Visitt: ${b
 
 const mailHTML = (date, time, branch) => `<div>Din bestilling av Visitt: ${branch}, ${date}, ${time}</div>`
 
-export const addBookingToDatabase = (branch: string, date: string, time: string, details: object) =>
+export const addBookingToDatabase = (branch, date, time, details) =>
   (dispatch, getState) => {
 
     const ref = database.ref(`appointments/${branch}/${date}/${time}`)
@@ -47,7 +46,7 @@ export const addBookingToDatabase = (branch: string, date: string, time: string,
       .catch(err => alert(err.message))
   }
 
-export const getSchedule = (branch: string, date: string) => dispatch => {
+export const getSchedule = (branch, date) => dispatch => {
 
   const ref = database.ref(`appointments/${branch}/${date}`)
 
@@ -56,4 +55,16 @@ export const getSchedule = (branch: string, date: string) => dispatch => {
       dispatch(addBooking(snapshot.key))
     }
   })
+}
+
+export const addSupportInquiry = (name, email, phoneNumber, message) => {
+  const ref = database.ref('inquiries')
+
+  ref.push().set({
+    name: name,
+    email: email,
+    phoneNumber: phoneNumber,
+    message: message
+  })
+  .catch(err => alert(err.message))
 }

@@ -22,6 +22,25 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
   handleSelectProperty = f => f }, match) => (
 
     <div>
+      <div className="housing-nav middle-xs row">
+        <ul className="col-xs middle-xs row">
+          <li>
+            <a href="#spesifikasjoner">Spesifikasjoner</a>
+          </li>
+          <li>
+            <a href="#om-bolig">Om Boligen</a>
+          </li>
+          <li>
+            <a href="#bilder">Bilder</a>
+          </li>
+          <li>
+            <a href="#vr">VR</a>
+          </li>
+        </ul>
+        <div className="col-xs end-xs middle-xs full-width reserve-visit-button">
+          <Link to={`/bestill-visitt/${id}`} onClick={() => handleSelectProperty()}>Bestill Visitt</Link>
+        </div>
+      </div>
       <main className='housing-ad-main'>
         <div className='row'>
           <section className='col-xs-12'>
@@ -31,21 +50,7 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
                 <p className='housing-location'>{`${zipLocation}, ${county}`}</p>
               </div>
             </div>
-
             <img src={trinn5} className='housing-main-img' alt='Trinn 5 bolig' />
-            <nav className='housing-inline-nav'>
-              <ul>
-                <li>
-                  <Link to='#information'>Informasjon</Link>
-                </li>
-                <li>
-                  <Link to='#presentation'>Presentasjon</Link>
-                </li>
-                <li>
-                  <Link to={`/bestill-visitt/${id}`} onClick={() => handleSelectProperty()}>Bestill Visitt</Link>
-                </li>
-              </ul>
-            </nav>
             <section className='row housing-basics'>
               <div className='col-xs-12 col-sm-4 col-md-6'>
                 <h2>Om boligen</h2>
@@ -84,8 +89,10 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
                   </div>
                 </div>
               </aside>
+              <a href="" name="spesifikasjoner"></a>
             </section>
             <div className='row center-xs'>
+              <a href="" name="om-bolig"></a>
               <div className='col-xs-6 two-grid-gutter big-button'>
                 <Link to='#'>Se Plantegning</Link>
               </div>
@@ -110,6 +117,7 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
               </div>
             </div>
             <div className='row center-xs'>
+              <a href="" name="bilder"></a>
               <div className='col-xs-6 two-grid-gutter'>
                 <img src={kjokken} alt='Kjøkken' className='img-container' />
               </div>
@@ -136,6 +144,7 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
               </div>
             </div>
             <div className='row center-xs'>
+              <a href="" name="vr"></a>
               <div className='col-xs-6 two-grid-gutter'>
                 <img src={barn} alt='Barn' className='img-container' />
               </div>

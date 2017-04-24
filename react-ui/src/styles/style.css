@@ -614,6 +614,23 @@ main.frontpage {
 
 /* HOUSING ANNONSE  */
 
+.housing-nav {
+    height: 3rem;
+    background-color: #097C84;
+}
+
+.housing-nav ul li a{
+    padding: 1rem 2rem;
+    color: #fff;
+}
+
+.housing-nav .reserve-visit-button a {
+    width: 3rem;
+    background-color: #F67F00;
+    color: #fff;
+    padding: 1rem 3rem;
+}
+
 .housing-ad-main {
 	margin-bottom: 5rem;
 }
