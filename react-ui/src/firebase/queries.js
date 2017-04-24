@@ -66,5 +66,5 @@ export const addSupportInquiry = (name, email, phoneNumber, message) => {
     phoneNumber: phoneNumber,
     message: message
   })
-  .catch(err => alert)
+  .catch(err => alert(err.message))
 }
