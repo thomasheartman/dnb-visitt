@@ -74,7 +74,7 @@ a:hover {
 }
 
 .page-sub-heading {
-    margin: 2rem 0;
+    margin: 1rem 0 2rem 0;
     border-bottom: 1px solid #404040;
 }
 
@@ -83,7 +83,8 @@ a:hover {
 }
 
 .page-sub-heading img {
-    height: 6rem;
+    height: 5rem;
+    width: auto;
 }
 
 
@@ -124,7 +125,7 @@ input[type="submit"], input[type="reset"] {
     width: 10rem;
     background:#404040;
     padding: 1rem;
-    margin: 1rem 0.25rem;
+    margin: 1rem 0;
     border: none;
     color: #fff;
     font-size: 1.25rem;
@@ -223,6 +224,7 @@ header nav ul li a:hover {
 main {
     max-width: 1240px;
     margin: 0 auto;
+    margin-bottom: 5rem;
 }
 
 .title-heading {
@@ -909,6 +911,31 @@ main.frontpage {
 .reserved-houses img {
     max-height: 14rem;
     width: auto;
+}
+
+/* CONTACT PAGE */
+
+
+.contact .map-container {
+
+}
+
+.contact .page-sub-heading {
+    margin: 5rem 0 2rem 0;
+}
+
+.contact .page-sub-heading:first-child {
+    margin: 1rem 0 2rem 0;
+}
+
+
+
+.map-container h3 {
+    margin: 1rem 0;
+}
+
+.contact-info p {
+    margin: 0.5rem 0;
 }
 
 

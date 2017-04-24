@@ -10,10 +10,12 @@ import SubmitSucceeded from './components/SubmitSucceeded'
 
 const ContactForm = ({ handleSubmit, input, pristine, submitting, reset, submitSucceeded }) => (
 
-  <div>
+  <div className="row">
+    <div className="col-xs">
+      <p>Lurer du på noe? Kontakt oss da vel.</p>
     {submitSucceeded
       ? <SubmitSucceeded/>
-    :<form className="col-xs-12 col-sm-4" onSubmit={(event, values) => {
+    :<form onSubmit={(event, values) => {
         event.preventDefault()
         handleSubmit(values)
       }}>
@@ -23,10 +25,10 @@ const ContactForm = ({ handleSubmit, input, pristine, submitting, reset, submitS
         <Field name='message' type='text' cols={50} rows={5} floatingLabelText='Din beskjed' hintText='Hva kan vi hjelpe deg med?'
           multiLine component={TextField} /><br />
 
-        <br />
         <input type='submit' value='Send' disabled={pristine || submitting} />
       </form>
     }
+    </div>
   </div>
 )
 
