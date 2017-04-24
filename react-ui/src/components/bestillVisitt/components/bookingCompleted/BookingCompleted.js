@@ -13,10 +13,13 @@ export default ({ date, time, branch, address, housingType }) => (
   <div>
     <main className='confirmation-container'>
       <div className='row middle-xs page-sub-heading'>
-        <h2 className='col-xs'>Takk for bestillingen din, vi gleder oss til å vise frem boligen</h2>
+        <h2 className='col-xs'>Takk for bestillingen din</h2>
         <img src={hjem} viewBox='0 0 500 500' role='presentation' />
       </div>
-      <p className='notification'>Din Visitt visning er nå bestilt. Du vil motta bekreftelse på epost.</p>
+      <div className="row center-xs notification-container">
+        <p className='center-xs notification'>Din Visitt visning er nå bestilt. </p>
+        <p className="center-xs notification">Du vil motta bekreftelse på epost.</p>
+      </div>
       <div className='reservation-info'>
         <h2>Din Bestilling</h2>
         <div className='col-xs center-xs'>

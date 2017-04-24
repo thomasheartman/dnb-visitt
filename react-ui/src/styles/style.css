@@ -103,14 +103,18 @@ a:hover {
     width: auto;
 }
 
+.notification-container {
+    width: 24rem;
+    margin: 0 auto;
+    border-bottom: 1px solid #F67F00;
+}
 
 .notification {
     box-sizing:padding-box;
     padding-bottom: 2rem;
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 300;
     text-align: center;
-    border-bottom: 1px solid #F67F00;
     max-width: 24rem;
     margin: 0 auto;
 }
@@ -924,6 +928,10 @@ main.frontpage {
 
 .reserved-house-container h2 {
     color: #097C84;
+}
+
+.order-button {
+    display: flex;
 }
 
 /* RESERVATION CONFIRMATION */

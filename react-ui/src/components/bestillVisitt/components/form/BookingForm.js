@@ -85,7 +85,7 @@ class BookingForm extends React.Component {
             required
           />
 
-          <input type='submit' value='Bestill Visitt'
+          <input type='submit' value='Bestill Visitt' className="order-button"
             disabled={pristine || submitting} />
         </form>
       </div>
