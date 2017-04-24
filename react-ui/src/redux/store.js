@@ -13,7 +13,7 @@ import { createStore, applyMiddleware } from 'redux'
  * for dev and debugging, but should be removed for
  *  deployment.
  */
-const consoleMessages = store => next => action => {
+/*const consoleMessages = store => next => action => {
   let result
 
   console.groupCollapsed(`Dispatching action => ${action.type}`)
@@ -33,6 +33,6 @@ const consoleMessages = store => next => action => {
   result = next(action)
 
   return result
-}
+}*/
 
-export default (initialState = {}) => applyMiddleware(thunk, consoleMessages)(createStore)(reducer, initialState)
+export default (initialState = {}) => applyMiddleware(thunk)(createStore)(reducer, initialState)
