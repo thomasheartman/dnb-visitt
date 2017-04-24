@@ -64,8 +64,21 @@ export const fetchResults = (parameters) => (dispatch, getState) => {
   const filter = getState().filter
   const filterValues = processFilterValues(filter)
 
-  ref.orderByChild('price').endAt(parseInt(filterValues.maxPrice, 10)).on('child_added', snapshot => {
-    const property = snapshot.val()
-    if (matchesSearchCriteria(filterValues, property)) dispatch(addResult(property))
-  })
+  // ref.orderByChild('price').endAt(parseInt(filterValues.maxPrice, 10)).on('child_added', snapshot => {
+  //   const property = snapshot.val()
+  //   if (matchesSearchCriteria(filterValues, property)) dispatch(addResult(property))
+
+  ref.orderByChild('price').endAt(parseInt(filterValues.maxPrice, 10)).once('value')
+    .then(snapshot => {
+      const properties = snapshot.val()
+      properties.forEach((property) => {
+        if (matchesSearchCriteria(filterValues, property)) dispatch(addResult(property))
+      }
+      )
+    })
+    .then(() => dispatch(cancelFetchingResults()))
+    .catch(err => {
+      dispatch(cancelFetchingResults())
+      console.log(err)
+    })
 }

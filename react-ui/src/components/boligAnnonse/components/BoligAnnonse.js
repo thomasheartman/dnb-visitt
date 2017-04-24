@@ -5,42 +5,46 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { kalkulator, omradeVelg } from '../../../media/icons.js'
-import trinn5 from './media/Trinn-5-alm-crop.jpg'
+// import trinn5 from './media/Trinn-5-alm-crop.jpg'
 import mekler from './media/mekler.jpg'
 import barn from './media/barn.jpg'
 import familie from './media/familie.jpg'
-import stue from './media/illustrasjon-stue.jpg'
-import kjokken from './media/kjokken.jpg'
-import lekeplass from './media/lekeplass.jpg'
-import trinn5alm from './media/Trinn-5-alm.jpg'
-import vardevei from './media/vardevei.jpg'
+// import stue from './media/illustrasjon-stue.jpg'
+// import kjokken from './media/kjokken.jpg'
+// import lekeplass from './media/lekeplass.jpg'
+// import trinn5alm from './media/Trinn-5-alm.jpg'
+// import vardevei from './media/vardevei.jpg'
+import { Sticky } from 'react-sticky'
 
 export default ({id, price, commonCosts, sharedDebt, grossArea,
   netLivingSpace, entryFloor, floors, numberOfRooms, bedrooms,
   energyRating, streetNumber, projectConstructionStart, projectConstructionFinalized,
   streetName, apartmentNumber, zipLocation, county, property,
-  handleSelectProperty = f => f }, match) => (
+  images, handleSelectProperty = f => f }, match) => (
 
     <div>
-      <div className="housing-nav middle-xs row">
-        <ul className="col-xs middle-xs row">
+    <Sticky>
+      <div className='housing-nav middle-xs row'>
+        <ul className='col-xs middle-xs row'>
           <li>
-            <a href="#spesifikasjoner">Spesifikasjoner</a>
+            <a href='#spesifikasjoner'>Spesifikasjoner</a>
           </li>
           <li>
-            <a href="#om-bolig">Om Boligen</a>
+            <a href='#om-bolig'>Om Boligen</a>
           </li>
           <li>
-            <a href="#bilder">Bilder</a>
+            <a href='#bilder'>Bilder</a>
           </li>
           <li>
-            <a href="#vr">VR</a>
+            <a href='#vr'>VR</a>
           </li>
         </ul>
-        <div className="col-xs end-xs middle-xs full-width reserve-visit-button">
-          <Link to={`/bestill-visitt/${id}`} onClick={() => handleSelectProperty()}>Bestill Visning</Link>
+        <div className='col-xs end-xs middle-xs full-width reserve-visit-button'>
+          <Link to={`/bestill-visitt/${id}`} onClick={() => handleSelectProperty()}>Bestill Visitt</Link>
         </div>
       </div>
+    </Sticky>
+
       <main className='housing-ad-main'>
         <div className='row'>
           <section className='col-xs-12'>
@@ -50,7 +54,7 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
                 <p className='housing-location'>{`${zipLocation}, ${county}`}</p>
               </div>
             </div>
-            <img src={trinn5} className='housing-main-img' alt='Trinn 5 bolig' />
+            <img src={images[0]} className='housing-main-img' alt='Trinn 5 bolig' />
             <section className='row housing-basics'>
               <div className='col-xs-12 col-sm-4 col-md-6'>
                 <h2>Om boligen</h2>
@@ -89,10 +93,10 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
                   </div>
                 </div>
               </aside>
-              <a href="" name="spesifikasjoner"></a>
+              <a href='' name='spesifikasjoner'></a>
             </section>
             <div className='row center-xs'>
-              <a href="" name="om-bolig"></a>
+              <a href='' name='om-bolig'></a>
               <div className='col-xs-6 two-grid-gutter big-button'>
                 <Link to='#'>Se Plantegning</Link>
               </div>
@@ -102,10 +106,10 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
             </div>
             <div className='row center-xs'>
               <div className='col-xs-6 two-grid-gutter big-button'>
-                <img src={trinn5alm} alt='Trinn 5' className='img-container' />
+                <img src={images[1]} alt='Trinn 5' className='img-container' />
               </div>
               <div className='col-xs-6 two-grid-gutter big-button'>
-                <img src={vardevei} alt='Vardevei' className='img-container' />
+                <img src={images[2]} alt='Vardevei' className='img-container' />
               </div>
             </div>
             <div className='row center-xs middle-xs'>
@@ -117,12 +121,12 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
               </div>
             </div>
             <div className='row center-xs'>
-              <a href="" name="bilder"></a>
+              <a href='' name='bilder'></a>
               <div className='col-xs-6 two-grid-gutter'>
-                <img src={kjokken} alt='Kjøkken' className='img-container' />
+                <img src={images[3]} alt='Kjøkken' className='img-container' />
               </div>
               <div className='col-xs-6 two-grid-gutter'>
-                <img src={stue} alt='Stue' className='img-container' />
+                <img src={images[4]} alt='Stue' className='img-container' />
               </div>
             </div>
             <div className='row'>
@@ -132,10 +136,10 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
             </div>
             <div className='row center-xs'>
               <div className='col-xs-6 two-grid-gutter'>
-                <img src={lekeplass} alt='Lekeplass' className='img-container' />
+                <img src={images[5]} alt='Lekeplass' className='img-container' />
               </div>
               <div className='col-xs-6 two-grid-gutter'>
-                <img src={vardevei} alt='Vardevei' className='img-container' />
+                <img src={images[5]} alt='Vardevei' className='img-container' />
               </div>
             </div>
             <div className='row'>
@@ -144,7 +148,7 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
               </div>
             </div>
             <div className='row center-xs'>
-              <a href="" name="vr"></a>
+              <a href='' name='vr'></a>
               <div className='col-xs-6 two-grid-gutter'>
                 <img src={barn} alt='Barn' className='img-container' />
               </div>

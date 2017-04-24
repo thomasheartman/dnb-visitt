@@ -20,7 +20,7 @@ const styles = {
 
   },
   color: {
-    color: '#404040' 
+    color: '#404040'
   },
 
   relative: {
@@ -43,7 +43,6 @@ export default ({ selectedCounty, allCounties, handleChange = f => f, handleSubm
                 hintText={selectedCounty || 'Velg et fylke ...'}
                 style={styles.customWidth}
                 floatingLabelText={selectedCounty || 'Velg et fylke ...'}
-                floatingLabelStyle={styles.color}
                 menuStyle={styles.backgroundColor}
                 fullWidth={true}
                 floatingLabelStyle={styles.relative}
@@ -54,7 +53,9 @@ export default ({ selectedCounty, allCounties, handleChange = f => f, handleSubm
               )}
               </SelectField>
           </div>
-          <Link to='/boligvelger' onClick={() => handleSubmit(selectedCounty)} className="col-xs"><input type='submit' value='Søk' /></Link>     
+          <Link to='/boligvelger' onClick={() => handleSubmit(selectedCounty)} className="col-xs">
+            <input type='submit' value='Søk' />
+          </Link>
         </div>
       </div>
       </div>

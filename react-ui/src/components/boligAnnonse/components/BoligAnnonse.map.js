@@ -6,11 +6,12 @@
 import { connect } from 'react-redux'
 import Annonse from './BoligAnnonse'
 import { clearBooking } from '../../../redux/reducers/booking/bookingActions'
+import { getAdImages } from './media/annonseImages'
 
 const mapStateToProps = state => {
   const property = state.currentProperty.propertyData
   if (!property) return
-
+  
   return ({
     id: property.id,
     price: property.price || 50,
@@ -30,7 +31,8 @@ const mapStateToProps = state => {
     apartmentNumber: property.apartmentNumber,
     zipLocation: property.zipLocation,
     county: property.county,
-    property: property
+    property: property,
+    images: getAdImages(property.housingType)
   })
 }
 

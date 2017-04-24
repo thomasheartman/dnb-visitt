@@ -4,7 +4,6 @@
  * submission of the contact form
  */
 import React from 'react'
-
 export default () => (
   <div>
     <h1>Takk for at du tar kontakt</h1>

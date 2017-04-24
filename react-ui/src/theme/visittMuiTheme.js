@@ -39,8 +39,5 @@ export default getMuiTheme({
     accent1Color: '#F67F00',
     accent2Color: '#404040',
     accent3Color: '#333'
-  },
-  appBar: { // NOTE: we're not actually using this, but it shows you can style individual components
-    height: 50
   }
 })
