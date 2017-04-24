@@ -20,7 +20,6 @@ class BookingForm extends React.Component {
   render () {
     const { date, branch, DateTimeFormat, schedule,
       handleSubmit, input, pristine, submitting } = this.props
-
     return (
       <div>
         <form onSubmit={(event, values) => {
@@ -35,7 +34,7 @@ class BookingForm extends React.Component {
             required
           >
             {branches.map((branch) =>
-                        <MenuItem value={branch} key={branch} primaryText={branch} style={'color: #333'} />
+                        <MenuItem value={branch} key={branch} primaryText={branch} style={{'color': '#333'}} />
             )}
           </Field>
 

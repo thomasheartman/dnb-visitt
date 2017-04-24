@@ -15,13 +15,12 @@ import SelectField from 'material-ui/SelectField'
 // This can be used to override values in the theme
 const styles = {
   customWidth: {
-    width: 500
+    width: 500,
+    backgroundColor: '#FFF'
+
   },
   color: {
     color: '#FFF' // DNB-orange. As an example
-  },
-  background: {
-    backgroundColor: '#FFF'
   }
 }
 
@@ -37,25 +36,25 @@ export default ({ selectedCounty, allCounties, handleChange = f => f, handleSubm
               <SelectField name='dropDownCounty' className="selectField"
                 onChange={(event, index, value) => handleChange(value)}
                 hintText={selectedCounty || 'Velg et fylke'}
-                style={styles.customWidth, styles.backgroundColor}
+                style={styles.customWidth}
                 floatingLabelText={selectedCounty || 'Velg et fylke'}
-                floatingLabelStyle={styles.color}
-                menuStyle={styles.backgroundColor}
+              floatingLabelStyle={styles.color}
+              menuStyle={styles.backgroundColor}
               >
                 <MenuItem value={null} primaryText='Vis alle' />
-                {allCounties.map((county) =>
-                  <MenuItem value={county} key={county} primaryText={county} />
-                )}
+              {allCounties.map((county) =>
+                <MenuItem value={county} key={county} primaryText={county} />
+              )}
               </SelectField>
-            </div>
-            <br />
-            <Link to='/boligvelger' onClick={() => handleSubmit(selectedCounty)} className="col-xs">
-              <input type='submit' value='Søk' />
-            </Link>
           </div>
+          <br />
+          <Link to='/boligvelger' onClick={() => handleSubmit(selectedCounty)} className="col-xs">
+            <input type='submit' value='Søk' />
+          </Link>
         </div>
       </div>
+      </div>
     </section>
-    <Steps />
-  </main>
+  <Steps />
+  </main >
 )
