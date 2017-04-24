@@ -18,6 +18,7 @@ install:
 script:
 - yarn test -a
 - yarn run build
+before_deploy: cd ../
 deploy:
   provider: heroku
   api_key:
