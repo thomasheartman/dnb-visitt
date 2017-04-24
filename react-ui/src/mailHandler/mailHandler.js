@@ -1,11 +1,12 @@
-/* global fetch */
+/* global fetch, Headers, alert */
 /*
  * Created by Thomas Hartmann
  * An email handler for confirmation mails
  */
-import { from, replyTo } from './defaultConfirmBookingValues'
 
-export const confirmBooking = ({ to, subject, html }) => {
+import { fromDefault, replyToDefault } from './defaultMailValues'
+
+export const composeMail = ({ from = fromDefault, to, replyTo = replyToDefault, subject, html }) => {
   const headers = new Headers()
 
   headers.append('Content-Type', 'application/json')

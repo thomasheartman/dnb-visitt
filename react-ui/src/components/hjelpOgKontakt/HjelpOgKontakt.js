@@ -3,7 +3,7 @@
  * Help and contact page
  */
 import React from 'react'
-import Form from './components/form/ContactForm'
+import Form from './components/form/ContactFormMap'
 import Map from './components/map/Map'
 import { Link } from 'react-router-dom'
 
