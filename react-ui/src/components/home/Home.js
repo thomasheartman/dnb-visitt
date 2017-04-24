@@ -20,14 +20,19 @@ const styles = {
 
   },
   color: {
-    color: '#404040' // DNB-orange. As an example
+    color: '#404040' 
+  },
+
+  relative: {
+    position: 'relative'
   }
 }
 
 export default ({ selectedCounty, allCounties, handleChange = f => f, handleSubmit = f => f }) => (
   <main className='frontpage full-width'>
-    <AboutBox />
     <section className='home-search center-xs middle-xs '>
+      <AboutBox />
+      <div className="col-xs-offset-3"></div>
       <div className='row'>
         <div className='col-xs-12 center-xs'>
           <h1 className='title-heading'>Hvor ønsker du å bo?</h1>
@@ -35,11 +40,13 @@ export default ({ selectedCounty, allCounties, handleChange = f => f, handleSubm
             <div className="dropDown-background">
               <SelectField name='dropDownCounty' className="selectField"
                 onChange={(event, index, value) => handleChange(value)}
-                hintText={selectedCounty || 'Velg et fylke'}
+                hintText={selectedCounty || 'Velg et fylke ...'}
                 style={styles.customWidth}
-                floatingLabelText={selectedCounty || 'Velg et fylke'}
+                floatingLabelText={selectedCounty || 'Velg et fylke ...'}
                 floatingLabelStyle={styles.color}
                 menuStyle={styles.backgroundColor}
+                fullWidth={true}
+                floatingLabelStyle={styles.relative}
               >
                 <MenuItem value={null} primaryText='Vis alle' />
               {allCounties.map((county) =>

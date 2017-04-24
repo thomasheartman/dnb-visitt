@@ -29,7 +29,7 @@ class ResultItem extends React.Component {
             <p className='housing-item-rooms'>Soverom: {bedrooms}</p>
             <p className='housing-item-price'>Pris fra: {price.toLocaleString()}</p>
             <div className='row middle-xs housing-item-type-container'>
-              <img src={getHousingIcon(housingType)} alt={housingType}/>
+              <img src={getHousingIcon(housingType)} alt={housingType} viewBox="0 0 100 100"/>
               <p className='housing-item-type'> {housingType}</p>
              
             </div>

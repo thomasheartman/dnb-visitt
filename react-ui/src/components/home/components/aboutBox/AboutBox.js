@@ -11,15 +11,15 @@ import { hjem, velg, vr } from '../../../../media/icons'
 export default () => (
   <div className='about-visit row middle-xs'>
     <div className='center-xs middle-xs text-box'>
-      <div className='row center-xs'>
+      <div className='row'>
         <img className='visitt-icon col-xs-12' src={hjem} alt='Se bolig i VR' />
         <p>Opplev din fremtidige bolig før den i det hele tatt er bygget</p>
       </div>
-      <div className='row center-xs'>
+      <div className='row'>
         <img className='visitt-icon col-xs-12' src={vr} alt='Velg bolig' />
         <p>Visitt lar deg gå på visning i nye boligprosjekter over hele landet</p>
       </div>
-      <div className='row center-xs'>
+      <div className='row'>
         <img className='visitt-icon col-xs-12' src={velg} alt='Velg bolig' />
         <p>Føl på størrelsen og opplev nybygg lenge før det er bygget</p>
       </div>
