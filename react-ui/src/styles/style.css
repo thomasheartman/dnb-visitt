@@ -140,7 +140,7 @@ input[type="search"] {
 input[type="submit"], input[type="reset"] {
     width: 10rem;
     padding: 1rem;
-    margin: 1rem 0;
+    margin: 2rem 0;
     border: none;
     color: #fff;
     font-size: 1.25rem;
@@ -623,6 +623,7 @@ main.frontpage {
 
 .housing-filter {
     position: relative;
+    height: 100%;
     padding: 0 2rem;
     background-color: #097C84;
     color: #fff;
@@ -671,6 +672,15 @@ main.frontpage {
 #showMore:hover {
     border: 1px solid #F67F00;
     cursor: pointer;
+}
+
+.housing-filter .submit {
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: center;
+    width: 10rem;
+    flex-basis: 10rem;
+    margin: 2rem 0;
 }
 
 
