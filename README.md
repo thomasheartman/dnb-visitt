@@ -1,13 +1,19 @@
 # DNB Visitt
-Repo for redoing the DNB Visitt application with Node, React, Firebase, Heroku, and Travis. Whew.
+Repo for redoing the DNB Visitt application with Node.js, React, Firebase, Heroku, and Travis. Whew.
 
 ## Getting started
 
-### `npm install`
-This will install all the modules listed in the package.json file, allowing the app to build and run.
+### Install modules in root folder and in react-ui
+Running `npm install` in both folders will sort this. Or, if you're on a Unix-based system, and have `concurrently` installed `npm run install-all` (or `yarn add-all` for yarn users) will install all the necessary dependencies in both folders.
 
-### `npm start`
-This will run the dev server from localhost:3000. Hot reloading is enabled so anytime anything is saved, the app reloads reflecting changes.
+### `node server`
+This will start the server on port 5000. This is only useful for activating email services, however, and with the restrictions of the free Mailgun account, emails will only be sent to one of a set of six predefined addresses. However, not running the server, might lead to some unexpected behavior on mail sending attempts.
+
+### react-ui: `npm start`
+This will run the dev server from localhost:3000. Hot reloading is enabled so anytime anything is saved, the app reloads reflecting changes. Note: this only loads the frontend of the site, although it is nearly fully functional on its own.
+
+### If you have concurrently installed: `npm run dev`
+This will start both the server and the frontend, assuming you're in the root folder.
 
 ## The tools
 
@@ -33,9 +39,13 @@ Continous integration service that will run tests, make sure the build succeeds 
 
 ### 'But wait, what about Node?'
 
-Well, with just a static website, there really is no need to use it for anything else than `npm`. It would've been cool to set up, but we don't have time to mess around with it, I'm afraid.
+Good point! While there didn't seem to be a need for it originally, an Express server was created to support sending emails on booking and inquiries.
 
 ## Project structure
+
+Root folder is separated into `server` and `react-ui`. The former naturally has configuration relating to the node server, while the latter contians the frontend of the website.
+
+### Structure: `react-ui`
 
 All files to be deployed must go in `src`. Other files, e.g. for documentation, can go anywhere else in the directory.
 
@@ -43,10 +53,10 @@ Generally the project is structured into a few main folders:
 `components`: contains the presentational components
   All subfolders are organised by main page, and then any subcomponents they use. Try and keep components and other dependencies as local as possible.
 `redux`: contains the state and logic of the application
-
-### Directories
-
-### Naming conventions
+`firebase`: Contains files relating to the database
+`mailHandler`: Contains mail handling functions.
+`routing`: Contains the website paths and routing setup
+`helperFunctions`: contains a number of useful functions used throughout the project.
 
 ## JavaScript Standard Style: style guide
 This project uses JavaScript Standard Style.
@@ -91,9 +101,6 @@ Go ahead and grab the alias `mergetest` from the .gitconfig example. This is a v
 Stay up to date with master and merge it into your branch whenever it updates (`git merge master`). This decreases the chance of conflicts
 
 Also, before merging back into master, it's not a bad idea to merge master into your branch first, thereby avoiding conflict resolving on master.
-
-### Setup
-
 
 #### .gitconfig
 
