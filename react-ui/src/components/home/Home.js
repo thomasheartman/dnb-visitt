@@ -12,35 +12,7 @@ import SelectField from 'material-ui/SelectField'
 import RecentProperties from './components/recentProperties/RecentProperties.map'
 import { showAll } from './dropdownConstants'
 import { boligvelger } from '../../routing/Routes'
-
-// This can be used to override values in the theme
-const styles = {
-  dropdownStyle: {
-    width: '32rem',
-    height: '4rem',
-    fontSize: '1.5rem',
-    backgroundColor: '#FFF',
-    color: '#404040'
-
-  },
-  color: {
-    color: '#404040'
-  },
-
-  inactiveBackground: {
-    color: '#e0e0e0'
-  },
-
-  centerLabel: {
-    position: 'relative',
-    top: '1.25rem',
-    right: '7rem'
-  },
-
-  listStyle: {
-    color: '#e0e0e0'
-  }
-}
+import styles from './homeStyles'
 
 export default ({ selectedCounty, allCounties, handleChange = f => f, handleSubmit = f => f }) => (
   <main className='frontpage full-width'>
