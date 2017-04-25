@@ -2,6 +2,9 @@
  * Created by Thomas Hartmann
  * A file with limits for filtering,
  * such as max price etc.
+ * Could be replaced by a database
+ * query to only give limits relevant
+ * to what's in the database.
  */
 
 export default {

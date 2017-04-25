@@ -10,7 +10,7 @@ const subject = 'Din henvendelse til DNB Visitt'
 const html = (name, message) => (
   `<h2>Hei, ${name},</h2>
 
-  <p>Vi takker for din hendvendelse til DNB Visitt. Vi vil forsøke å svare deg så snart som mulig.</p>
+  <p>Vi takker for din hendvendelse til DNB Visitt. Vi har registrert henvendelsen din, og vil forsøke å svare deg så snart som mulig.</p>
 
   <p>Din melding: ${message}</p>
   `)
