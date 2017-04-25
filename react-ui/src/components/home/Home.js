@@ -16,7 +16,7 @@ import { boligvelger } from '../../routing/Routes'
 // This can be used to override values in the theme
 const styles = {
   dropdownStyle: {
-    width: '32rem',
+    width: '28rem',
     height: '4rem',
     fontSize: '1.5rem',
     backgroundColor: '#FFF',

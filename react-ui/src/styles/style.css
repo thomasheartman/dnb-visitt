@@ -21,14 +21,15 @@ h3,
 h4,
 h5,
 a,
+*,
 input {
     font-family: 'Lato', arial;
-    
+
 }
 
-p, span, label {
-    font-family: 'Libre Baskerville', arial, sans-serif;
-}
+/*p, span, label {
+    font-family: 'Lato', arial;
+}*/
 
 p+p {
     line-height: 1.25rem;
@@ -194,7 +195,7 @@ form p {
 @media screen and (min-width: 760px) {
     .container-header {
         height: 60px;
-        
+
     }
 }
 
@@ -264,12 +265,12 @@ header nav ul li a:hover {
 }
 
 .selected {
-    background-color: #F67F00; 
+    background-color: #F67F00;
     color: #fff;
 }
 
 .select-county-search-button {
-    height: 
+    height:
 }
 
 /* MAIN */
@@ -318,14 +319,14 @@ main.frontpage {
 
 .about-visit {
     position: relative;
-    left: 4rem;
-    padding: 0 2rem;
+    left: 1rem;
+    padding: 0 1rem;
 }
 
 .about-visit .text-box {
     position: relative;
-    width: 20rem;
-    height: 36rem;
+    width: 28rem;
+    height: 40rem;
     max-height: 100%;
     padding: 1rem 2rem;
     background: #fff;
@@ -333,16 +334,16 @@ main.frontpage {
 }
 
 .about-visit .text-box .row {
-    margin: 2rem 0;
+    margin: 1rem 0;
 }
 
 .about-visit .visitt-icon {
-    width: 4rem;
-    height: 4rem;
+    width: 6rem;
+    height: 6rem;
 }
 
 .about-visit .text-box p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1.25rem;
     color: #097C84;
 }
@@ -477,7 +478,7 @@ main.frontpage {
 .recentProperties .housing-item-container {
     width: 33%;
     margin: 0 1rem;
-    display: inline-flex;  
+    display: inline-flex;
 
 }
 
@@ -649,7 +650,7 @@ main.frontpage {
 .housing-filter legend {
     font-size: 1.2rem;
     font-weight: 700;
-    margin: 1.5rem 0; 
+    margin: 1.5rem 0;
 }
 
 .housing-filter input[type="number"] {
@@ -657,7 +658,7 @@ main.frontpage {
     padding: 0.25rem;
     margin: 0.1rem 0;
     font-size: 0.8rem;
-} 
+}
 
 .housing-filter ul div {
     margin-bottom: 0;
@@ -878,7 +879,7 @@ main.frontpage {
 .about-heading .visitt-icon {
     width: 3rem;
     max-height: 3rem;
-    
+
 }
 
 .about-description {
@@ -991,7 +992,7 @@ main.frontpage {
 .reserved-houses h3 {
     margin: 1rem 0;
     color: #097C84;
-  
+
 }
 
 .reserved-houses h3::first-letter {
@@ -1057,19 +1058,19 @@ footer {
 .footer-links ul  {
     width: 60%;
     margin: 0 auto;
-    padding: 2rem;  
+    padding: 2rem;
     border-bottom: 2px solid #fff;
 }
 
 .footer-links ul  li {
-    padding: 1rem 0;  
+    padding: 1rem 0;
 }
 
 .footer-links ul li a {
     padding: 2rem 0;
     font-size: 1.5rem;
     color: #fff;
-} 
+}
 
 .footer-links .dnb-logo-footer {
     width: 10rem;
@@ -1086,7 +1087,7 @@ footer {
 .footer-box a {
     color: #CCCCCC;
     font-size: 0.8em;
-   
+
 }
 
 .footer-box p {

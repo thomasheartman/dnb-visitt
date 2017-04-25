@@ -10,7 +10,7 @@ import { annonse } from '../../../../../../routing/Routes'
 
 class ResultItem extends React.Component {
   render () {
-    const { id, price, postPlace, streetName, streetNumber, bedrooms, housingType } = this.props
+    const { id, price, zipLocation, streetName, streetNumber, bedrooms, housingType } = this.props
 
     return (
       < Link to={`${annonse}/${id}`}
@@ -24,7 +24,7 @@ class ResultItem extends React.Component {
           </div>
           <div className='col-xs-12 col-sm-6 housing-item-info-container'>
             <div className='housing-items'>
-              <p className='housing-item-loc'>{postPlace}</p>
+              <p className='housing-item-loc'>{zipLocation}</p>
               <h2 className='housing-item-title'>{streetName} {streetNumber}</h2>
               <p className='housing-item-rooms'>Soverom: {bedrooms}</p>
               <p className='housing-item-price'>Pris fra: {price.toLocaleString()}</p>
