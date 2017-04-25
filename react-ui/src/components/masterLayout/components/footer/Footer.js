@@ -7,6 +7,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import visittLogo from './media/dnb_visitt_footer.svg'
 import dnbLogo from './media/dnb-standard.svg'
+import { boligvelger, omVisitt, hjelpOgKontakt } from '../../../../routing/Routes'
 
 export default () => (
   <footer className='row middle-xs'>
@@ -16,13 +17,13 @@ export default () => (
     <div className='col-xs-8 footer-links'>
       <ul>
         <li>
-          <Link to='/boligvelger'>Boligsøk</Link>
+          <Link to={boligvelger}>Boligsøk</Link>
         </li>
         <li>
-          <Link to='/om-visitt'>Om Visitt</Link>
+          <Link to={omVisitt}>Om Visitt</Link>
         </li>
         <li>
-          <Link to='/hjelp-og-kontakt'>Kontakt Oss</Link>
+          <Link to={hjelpOgKontakt}>Kontakt Oss</Link>
         </li>
       </ul>
       <div className='footer-box'>

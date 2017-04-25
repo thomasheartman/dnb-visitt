@@ -8,6 +8,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { hjem } from '../../../../media/icons'
 import { getHousingImage } from '../../../boligvelger/components/searchResults/components/resultItem/media/defaultThumbnails'
+import { home } from '../../../../routing/Routes'
 
 export default ({ date, time, branch, address, housingType }) => (
   <div>
@@ -17,7 +18,7 @@ export default ({ date, time, branch, address, housingType }) => (
         <img src={hjem} viewBox='0 0 500 500' role='presentation' />
       </div>
       <div className="row center-xs notification-container">
-        <p className='center-xs notification'>Din Visitt visning er nå bestilt. </p>
+        <p className='center-xs notification'>Din visittvisning er nå bestilt. </p>
         <p className="center-xs notification">Du vil motta bekreftelse på epost.</p>
       </div>
       <div className='reservation-info'>
@@ -42,7 +43,7 @@ export default ({ date, time, branch, address, housingType }) => (
         <img src={getHousingImage(housingType)} role='presentation' />
       </div>
       <div className='row center-xs'>
-        <Link to='/' className='orange-button' target='_blank'>Gå til forsiden</Link>
+        <Link to={home} className='orange-button' target='_blank'>Gå til forsiden</Link>
       </div>
     </main>
   </div>

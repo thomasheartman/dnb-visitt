@@ -24,7 +24,7 @@ app.get('/api', function (req, res) {
   res.send('{"message":"Hello from the custom server!"}')
 })
 
-app.post('/send-bekreftelse', (req, res) => {
+app.post('/send-mail', (req, res) => {
   console.log(req.body)
   sendMail(req.body)
   res.send('POST request to send-email')

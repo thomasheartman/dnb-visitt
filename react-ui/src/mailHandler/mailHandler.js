@@ -11,7 +11,7 @@ export const composeMail = ({ from = fromDefault, to, replyTo = replyToDefault, 
 
   headers.append('Content-Type', 'application/json')
 
-  fetch('/send-bekreftelse', {
+  fetch('/send-mail', {
     method: 'POST',
     headers: headers,
     body: JSON.stringify({

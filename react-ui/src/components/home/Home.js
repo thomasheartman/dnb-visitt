@@ -11,6 +11,7 @@ import MenuItem from 'material-ui/MenuItem'
 import SelectField from 'material-ui/SelectField'
 import RecentProperties from './components/recentProperties/RecentProperties.map'
 import { showAll } from './dropdownConstants'
+import { boligvelger } from '../../routing/Routes'
 
 // This can be used to override values in the theme
 const styles = {
@@ -66,7 +67,7 @@ export default ({ selectedCounty, allCounties, handleChange = f => f, handleSubm
                 <MenuItem value={county} key={county} primaryText={county} />
               )}
             </SelectField>
-            <Link to='/boligvelger' onClick={() => handleSubmit(selectedCounty)} className="select-county-search-button">
+            <Link to={boligvelger} onClick={() => handleSubmit(selectedCounty)} className="select-county-search-button">
               <input type='submit' value='Søk' />
             </Link>
           </div>
@@ -76,6 +77,6 @@ export default ({ selectedCounty, allCounties, handleChange = f => f, handleSubm
     <div className="recentProperties row center-xs between-xs middle-xs">
         <RecentProperties />
     </div>
-    
+
   </main >
 )

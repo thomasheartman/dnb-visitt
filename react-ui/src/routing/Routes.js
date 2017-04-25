@@ -20,17 +20,24 @@ import Error404 from '../components/error404/Error404'
 
 const history = createHistory()
 
+export const home = '/'
+export const omVisitt = '/om-visitt'
+export const hjelpOgKontakt = '/hjelp-og-kontakt'
+export const boligvelger = '/boligvelger'
+export const annonse = '/boligvelger/annonse'
+export const bestillVisitt = '/bestill-visitt'
+
 export default () => (
   <Router history={history} onUpdate={() => window.scrollTo(0, 0)}>
     <ScrollToTop>
       <MasterLayout>
         <Switch>
-          <Route exact path='/' component={Home} />
-          <Route path='/om-visitt' component={OmVisitt} />
-          <Route path='/hjelp-og-kontakt' component={HjelpOgKontakt} />
-          <Route path='/boligvelger/annonse/:id' component={AnnonseWrapper} />
-          <Route path='/boligvelger' component={Boligvelger} />
-          <Route path='/bestill-visitt/:id' component={BestillVisitt} />
+          <Route exact path={home} component={Home} />
+          <Route path={omVisitt} component={OmVisitt} />
+          <Route path={hjelpOgKontakt} component={HjelpOgKontakt} />
+          <Route path={`${annonse}/:id`} component={AnnonseWrapper} />
+          <Route path={boligvelger} component={Boligvelger} />
+          <Route path={`${bestillVisitt}/:id`} component={BestillVisitt} />
           <Route component={Error404} />
         </Switch>
       </MasterLayout>

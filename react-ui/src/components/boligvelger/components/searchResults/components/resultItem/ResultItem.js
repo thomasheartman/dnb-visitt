@@ -6,15 +6,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { getHousingIcon } from '../../../../../../media/icons'
 import { getHousingImage } from './media/defaultThumbnails'
+import { annonse } from '../../../../../../routing/Routes'
 
 class ResultItem extends React.Component {
   render () {
     const { id, price, postPlace, streetName, streetNumber, bedrooms, housingType } = this.props
 
     return (
-      < Link to={{
-        pathname: `/boligvelger/annonse/${id}`
-      }}
+      < Link to={`${annonse}/${id}`}
       >
         <article className='row housing-item-container start-xs'>
           <div className='col-xs-12 col-sm-6 full-width housing-item-image'>
@@ -42,4 +41,3 @@ class ResultItem extends React.Component {
 }
 
 export default ResultItem
-  

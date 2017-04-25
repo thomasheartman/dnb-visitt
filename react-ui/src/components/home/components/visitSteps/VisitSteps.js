@@ -5,6 +5,7 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { omVisitt } from '../../../../routing/Routes'
 
 // icons
 import { kontrakt, velg, vr, sok, eie } from '../../../../media/icons'
@@ -16,7 +17,7 @@ export default () => (
         <h3>Slik fungerer Visitt</h3>
       </div>
       <div className='col-xs end-xs'>
-        <Link to='/om-visitt'>Mer om Visitt</Link>
+        <Link to={omVisitt}>Mer om Visitt</Link>
       </div>
     </div >
     <div className='row center-xs frontpage-buttons'>
