@@ -6,10 +6,10 @@ Repo for redoing the DNB Visitt application with Node.js, React, Firebase, Herok
 ### Install modules in root folder and in react-ui
 Running `npm install` in both folders will sort this. Or, if you're on a Unix-based system, and have `concurrently` installed `npm run install-all` (or `yarn add-all` for yarn users) will install all the necessary dependencies in both folders.
 
-### `node server`
+### root: `node server`
 This will start the server on port 5000. This is only useful for activating email services, however, and with the restrictions of the free Mailgun account, emails will only be sent to one of a set of six predefined addresses. However, not running the server, might lead to some unexpected behavior on mail sending attempts.
 
-### react-ui: `npm start`
+### /react-ui: `npm start`
 This will run the dev server from localhost:3000. Hot reloading is enabled so anytime anything is saved, the app reloads reflecting changes. Note: this only loads the frontend of the site, although it is nearly fully functional on its own.
 
 ### If you have concurrently installed: `npm run dev`
@@ -31,11 +31,11 @@ Free, quick, no-server, NoSQL database. Denormalize!
 
 ### Heroku
 
-Deployment service, so that the page can always be found somewhere.
+Deployment service, so that the page can always be found somewhere. Note: not publicly available.
 
 ### Travis CI
 
-Continous integration service that will run tests, make sure the build succeeds on a server (hint: a lot of them run Linux!), and can, optionally, deploy to a hosting service of your choice. They're the good guys.
+Continous integration service that will run tests, make sure the build succeeds on a server (hint: a lot of them run Linux!), and can, optionally, deploy to a hosting service of your choice. They're good guys.
 
 ### 'But wait, what about Node?'
 
