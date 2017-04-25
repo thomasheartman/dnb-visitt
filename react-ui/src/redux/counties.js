@@ -10,7 +10,7 @@ export default [
   'Sogn og Fjordane',
   'Møre og Romsdal',
   'Sør-Trøndelag',
-  'Nord-Trøndelaf',
+  'Nord-Trøndelag',
   'Nordland',
   'Hedmark',
   'Oppland',

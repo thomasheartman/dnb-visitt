@@ -24,11 +24,11 @@ export default () => (
       <Se />
       <Tryggere />
       <div className='row center-xs'>
-        <Link to='/boligvelger' className='orange-button'>Gå til bolig velger</Link>
+        <Link to='/boligvelger' className='orange-button'>Gå til boligvelger</Link>
       </div>
       <Hvor />
       <div className='row center-xs'>
-        <Link to='/hjelp-og-kontakt' className='orange-button'>Finn din lokale Visitt-filial</Link>
+        <Link to='/hjelp-og-kontakt' className='orange-button'>Finn din lokale visittfilial</Link>
       </div>
 
     </main>

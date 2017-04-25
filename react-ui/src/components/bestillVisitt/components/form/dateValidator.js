@@ -1,12 +1,12 @@
 /*
  *  Created by Gruppe 3
+ *  Contains functions for validating dates
  */
 
-export const validateDate = (date) => {
-  if (date.getDay() === 0 || date.getDay() === 6) {
-    return true
-  }
-  if (new Date() >= date) {
-    return true
-  }
-}
+const isWeekend = (date) => date.getDay() === 0 || date.getDay() === 6
+
+const isTodayOrEarlier = (date) => new Date() >= date
+
+// checks whether a date is on the weekend or in the past. If so, returns true.
+// could be expanded with a list of bank holidays etc.
+export const shouldDisableDate = (date) => isWeekend(date) || isTodayOrEarlier(date)

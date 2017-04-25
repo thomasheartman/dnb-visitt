@@ -1,6 +1,6 @@
 /*
  * Created by Thomas Hartmann
- * A file to serve relevant images
+ * A file to serve relevant default images
  * depending on the housing type
  */
 import ene1 from './enebolig/annonse-1.JPG'

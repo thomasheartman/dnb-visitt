@@ -10,6 +10,7 @@ import barn from './media/barn.jpg'
 import familie from './media/familie.jpg'
 import lekeplass from './media/lekeplass.jpg'
 import { Sticky } from 'react-sticky'
+import { bestillVisitt } from '../../../routing/Routes'
 
 export default ({id, price, commonCosts, sharedDebt, grossArea,
   netLivingSpace, entryFloor, floors, numberOfRooms, bedrooms,
@@ -35,7 +36,7 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
             </li>
           </ul>
           <div className='col-xs end-xs middle-xs full-width reserve-visit-button'>
-            <Link to={`/bestill-visitt/${id}`} onClick={() => handleSelectProperty()}>Bestill VR Visning</Link>
+            <Link to={`${bestillVisitt}/${id}`} onClick={() => handleSelectProperty()}>Bestill VR Visning</Link>
           </div>
         </div>
       </Sticky>

@@ -10,14 +10,23 @@ import { saveBooking } from '../redux/reducers/booking/bookingActions'
 import { composeMail } from '../mailHandler/mailHandler'
 import { formatTime } from '../helperFunctions/formatting'
 
-// TODO: heavy refactoring, think about separation of concerns etc.
-const createMailSubject = (date, time, branch) => `Din bestilling av Visitt: ${branch}, ${date}, ${time}`
+const createMailSubject = (date, time, branch) => `Din bestilling av Visitt: ${branch}, ${date}, kl ${time}`
 
-const mailHTML = (date, time, branch) => `<div>Din bestilling av Visitt: ${branch}, ${date}, ${time}</div>`
+const mailHTML = (date, time, branch, property) => {
+const addressString = `${property.streetName} ${property.streetNumber}`
+  const fullAddressString = property.apartmentNumber
+    ? addressString.concat(`, leilighet ${property.apartmentNumber}`)
+    : addressString
+    return(
+    `<div>Info om din bestilling av Visitt: ${branch}, ${date}, ${time}.
+    Bolig: ${fullAddressString}</div>`
+    )
+}
 
 export const addBookingToDatabase = (branch, date, time, details) =>
   (dispatch, getState) => {
     const ref = database.ref(`appointments/${branch}/${date}/${time}`)
+    const property = getState().currentProperty.propertyData
 
     ref.once('value')
       .then(snapshot => {
@@ -27,7 +36,6 @@ export const addBookingToDatabase = (branch, date, time, details) =>
         ref.set(details)
       })
       .then(() => {
-        const property = getState().currentProperty.propertyData
         dispatch(saveBooking({
           date: date,
           time: time,
@@ -46,7 +54,7 @@ export const addBookingToDatabase = (branch, date, time, details) =>
         composeMail({
           to: details.email,
           subject: createMailSubject(date, timeFormatted, branch),
-          html: mailHTML(date, timeFormatted, branch)
+          html: mailHTML(date, timeFormatted, branch, property)
         })
       })
       .catch(err => alert(err.message))

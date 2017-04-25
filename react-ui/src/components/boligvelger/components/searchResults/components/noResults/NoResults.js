@@ -7,9 +7,9 @@ import React from 'react'
 
 export default () => (
   <div>
-    <h1>
+    <h2>
     Ingen resultater
-  </h1>
-    <p>Beklager, men vi fant ingen resultater som matcher søket ditt.</p>
+  </h2>
+    <p>Beklager, men vi fant ingen resultater som passer søket ditt.</p>
   </div>
 )

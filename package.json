@@ -8,6 +8,8 @@
     "start": "node server",
     "devya": "concurrently \"node server\" \"cd react-ui && yarn start\"",
     "dev": "concurrently \"node server\" \"cd react-ui && npm start\"",
+    "add-all": "concurrently \"yarn\" \"cd react-ui && yarn\"",
+    "install-all": "concurrently \"npm install\" \"cd react-ui && npm install\"",
     "heroku-postbuild": "cd react-ui/ && npm install --only=dev && npm install && npm run build"
   },
   "cacheDirectories": [
