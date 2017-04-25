@@ -13,14 +13,14 @@ import { formatTime } from '../helperFunctions/formatting'
 const createMailSubject = (date, time, branch) => `Din bestilling av Visitt: ${branch}, ${date}, kl ${time}`
 
 const mailHTML = (date, time, branch, property) => {
-const addressString = `${property.streetName} ${property.streetNumber}`
+  const addressString = `${property.streetName} ${property.streetNumber}`
   const fullAddressString = property.apartmentNumber
     ? addressString.concat(`, leilighet ${property.apartmentNumber}`)
     : addressString
-    return(
+  return (
     `<div>Info om din bestilling av Visitt: ${branch}, ${date}, ${time}.
     Bolig: ${fullAddressString}</div>`
-    )
+  )
 }
 
 export const addBookingToDatabase = (branch, date, time, details) =>

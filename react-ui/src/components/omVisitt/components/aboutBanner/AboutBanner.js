@@ -34,7 +34,7 @@ export default () => (
       </div>
 
       <div className='col-xs-3'>
-        <img className='visitt-icon' src={omradeVelg} alt='Visitt filialer' />
+        <img className='visitt-icon' src={omradeVelg} alt='Visitt-filialer' />
         <a href='#where' className='frontpage-button'>Hvor finner jeg Visitt?</a>
       </div>
 
