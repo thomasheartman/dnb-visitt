@@ -10,7 +10,6 @@ import { saveBooking } from '../redux/reducers/booking/bookingActions'
 import { composeMail } from '../mailHandler/mailHandler'
 import { formatTime } from '../helperFunctions/formatting'
 
-// TODO: heavy refactoring, think about separation of concerns etc.
 const createMailSubject = (date, time, branch) => `Din bestilling av Visitt: ${branch}, ${date}, ${time}`
 
 const mailHTML = (date, time, branch) => `<div>Din bestilling av Visitt: ${branch}, ${date}, ${time}</div>`

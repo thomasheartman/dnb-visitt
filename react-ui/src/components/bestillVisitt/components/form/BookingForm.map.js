@@ -30,7 +30,6 @@ const mapDispatchToProps = dispatch => ({
 
 const reduxConnectedForm = reduxForm({
   form: 'bookingForm'
-  // destroyOnUnmount: false
 })(Form)
 
 const selector = formValueSelector('bookingForm')
