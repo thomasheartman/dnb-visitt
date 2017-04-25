@@ -28,7 +28,7 @@ export default () => (
       </div>
       <Hvor />
       <div className='row center-xs'>
-        <Link to='/hjelp-og-kontakt' className='orange-button'>Finn din lokale visittfilial</Link>
+        <Link to='/hjelp-og-kontakt' className='orange-button'>Finn din lokale Visitt-filial</Link>
       </div>
 
     </main>

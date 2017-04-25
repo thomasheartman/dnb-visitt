@@ -11,7 +11,7 @@ import { omradeVelg } from '../../../../media/icons'
 const mapStateToProps = () => ({
   link: 'where',
   icon: omradeVelg,
-  iconAltText: 'Visittfilialer',
+  iconAltText: 'Visitt-filialer',
   heading: 'Her finner du Visitt',
   body:
   <div>
