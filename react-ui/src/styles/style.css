@@ -126,7 +126,9 @@ a:hover {
 
 .orange-button {
     width: 30rem;
+    height: 4rem;
     padding: 1rem 3rem;
+    font-size: 1.25rem;
     border: 1px solid #F67F00;
     color: #F67F00;
 }
@@ -697,6 +699,7 @@ main.frontpage {
 
 .housing-nav {
     height: 3rem;
+    z-index: 9999;
     background-color: #097C84;
 }
 
@@ -779,6 +782,7 @@ main.frontpage {
     width: 100%;
     margin: 3rem 0 0 0;
     padding: 1rem;
+    z-index: -1;
     background: #F0ECE9;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -826,14 +830,12 @@ main.frontpage {
     max-width: 6rem;
 }
 
-.two-grid-gutter:first-child {
-    padding-left: 0rem;
-    padding-right: 0.5rem;
+.two-grid-gutter {
+    padding: 1rem 0.5rem 1rem 0;
 }
 
 .two-grid-gutter:last-child {
-    padding-right: 0rem;
-    padding-left: 0.5rem;
+    padding: 1rem 0 1rem 0.5rem;
 }
 
 .housing-ad-main .big-button a {

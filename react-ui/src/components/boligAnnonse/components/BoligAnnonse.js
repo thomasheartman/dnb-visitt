@@ -4,7 +4,7 @@
  */
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { kalkulator, omradeVelg } from '../../../media/icons.js'
+import { kalkulator, omradeVelg, vr } from '../../../media/icons.js'
 import mekler from './media/mekler.jpg'
 import barn from './media/barn.jpg'
 import familie from './media/familie.jpg'
@@ -35,14 +35,14 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
           </li>
         </ul>
         <div className='col-xs end-xs middle-xs full-width reserve-visit-button'>
-          <Link to={`/bestill-visitt/${id}`} onClick={() => handleSelectProperty()}>Bestill Visitt</Link>
+          <Link to={`/bestill-visitt/${id}`} onClick={() => handleSelectProperty()}>Bestill VR Visning</Link>
         </div>
       </div>
     </Sticky>
 
       <main className='housing-ad-main'>
         <div className='row'>
-          <section className='col-xs-12'>
+          <div className='col-xs-12'>
             <div className='row center-xs'>
               <div className='col-xs housing-header'>
                 <h2 className='housing-title'>{`${streetName} ${streetNumber}`}</h2>
@@ -130,7 +130,7 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
               </div>
             </div>
             <div className='row center-xs'>
-              <div className='col-xs-6 two-grid-gutter'>
+              <div className='col-xs-6  two-grid-gutter'>
                 <img src={images[5]} alt='Lekeplass' className='img-container' />
               </div>
               <div className='col-xs-6 two-grid-gutter'>
@@ -159,9 +159,15 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
                 <a>Lyst til å ta en titt?</a>
               </div>
             </div>
-          </section>
+          </div>
         </div>
-
+        <div className='row middle-xs page-sub-heading'>
+          <h2 className='col-xs'>Bestill Visning</h2>
+          <img src={vr} viewBox='0 0 500 500' role='presentation' />
+        </div>
+        <div className="row center-xs middle-xs">
+          <Link to={`/bestill-visitt/${id}`} onClick={() => handleSelectProperty()} className="orange-button">Bestill VR Visning</Link>
+        </div>
       </main>
     </div>
   )
