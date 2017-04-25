@@ -15,7 +15,7 @@ const mapStateToProps = () => ({
   heading: 'Her finner du Visitt',
   body:
   <div>
-    <p>Det å kjøpe bolig er et stort steg og ofte en del av et nytt kapittel i livet. <Link to="/hjelp-og-kontakt">Kontakt oss</Link> gjerne om du har spørsmål.</p>
+    <p>Det å kjøpe bolig er et stort steg og ofte en del av et nytt kapittel i livet. <Link to='/hjelp-og-kontakt'>Kontakt oss</Link> gjerne om du har spørsmål.</p>
   </div>
 })
 

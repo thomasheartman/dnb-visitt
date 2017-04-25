@@ -5,13 +5,12 @@
 import React from 'react'
 import Form from './components/form/ContactForm.map'
 import Map from './components/map/Map'
-import { omradeVelg} from '../../media/icons'
-import { hjem} from '../../media/icons'
+import { omradeVelg, hjem } from '../../media/icons'
 
 export default () => (
   <div>
-    <div className='row heading'>	     
-      <h1 className='title'>Hjelp og Kontakt</h1>	    
+    <div className='row heading'>
+      <h1 className='title'>Hjelp og Kontakt</h1>
     </div>
     <main className='contact'>
       <Map />
@@ -19,15 +18,15 @@ export default () => (
         <h2 className='col-xs'>Hovedkontor</h2>
         <img src={hjem} viewBox='0 0 500 500' role='presentation' />
       </div>
-      <div className="row contact-info">
-        <div className="col-xs-8">
+      <div className='row contact-info'>
+        <div className='col-xs-8'>
           <p>Telefon: 04800</p>
           <p>Kontortid: Hverdager 10-16</p>
           <p>Epost: info@dnb-visitt.no</p>
           <p>Besøksadresse: Dronning Eufemiasgate 30, 0191 Oslo</p>
           <p>Postadresse: DNB, Postboks 1600 Sentrum, 0021 Oslo</p>
         </div>
-        <div className="col-xs-4">
+        <div className='col-xs-4'>
           <p>Følg Oss</p>
           <p>Facebook</p>
           <p>Twitter</p>
@@ -40,7 +39,7 @@ export default () => (
         <img src={omradeVelg} viewBox='0 0 500 500' role='presentation' />
       </div>
       <Form />
-      
+
     </main>
   </div>
 )

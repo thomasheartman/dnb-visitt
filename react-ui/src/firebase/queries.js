@@ -1,3 +1,5 @@
+/* global alert */
+
 /*
  * Created by Thomas Hartmann
  * A file containing database queries
@@ -15,7 +17,6 @@ const mailHTML = (date, time, branch) => `<div>Din bestilling av Visitt: ${branc
 
 export const addBookingToDatabase = (branch, date, time, details) =>
   (dispatch, getState) => {
-
     const ref = database.ref(`appointments/${branch}/${date}/${time}`)
 
     ref.once('value')
@@ -43,16 +44,15 @@ export const addBookingToDatabase = (branch, date, time, details) =>
         const timeFormatted = formatTime(time)
 
         composeMail({
-        to: details.email,
-        subject: createMailSubject(date, timeFormatted, branch),
-        html: mailHTML(date, timeFormatted, branch)
+          to: details.email,
+          subject: createMailSubject(date, timeFormatted, branch),
+          html: mailHTML(date, timeFormatted, branch)
         })
       })
       .catch(err => alert(err.message))
   }
 
 export const getSchedule = (branch, date) => dispatch => {
-
   const ref = database.ref(`appointments/${branch}/${date}`)
 
   ref.on('child_added', snapshot => {

@@ -17,9 +17,9 @@ export default ({ date, time, branch, address, housingType }) => (
         <h2 className='col-xs'>Takk for bestillingen din</h2>
         <img src={hjem} viewBox='0 0 500 500' role='presentation' />
       </div>
-      <div className="row center-xs notification-container">
+      <div className='row center-xs notification-container'>
         <p className='center-xs notification'>Din visittvisning er nå bestilt. </p>
-        <p className="center-xs notification">Du vil motta bekreftelse på epost.</p>
+        <p className='center-xs notification'>Du vil motta bekreftelse på epost.</p>
       </div>
       <div className='reservation-info'>
         <h2>Din Bestilling</h2>

@@ -20,7 +20,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(setDropDownCounty(value))
   },
   handleSubmit (value) {
-    if (!value || value===showAll ) {
+    if (!value || value === showAll) {
       dispatch(clearCounties())
     } else {
       dispatch(setCounty(value))

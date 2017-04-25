@@ -10,9 +10,8 @@ import { reduxForm, formValueSelector } from 'redux-form'
 import { processForm } from '../../../../redux/reducers/booking/bookingActions'
 import { updateSchedule } from '../../../../redux/reducers/bookingSchedule/bookingScheduleActions'
 
-
 // For supporting norwegian dates
-import areIntlLocalesSupported from 'intl-locales-supported';
+import areIntlLocalesSupported from 'intl-locales-supported'
 import IntlPolyfill from 'intl'
 require('intl/locale-data/jsonp/nb-NO')
 
@@ -24,7 +23,7 @@ const mapDispatchToProps = dispatch => ({
   onSubmit (values) {
     dispatch(processForm(values))
   },
-  fetchSchedule (branch: string, date: Date) {
+  fetchSchedule (branch, date) {
     dispatch(updateSchedule(branch, date))
   }
 })

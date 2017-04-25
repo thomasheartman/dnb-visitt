@@ -8,7 +8,6 @@ import { reduxForm } from 'redux-form'
 import Form from './ContactForm'
 import { confirmEnquiry } from './functions/contactFormFunctions'
 
-
 const mapDispatchToProps = dispatch => ({
   onSubmit (values) {
     confirmEnquiry(values)

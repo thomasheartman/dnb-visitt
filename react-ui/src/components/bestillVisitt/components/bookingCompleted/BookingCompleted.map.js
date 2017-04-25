@@ -16,7 +16,7 @@ const mapStateToProps = state => {
 
   return ({
     date,
-    time: formatTime (time),
+    time: formatTime(time),
     branch,
     address,
     housingType

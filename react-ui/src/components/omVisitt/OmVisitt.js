@@ -3,7 +3,6 @@
  * A simple about page
  */
 
-
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Banner from './components/aboutBanner/AboutBanner'
@@ -24,12 +23,12 @@ export default () => (
       <Hva />
       <Se />
       <Tryggere />
-      <div className="row center-xs">
-        <Link to="/boligvelger" className="orange-button">Gå til bolig velger</Link>
+      <div className='row center-xs'>
+        <Link to='/boligvelger' className='orange-button'>Gå til bolig velger</Link>
       </div>
       <Hvor />
-      <div className="row center-xs">
-        <Link to="/hjelp-og-kontakt" className="orange-button">Finn din lokale Visitt-filial</Link>
+      <div className='row center-xs'>
+        <Link to='/hjelp-og-kontakt' className='orange-button'>Finn din lokale Visitt-filial</Link>
       </div>
 
     </main>

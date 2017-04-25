@@ -35,7 +35,7 @@ class BookingForm extends React.Component {
             required
           >
             {branches.map((branch) =>
-                        <MenuItem value={branch} key={branch} primaryText={branch} style={{'color': '#333'}} />
+              <MenuItem value={branch} key={branch} primaryText={branch} style={{'color': '#333'}} />
             )}
           </Field>
 
@@ -47,7 +47,7 @@ class BookingForm extends React.Component {
             floatingLabelText='Velg dato'
             hintText='Velg dato'
             autoOk
-            shouldDisableDate={(date) => validateDate(date) }
+            shouldDisableDate={(date) => validateDate(date)}
             required
           />
 
@@ -85,7 +85,7 @@ class BookingForm extends React.Component {
             required
           />
 
-          <input type='submit' value='Bestill Visitt' className="order-button"
+          <input type='submit' value='Bestill Visitt' className='order-button'
             disabled={pristine || submitting} />
         </form>
       </div>

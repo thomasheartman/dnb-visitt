@@ -58,8 +58,7 @@ const leilighet = [
 ]
 
 export const getAdImages = (propertyType) => {
-
-  const switchTerm = propertyType ? propertyType : ' leilighet'
+  const switchTerm = propertyType || ' leilighet'
 
   switch (switchTerm) {
     case 'enebolig':

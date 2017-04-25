@@ -75,7 +75,8 @@ export const fetchResults = (parameters) => (dispatch, getState) => {
       })
     })
     .then(() => {
-      if (getState().searchResults.fetchingResults) dispatch(cancelFetchingResults())})
+      if (getState().searchResults.fetchingResults) dispatch(cancelFetchingResults())
+    })
     .catch(err => {
       dispatch(cancelFetchingResults())
       console.log(err)
@@ -87,7 +88,6 @@ export const fetchResultsHomePage = () => (dispatch, getState) => {
   dispatch(clearResults())
 
   const ref = database.ref('properties')
-
 
   ref.orderByChild('price').limitToLast(2).once('value')
     .then(snapshot => {

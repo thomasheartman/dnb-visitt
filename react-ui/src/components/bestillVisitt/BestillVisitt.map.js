@@ -31,7 +31,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(getProperty(id))
   },
   fireMail () {
-    composeMail({ to: 'thomas.o.hartmann@gmail.com', subject: 'Din bestilling', html: '<div>HTML</div>'})
+    composeMail({ to: 'thomas.o.hartmann@gmail.com', subject: 'Din bestilling', html: '<div>HTML</div>' })
   }
 })
 

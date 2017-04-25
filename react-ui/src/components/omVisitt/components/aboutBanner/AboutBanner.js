@@ -10,7 +10,7 @@ import image from './media/omvisitt.jpg'
 import { vr, leilighet, hjem, omradeVelg } from '../../../../media/icons'
 
 export default () => (
-  <div class="about-banner-container">
+  <div className='about-banner-container'>
 
     <div className='row img-container'>
       <img src={image} alt='Om Visitt banner' />

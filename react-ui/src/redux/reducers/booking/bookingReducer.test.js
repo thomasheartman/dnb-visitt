@@ -47,8 +47,7 @@ it('should change the client name', () => {
     }
   }
 
-  expect(reducer
-    (initialState, ({ type: types.SET_CLIENT_NAME, payload: payload })))
+  expect(reducer(initialState, ({ type: types.SET_CLIENT_NAME, payload: payload })))
     .toEqual(expectedState)
 })
 

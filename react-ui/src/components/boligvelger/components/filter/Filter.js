@@ -20,12 +20,12 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
           <li className='filter-item' key={county}>
             <Checkbox className='regionItem' label={county}
               checked={selectedCounties.includes(county)}
-                  onCheck={() => {
-                    handleChange(selectedCounties.includes(county) ? fields.REMOVE_COUNTY : fields.ADD_COUNTY, county)
-                    performSearch()
-                  }}
-                    labelStyle={{color: 'white'}}
-                    iconStyle={{fill: 'white'}}
+              onCheck={() => {
+                handleChange(selectedCounties.includes(county) ? fields.REMOVE_COUNTY : fields.ADD_COUNTY, county)
+                performSearch()
+              }}
+              labelStyle={{color: 'white'}}
+              iconStyle={{fill: 'white'}}
               />
           </li>
         )}
@@ -49,7 +49,7 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
       </ul>
 
       <legend>Pris</legend>
-      <ul className="filter-slider-container">
+      <ul className='filter-slider-container'>
         <li>
           <label htmlFor='minPriceSlider'>Fra kr. {minPrice.toLocaleString()}</label>
           <Slider
@@ -85,7 +85,7 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
       </ul>
 
       <legend>Areal</legend>
-      <ul className="filter-slider-container">
+      <ul className='filter-slider-container'>
 
         <li>
           <label htmlFor='minSizeSlider'>Fra {minSize} m&#178;</label>
@@ -99,7 +99,6 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
             onBlur={() => performSearch(filter)}
             onChange={(event, value) => {
               handleChange(fields.SET_MIN_SIZE, value)
-
             }}
             style={{ marginBottom: 0 }}
           />
@@ -123,7 +122,7 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
       </ul>
 
       <legend>Antall soverom</legend>
-      <ul className="filter-slider-container">
+      <ul className='filter-slider-container'>
         {allBedroomValues.map((entry) =>
           <li className='filter-item' key={entry}>
             <Checkbox value={entry}
@@ -135,7 +134,6 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
                   : fields.ADD_BEDROOM_OPTION,
                   entry)
                 performSearch()
-                
               }}
               labelStyle={{color: 'white'}}
               iconStyle={{fill: 'white'}}
@@ -143,16 +141,16 @@ export default ({ showAll, initialCounties, hiddenCounties, allBedroomValues, se
           </li>
         )}
       </ul>
-      <div className="row middle-xs between-xs">
+      <div className='row middle-xs between-xs'>
         <input type='submit' value='Søk' className='submit'
-            onClick={() => performSearch(filter)}
+          onClick={() => performSearch(filter)}
         />
         <input type='reset' value='Tilbakestill' className='submit'
           onClick={() => {
             handleReset()
             performSearch()
           }}
-          
+
         />
       </div>
     </div>

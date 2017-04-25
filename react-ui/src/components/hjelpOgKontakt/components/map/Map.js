@@ -5,7 +5,7 @@
 import React from 'react'
 
 export default () => (
-  <div className="row">
+  <div className='row'>
     <div className='col-xs-12 map-container'>
       <h3>Finn din Visitt filial</h3>
       <iframe width='100%' height='450' frameBorder='0' style={{ 'border': 0 }}

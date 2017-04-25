@@ -4,7 +4,7 @@
  */
 
 // function to pad numbers so that they're always X characters long
-export const pad = (number: number, desiredLength: number = 4, paddingCharacter: string = '0') =>
+export const pad = (number, desiredLength = 4, paddingCharacter = '0') =>
   (String(paddingCharacter).repeat(desiredLength) + String(number)).slice(String(number).length)
 
 // function to format a date into our preferred format: YYYY-MM-DD
@@ -18,7 +18,6 @@ export const formatDate = (date) => {
 
 // Function to format street and county names according to norwegian standards
 export const toTitleCaseNorwegian = (textString) => {
-
   const lowerCaseWords = ['og', 'vei', 'gate']
 
   return textString.replace(/\w\S*/g, (word) => {

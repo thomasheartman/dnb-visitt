@@ -18,27 +18,27 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
   images, handleSelectProperty = f => f }) => (
 
     <div>
-    <Sticky>
-      <div className='housing-nav middle-xs row'>
-        <ul className='col-xs middle-xs row'>
-          <li>
-            <a href='#spesifikasjoner'>Spesifikasjoner</a>
-          </li>
-          <li>
-            <a href='#om-bolig'>Om Boligen</a>
-          </li>
-          <li>
-            <a href='#bilder'>Bilder</a>
-          </li>
-          <li>
-            <a href='#vr'>VR</a>
-          </li>
-        </ul>
-        <div className='col-xs end-xs middle-xs full-width reserve-visit-button'>
-          <Link to={`/bestill-visitt/${id}`} onClick={() => handleSelectProperty()}>Bestill VR Visning</Link>
+      <Sticky>
+        <div className='housing-nav middle-xs row'>
+          <ul className='col-xs middle-xs row'>
+            <li>
+              <a href='#spesifikasjoner'>Spesifikasjoner</a>
+            </li>
+            <li>
+              <a href='#om-bolig'>Om Boligen</a>
+            </li>
+            <li>
+              <a href='#bilder'>Bilder</a>
+            </li>
+            <li>
+              <a href='#vr'>VR</a>
+            </li>
+          </ul>
+          <div className='col-xs end-xs middle-xs full-width reserve-visit-button'>
+            <Link to={`/bestill-visitt/${id}`} onClick={() => handleSelectProperty()}>Bestill VR Visning</Link>
+          </div>
         </div>
-      </div>
-    </Sticky>
+      </Sticky>
 
       <main className='housing-ad-main'>
         <div className='row'>
@@ -88,10 +88,10 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
                   </div>
                 </div>
               </aside>
-              <a href='' name='spesifikasjoner'></a>
+              <a href='' name='spesifikasjoner' />
             </section>
             <div className='row center-xs'>
-              <a href='' name='om-bolig'></a>
+              <a href='' name='om-bolig' />
               <div className='col-xs-6 two-grid-gutter big-button'>
                 <Link to='#'>Se Plantegning</Link>
               </div>
@@ -116,7 +116,7 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
               </div>
             </div>
             <div className='row center-xs'>
-              <a href='' name='bilder'></a>
+              <a href='' name='bilder' />
               <div className='col-xs-6 two-grid-gutter'>
                 <img src={images[3]} alt='Kjøkken' className='img-container' />
               </div>
@@ -143,7 +143,7 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
               </div>
             </div>
             <div className='row center-xs'>
-              <a href='' name='vr'></a>
+              <a href='' name='vr' />
               <div className='col-xs-6 two-grid-gutter'>
                 <img src={barn} alt='Barn' className='img-container' />
               </div>
@@ -165,8 +165,8 @@ export default ({id, price, commonCosts, sharedDebt, grossArea,
           <h2 className='col-xs'>Bestill Visning</h2>
           <img src={vr} viewBox='0 0 500 500' role='presentation' />
         </div>
-        <div className="row center-xs middle-xs">
-          <Link to={`/bestill-visitt/${id}`} onClick={() => handleSelectProperty()} className="orange-button">Bestill VR Visning</Link>
+        <div className='row center-xs middle-xs'>
+          <Link to={`/bestill-visitt/${id}`} onClick={() => handleSelectProperty()} className='orange-button'>Bestill VR Visning</Link>
         </div>
       </main>
     </div>
