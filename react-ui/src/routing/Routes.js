@@ -24,7 +24,7 @@ export const home = '/'
 export const omVisitt = '/om-visitt'
 export const hjelpOgKontakt = '/hjelp-og-kontakt'
 export const boligvelger = '/boligvelger'
-export const annonse = '/boligvelger/annonse'
+export const annonse = `${boligvelger}/annonse`
 export const bestillVisitt = '/bestill-visitt'
 
 export default () => (
