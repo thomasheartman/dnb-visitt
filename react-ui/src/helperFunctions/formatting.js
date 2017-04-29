@@ -20,7 +20,7 @@ export const formatDate = (date) => {
 export const toTitleCaseNorwegian = (textString) => {
   const lowerCaseWords = ['og', 'vei', 'gate']
 
-  return textString.replace(/\D\S*/g, (word) => {
+  return textString.replace(/[A-Za-z\u00C0-\u017F]\S*/g, (word) => {
     if (lowerCaseWords.includes(word)) return word.toLowerCase()
 
     return word.charAt(0).toUpperCase() + word.substr(1).toLowerCase()
