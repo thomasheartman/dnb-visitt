@@ -24,6 +24,8 @@ class BestillVisitt extends React.Component {
       return <BookingCompleted />
     }
 
+    console.log(image)
+
     return (
       fetching
         ? <Spinner />
@@ -42,7 +44,7 @@ class BestillVisitt extends React.Component {
               <div className='col-xs-12 col-sm-6 reserved-house-container'>
                 <p>Valgt bolig:</p>
                 <h2>{address}</h2>
-                <img href={image} role='presentation' />
+                <img src={image} role='presentation' />
               </div>
             </div>
           </main>

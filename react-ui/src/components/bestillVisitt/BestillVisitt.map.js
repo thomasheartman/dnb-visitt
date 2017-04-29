@@ -8,6 +8,8 @@ import BestillVisitt from './BestillVisitt'
 import { getProperty } from '../../redux/reducers/currentProperty/currentPropertyActions'
 import _ from 'lodash'
 import { composeMail } from '../../mailHandler/mailHandler'
+import { getHousingImage } from '../boligvelger/components/searchResults/components/resultItem/media/defaultThumbnails'
+
 
 const mapStateToProps = state => {
   const property = state.currentProperty.propertyData
@@ -22,7 +24,7 @@ const mapStateToProps = state => {
     id: property.id,
     fetching: state.currentProperty.fetchingProperty,
     address: fullAddressString,
-    image: property.image
+    image: property.image || getHousingImage(property.housingType)
   })
 }
 

@@ -14,7 +14,8 @@ export const rekkehus = rekkehusSrc
 export const leilighet = leilighetSrc
 
 export const getHousingImage = (propertyType) => {
-  switch (propertyType.toLowerCase()) {
+  const type = propertyType ? propertyType.toLowerCase() : 'blank'
+  switch (type) {
     case 'enebolig':
       return enebolig
     case 'rekkehus':
