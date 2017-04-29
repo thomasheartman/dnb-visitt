@@ -14,18 +14,19 @@ import { createStore, applyMiddleware } from 'redux'
  *  deployment. Left in as a comment for easy
  *  integration on further development.
  */
-/* const consoleMessages = store => next => action => {
+ const consoleMessages = store => next => action => {
   let result
 
   console.groupCollapsed(`Dispatching action => ${action.type}`)
 
-  const schedule = store.getState().bookingSchedule.appointments
+  const results = store.getState().searchResults
 
   console.log(`
 
   Current booking schedule:
    === === === === ===
-  Schedule: ${schedule}
+  Fetching: ${results.fetchingResults}
+  Queued: ${results.queuedSearch}
 
 `)
   console.groupEnd()
@@ -33,6 +34,6 @@ import { createStore, applyMiddleware } from 'redux'
   result = next(action)
 
   return result
-} */
+}
 
-export default (initialState = {}) => applyMiddleware(thunk)(createStore)(reducer, initialState)
+export default (initialState = {}) => applyMiddleware(thunk, consoleMessages)(createStore)(reducer, initialState)

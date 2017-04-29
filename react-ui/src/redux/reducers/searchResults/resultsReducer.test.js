@@ -10,11 +10,19 @@ import types from './resultsActionTypes'
 
 const initialState = {
   'fetchingResults': false,
+  'queuedSearch': false,
   'results': []
 }
 
 const fetchingState = {
   'fetchingResults': true,
+  'queuedSearch': false,
+  'results': []
+}
+
+const queuedState = {
+  'fetchingResults': true,
+  'queuedSearch': true,
   'results': []
 }
 
@@ -22,6 +30,13 @@ it('should return the initial state', () => {
   expect(
     reducer(undefined, {})
   ).toEqual(initialState)
+})
+
+it('should queue a search', () => {
+  expect(reducer(
+    fetchingState, ({type: types.QUEUE_SEARCH})
+  )).toEqual(queuedState)
+
 })
 
 it('should set fetching to true', () => {
@@ -58,6 +73,7 @@ it('should change the results', function () {
       }
     )).toEqual({
       'fetchingResults': false,
+      'queuedSearch': false,
       'results': payload
     })
 })

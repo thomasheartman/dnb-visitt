@@ -12,6 +12,7 @@
   "showAllCounties": false,
   "searchResults": {
     "fetchingResults": false,
+    "queuedSearch": false,
     "results": []
   },
 

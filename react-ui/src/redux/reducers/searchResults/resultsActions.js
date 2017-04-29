@@ -11,6 +11,10 @@ export const startFetchingResults = () => ({ type: types.FETCH_RESULTS })
 
 export const cancelFetchingResults = () => ({ type: types.CANCEL_FETCHING_RESULTS })
 
+export const queueSearch = () => ({ type: types.QUEUE_SEARCH })
+
+export const clearSearchQueue = () => ({ type: types.CLEAR_SEARCH_QUEUE })
+
 export const addResult = newResult => ({ type: types.ADD_RESULT, payload: newResult })
 
 export const changeResults = results => ({ type: types.CHANGE_RESULTS, payload: results })
@@ -58,11 +62,16 @@ const matchesSearchCriteria = (filter, property) => {
 }
 
 export const fetchResults = (parameters) => (dispatch, getState) => {
+  if (getState().searchResults.fetchingResults) {
+    dispatch(queueSearch())
+    return
+  }
   dispatch(startFetchingResults())
+  dispatch(clearSearchQueue())
   dispatch(clearResults())
 
-  const ref = database.ref('properties')
   const filter = getState().filter
+  const ref = database.ref('properties')
   const filterValues = processFilterValues(filter)
 
   ref.orderByChild('price').endAt(parseInt(filterValues.maxPrice, 10)).once('value')
@@ -74,8 +83,9 @@ export const fetchResults = (parameters) => (dispatch, getState) => {
         }
       })
     })
+    .then(() => dispatch(cancelFetchingResults()))
     .then(() => {
-      if (getState().searchResults.fetchingResults) dispatch(cancelFetchingResults())
+      if (getState().searchResults.queuedSearch) dispatch(fetchResults())
     })
     .catch(err => {
       dispatch(cancelFetchingResults())

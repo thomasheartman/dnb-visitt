@@ -11,8 +11,18 @@ const fetchingResults = (state = false, action) => {
     case types.FETCH_RESULTS:
       return true
     case types.CANCEL_FETCHING_RESULTS:
-    case types.ADD_RESULT:
     case types.CHANGE_RESULTS:
+      return false
+    default:
+      return state
+  }
+}
+
+const queuedSearch = (state = false, action) => {
+  switch (action.type) {
+    case types.QUEUE_SEARCH:
+      return true
+    case types.CLEAR_SEARCH_QUEUE:
       return false
     default:
       return state
@@ -34,5 +44,6 @@ const results = (state = [], action) => {
 
 export default combineReducers({
   fetchingResults,
+  queuedSearch,
   results
 })
