@@ -216,7 +216,7 @@ concurrently@^3.4.0:
     uberproto "~1.1.0"
     underscore ">= 1.4.4"
 
-connect-wwwhisper@^0.1.17:
+connect-wwwhisper@*:
   version "0.1.17"
   resolved "https://registry.yarnpkg.com/connect-wwwhisper/-/connect-wwwhisper-0.1.17.tgz#163248b3531d20d214cef4a9d90e2a45228a672c"
   dependencies:

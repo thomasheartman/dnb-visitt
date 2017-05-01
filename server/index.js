@@ -12,6 +12,13 @@ const wwwhisper = require('connect-wwwhisper')
 const app = express()
 const PORT = process.env.PORT || 5000
 
+//email—placed before authentication to get around auth issues
+app.post('/send-mail', (req, res) => {
+  console.log(req.body)
+  sendMail(req.body)
+  res.send('POST request to send-email')
+})
+
 // authorization
 app.use(wwwhisper(false))
 
@@ -28,11 +35,6 @@ app.get('/api', function (req, res) {
   res.send('{"message":"Hello from the custom server!"}')
 })
 
-app.post('/send-mail', (req, res) => {
-  console.log(req.body)
-  sendMail(req.body)
-  res.send('POST request to send-email')
-})
 
 // All remaining requests return the React app, so it can handle routing.
 app.get('*', function (request, response) {
