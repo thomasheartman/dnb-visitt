@@ -7,9 +7,13 @@ const sendMail = require('./mailservice/mailHandler')
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
+const wwwhisper = require('connect-wwwhisper')
 
 const app = express()
 const PORT = process.env.PORT || 5000
+
+// authorization
+app.use(wwwhisper(false))
 
 // Priority serve any static files.
 app.use(express.static(path.resolve(__dirname, '../react-ui/build')))

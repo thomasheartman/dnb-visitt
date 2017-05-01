@@ -19,6 +19,7 @@
   "dependencies": {
     "body-parser": "^1.17.1",
     "concurrently": "^3.4.0",
+    "connect-wwwhisper": "*",
     "express": "^4.14.1",
     "nodemailer": "^4.0.1",
     "nodemailer-mailgun-transport": "^1.3.4"
